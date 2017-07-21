@@ -32,4 +32,4 @@ Follow these steps to create a new slide deck:
 3. Make a copy of the [sample slides](classes/sample_slides.md) and rename it
    to `week_N_slides.md` in that same folder.
 4. Using Marp, export your slide deck as a PDF and save it to the `slides`
-   directory.
+   directory. (`File > Export Slides as PDF`)
