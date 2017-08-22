@@ -375,6 +375,7 @@ String variableName = "string variable value";
 int age = 92;
 
 age = 93;
+age = age + 1;
 ```
 
 -----------------------------------------------------------------------------
