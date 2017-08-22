@@ -43,19 +43,21 @@
   - Operators
   - **Book sections**:
     - Variables (ch. 1, page 25)
+    - Basic syntax and data types
+      - Comments (ch. 1, page 4)
     - Operators (ch. 2, page 52)
       - Arithmetic operators (ch. 2, page 53)
-      - Numeric promition, casting (ch. 2, page 55)
       - Unary operators (ch. 2, page 57)
-        - Logical operators (ch. 2, page 57)
         - Increment and decrement operators (ch. 2, page 58)
-      - Basic syntax and data types
-        - Comments (ch. 1, page 4)
-        - Assignment operator (ch. 2, page 60)
+      - Assignment operator (ch. 2, page 60)
       - Compound assignment operators (ch. 2, page 62)
       - Relational operatos (ch. 2, page 63)
-      - Logical operators (ch. 2, page 64)
       - Equality operators (ch. 2, page 65)
+  - **Left out**:
+      - Numeric promition, casting (ch. 2, page 55)
+        - Maybe this can be moved to week 14 since casting is covered then
+      - Ignoring `instanceof` operator. Teach this on one of the classes weeks?
+      - Logical operators (ch. 2, page 57)
 
 - Week 2:
   - Valid variable names and declaring, and initialization

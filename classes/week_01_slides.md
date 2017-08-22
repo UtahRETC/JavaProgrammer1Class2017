@@ -6,13 +6,17 @@ footer: Java Class - Week 1
 
 # Week 1
 
-- **Terminology, commands, and installing Java**
+- **Terminology and a few commands**
 - **Hello, World**
-- **Input and output**
 - **Variables**
+- **Input and output**
 - **Data types**
 - **Operators**
 - **Reading compiler output**
+
+-----------------------------------------------------------------------------
+
+# Follow along http://tiny.cc/javaslides
 
 -----------------------------------------------------------------------------
 
@@ -53,7 +57,6 @@ Before we start writing code, let's cover a few terms, commands, and other usefu
 -----------------------------------------------------------------------------
 
 # Commands
-
 
 - `cd`: lets you move from one folder to another folder. Remember the phrase "_change directory_" (change = c, directory = d)
 - `dir` (Windows) or `ls` (Macos/Linux): this command is used to list all of the files and folders in the folder you are currently in.
@@ -97,19 +100,15 @@ The example above is telling you to run `javac HelloWorld.java`, press enter, th
 
 -----------------------------------------------------------------------------
 
-# Installing Java
+# Hello, World and saving your code
 
-Open your USB drive and double click on the "_jdk_" program.
+Now we can get started writing code. In this section we're going to use a text editor to write a Java program, and then go into the terminal/command prompt to compile and run your program.
 
------------------------------------------------------------------------------
-
-# Hello, World
-
-Now we can get started writing code. In this section we're going to use a text editor to write a Java program and then go into the terminal/command prompt to compile and run your program.
+Make sure you create a folder that you will have access to in the future, and remember where it is as well. This will be your "Java Class Code" folder from now on. You should probably name it "_JavaClassCode_".
 
 -----------------------------------------------------------------------------
 
-In your text editor, create a new file and write the program below. Make sure you save this file in your pen drive in the "_week01_" folder and name it "_HelloWorld.java_".
+In your text editor, create a new file and write the program below. In your code folder, create a new folder and name it "_week01_". In that new folder save the new file and name it "_HelloWorld.java_". Write this code and save it to your file:
 
 <br>
 
@@ -128,7 +127,6 @@ Go to your terminal and run the following commands (make sure you're in the righ
 <br>
 
 ```bash
-> cd PATH_TO_USB_DRIVE_ON_WINDOWS_COMPUTER
 > javac HelloWorld.java
 > java HelloWorld
 ```
@@ -139,43 +137,30 @@ If everything worked you should see `Hello, World!` as the output of running the
 
 -----------------------------------------------------------------------------
 
-# Input
+![bg](https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif)
 
-Now that we have written a program which has output, let's update it to also work with user input. As mentioned earlier commands can take arguments, so let's use an argument to make our Hello World program have the ability to say "Hello" to more than just "World" depending on if we run our program with an argument or not.
+<div style="text-align: center">
+
+# You're a Java Programmer
+
+<div style="font-size: 150px">👏</div>
+
+</div>
 
 -----------------------------------------------------------------------------
 
-In your text editor, create a new file and write the program below. Make sure you save this file in your pen drive in the "_week01_" folder and name it "_HelloWorldWithArguments.java_".
+
+Change something about your code and see what happens. What happens if you change _"Hello, World"_? Do you see your updates? What happens if you remove the word ==void==? Did you get an error? Make any change you'd like. Below is a reference to the original code if you want to undo any changes you make.
+
+<br>
 
 ```java
-public class HelloWorldWithArguments {
+public class HelloWorld {
   public static void main(String[] args) {
-    String name = "World";
-
-    if (args.length > 0) {
-      name = args[0];
-    }
-
-    System.out.println("Hello, " + name + "!");
+    System.out.println("Hello, World!");
   }
 }
 ```
-
------------------------------------------------------------------------------
-
-Go to your terminal and run the following commands (make sure you're in the right folder)
-
-<br>
-
-```bash
-> cd PATH_TO_USB_DRIVE_ON_WINDOWS_COMPUTER
-> javac HelloWorldWithArguments.java
-> java HelloWorldWithArguments Programmer
-```
-
-<br>
-
-If everything worked you should see `Hello, Programmer!` as the output of running the last command.
 
 -----------------------------------------------------------------------------
 
@@ -228,20 +213,281 @@ int x = 7;
 
 -----------------------------------------------------------------------------
 
+# Input
+
+Now that we have written a program which has output and know about variables, let's update your code to work with user input. As mentioned earlier, commands can take arguments, so let's use an argument to make our Hello World program have the ability to say "Hello" to more than just "World" depending on if we run our program with an argument or not.
+
+-----------------------------------------------------------------------------
+
+In your text editor, create a new file and write the program below. Name this file "_HelloWorldWithArguments.java_" and save it in your "_week01_" folder.
+
+```java
+public class HelloWorldWithArguments {
+  public static void main(String[] args) {
+    String name = "World";
+
+    if (args.length > 0) {
+      name = args[0];
+    }
+
+    System.out.println("Hello, " + name + "!");
+  }
+}
+```
+
+-----------------------------------------------------------------------------
+
+# Notice some new things?
+
+<div style="height: 59px"></div>
+
+```java
+public class HelloWorldWithArguments {
+  public static void main(String[] args) {
+    String name = "World";
+
+    if (args.length > 0) {
+      name = args[0];
+    }
+
+    System.out.println("Hello, " + name + "!");
+  }
+}
+```
+
+-----------------------------------------------------------------------------
+
+Go to your terminal and run the following commands (make sure you're in the right folder)
+
+<br>
+
+```bash
+> javac HelloWorldWithArguments.java
+> java HelloWorldWithArguments Programmer
+```
+
+<br>
+
+If everything worked you should see `Hello, Programmer!` as the output of running the last command.
+
+-----------------------------------------------------------------------------
+
 # Data types
 
 -----------------------------------------------------------------------------
 
+# What's a type?
+
+Remember the code you wrote in _HelloWorldWithArguments.java_?
+
+```java
+public class HelloWorldWithArguments {
+  public static void main(String[] args) {
+    String name = "World";
+
+    if (args.length > 0) {
+      name = args[0];
+    }
+
+    System.out.println("Hello, " + name + "!");
+  }
+}
+```
+
+-----------------------------------------------------------------------------
+
+```java
+public class DataTypesSample {
+  public static void main(String[] args) {
+    // "int" stands for "Integer"
+    int age = 97;
+    
+    String name = "Marcos";
+    String message = "Hello, " + name +
+                     ", you are " + age +
+                     " years old";
+
+    System.out.println(message);
+  }
+}
+```
+
+-----------------------------------------------------------------------------
 
 - `byte`, `short`, `int`, and `long` are for integers, such as `1`, `99`, and `32423325`
 - `float` and `double` are for floating-point numbers, such as `3.14`, `3.1`, and `89.12e32`
-- `boolean` is for storing either `true` or `false` (think of this as on/off or yes/no)
 - `char` is for a single character, such as `a`, `B`, and `\n`
+- `boolean` is for storing either `true` or `false` (think of this as on/off or yes/no)
 - `String` is for a sequence of characters, or a string. For example, `Hello, World!`
 
 -----------------------------------------------------------------------------
 
+- `byte` = 1 Byte, signed, -128 to 127
+- `short` = 2 Bytes, signed, -32,768 to 32,767
+- `int` = 4 Bytes, signed, -2<sup>31</sup> to 2<sup>31</sup>-1
+- `long` = 8 Bytes, signed, -2<sup>63</sup> to 2<sup>63</sup>-1
+- `float` = 4 Bytes, signed
+- `double` = 8 Bytes, signed
+- `char` = 2 Bytes, unsigned
+- `boolean` = 1 Byte, unsigned
+
+-----------------------------------------------------------------------------
+
+# What happens if I use the wrong type?
+
+```java
+public class BigByte {
+  public static void main(String[] args) {
+    byte oneTwentySeven = 127;
+    byte oneTwentyEight = 128;
+
+    System.out.println(oneTwentySeven);
+    System.out.println(oneTwentyEight);
+  }
+}
+```
+
+-----------------------------------------------------------------------------
+
+# Why?
+
+You should use the smallest amount of data possible to accomplish a task, so that your computer doesn't run out of memory.x
+
+-----------------------------------------------------------------------------
+
 # Operators
+
+-----------------------------------------------------------------------------
+
+# You're already using operators
+
+```java
+String variableName = "string variable value";
+```
+
+-----------------------------------------------------------------------------
+
+# Assigned Operator (1 of 2)
+
+- `=`
+
+```java
+int age = 92;
+
+age = 93;
+```
+
+-----------------------------------------------------------------------------
+
+# Arithmetic Operators
+
+- `*`
+- `/`
+- `%`
+- `+`
+- `-`
+
+-----------------------------------------------------------------------------
+
+# Arithmetic Operators
+
+```java
+int a = 37;
+int b = 21;
+
+int multiplication = a * b;
+int division = a / b;
+int modulos = a % b;
+int addition = a + b;
+int subtraction = a - b;
+```
+
+-----------------------------------------------------------------------------
+
+# Assigned Operators (2 of 2)
+
+- `+=`
+- `-=`
+- `*=`
+- `/=`
+- `%=`
+
+```java
+int age = 92;
+
+age += 1;
+```
+
+-----------------------------------------------------------------------------
+
+# Unary Operators
+
+- `++`
+- `--`
+
+```java
+int age = 92;
+
+age++;
+```
+
+-----------------------------------------------------------------------------
+
+# Pre-unary vs. post-unary
+
+```java
+public class PostUnaryOperators {
+  public static void main(String[] args) {
+    int age = 92;
+    int nextAge = age++;
+
+    System.out.println("Age = " + age);
+    System.out.println("Next Age = " + nextAge);
+  }
+}
+```
+
+```text
+Age = 93
+Next Age = 92
+```
+
+-----------------------------------------------------------------------------
+
+# Pre-unary vs. post-unary
+
+```java
+public class PreUnaryOperators {
+  public static void main(String[] args) {
+    int age = 92;
+    int nextAge = ++age;
+
+    System.out.println("Age = " + age);
+    System.out.println("Next Age = " + nextAge);
+  }
+}
+```
+
+```text
+Age = 93
+Next Age = 93
+```
+
+-----------------------------------------------------------------------------
+
+# Relational Operators
+
+- `<`
+- `>`
+- `<=`
+- `>=`
+
+-----------------------------------------------------------------------------
+
+# Equality Operators
+
+- `==`
+- `!=`
 
 -----------------------------------------------------------------------------
 
