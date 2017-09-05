@@ -1,6 +1,6 @@
 # Class Outline
 
-<title>Class Outline</title>
+<title>outline</title>
 
 <style>
 @media print {
