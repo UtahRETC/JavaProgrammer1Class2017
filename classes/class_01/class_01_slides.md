@@ -19,7 +19,7 @@ footer: Java Class - Class 1
 
 -----------------------------------------------------------------------------
 
-![Github Download](../assets/downloading-and-navigating-the-repo.png)
+![Github Download](assets/downloading-and-navigating-the-repo.png)
 
 -----------------------------------------------------------------------------
 
