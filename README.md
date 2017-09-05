@@ -1,4 +1,4 @@
-# Java 8 Programmer I UtahRETC Class Content
+# Java 8 Programmer 1 UtahRETC Class Content
 
 We're using [OCA: Oracle Certified Associate Java SE 8
 Programmer](http://www.wiley.com/WileyCDA/WileyTitle/productCd-1118957407.html)
