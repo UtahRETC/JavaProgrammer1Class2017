@@ -8,11 +8,10 @@ footer: Java Class - Week 1
 
 - **Terminology and a few commands**
 - **Hello, World**
-- **Variables**
-- **Data types**
+- **Introduction to variables and data types**
 - **Operators**
 - **User input**
-- **Reading compiler output**
+- **Dealing with problematic code**
 
 -----------------------------------------------------------------------------
 
@@ -497,7 +496,110 @@ If everything worked you should see `Hello, Programmer!` as the output of runnin
 
 -----------------------------------------------------------------------------
 
+# Dealing with problematic code
+
+You're going to make mistakes. This is true for *all* programmer, but specially in the beginning your code will fail to run more times than not. But this is ok. You'll be better and programming and better at using the tools at your disposal.
+
+-----------------------------------------------------------------------------
+
 # Reading compiler output
+
+The compiler should become your friend. Learning how to understand what it is telling you will help accomplish this. When your code fails to compile, most of the time you will be given a very explicit reason why.
+
+-----------------------------------------------------------------------------
+
+For example, try compiling `CompileError1.java`. You should see something like this:
+
+```bash
+code/class_01/CompileError1.java:3: error: cannot find
+symbol
+
+    System.out.prntln("This is a string");
+              ^
+  symbol:   method prntln(String)
+  location: variable out of type PrintStream
+
+1 error
+```
+
+-----------------------------------------------------------------------------
+
+```bash
+CompileError1.java:3: error: cannot find
+symbol
+
+    System.out.prntln("This is a string");
+              ^
+  symbol:   method prntln(String)
+  location: variable out of type PrintStream
+
+1 error
+```
+
+What can we get out of this?
+
+-----------------------------------------------------------------------------
+
+1. The file that the compiler had problems: `CompileError1.java`
+2. The line number in that file: `3`
+3. The actual "thing" that is causing problems:
+
+```bash
+    System.out.prntln("This is a string");
+              ^
+  symbol:   method prntln(String)
+  location: variable out of type PrintStream
+```
+4. Finally, the number of errors it found: `1 error`. Keep in mind that as you fix errors other may arise.
+
+-----------------------------------------------------------------------------
+
+# Reading runtime errors
+
+Sometimes the compiler doesn't catch potential problems. This includes instances when there is nothing technically wrong with your code but just fail to check it will correctly run.
+
+Compile and execute `RuntimeError1.java` and let's talk about what's happening.
+
+-----------------------------------------------------------------------------
+
+Running `javac RuntimeError1.java` results in no errors, but when you run `java RuntimeError1` you should see something like this:
+
+```bash
+Exception in thread "main" java.lang.NumberFormatException: For input string: "seven"
+        at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+        at java.lang.Integer.parseInt(Integer.java:580)
+        at java.lang.Integer.parseInt(Integer.java:615)
+        at RuntimeError1.main(RuntimeError1.java:3)
+```
+
+What can we get out of this?
+
+
+-----------------------------------------------------------------------------
+
+
+1. The file that the compiler had problems: `RuntimeError1.java`
+2. The line number in that file: `3`
+3. The exception that was thrown `NumberFormatException`
+4. The stack trace:
+
+```bash
+at java.lang.Integer.parseInt(Integer.java:580)
+at java.lang.Integer.parseInt(Integer.java:615)
+at RuntimeError1.main(RuntimeError1.java:3)
+```
+
+-----------------------------------------------------------------------------
+
+# New Terminology!
+
+-----------------------------------------------------------------------------
+
+==**Exception**==: we'll cover this topic in much more detail in a later class, but for the time being think of exceptions as your code telling you that it ran into an issue. Different exceptions mean different issues, so this will help you get to the bottom of the problem.
+
+-----------------------------------------------------------------------------
+
+==**Stack trace**==: stack traces are related to Exceptions and they include information about the files/lines that your code ran through before it ran into an error. Stack traces will help you find the exact location (file and line number) of your error.
 
 -----------------------------------------------------------------------------
 
