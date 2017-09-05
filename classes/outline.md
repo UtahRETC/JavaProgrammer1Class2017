@@ -18,10 +18,10 @@
 ### Todo
 
 - [x] List all sections
-- [x] Make week outline
-- [x] Put those sections into week outline
-- [ ] Find questions for every section/week
-- [ ] Find resources (Pluralsight videos are an option) for every section/week
+- [x] Make class outline
+- [x] Put those sections into class outline
+- [ ] Find questions for every section/class/week
+- [ ] Find resources (Pluralsight videos are an option) for every section/class/week
 - [ ] Slides
 
 
@@ -30,11 +30,11 @@
 ### Outline
 
 - Leftovers:
-  - **The following book sections are not included in any of the weeks below**:
+  - **The following book sections are not included in any of the classes below**:
     - Passing data among methods (ch. 4, page 188)
     - Encapsulating data and immutable classes (ch. 4, page 205, 207)
 
-- Week 1:
+- Class 1:
   - Hello, World
   - Input and output
   - Reading compiler output
@@ -55,11 +55,11 @@
       - Equality operators (ch. 2, page 65)
   - **Left out**:
       - Numeric promition, casting (ch. 2, page 55)
-        - Maybe this can be moved to week 14 since casting is covered then
-      - Ignoring `instanceof` operator. Teach this on one of the classes weeks?
+        - Maybe this can be moved to class 14 since casting is covered then
+      - Ignoring `instanceof` operator. Teach this on one of the classes were Classes are taught?
       - Logical operators (ch. 2, page 57)
 
-- Week 2:
+- Class 2:
   - Valid variable names and declaring, and initialization
   - Conditionals (`if`, `if-then`, `if-then-else`, `switch`)
   - Loops (`while`, `do-while`, `for`, `break`, `continue`, labels)
@@ -81,7 +81,7 @@
         - `do-while` statement (ch. 2, page 78)
         - `for` statement (ch. 2, page 80)
 
-- Week 3:
+- Class 3:
   - Classes
   - Objects
   - Constructors
@@ -98,7 +98,7 @@
       - Variables (ch. 1, page 25)
         - Instance vs local vs class variables (ch. 1, page 29, 30)
 
-- Week 4
+- Class 4
   - Methods
   - Fields
   - Encapsulation
@@ -112,7 +112,7 @@
       - Exception list (ch. 4, page 171)
       - Method body (ch. 4, page 171)
 
-- Week 5:
+- Class 5:
   - Arrays
   - Strings
   - Difference between object references and primitives
@@ -136,7 +136,7 @@
       - Difference between object references and primitives (ch. 1, page 20)
     - Varargs (ch. 4, page 172)
 
-- Week 6:
+- Class 6:
   - Introduction to Git
   - Create a github account
   - Close base project repo
@@ -144,7 +144,7 @@
   - **Project outline**: use control flows, arrays and other different data
     types, and classes
 
-- Week 7:
+- Class 7:
   - Packages
   - Creating packages
   - Imports
@@ -161,7 +161,7 @@
         - Code formatting trickery (ch. 1, page 16)
       - Static imports (ch. 4, page 187)
 
-- Week 8:
+- Class 8:
   - Looking up documentation and how to read it, using `ArrayList` as an example
   - `ArrayList` deep dive
   - Difference between Arrays and ArrayLists
@@ -169,7 +169,7 @@
     - Arrays (ch. 3, page 119 - 123)
       - `ArrayList` (ch. 3, page 129 - 138)
 
-- Week 9:
+- Class 9:
   - `StringBuilder` deep dive
   - String pool
   - **Book sections**:
@@ -181,7 +181,7 @@
       - `StringBuilder` class and important methods (ch. 3, page 111 - 114)
       - `StringBuilder` vs `StringBuffer` (ch. 3, page 117)
 
-- Week 10:
+- Class 10:
   - Working with Dates and Times
   - **Book sections**:
     - Dates and times (ch. 3, page 138)
@@ -190,10 +190,10 @@
       - Formatting dates and times (ch. 3, page 148)
       - Parsing dates and times (ch. 3, page 151)
 
-- Week 11:
+- Class 11:
   - **Project outline**: use Dates, Times, and ArrayLists
 
-- Week 12:
+- Class 12:
   - Classes deep dive
   - Instance initializing blocks
   - Static initializing blocks
@@ -207,7 +207,7 @@
       - Calling static methods and fields (ch. 4, page 182)
       - Static vs instance (ch. 4, page 183)
 
-- Week 13:
+- Class 13:
   - Overloading
   - Access modifiers
   - Inheritance
@@ -232,7 +232,7 @@
       - Overloading constructors (ch. 4, page 199)
       - Order of initialization (ch. 4, page 202)
 
-- Week 14:
+- Class 14:
   - Abstract classes
   - Interfaces
   - Casting
@@ -255,11 +255,11 @@
       - Polymorphic parameters (ch. 5, page 285)
       - Polymorphism and method overriding (ch. 5, page 287)
 
-- Week 15:
+- Class 15:
   - **Project outline**: use classes, inheritance, polymorphism, method
     overriding, Overloading, and initialization blocks
 
-- Week 16:
+- Class 16:
   - Exceptions
   - What their role is
   - `try-catch` blocks
@@ -283,7 +283,7 @@
       - Exceptions in subclasses (ch. 6, page 319)
       - Printing exceptions (ch. 6, page 321)
 
-- Week 17:
+- Class 17:
   - Lambdas
   - Scopes
   - Garbage collection
@@ -296,10 +296,10 @@
       - Syntax (ch. 4, page 211)
       - Predicates (ch. 4, page 214)
 
-- Week 18:
+- Class 18:
   - **Project outline**: use exceptions
 
-- Week 19, 20, 21, 22:
+- Class 19, 20, 21, 22:
   - Reviews and practice tests
   - **Book sections**:
     - Review (appx. A, page 333)
