@@ -9,9 +9,9 @@ footer: Java Class - Week 1
 - **Terminology and a few commands**
 - **Hello, World**
 - **Variables**
-- **Input and output**
 - **Data types**
 - **Operators**
+- **Input and output**
 - **Reading compiler output**
 
 -----------------------------------------------------------------------------
@@ -210,65 +210,6 @@ x = 7;
 ```java
 int x = 7;
 ```
-
------------------------------------------------------------------------------
-
-# Input
-
-Now that we have written a program which has output and know about variables, let's update your code to work with user input. As mentioned earlier, commands can take arguments, so let's use an argument to make our Hello World program have the ability to say "Hello" to more than just "World" depending on if we run our program with an argument or not.
-
------------------------------------------------------------------------------
-
-In your text editor, create a new file and write the program below. Name this file "_HelloWorldWithArguments.java_" and save it in your "_week01_" folder.
-
-```java
-public class HelloWorldWithArguments {
-  public static void main(String[] args) {
-    String name = "World";
-
-    if (args.length > 0) {
-      name = args[0];
-    }
-
-    System.out.println("Hello, " + name + "!");
-  }
-}
-```
-
------------------------------------------------------------------------------
-
-# Notice some new things?
-
-<div style="height: 59px"></div>
-
-```java
-public class HelloWorldWithArguments {
-  public static void main(String[] args) {
-    String name = "World";
-
-    if (args.length > 0) {
-      name = args[0];
-    }
-
-    System.out.println("Hello, " + name + "!");
-  }
-}
-```
-
------------------------------------------------------------------------------
-
-Go to your terminal and run the following commands (make sure you're in the right folder)
-
-<br>
-
-```bash
-> javac HelloWorldWithArguments.java
-> java HelloWorldWithArguments Programmer
-```
-
-<br>
-
-If everything worked you should see `Hello, Programmer!` as the output of running the last command.
 
 -----------------------------------------------------------------------------
 
@@ -489,6 +430,66 @@ Next Age = 93
 
 - `==`
 - `!=`
+
+
+-----------------------------------------------------------------------------
+
+# Input
+
+Now that we have written a program which has output and know about variables, let's update your code to work with user input. As mentioned earlier, commands can take arguments, so let's use an argument to make our Hello World program have the ability to say "Hello" to more than just "World" depending on if we run our program with an argument or not.
+
+-----------------------------------------------------------------------------
+
+In your text editor, create a new file and write the program below. Name this file "_HelloWorldWithArguments.java_" and save it in your "_week01_" folder.
+
+```java
+public class HelloWorldWithArguments {
+  public static void main(String[] args) {
+    String name = "World";
+
+    if (args.length > 0) {
+      name = args[0];
+    }
+
+    System.out.println("Hello, " + name + "!");
+  }
+}
+```
+
+-----------------------------------------------------------------------------
+
+# Notice some new things?
+
+<div style="height: 59px"></div>
+
+```java
+public class HelloWorldWithArguments {
+  public static void main(String[] args) {
+    String name = "World";
+
+    if (args.length > 0) {
+      name = args[0];
+    }
+
+    System.out.println("Hello, " + name + "!");
+  }
+}
+```
+
+-----------------------------------------------------------------------------
+
+Go to your terminal and run the following commands (make sure you're in the right folder)
+
+<br>
+
+```bash
+> javac HelloWorldWithArguments.java
+> java HelloWorldWithArguments Programmer
+```
+
+<br>
+
+If everything worked you should see `Hello, Programmer!` as the output of running the last command.
 
 -----------------------------------------------------------------------------
 
