@@ -1,6 +1,6 @@
-# Java cert prep class
+# Class Outline
 
-<title>Java Cert Prep Class - Outline</title>
+<title>Class Outline</title>
 
 <style>
 @media print {
