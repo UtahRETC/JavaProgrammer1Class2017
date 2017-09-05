@@ -508,11 +508,10 @@ The compiler should become your friend. Learning how to understand what it is te
 
 -----------------------------------------------------------------------------
 
-For example, try compiling `CompileError1.java`. You should see something like this:
+For example, try compiling `CompileError.java`. You should see something like this:
 
 ```bash
-code/class_01/CompileError1.java:3: error: cannot find
-symbol
+CompileError.java:3: error: cannot find symbol
 
     System.out.prntln("This is a string");
               ^
@@ -522,25 +521,11 @@ symbol
 1 error
 ```
 
------------------------------------------------------------------------------
-
-```bash
-CompileError1.java:3: error: cannot find
-symbol
-
-    System.out.prntln("This is a string");
-              ^
-  symbol:   method prntln(String)
-  location: variable out of type PrintStream
-
-1 error
-```
-
-What can we get out of this?
+What can we get out of this?!?!?!
 
 -----------------------------------------------------------------------------
 
-1. The file that the compiler had problems: `CompileError1.java`
+1. The file that the compiler had problems: `CompileError.java`
 2. The line number in that file: `3`
 3. The actual "thing" that is causing problems:
 
@@ -558,27 +543,27 @@ What can we get out of this?
 
 Sometimes the compiler doesn't catch potential problems. This includes instances when there is nothing technically wrong with your code but just fail to check it will correctly run.
 
-Compile and execute `RuntimeError1.java` and let's talk about what's happening.
+Compile and execute `RuntimeError.java` and let's talk about what's happening.
 
 -----------------------------------------------------------------------------
 
-Running `javac RuntimeError1.java` results in no errors, but when you run `java RuntimeError1` you should see something like this:
+Running `javac RuntimeError.java` results in no errors, but when you run `java RuntimeError` you should see something like this:
 
 ```bash
 Exception in thread "main" java.lang.NumberFormatException: For input string: "seven"
         at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
         at java.lang.Integer.parseInt(Integer.java:580)
         at java.lang.Integer.parseInt(Integer.java:615)
-        at RuntimeError1.main(RuntimeError1.java:3)
+        at RuntimeError.main(RuntimeError.java:3)
 ```
 
-What can we get out of this?
+What can we get out of this?!?!?!
 
 
 -----------------------------------------------------------------------------
 
 
-1. The file that the compiler had problems: `RuntimeError1.java`
+1. The file that the compiler had problems: `RuntimeError.java`
 2. The line number in that file: `3`
 3. The exception that was thrown `NumberFormatException`
 4. The stack trace:
@@ -586,7 +571,7 @@ What can we get out of this?
 ```bash
 at java.lang.Integer.parseInt(Integer.java:580)
 at java.lang.Integer.parseInt(Integer.java:615)
-at RuntimeError1.main(RuntimeError1.java:3)
+at RuntimeError.main(RuntimeError.java:3)
 ```
 
 -----------------------------------------------------------------------------
