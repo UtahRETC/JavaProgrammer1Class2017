@@ -23,13 +23,13 @@ Follow these steps to create a new slide deck:
 
 1. Pick a section in the [outline documentation](classes/outline.md) and make
    sure you are familiar and confortable with the content.
-2. Make a copy of the [sample outline](classes/sample_outline.md) and rename it
+2. Make a copy of the [sample outline](samples/sample_outline.md) and rename it
    to `class_N_outline.md` where `N` is your class number (obvs). Make sure to
    save this file in that same folder. This is where can put notes, questions,
    and homework information for your section. This will be useful for putting
    together the slides, running the class, and getting other instructors up to
    speed on that week's class so that they can help.
-3. Make a copy of the [sample slides](classes/sample_slides.md) and rename it
+3. Make a copy of the [sample slides](samples/sample_slides.md) and rename it
    to `class_N_slides.md` in that same folder.
 4. Using Marp, export your slide deck as a PDF and save it to the `slides`
    directory. (`File > Export Slides as PDF`)
