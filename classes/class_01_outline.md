@@ -90,7 +90,7 @@ public class HelloWorld {
 ```java
 public class Hello {
   public static void main() {
-    System.out.println("Doesn't execute");   
+    System.out.println("Doesn't execute");
   }
 }
 ```

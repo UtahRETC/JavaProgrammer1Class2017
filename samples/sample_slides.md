@@ -1,10 +1,10 @@
 <!--
 $theme: default
 page_number: true
-footer: Java Class - Week N
+footer: Java Class - Class N
 -->
 
-# Week N
+# Class N
 
 - **We are going to cover this**
 - **and this**

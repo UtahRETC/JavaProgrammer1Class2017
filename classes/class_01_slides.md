@@ -1,10 +1,10 @@
 <!--
 $theme: default
 page_number: true
-footer: Java Class - Week 1
+footer: Java Class - Class 1
 -->
 
-# Week 1
+# Class 1
 
 - **Terminology and a few commands**
 - **Hello, World**
@@ -105,7 +105,7 @@ Make sure you create a folder that you will have access to in the future, and re
 
 -----------------------------------------------------------------------------
 
-In your text editor, create a new file and write the program below. In your code folder, create a new folder and name it "_week01_". In that new folder save the new file and name it "_HelloWorld.java_". Write this code and save it to your file:
+In your text editor, create a new file and write the program below. In your code folder, create a new folder and name it "_class_01_". In that new folder save the new file and name it "_HelloWorld.java_". Write this code and save it to your file:
 
 <br>
 
@@ -508,7 +508,7 @@ Now that we have written a program which has output and know much more about var
 
 -----------------------------------------------------------------------------
 
-In your text editor, create a new file and write the program below. Name this file "_HelloWorldWithArguments.java_" and save it in your "_week01_" folder.
+In your text editor, create a new file and write the program below. Name this file "_HelloWorldWithArguments.java_" and save it in your "_class_01_" folder.
 
 ```java
 public class HelloWorldWithArguments {
