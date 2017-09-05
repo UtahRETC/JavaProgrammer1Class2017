@@ -15,7 +15,11 @@ footer: Java Class - Week 1
 
 -----------------------------------------------------------------------------
 
-# Follow along http://tiny.cc/javaslides
+# To follow along, go to http://tiny.cc/urect-java
+
+-----------------------------------------------------------------------------
+
+![Github Download](../assets/downloading-and-navigating-the-repo.png)
 
 -----------------------------------------------------------------------------
 
