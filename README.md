@@ -1,4 +1,4 @@
-# Study guide for Java 8 Programmer I
+# Java 8 Programmer I UtahRETC Class Content
 
 We're using [OCA: Oracle Certified Associate Java SE 8
 Programmer](http://www.wiley.com/WileyCDA/WileyTitle/productCd-1118957407.html)
