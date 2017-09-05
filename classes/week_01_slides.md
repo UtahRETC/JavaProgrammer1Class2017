@@ -28,6 +28,8 @@ Before we start writing code, let's cover a few terms, commands, and other usefu
 
 ==**Code editor**==: this is a program used to write anything, including code. Examples include Nodepad, Notepad++, Sublime Text, Atom, IntelliJ. If you're unsure about white editor to use, start with [Atom](https://atom.io/).
 
+What ever you use, make sure you disable syntax highlighting.
+
 -----------------------------------------------------------------------------
 
 ==**Terminal/Command Prompt**==: this is a program used to _run_ other programs. Your computer already has this program installed.
@@ -141,9 +143,7 @@ If everything worked you should see `Hello, World!` as the output of running the
 
 <div style="text-align: center">
 
-# You're a Java Programmer
-
-<div style="font-size: 150px">👏</div>
+# You're a Java Programmer!!!
 
 </div>
 
@@ -351,7 +351,7 @@ public class BigByte {
 
 # Why?
 
-You should use the smallest amount of data possible to accomplish a task, so that your computer doesn't run out of memory.x
+You should use the smallest amount of data possible to accomplish a task, so that your computer doesn't run out of memory.
 
 -----------------------------------------------------------------------------
 
