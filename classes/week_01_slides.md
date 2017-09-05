@@ -11,7 +11,7 @@ footer: Java Class - Week 1
 - **Variables**
 - **Data types**
 - **Operators**
-- **Input and output**
+- **User input**
 - **Reading compiler output**
 
 -----------------------------------------------------------------------------
@@ -50,14 +50,6 @@ What ever you use, make sure you disable syntax highlighting.
 
 -----------------------------------------------------------------------------
 
-==**Command arguments/parameters**==: sometimes you want to pass custom information to a command. This information is placed after the command name and is refered to as an argument or a parameter. For example, the command to compile a Java file is `javac` and this command takes a file name as one of its arguments. So if I wanted to compile a file named "HelloWorld.java" I would run `javac HelloWorld.java` where `javac` is the command and `HelloWorld.java` is the argument.
-
------------------------------------------------------------------------------
-
-==**Input and output**==: there are many forms of input and output, but for the next sections, we mean input to be custom arguments you pass to your Java programs and output to be the text that you see after running a command in your terminal/commandline prompt.
-
------------------------------------------------------------------------------
-
 # Commands
 
 - `cd`: lets you move from one folder to another folder. Remember the phrase "_change directory_" (change = c, directory = d)
@@ -69,7 +61,7 @@ What ever you use, make sure you disable syntax highlighting.
 # Commands
 
 - `javac`: the Java compiler. For example, if you had a file named "HelloWorld.java" and you wanted to compiled it, you would do so by running `javac HelloWorld.java` in your terminal/command prompt.
-- `java`: another Java related command. This one is used to actually run your compiled program.
+- `java`: another Java related command. This one is used to actually run your compiled program. If you wanted to run the HelloWorld program from the example above, you would run `java HelloWorld`.
 
 -----------------------------------------------------------------------------
 
@@ -434,9 +426,21 @@ Next Age = 93
 
 -----------------------------------------------------------------------------
 
-# Input
+# User Input
 
-Now that we have written a program which has output and know about variables, let's update your code to work with user input. As mentioned earlier, commands can take arguments, so let's use an argument to make our Hello World program have the ability to say "Hello" to more than just "World" depending on if we run our program with an argument or not.
+Now that we have written a program which has output and know much more about variables, let's update your code to work with user input. Commands can take **arguments**, so let's use an argument to make our Hello World program have the ability to say "Hello" to more than just "World" depending on if we run our program with an argument or not.
+
+-----------------------------------------------------------------------------
+
+# New Terminology!
+
+-----------------------------------------------------------------------------
+
+==**Command arguments/parameters**==: sometimes you want to pass custom information to a command. This information is placed after the command name and is refered to as an argument or a parameter. For example, the command to compile a Java file is `javac` and this command takes a file name as one of its arguments. So if I wanted to compile a file named "HelloWorld.java" I would run `javac HelloWorld.java` where `javac` is the command and `HelloWorld.java` is the argument.
+
+-----------------------------------------------------------------------------
+
+==**Input and output**==: there are many forms of input and output, but for the next sections, we mean input to be custom arguments you pass to your Java programs and output to be the text that you see after running a command in your terminal/commandline prompt.
 
 -----------------------------------------------------------------------------
 
