@@ -1,5 +1,18 @@
 # Class 1 Homework
 
+<style>
+@media print {
+  pre {
+    border: 1px solid gray;
+    page-break-inside: avoid;
+  }
+}
+
+.break {
+  page-break-after: always;
+}
+</style>
+
 #### Write the commands needed for the following questions
 
 1. If I have a Java file named `HelloWorld.java`, how would I compile it?
@@ -25,19 +38,7 @@
 1. `System.out.println("bc" + (2+3));`
 1. `System.out.println("bc" + 2 + 3);`
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+---
 
 ### Write the following programs
 
