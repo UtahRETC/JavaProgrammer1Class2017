@@ -1,7 +1,5 @@
 # Java cert prep class (Week N)
 
-<title>Java Cert Prep Class - Week N</title>
-
 <style>
 @media print {
   pre {

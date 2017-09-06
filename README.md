@@ -36,3 +36,4 @@ Follow these steps to create a new slide deck:
    generate an html file of the homework, opening it in Chrome, and using the
    save to PDF option when printing the file. I then save it to the class
    folder.
+7. Same goes for the outline file.
