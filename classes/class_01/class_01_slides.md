@@ -113,6 +113,12 @@ Sometimes you'll see text as part of text that has a gray background, `like this
 
 -----------------------------------------------------------------------------
 
+# Reading these slides: references
+
+If you see a number surrounded by square brackets (like this [123]) it's a reference. The last slide in this in this slide deck will have a list of all of the resources used in the slide and a reference number as well. Sometimes references will go into more detail than the slides or teacher does, so it can be useful to check them out.
+
+-----------------------------------------------------------------------------
+
 # Hello, World and saving your code
 
 Now we can get started writing code. In this section we're going to use a text editor to write a Java program, and then go into the terminal/command prompt to compile and run your program. Open the folder you created earlier and `cd` into it in your terminal.
@@ -544,7 +550,7 @@ Is Int 3 equal to Double 3? true
 
 -----------------------------------------------------------------------------
 
-# Operator Precedence
+# Operator Precedence [2]
 
 1. Parentheses `()`
 2. Multiplicative `* / %`
