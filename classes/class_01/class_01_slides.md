@@ -6,7 +6,9 @@ footer: Java Class - Class 1
 
 # Class 1
 
+- **Downloading class content**
 - **Terminology and a few commands**
+- **How you should read these slides**
 - **Hello, World**
 - **Introduction to variables and data types**
 - **Operators**
@@ -15,11 +17,19 @@ footer: Java Class - Class 1
 
 -----------------------------------------------------------------------------
 
-# To follow along, go to http://tiny.cc/urect-java
+# Class content can be downloaded by going to tiny.cc/urect-java
+
+Download the files by clicking on "Clone or download" then click "Download ZIP".
 
 -----------------------------------------------------------------------------
 
 ![Github Download](assets/downloading-the-repo.png)
+
+-----------------------------------------------------------------------------
+
+![Folder Structure](assets/folder-structure.png)
+
+You can do this however you want to, but the way I did it was I created a `JavaClass` folder in my `Documents` folder and in there I put the extracted content I downloaded from Github and created a `my_code` folder as well. I also created a `class_01` where I will put all of the code I write for this class.
 
 -----------------------------------------------------------------------------
 
@@ -97,25 +107,34 @@ The example above is telling you to run `javac HelloWorld.java`, press enter, th
 
 -----------------------------------------------------------------------------
 
-# Hello, World and saving your code
+# Reading these slides: inline examples
 
-Now we can get started writing code. In this section we're going to use a text editor to write a Java program, and then go into the terminal/command prompt to compile and run your program.
-
-Make sure you create a folder that you will have access to in the future, and remember where it is as well. This will be your "Java Class Code" folder from now on. You should probably name it "_JavaClassCode_".
+Sometimes you'll see text as part of text that has a gray background, `like this`. This can either be a command or a line of code. If you're unsure about which one it is, go back to the list of commands listed in an earlier slide, and if it is in that list then it's a command, otherwise it's code.
 
 -----------------------------------------------------------------------------
 
-In your text editor, create a new file and write the program below. In your code folder, create a new folder and name it "_class_01_". In that new folder save the new file and name it "_HelloWorld.java_". Write this code and save it to your file:
+# Hello, World and saving your code
 
-<br>
+Now we can get started writing code. In this section we're going to use a text editor to write a Java program, and then go into the terminal/command prompt to compile and run your program. Open the folder you created earlier and `cd` into it in your terminal.
+
+-----------------------------------------------------------------------------
+
+Open your code folder (`JavaClass/my_code/class_01` for me) and then write the code below in a file named "HelloWorld.java":
 
 ```java
-public class HelloWorld {
-  public static void main(String[] args) {
-    System.out.println("Hello, World!");
+/**
+ * A HelloWorld example class that prints       // (1)
+ * out a message to the user.
+ */
+public class HelloWorld {                       // (2)
+  public static void main(String[] args) {      // (3)
+    // print out Hello, World                   // (4)
+    System.out.println("Hello, World!");        // (5)
   }
 }
 ```
+
+Before we move on let's go over every line of code and talk about what it is for and why we need it.
 
 -----------------------------------------------------------------------------
 
@@ -156,6 +175,41 @@ public class HelloWorld {
   }
 }
 ```
+
+-----------------------------------------------------------------------------
+
+### Let's talk about files, code, and bytecode
+
+Run `javac HelloWorld.java` again and then list the contents in the directory (`ls` in Macos and `dir` for Windows). You should see `HelloWorld.class`. This is the result of running the compiler, it generates a file with information about your code and also something called "bytecode".
+
+Think of bytecode as code that is harder for humans to read and write but much easier for computers to work with. And don't let it intimidate you, you won't have to know much about bytecode to be a really great Java programmer or to do well in the exam.
+
+-----------------------------------------------------------------------------
+
+# Bytecode for HelloWorld.java example
+
+```java
+public class HelloWorld {
+  public HelloWorld();
+    Code:
+       0: aload_0
+       1: invokespecial #1 // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: getstatic     #2 // Field java/lang/System.out:Ljava/io/PrintStream;
+       3: ldc           #3 // String Hello, World!
+       5: invokevirtual #4 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       8: return
+}
+```
+
+-----------------------------------------------------------------------------
+
+1. Write your Java code in `FileName.java`
+2. Compile using `javac FileName.java`
+3. Run your program using `java FileName`
 
 -----------------------------------------------------------------------------
 
