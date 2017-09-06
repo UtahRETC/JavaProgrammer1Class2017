@@ -31,4 +31,8 @@ Follow these steps to create a new slide deck:
 4. Repeat the previous step with the [sample slides](samples/sample_slides.md)
    and [sample homework](samples/sample_homework.md).
 5. Using Marp, export your slides and homeword as a PDFs and save them to the
-  `slides` directory. (`File > Export Slides as PDF`)
+   class folder. (`File > Export Slides as PDF`)
+6. I'm using [`ghmd`](https://github.com/alxlu/ghmd) (`npm i -g ghmd`) to
+   generate an html file of the homework, opening it in Chrome, and using the
+   save to PDF option when printing the file. I then save it to the class
+   folder.
