@@ -424,28 +424,7 @@ age++;
 
 -----------------------------------------------------------------------------
 
-# Pre-unary vs. post-unary
-
-```java
-public class PostUnaryOperators {
-  public static void main(String[] args) {
-    int age = 92;
-    int nextAge = age++;
-
-    System.out.println("Age = " + age);
-    System.out.println("Next Age = " + nextAge);
-  }
-}
-```
-
-```text
-Age = 93
-Next Age = 92
-```
-
------------------------------------------------------------------------------
-
-# Pre-unary vs. post-unary
+# Pre-unary vs. post-unary: Pre-unary
 
 ```java
 public class PreUnaryOperators {
@@ -462,6 +441,27 @@ public class PreUnaryOperators {
 ```text
 Age = 93
 Next Age = 93
+```
+
+-----------------------------------------------------------------------------
+
+# Pre-unary vs. post-unary: Post-unary
+
+```java
+public class PostUnaryOperators {
+  public static void main(String[] args) {
+    int age = 92;
+    int nextAge = age++;
+
+    System.out.println("Age = " + age);
+    System.out.println("Next Age = " + nextAge);
+  }
+}
+```
+
+```text
+Age = 93
+Next Age = 92
 ```
 
 -----------------------------------------------------------------------------
@@ -540,6 +540,31 @@ System.out.println("Is Int 3 equal to Double 3? "
 ```text
 Is String 3 equal to Int 3? false
 Is Int 3 equal to Double 3? true
+```
+
+-----------------------------------------------------------------------------
+
+# Operator Precedence
+
+1. Parentheses `()`
+2. Multiplicative `* / %`
+3. Additive and string concatenation `+ -`
+4. Relational `< <= > >=`
+5. Equality `== !=`
+6. Assignment ` =   +=   -= *=   /=   %=`
+
+-----------------------------------------------------------------------------
+
+# Operator Precedence Example
+
+```java
+5 + 4 * 3 = 17
+```
+```java
+"abc" + 1 + 2 = "abc12"
+```
+```java
+1 + 2 + "abc" = "3abc"
 ```
 
 -----------------------------------------------------------------------------
@@ -717,3 +742,4 @@ at RuntimeError.main(RuntimeError.java:3)
 # Reference list
 
 1. Germain, https://www.cs.utah.edu/~germain/PPS/Topics/variables.html
+2. Operator Precedence in Java, http://introcs.cs.princeton.edu/java/11precedence/
