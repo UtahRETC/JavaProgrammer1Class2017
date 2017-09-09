@@ -40,6 +40,8 @@
 
 ---
 
+<div class="break"></div>
+
 ### Write the following programs
 
 ---
@@ -47,6 +49,12 @@
 #### Hello
 
 Write a program that prints "Hello, my name is Marcos". Just make sure to use your name instead of mine.
+
+---
+
+#### Data Types
+
+Write a program that uses each of the data types that we presented in class.
 
 ---
 
@@ -65,5 +73,11 @@ public class Operators {
   }
 }
 ```
+
+---
+
+#### User Input
+
+In class we wrote a program that accepted a single argument and printed a string that used that argument. Write a program that accepts three arguments and prints a string that uses all of them. (Hint: Remember that user input is an Array)
 
 ---
