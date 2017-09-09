@@ -51,7 +51,7 @@ What ever you use, make sure you disable syntax highlighting.
 
 -----------------------------------------------------------------------------
 
-==**Command**==: a computer program similar to your browser, text editor, and music player, but with a few differences. First, you run commands in your terminal or command prompt. And second, commands generally don't have a GUI, meaning that you won't see a window or be able to click on buttons when you run them, but just text.
+==**Command**==: commands are programs you run in your terminal.
 
 -----------------------------------------------------------------------------
 
@@ -68,6 +68,7 @@ What ever you use, make sure you disable syntax highlighting.
 - `cd`: lets you move from one folder to another folder. Remember the phrase "_change directory_" (change = c, directory = d)
 - `dir` (Windows) or `ls` (Macos/Linux): this command is used to list all of the files and folders in the folder you are currently in.
 - `pwd` (Macos/Linux): this command will tell you what folder you are on right now. Useful when you want to `cd` into another folder.
+- Let's practice.
 
 -----------------------------------------------------------------------------
 
@@ -80,7 +81,7 @@ What ever you use, make sure you disable syntax highlighting.
 
 # Reading these slides: code
 
-Below is an example of how code is represented in these slides. Notice the gray background color. When you see code in slides, it will usually mean that you should write it in your text editor.
+Below is an example of how code is represented in these slides. Notice the gray background color. Let's practice writing this code in your text editor.
 
 <br>
 
@@ -96,20 +97,30 @@ public class HelloWorld {
 
 # Reading these slides: commands
 
-Commands will a lot like code with the exeption that they will have a "_>_" at the beginnig of the line. That's how you will know if it is a command instead of Java code. When you see this, it means that you should open your terminal/command prompt and run the command or commands.
+Commands will look a lot like code with the exeption that they will have a "_>_" at the beginnig of the line. Let's practice running these commands.
+
+<br>
 
 ```bash
 > javac HelloWorld.java
 > java HelloWorld
 ```
 
-The example above is telling you to run `javac HelloWorld.java`, press enter, then run `java HelloWorld` and press enter again.
+-----------------------------------------------------------------------------
+
+![bg](https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif)
+
+<div style="text-align: center">
+
+# You're a Java Programmer!!!
+
+</div>
 
 -----------------------------------------------------------------------------
 
 # Reading these slides: inline examples
 
-Sometimes you'll see text as part of text that has a gray background, `like this`. This can either be a command or a line of code. If you're unsure about which one it is, go back to the list of commands listed in an earlier slide, and if it is in that list then it's a command, otherwise it's code.
+Sometimes you'll see text formatted `like this`. This can either be a command or a line of code. If you're unsure about which one it is, just ask.
 
 -----------------------------------------------------------------------------
 
@@ -119,13 +130,11 @@ If you see a number surrounded by square brackets (like this [123]) it's a refer
 
 -----------------------------------------------------------------------------
 
-# Hello, World and saving your code
+# Understanding Hello, World
 
-Now we can get started writing code. In this section we're going to use a text editor to write a Java program, and then go into the terminal/command prompt to compile and run your program. Open the folder you created earlier and `cd` into it in your terminal.
+Let's revisit the code that we wrote earlier in depth.
 
 -----------------------------------------------------------------------------
-
-Open your code folder (`JavaClass/my_code/class_01` for me) and then write the code below in a file named "HelloWorld.java":
 
 ```java
 /**
@@ -140,37 +149,10 @@ public class HelloWorld {                       // (2)
 }
 ```
 
-Before we move on let's go over every line of code and talk about what it is for and why we need it.
-
------------------------------------------------------------------------------
-
-Go to your terminal and run the following commands (make sure you're in the right folder)
-
-<br>
-
-```bash
-> javac HelloWorld.java
-> java HelloWorld
-```
-
-<br>
-
-If everything worked you should see `Hello, World!` as the output of running the last command.
-
------------------------------------------------------------------------------
-
-![bg](https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif)
-
-<div style="text-align: center">
-
-# You're a Java Programmer!!!
-
-</div>
-
 -----------------------------------------------------------------------------
 
 
-Change something about your code and see what happens. What happens if you change _"Hello, World"_? Do you see your updates? What happens if you remove the word ==void==? Did you get an error? Make any change you'd like. Below is a reference to the original code if you want to undo any changes you make.
+Change something about your code and see what happens. What happens if you change the string _"Hello, World"_? Do you see your updates? What happens if you remove the word ==void==? Did you get an error? Make any change you'd like. Below is a reference to the original code if you want to undo any changes you make.
 
 <br>
 
@@ -184,11 +166,11 @@ public class HelloWorld {
 
 -----------------------------------------------------------------------------
 
-### Let's talk about files, code, and bytecode
+## `HelloWorld.java` and `HelloWorld.class`
 
-Run `javac HelloWorld.java` again and then list the contents in the directory (`ls` in Macos and `dir` for Windows). You should see `HelloWorld.class`. This is the result of running the compiler, it generates a file with information about your code and also something called "bytecode".
+List the contents in the directory (`ls` in Macos and `dir` for Windows). You should see `HelloWorld.class`. Notice there are two files here, `HelloWord.java` and `HelloWorld.class`. `HelloWorld.java` is the file you wrote. `HelloWorld.class` is the result of running the `javac` command on that file. It's contents are called "bytecode".
 
-Think of bytecode as code that is harder for humans to read and write but much easier for computers to work with. And don't let it intimidate you, you won't have to know much about bytecode to be a really great Java programmer or to do well in the exam.
+Java code is for humans and bytecode is for computers. You won't have to know much about bytecode to be a really great Java programmer or to do well in the exam.
 
 -----------------------------------------------------------------------------
 
@@ -213,6 +195,8 @@ public class HelloWorld {
 
 -----------------------------------------------------------------------------
 
+# Workflow for writing and running Java.
+
 1. Write your Java code in `FileName.java`
 2. Compile using `javac FileName.java`
 3. Run your program using `java FileName`
@@ -235,6 +219,7 @@ A valid variable name can be made up of letters, numbers, dollar signs `$` and u
 String activityName = "Java programming";
 int age = 47;
 double pi = 3.14159;
+int favoriteNumber;
 ```
 
 -----------------------------------------------------------------------------
@@ -243,7 +228,7 @@ double pi = 3.14159;
 
 -----------------------------------------------------------------------------
 
-==**Declaration**==: as previously mentioned, a value is optional when creating a variable. When a variable is created and it does not have a value, this is a way of _declaring_ the variable, meaning you are telling your program that this variable exists and it is information that should be tracked, but that you do not yet know what the value is and will set it after the program starts running. Keep in mind that the variable's data type is only required when it is being _declared_.
+==**Declaration**==: as previously mentioned, a value is optional when creating a variable. When a variable is created and it does not have a value, you are _declaring_ the variable, meaning you are telling your program that this variable exists and it is information that should be tracked, but that you do not yet know what the value is and will set it after the program starts running. Keep in mind that the variable's data type is only required when it is being _declared_.
 
 <br>
 
@@ -274,38 +259,12 @@ int x = 7;
 
 # What's a type?
 
-Remember the code you wrote in _HelloWorldWithArguments.java_?
+Remember the code from earlier?
 
 ```java
-public class HelloWorldWithArguments {
-  public static void main(String[] args) {
-    String name = "World";
-
-    if (args.length > 0) {
-      name = args[0];
-    }
-
-    System.out.println("Hello, " + name + "!");
-  }
-}
-```
-
------------------------------------------------------------------------------
-
-```java
-public class DataTypesSample {
-  public static void main(String[] args) {
-    // "int" stands for "Integer"
-    int age = 97;
-    
-    String name = "Marcos";
-    String message = "Hello, " + name +
-                     ", you are " + age +
-                     " years old";
-
-    System.out.println(message);
-  }
-}
+String activityName = "Java programming";
+int age = 47;
+double pi = 3.14159;
 ```
 
 -----------------------------------------------------------------------------
@@ -329,6 +288,28 @@ public class DataTypesSample {
 
 -----------------------------------------------------------------------------
 
+# Arrays
+
+Arrays are lists. In order to use an Array, you must declare the type as an Array and you must declare the type of the values the array will hold.
+
+```java
+public class ArraySample {
+  public static void main(String[] args) {
+    String[] myFriends;
+
+    myFriends = new String[3];
+
+    myFriends[0] = "Ryan";
+    myFriends[1] = "Andi";
+
+    System.out.println(myFriends[0] + " is my friend.");
+    System.out.println(myFriends[1] + " is my friend.");
+  }
+}
+```
+
+-----------------------------------------------------------------------------
+
 # What happens if I use the wrong type?
 
 ```java
@@ -343,9 +324,11 @@ public class BigByte {
 }
 ```
 
+Create a new file, write this program, and compile it. What happens?
+
 -----------------------------------------------------------------------------
 
-# Why?
+# Why do Data Types exists?
 
 You should use the smallest amount of data possible to accomplish a task, so that your computer doesn't run out of memory.
 
@@ -363,7 +346,7 @@ String variableName = "string variable value";
 
 -----------------------------------------------------------------------------
 
-# Assigned Operator (1 of 2)
+# Assigned Operator
 
 - `=`
 
@@ -401,7 +384,7 @@ int subtraction = a - b;
 
 -----------------------------------------------------------------------------
 
-# Assigned Operators (2 of 2)
+# Compound Operators
 
 - `+=`
 - `-=`
@@ -552,6 +535,8 @@ Is Int 3 equal to Double 3? true
 
 # Operator Precedence [2]
 
+From left to right:
+
 1. Parentheses `()`
 2. Multiplicative `* / %`
 3. Additive and string concatenation `+ -`
@@ -561,7 +546,7 @@ Is Int 3 equal to Double 3? true
 
 -----------------------------------------------------------------------------
 
-# Operator Precedence Example
+# Operator Precedence Examples
 
 ```java
 5 + 4 * 3 = 17
@@ -577,7 +562,9 @@ Is Int 3 equal to Double 3? true
 
 # User Input
 
-Now that we have written a program which has output and know much more about variables, let's update your code to work with user input. Commands can take **arguments**, so let's use an argument to make our Hello World program have the ability to say "Hello" to more than just "World" depending on if we run our program with an argument or not.
+Now that we have written a program which has output and know much more about variables, let's write some code to work with user input.
+
+Commands can take **arguments**, so let's use an argument to make our Hello World program have the ability to say "Hello" to more than just "World" depending on if we run our program with an argument or not.
 
 -----------------------------------------------------------------------------
 
@@ -585,11 +572,13 @@ Now that we have written a program which has output and know much more about var
 
 -----------------------------------------------------------------------------
 
-==**Command arguments/parameters**==: sometimes you want to pass custom information to a command. This information is placed after the command name and is refered to as an argument or a parameter. For example, the command to compile a Java file is `javac` and this command takes a file name as one of its arguments. So if I wanted to compile a file named "HelloWorld.java" I would run `javac HelloWorld.java` where `javac` is the command and `HelloWorld.java` is the argument.
+==**Command arguments/parameters**==: sometimes you want to pass custom information to a command. This information is placed after the command name and is refered to as an argument or a parameter. For example, the command to compile a Java file is `javac` and this command takes a file name as one of its arguments.
+
+So if I wanted to compile a file named "HelloWorld.java" I would run `javac HelloWorld.java` where `javac` is the command and `HelloWorld.java` is the argument.
 
 -----------------------------------------------------------------------------
 
-==**Input and output**==: there are many forms of input and output, but for the next sections, we mean input to be custom arguments you pass to your Java programs and output to be the text that you see after running a command in your terminal/commandline prompt.
+==**Input and output**==: there are different forms of input and output, but for the next sections, we mean input to be custom arguments you pass to your Java programs and output to be the text that you see after running a command.
 
 -----------------------------------------------------------------------------
 
@@ -642,17 +631,17 @@ Go to your terminal and run the following commands (make sure you're in the righ
 
 <br>
 
-If everything worked you should see `Hello, Programmer!` as the output of running the last command.
+If everything worked you should see `Hello, Programmer!` as the output of running the last command. Try running the last command using your name!
 
 -----------------------------------------------------------------------------
 
 # Dealing with problematic code
 
-You're going to make mistakes. This is true for *all* programmer, but specially in the beginning your code will fail to run more times than not. But this is ok. You'll be better and programming and better at using the tools at your disposal.
+You're going to make mistakes. This is OK.
 
 -----------------------------------------------------------------------------
 
-# Reading compiler output
+# Understanding compiler output
 
 The compiler should become your friend. Learning how to understand what it is telling you will help accomplish this. When your code fails to compile, most of the time you will be given a very explicit reason why.
 
@@ -675,7 +664,7 @@ What can we get out of this?!?!?!
 
 -----------------------------------------------------------------------------
 
-1. The file that the compiler had problems: `CompileError.java`
+1. The file that the compiler had problems in: `CompileError.java`
 2. The line number in that file: `3`
 3. The actual "thing" that is causing problems:
 
@@ -689,9 +678,9 @@ What can we get out of this?!?!?!
 
 -----------------------------------------------------------------------------
 
-# Reading runtime errors
+# Understanding runtime errors
 
-Sometimes the compiler doesn't catch potential problems. This includes instances when there is nothing technically wrong with your code but just fail to check it will correctly run.
+The Java compiler cannot predict every error in code.
 
 Compile and execute `RuntimeError.java` and let's talk about what's happening.
 
@@ -713,7 +702,7 @@ What can we get out of this?!?!?!
 -----------------------------------------------------------------------------
 
 
-1. The file that the compiler had problems: `RuntimeError.java`
+1. The file with the problem: `RuntimeError.java`
 2. The line number in that file: `3`
 3. The exception that was thrown `NumberFormatException`
 4. The stack trace:
@@ -734,7 +723,7 @@ at RuntimeError.main(RuntimeError.java:3)
 
 -----------------------------------------------------------------------------
 
-==**Stack trace**==: stack traces are related to Exceptions and they include information about the files/lines that your code ran through before it ran into an error. Stack traces will help you find the exact location (file and line number) of your error.
+==**Stack trace**==: stack traces are related to Exceptions and they include information about the files/lines that your code ran through before it had into an error. Stack traces will help you find the exact location (file and line number) of the error.
 
 -----------------------------------------------------------------------------
 
