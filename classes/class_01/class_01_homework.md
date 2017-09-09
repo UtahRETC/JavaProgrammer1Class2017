@@ -38,9 +38,63 @@
 1. `System.out.println("bc" + (2+3));`
 1. `System.out.println("bc" + 2 + 3);`
 
+#### Describe what happens if, in HelloWorld.java, you omit
+1. `main`
+1. `String`
+1. `HelloWorld`
+1. `System.out`
+1. `println`
+
 ---
 
+#### Describe what happens if, in HelloWorld.java, you omit
+1. the `;`
+1. the first `"`
+1. the second `"`
+1. the first `{`
+1. the second `{`
+1. the first `}`
+1. the second `}`
+
+---
+
+#### Describe what happens if, in HelloWorld.java, you misspell (by, say, omitting the second letter)
+1. `main`
+1. `String`
+1. `HelloWorld`
+1. `System.out`
+1. `println`
+
 <div class="break"></div>
+
+#### I typed in the following program. It compiles fine, but when I execute it, I get the error java.lang.NoSuchMethodError: main. What am I doing wrong?
+
+```java
+public class Hello {
+  public static void main() {
+    System.out.println("Doesn't execute");
+  }
+}
+```
+
+What do I need to do to fix it?
+
+---
+
+#### What is the result of the following program?
+
+```java
+public class Test {
+  public static void main(String[] arg) {
+    System.out.println(10.0 / 3.0);
+    System.out.println(10 / 3.0);
+    System.out.println(10.0 / 3.0);
+    System.out.println(10 / 3);
+  }
+}
+```
+
+---
 
 ### Write the following programs
 

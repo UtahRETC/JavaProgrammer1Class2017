@@ -184,5 +184,7 @@ d0 = (d + x + 31m0 / 12) mod 7
 ## Resources
 
 - http://introcs.cs.princeton.edu/java/home/
+- http://introcs.cs.princeton.edu/java/11hello/
+- http://introcs.cs.princeton.edu/java/12types/
 - _Introduction and Setting up Your Environment_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m1&clip=0
 - _Variables, Data Types, and Math Operators_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m3&clip=0
