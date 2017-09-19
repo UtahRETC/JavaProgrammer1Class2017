@@ -58,6 +58,10 @@
       - Ignoring `instanceof` operator. Teach this on one of the classes were Classes are taught?
         - Move this to class 3
       - Logical operators (ch. 2, page 57)
+        - Move this to class 2
+  - **Additional resources**:
+    - _Introduction and Setting up Your Environment_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m1&clip=0
+    - _Variables, Data Types, and Math Operators_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m3&clip=0
 
 - Class 2:
   - Valid variable names and declaring, and initialization
