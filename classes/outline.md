@@ -63,7 +63,11 @@
   - Valid variable names and declaring, and initialization
   - Conditionals (`if`, `if-then`, `if-then-else`, `switch`)
   - Loops (`while`, `do-while`, `for`, `break`, `continue`, labels)
+  - Left over from Class 1
   - **Book sections**:
+    - Left over from Class 1
+      - Logical operators (ch. 2, page 57)
+        - Move this to class 2
     - Variables (ch. 1, page 25)
       - Valid names, identifiers (ch. 1, page 27)
       - Declaring variables (ch. 1, page 25)
@@ -80,13 +84,19 @@
         - `while` statement (ch. 2, page 76)
         - `do-while` statement (ch. 2, page 78)
         - `for` statement (ch. 2, page 80)
+  - **Additional resources**:
+    - _Conditional Logic, Looping, and Arrays_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m4&clip=2&mode=live
 
 - Class 3:
   - Classes
   - Objects
   - Constructors
   - Instances
+  - Left over from Class 1
   - **Book sections**:
+    - Left over from Class 1
+      - Numeric promition, casting (ch. 2, page 55)
+      - Ignoring `instanceof` operator. Teach this on one of the classes were Classes are taught?
     - Classes (ch. 1)
       - Main method basics (ch. 1, page 6)
       - Fields (ch. 1)
