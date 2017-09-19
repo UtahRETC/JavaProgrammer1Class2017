@@ -53,10 +53,10 @@
       - Compound assignment operators (ch. 2, page 62)
       - Relational operatos (ch. 2, page 63)
       - Equality operators (ch. 2, page 65)
-  - **Left out**:
+  - **Left out (resolved)**:
       - Numeric promition, casting (ch. 2, page 55)
-        - Maybe this can be moved to class 14 since casting is covered then
       - Ignoring `instanceof` operator. Teach this on one of the classes were Classes are taught?
+        - Move this to class 3
       - Logical operators (ch. 2, page 57)
 
 - Class 2:
