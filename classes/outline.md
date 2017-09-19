@@ -89,7 +89,7 @@
         - `do-while` statement (ch. 2, page 78)
         - `for` statement (ch. 2, page 80)
   - **Additional resources**:
-    - _Conditional Logic, Looping, and Arrays_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m4&clip=2&mode=live
+    - _Conditional Logic, Looping, and Arrays_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m4&clip=0&mode=live
 
 - Class 3:
   - Classes
@@ -111,6 +111,9 @@
       - Classes vs files (ch. 1, page 5)
       - Variables (ch. 1, page 25)
         - Instance vs local vs class variables (ch. 1, page 29, 30)
+  - **Additional resources**:
+    - _Representing Complex Types with Classes_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m5&clip=0&mode=live
+    - _Class Initializers and Constructors_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m6&clip=0&mode=live
 
 - Class 4
   - Methods
@@ -125,6 +128,8 @@
       - Parameter list (ch. 4, page 171)
       - Exception list (ch. 4, page 171)
       - Method body (ch. 4, page 171)
+  - **Additional resources**:
+    - _A Closer Look at Parameters_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m7&clip=0&mode=live
 
 - Class 5:
   - Arrays
@@ -174,6 +179,8 @@
         - Creating a new package (ch. 1, page 13)
         - Code formatting trickery (ch. 1, page 16)
       - Static imports (ch. 4, page 187)
+  - **Additional resources**:
+    - _Working with Packages_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m11&clip=0&mode=live
 
 - Class 8:
   - Looking up documentation and how to read it, using `ArrayList` as an example
@@ -194,6 +201,8 @@
       - Key string methods (ch. 3, page 105)
       - `StringBuilder` class and important methods (ch. 3, page 111 - 114)
       - `StringBuilder` vs `StringBuffer` (ch. 3, page 117)
+  - **Additional resources**:
+    - _More About Data Types_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m9&clip=0&mode=live
 
 - Class 10:
   - Working with Dates and Times
@@ -220,6 +229,9 @@
       - Static variables (ch. 4, page 185)
       - Calling static methods and fields (ch. 4, page 182)
       - Static vs instance (ch. 4, page 183)
+  - **Additional resources**:
+    - _Class Initializers and Constructors_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m6&clip=0&mode=live
+    - _Static Members, Nested Types, and Anonymous Classes_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m13&clip=0&mode=live
 
 - Class 13:
   - Overloading
@@ -245,6 +257,9 @@
       - Default constructor (ch. 4, page 197)
       - Overloading constructors (ch. 4, page 199)
       - Order of initialization (ch. 4, page 202)
+  - **Additional resources**:
+    - _A Closer Look at Parameters_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m7&clip=0&mode=live
+    - _Class Inheritance_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m8&clip=0&mode=live
 
 - Class 14:
   - Abstract classes
@@ -268,6 +283,8 @@
       - Virtual methods (ch. 5, page 284)
       - Polymorphic parameters (ch. 5, page 285)
       - Polymorphism and method overriding (ch. 5, page 287)
+  - **Additional resources**:
+    - _Creating Abstract Relationships with Interfaces_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m12&clip=0&mode=live
 
 - Class 15:
   - **Project outline**: use classes, inheritance, polymorphism, method
@@ -296,6 +313,8 @@
       - Calling methods that throw exceptions (ch. 6, page 318)
       - Exceptions in subclasses (ch. 6, page 319)
       - Printing exceptions (ch. 6, page 321)
+  - **Additional resources**:
+    - _Exceptions and Error Handling_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m10&clip=0&mode=live
 
 - Class 17:
   - Lambdas
