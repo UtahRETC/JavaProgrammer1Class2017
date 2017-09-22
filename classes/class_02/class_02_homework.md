@@ -22,7 +22,14 @@
 * If and else.
 * If, else if, and else.
 
-**Q4)** Use loops to recreate the [Fibonacci Sequence](https://www.mathsisfun.com/numbers/fibonacci-sequence.html) with the initial indexes of 0 and 1.
-* The first 10 indexes are (0,1,1,2,3,5,8,13,21,34...)
-* What is index #12? #20? #50? 
+
+**Q4)** Use for loops and the [modulo operator](https://javaranch.com/drive/modulo.html) ```%``` to find every number divisible by 6 between 0 and 100 and print it to console. (0, 6, 12, 18, 24....)
+Consider this example:
+```java
+int x = 4;
+if( x % 2 == 0){
+    System.out.println("The number " + x + " is even");
+}
+
+```
 <div class="break"></div>
