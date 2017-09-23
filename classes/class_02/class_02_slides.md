@@ -416,9 +416,8 @@ while(!bankAccountIsEmpty){
     System.out.println("You bought a burger")
     bankAccountBalance-=5;
     burgerCount+=1;
-    }
     if(bankAccountBalance <= 0){
-	bankAccountIsEmpty = true;
+	      bankAccountIsEmpty = true;
     }
 }
 ```
