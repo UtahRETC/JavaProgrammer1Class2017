@@ -4,7 +4,7 @@ page_number: true
 footer: Java Class - Class 1
 -->
 
-# Part II
+# Part II - Brent Wenerstrom
 
 - Constructors
 - Compiling multiple files
@@ -34,6 +34,23 @@ class Halloween
     date = "Oct 31st";
   }
 }
+```
+
+-----------------------------------------------------------------------------
+
+# Parameter Passing
+
+- Provide a "mailbox"
+- Enable passing of values between different parts of code
+- Example:
+```java
+void double(int x) {
+    return x + x;
+}
+```
+```java
+int y = double(3);
+int z = double(y);
 ```
 
 -----------------------------------------------------------------------------
@@ -102,15 +119,10 @@ $ javac Actor.java ActorExample.java
 ```
 -> Actor.class, ActorExample.class
 
------------------------------------------------------------------------------
-
-# Compile Multiple Files Example
-- Use default to your advantage
+- Now you can run the `ActorExample` class through it's `main` method.
 ```bash
-$ javac ActorExample.java
+$ java ActorExample
 ```
--> Actor.class, ActorExample.class
-- Last approach uses the default classpath of the current directory to find the Actor class and compile it.
 
 -----------------------------------------------------------------------------
 
@@ -178,6 +190,19 @@ Actor class
 2. When mixing floating point and integral, promote integral to floating point
 3. `byte`, `short` and `char` are promoted to `int` when part of operation
 4. Output of expression is same type as operands
+
+----------------------------------------------------------------------------
+
+# Primitive Ranks
+
+- Reference table for numeric promotion
+
+|          | smaller | -> | -> | larger|
+| -------- | ------- | -- | -- | ----- |
+| Integral | `byte` | `short` | `int` | `long` |
+| Floating | `float` | `double` |
+| Other    | `char` | `int` |
+
 
 ----------------------------------------------------------------------------
 
@@ -311,3 +336,15 @@ $ javac Fail.java
 Casting objects will make more sense when we have more class types and hierarchies to talk about.
 
 ----------------------------------------------------------------------------
+
+# Definitions
+
+- **class**: "blueprint" of object structure.
+- **method**: block of code executable through its name.
+- **object**: instance of class.
+- **instantiation**: to create an object from class definition.
+- **constructor**: initializing method within a class.
+- **parameter**: receiving variable in a method definition
+- **numeric promotion**: how Java unifies types before performing binary opterations
+- **casting**: forcing a change of the evaluated type of a variable
+- **binary operator**: mathematical mapping of two parameters to one (example: +)
