@@ -25,11 +25,12 @@ aside {
 A class is a blueprint which describes a container for specific data.  
 
 ```
-class BoringAnimal
+public class BoringAnimal
 {
 }
 ```
 - class definition
+  - `public` keyword
   - `class` keyword
   - class name `BoringAnimal`
   - body of the class
@@ -41,14 +42,15 @@ class BoringAnimal
 The data contained within a class is represented by fields. 
 
 ```
-class Dog 
+public class Dog 
 {
-  String name = "Griz";
-  int age = 5;
-  String breed = "Rottweiler";
+  public String name = "Griz";
+  public int age = 5;
+  public String breed = "Rottweiler";
 }
 ```
 - field definition
+  - `public` keyword
   - type
   - name
   - value
@@ -70,11 +72,11 @@ Make sure this class compiles with javac.
 # Class Data Exercise Example
 
 ```
-class FavoriteMovie
+public class FavoriteMovie
 {
-  String name = "Deadpool";
-  int year = 2016;
-  String genre = "Comedy";
+  public String name = "Deadpool";
+  public int year = 2016;
+  public String genre = "Comedy";
 }
 ```
 
@@ -85,12 +87,12 @@ class FavoriteMovie
 <aside>In addition to containing data, a class may contain logic which interacts with that data. </aside>Logic contained in a class is called a method.
 
 ```
-class Pet
+public class Pet
 {
-  String type = "Dog";
-  String trick = "Roll Over";
+  public String type = "Dog";
+  public String trick = "Roll Over";
 
-  void doTrick()
+  public void doTrick()
   {
     System.out.println(trick);
   }
@@ -101,12 +103,13 @@ class Pet
 
 # Method Definition Breakdown
 ```
-  void doTrick()
+  public void doTrick()
   {
     System.out.println(trick);
   }
 ```
 - method definition
+  - `public` keyword
   - type signature
   - method body
 
@@ -126,13 +129,13 @@ Add a method to your movie class which will print each field on its own line.
 # Method Exercise Example
 
 ```
-class FavoriteMovie
+public class FavoriteMovie
 {
-  String name = "Deadpool";
-  int year = 2016;
-  String genre = "Comedy";
+  public String name = "Deadpool";
+  public int year = 2016;
+  public String genre = "Comedy";
 
-  void printFields()
+  public void printFields()
   {
     System.out.println(name);
     System.out.println(year);
@@ -159,12 +162,12 @@ Understanding the distinction between a class and an object is critical to under
 The process of creating an object from a class is called instantiation. 
 
 ```
-class Pet
+public class Pet
 {
-  String type = "Dog";
-  String trick = "Roll Over";
+  public String type = "Dog";
+  public String trick = "Roll Over";
 
-  void doTrick()
+  public void doTrick()
   {
     System.out.println(trick);
   }
@@ -208,10 +211,7 @@ Instantiate your movie class from the previous examples and invoke your method t
 
 -----------------------------------------------------------------------------
 
-- _A video students should watch_ by Someone https://andalinktotheresource.com
-
------------------------------------------------------------------------------
-
 # Reference list
 
-1. Your citation, https://anditswebsite.com
+1. https://docs.oracle.com/javase/tutorial/java/javaOO/index.html
+1. http://web.mit.edu/1.00/www/definitions.htm
