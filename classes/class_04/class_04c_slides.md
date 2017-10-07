@@ -37,6 +37,92 @@ footer: Java Class - Class 4c
 
 ----------------------------------------------------------------------------
 
+# Numeric Promotion: Rule 1
+Promote smaller (in bytes) type to larger type
+- Computer math only works with exact same representation
+
+----------------------------------------------------------------------------
+
+# Numeric Promotion: Rule 1 Example
+
+Example: `result = a + b`
+- Before
+
+| variable  | type    |value  | bytes        | type max      |
+| ---------:|:-------:| -----:| ------------:| -------------:|
+|       `a` |   `int` | 40,000| [-][-][-][-] | 2,147,483,647 |
+|       `b` | `short` |  3,000|       [-][-] |        32,767 |
+|  `result` | -       | -     | -            | -             |
+
+----------------------------------------------------------------------------
+
+# Numeric Promotion: Rule 1 Example
+
+Example: `result = a + b`
+- After
+
+| variable  | type    |value  | bytes        | type max      |
+| ---------:|:-------:| -----:| ------------:| -------------:|
+|       `a` |   `int` | 40,000| [-][-][-][-] | 2,147,483,647 |
+|       `b` |   `int` |  3,000| [-][-][-][-] | 2,147,483,647 |
+|  `result` |   `int` | 43,000| [-][-][-][-] | 2,147,483,647 | 
+
+----------------------------------------------------------------------------
+
+# Numeric Promotion: Rule 2
+When mixing floating point and integral, promote integral to floating point
+- Special things are done to account for a decimal
+- Result may have decimal part so both sides must be floating
+
+Example:
+- Before: `result = 2 + 4.2`
+- After: `result = 2.0 + 4.2`
+
+----------------------------------------------------------------------------
+
+# Numeric Promotion: Rule 3
+`byte`, `short` and `char` are promoted to `int` when part of operation
+- Just a Java specific thing
+
+----------------------------------------------------------------------------
+
+# Numeric Promotion: Rule 3 Example
+
+Example: `result = x + y`
+- Before
+
+| variable  | type    |value  | bytes        | type max      |
+| ---------:|:-------:| -----:| ------------:| -------------:|
+|       `x` |  `byte` |     1 |          [-] |           127 |
+|       `y` | `short` |     2 |       [-][-] |        32,767 |
+|  `result` | -       | -     | -            | -             |
+
+----------------------------------------------------------------------------
+
+# Numeric Promotion: Rule 3 Example
+
+Example: `result = x + y`
+- After
+
+| variable  | type    |value  | bytes        | type max      |
+| ---------:|:-------:| -----:| ------------:| -------------:|
+|       `x` |   `int` |     1 | [-][-][-][-] | 2,147,483,647 |
+|       `y` |   `int` |     2 | [-][-][-][-] | 2,147,483,647 |
+|  `result` |   `int` |     3 | [-][-][-][-] | 2,147,483,647 | 
+
+----------------------------------------------------------------------------
+
+# Numeric Promotion: Rule 4
+Output of expression is same type as operands
+- Whatever type is decided is the type of the result
+
+Examples (after 1-3 rules performed):
+- `long` + `long` = `long`
+- `double` / `double` = `double`
+- ~~`short` * `short` = `short`~~ (impossible: see rule 3)
+
+----------------------------------------------------------------------------
+
 # Primitive Ranks
 
 - Reference table for numeric promotion
@@ -143,6 +229,13 @@ int x = 2;
 int y = 3;
 (float) 2 / 3;
 ```
+
+----------------------------------------------------------------------------
+
+# Casting with Classes
+- An object reference is of multiple types at the same time
+- `String s = "ab";` Reference `s` is both a `String` and an `Object` at the same time.
+- `(Object) s` outputs a reference of type `Object` but the bytes don't change.
 
 ----------------------------------------------------------------------------
 
