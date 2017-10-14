@@ -21,19 +21,20 @@ For each of the following problems figure out the output type. The available opt
 1. `float`
 1. `double`
 1. `char`
+1. fails to compile
 
-You may use a computer to work out the answers. If you do make an educated guess before observing the output.
+You may use a computer to work out the answers. Make sure to guess before running code.
 
 ### 1. What is the output type of the following:
 ```java
-long x = 5L;
-long y = 6L;
+long x = 5;
+long y = 6;
 x + y;
 ```
 
 ### 2. What is the output type of the following:
 ```java
-float x = 2.1f;
+float x = 2.1;
 double y = 3.2;
 x - y;
 ```
@@ -54,7 +55,7 @@ x + y;
 
 ### 5. What is the output type of the following:
 ```java
-long x = 200L;
+long x = 200;
 double y = 3.5;
 x / y;
 ```

@@ -1,13 +1,13 @@
 <!--
 $theme: default
 page_number: true
-footer: Java Class - Class 4c
+footer: Java Class - Class 5
 -->
 
-# Part III - Brent Wenerstrom
+# Class 05 - Brent Wenerstrom
 
 - Numeric promotion
-- casting
+- Casting
 
 ----------------------------------------------------------------------------
 
@@ -16,6 +16,10 @@ footer: Java Class - Class 4c
 - How does Java interpret the following expression:
 ```java
 'a' + 2
+```
+- How would you perfom the following:
+```
+5 cm + 2 inches
 ```
 
 ----------------------------------------------------------------------------
@@ -39,7 +43,7 @@ footer: Java Class - Class 4c
 
 # Numeric Promotion: Rule 1
 Promote smaller (in bytes) type to larger type
-- Computer math only works with exact same representation
+- Computer math on same types __ONLY__
 
 ----------------------------------------------------------------------------
 
@@ -71,8 +75,8 @@ Example: `result = a + b`
 
 # Numeric Promotion: Rule 2
 When mixing floating point and integral, promote integral to floating point
-- Special things are done to account for a decimal
-- Result may have decimal part so both sides must be floating
+- Accounting for decimal requires different representation
+- Only accurate result is floating point
 
 Example:
 - Before: `result = 2 + 4.2`
@@ -145,7 +149,7 @@ long y = 33;
 x * y;
 ```
 
-Notes: Ugly way to find out the boxed type.
+Note: Ugly way to find out the boxed type.
 ```java
 ((Object) (x * y)).getClass().getName();
 ```
@@ -173,6 +177,26 @@ conversion from double to float
 		float y = 2.1;
 		          ^
 1 error
+```
+----------------------------------------------------------------------------
+
+# Understanding the Trick
+- Literal integral evaluates to `int`
+  - `((Object) 5).getClass().getName();`
+  - Result: `java.lang.Integer`
+  - Java does not complain converting to `byte`, `short`, `int`, `long`, `char`
+- Literal float evaluates to `double`
+  - Java complains shortening bytes from `double` to `float`
+
+----------------------------------------------------------------------------
+
+# Numeric Promotion Examples (take 2)
+
+What is the resulting type of the last expression?
+```java
+double x = 39.21;
+float y = 2.1f;
+x + y;
 ```
 
 ----------------------------------------------------------------------------
@@ -234,7 +258,9 @@ int y = 3;
 
 # Casting with Classes
 - An object reference is of multiple types at the same time
-- `String s = "ab";` Reference `s` is both a `String` and an `Object` at the same time.
+
+`String s = "ab";` 
+- Reference `s` is both a `String` and an `Object`.
 - `(Object) s` outputs a reference of type `Object` but the bytes don't change.
 
 ----------------------------------------------------------------------------
