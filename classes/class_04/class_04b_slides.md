@@ -67,13 +67,13 @@ Halloween halloween = new Halloween();
 - Enable passing of values between different parts of code
 - Example:
 ```java
-void double(int x) {
+void doubleIt(int x) {
     return x + x;
 }
 ```
 ```java
-int y = double(3);
-int z = double(y);
+int y = doubleIt(3);
+int z = doubleIt(y);
 ```
 
 -----------------------------------------------------------------------------

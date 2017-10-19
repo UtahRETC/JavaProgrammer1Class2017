@@ -89,7 +89,7 @@ public class FavoriteMovie
 ```
 public class Pet
 {
-  public String type = "Dog";
+  public String animalType = "Dog";
   public String trick = "Roll Over";
 
   public void doTrick()
@@ -164,7 +164,7 @@ The process of creating an object from a class is called instantiation.
 ```
 public class Pet
 {
-  public String type = "Dog";
+  public String animalType = "Dog";
   public String trick = "Roll Over";
 
   public void doTrick()
@@ -194,7 +194,7 @@ Pet myPet = new Pet();
 
 Field reference
 ```
-System.out.println(myPet.type);
+System.out.println(myPet.animalType);
 ```
 
 Invoking a method
