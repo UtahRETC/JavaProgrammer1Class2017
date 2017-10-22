@@ -1,6 +1,6 @@
 <!-- $theme: default -->
 
-# Week 2
+# Module 2
 
 - Variables (Naming, Declaring and Initialization) **Review**
 - Conditionals (if , if-then , if-then-else , switch )

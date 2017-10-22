@@ -30,24 +30,24 @@
 ### Modules
 
 1. Hello, World
-1. Variables, conditionals, and loops
-1. Classes and instances
-1. Modules, fields, and encapsulation
-1. Arrays, strings, and references
-1. Project 1 and introduction to git
-1. Packages, imports, and conflicts
-1. ArrayList deep dive and introduction to reading the docs
-1. StringBuilder deep dive and String pool
-1. Working with Dates and Times
-1. Project 2
-1. Classes deep dive, initializing blocks and static
-1. Overloading, access modifiers, inheritance, overriding, and final
-1. Abstract classes, interfaces, casting
-1. Project 3
-1. Exceptions
-1. Lambdas, scopes, garbage collector
-1. Project 4
-1. Test reviews
+2. Variables, conditionals, and loops
+3. Classes and instances
+4. Modules, fields, and encapsulation
+5. Arrays, strings, and references
+6. Project 1 and introduction to git
+7. Packages, imports, and conflicts
+8. ArrayList deep dive and introduction to reading the docs
+9. StringBuilder deep dive and String pool
+10. Working with Dates and Times
+11. Project 2
+12. Classes deep dive, initializing blocks and static
+13. Overloading, access modifiers, inheritance, overriding, and final
+14. Abstract classes, interfaces, casting
+15. Project 3
+16. Exceptions
+17. Lambdas, scopes, garbage collector
+19. Project 4
+20. Test reviews
 
 
 ### Outline
