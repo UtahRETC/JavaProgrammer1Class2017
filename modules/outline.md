@@ -1,4 +1,4 @@
-# Class Outline
+# Module Outline
 
 <title>outline</title>
 
@@ -18,8 +18,8 @@
 ### Todo
 
 - [x] List all sections
-- [x] Make class outline
-- [x] Put those sections into class outline
+- [x] Make module outline
+- [x] Put those sections into module outline
 - [ ] Find questions for every section/class/week
 - [ ] Find resources (Pluralsight videos are an option) for every section/class/week
 - [ ] Slides
@@ -34,7 +34,7 @@
     - Passing data among methods (ch. 4, page 188)
     - Encapsulating data and immutable classes (ch. 4, page 205, 207)
 
-- Class 1:
+- Module 1:
   - Hello, World
   - Input and output
   - Reading compiler output
@@ -56,22 +56,22 @@
   - **Left out (resolved)**:
       - Numeric promition, casting (ch. 2, page 55)
       - Ignoring `instanceof` operator. Teach this on one of the classes were Classes are taught?
-        - Move this to class 3
+        - Move this to Module 3
       - Logical operators (ch. 2, page 57)
-        - Move this to class 2
+        - Move this to Module 2
   - **Additional resources**:
     - _Introduction and Setting up Your Environment_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m1&clip=0
     - _Variables, Data Types, and Math Operators_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m3&clip=0
 
-- Class 2:
+- Module 2:
   - Valid variable names and declaring, and initialization
   - Conditionals (`if`, `if-then`, `if-then-else`, `switch`)
   - Loops (`while`, `do-while`, `for`, `break`, `continue`, labels)
-  - Left over from Class 1
+  - Left over from Module 1
   - **Book sections**:
-    - Left over from Class 1
+    - Left over from Module 1
       - Logical operators (ch. 2, page 57)
-        - Move this to class 2
+        - Move this to Module 2
     - Variables (ch. 1, page 25)
       - Valid names, identifiers (ch. 1, page 27)
       - Declaring variables (ch. 1, page 25)
@@ -91,14 +91,14 @@
   - **Additional resources**:
     - _Conditional Logic, Looping, and Arrays_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m4&clip=0&mode=live
 
-- Class 3:
+- Module 3:
   - Classes
   - Objects
   - Constructors
   - Instances
-  - Left over from Class 1
+  - Left over from Module 1
   - **Book sections**:
-    - Left over from Class 1
+    - Left over from Module 1
       - Numeric promition, casting (ch. 2, page 55)
       - Ignoring `instanceof` operator. Teach this on one of the classes were Classes are taught?
     - Classes (ch. 1)
@@ -115,7 +115,7 @@
     - _Representing Complex Types with Classes_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m5&clip=0&mode=live
     - _Class Initializers and Constructors_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m6&clip=0&mode=live
 
-- Class 4
+- Module 4
   - Methods
   - Fields
   - Encapsulation
@@ -131,7 +131,7 @@
   - **Additional resources**:
     - _A Closer Look at Parameters_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m7&clip=0&mode=live
 
-- Class 5:
+- Module 5:
   - Arrays
   - Strings
   - Difference between object references and primitives
@@ -155,7 +155,7 @@
       - Difference between object references and primitives (ch. 1, page 20)
     - Varargs (ch. 4, page 172)
 
-- Class 6:
+- Module 6:
   - Introduction to Git
   - Create a github account
   - Close base project repo
@@ -163,7 +163,7 @@
   - **Project outline**: use control flows, arrays and other different data
     types, and classes
 
-- Class 7:
+- Module 7:
   - Packages
   - Creating packages
   - Imports
@@ -182,7 +182,7 @@
   - **Additional resources**:
     - _Working with Packages_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m11&clip=0&mode=live
 
-- Class 8:
+- Module 8:
   - Looking up documentation and how to read it, using `ArrayList` as an example
   - `ArrayList` deep dive
   - Difference between Arrays and ArrayLists
@@ -190,7 +190,7 @@
     - Arrays (ch. 3, page 119 - 123)
       - `ArrayList` (ch. 3, page 129 - 138)
 
-- Class 9:
+- Module 9:
   - `StringBuilder` deep dive
   - String pool
   - **Book sections**:
@@ -204,7 +204,7 @@
   - **Additional resources**:
     - _More About Data Types_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m9&clip=0&mode=live
 
-- Class 10:
+- Module 10:
   - Working with Dates and Times
   - **Book sections**:
     - Dates and times (ch. 3, page 138)
@@ -213,10 +213,10 @@
       - Formatting dates and times (ch. 3, page 148)
       - Parsing dates and times (ch. 3, page 151)
 
-- Class 11:
+- Module 11:
   - **Project outline**: use Dates, Times, and ArrayLists
 
-- Class 12:
+- Module 12:
   - Classes deep dive
   - Instance initializing blocks
   - Static initializing blocks
@@ -233,7 +233,7 @@
     - _Class Initializers and Constructors_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m6&clip=0&mode=live
     - _Static Members, Nested Types, and Anonymous Classes_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m13&clip=0&mode=live
 
-- Class 13:
+- Module 13:
   - Overloading
   - Access modifiers
   - Inheritance
@@ -261,7 +261,7 @@
     - _A Closer Look at Parameters_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m7&clip=0&mode=live
     - _Class Inheritance_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m8&clip=0&mode=live
 
-- Class 14:
+- Module 14:
   - Abstract classes
   - Interfaces
   - Casting
@@ -286,11 +286,11 @@
   - **Additional resources**:
     - _Creating Abstract Relationships with Interfaces_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m12&clip=0&mode=live
 
-- Class 15:
+- Module 15:
   - **Project outline**: use classes, inheritance, polymorphism, method
     overriding, Overloading, and initialization blocks
 
-- Class 16:
+- Module 16:
   - Exceptions
   - What their role is
   - `try-catch` blocks
@@ -316,7 +316,7 @@
   - **Additional resources**:
     - _Exceptions and Error Handling_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m10&clip=0&mode=live
 
-- Class 17:
+- Module 17:
   - Lambdas
   - Scopes
   - Garbage collection
@@ -329,10 +329,10 @@
       - Syntax (ch. 4, page 211)
       - Predicates (ch. 4, page 214)
 
-- Class 18:
+- Module 18:
   - **Project outline**: use exceptions
 
-- Class 19, 20, 21, 22:
+- Module 19, 20, 21, 22:
   - Reviews and practice tests
   - **Book sections**:
     - Review (appx. A, page 333)
