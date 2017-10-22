@@ -27,6 +27,29 @@
 
 <div class="break"></div>
 
+### Modules
+
+1. Hello, World
+1. Variables, conditionals, and loops
+1. Classes and instances
+1. Modules, fields, and encapsulation
+1. Arrays, strings, and references
+1. Project 1 and introduction to git
+1. Packages, imports, and conflicts
+1. ArrayList deep dive and introduction to reading the docs
+1. StringBuilder deep dive and String pool
+1. Working with Dates and Times
+1. Project 2
+1. Classes deep dive, initializing blocks and static
+1. Overloading, access modifiers, inheritance, overriding, and final
+1. Abstract classes, interfaces, casting
+1. Project 3
+1. Exceptions
+1. Lambdas, scopes, garbage collector
+1. Project 4
+1. Test reviews
+
+
 ### Outline
 
 - Leftovers:
