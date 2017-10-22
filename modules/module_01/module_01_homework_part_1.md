@@ -1,4 +1,4 @@
-# Class 1 Homework (Part 1)
+# Module 1 Homework (Part 1)
 
 <style>
 @media print {

@@ -1,7 +1,7 @@
 <!--
 $theme: default
 page_number: true
-footer: Java Class - Class 4b
+footer: Java Class - Module 3 (part 2)
 -->
 
 # Part II - Brent Wenerstrom

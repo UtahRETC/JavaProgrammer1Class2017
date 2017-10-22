@@ -1,10 +1,10 @@
 <!--
 $theme: default
 page_number: true
-footer: Java Class - Class 1
+footer: Java Class - Module 1
 -->
 
-# Class 1
+# Module 1
 
 - **Downloading class content**
 - **Terminology and a few commands**

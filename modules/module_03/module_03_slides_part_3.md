@@ -1,10 +1,10 @@
 <!--
 $theme: default
 page_number: true
-footer: Java Class - Class 5
+footer: Java Class - Module 3 (part 3)
 -->
 
-# Class 05 - Brent Wenerstrom
+# Module 3 - Part 3 - Brent Wenerstrom
 
 - Numeric promotion
 - Casting

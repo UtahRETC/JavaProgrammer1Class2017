@@ -1,6 +1,6 @@
 <!-- $theme: default
 page_number: true
-footer: Java Class - Class 4
+footer: Java Class - Module 3 (part 1)
 -->
 <style>
 aside::before { 

@@ -1,6 +1,6 @@
 <!-- $theme: default
 page_number: true
-footer: Java Class - Class 6
+footer: Java Class - Module 4
 -->
 <style>
 <style>

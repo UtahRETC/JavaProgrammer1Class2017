@@ -1,6 +1,6 @@
 <!-- $theme: default
 page_number: true
-footer: Java - Class 6 Homework
+footer: Java - Module 4 Homework
 -->
 # Home Work 
 
