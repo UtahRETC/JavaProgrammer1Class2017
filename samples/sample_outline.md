@@ -1,4 +1,4 @@
-# Java cert prep class (Week N)
+# Java cert prep class (Module N)
 
 <style>
 @media print {

@@ -1,4 +1,4 @@
-# Class N Homework
+# Module N Homework
 
 <style>
 @media print {
