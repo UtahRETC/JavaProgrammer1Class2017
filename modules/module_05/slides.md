@@ -229,8 +229,27 @@ System.out.print(lie.equalsIgnoreCase("java is hard")); //true
   - replace(String s, String t)
 - trim() - trims off all whitespace before and after the string
 -----------------------------------------------------------------------------
-# Object Reference vs. Primitive
+# String Method Chaining
+- What does the following print out?
+```
+String result = " My Programs Never Have Bugs ".trim().toLowerCase().
+                 .substring(3).replace("never", "always");
+System.out.println(result);
+```
+-----------------------------------------------------------------------------
+# Primitives
+- Primitives are the basic building blocks of everything in Java
+- The primitive value is held directly in memory
+- It cannot be null
 
+![List of Primitives](assets/primitives.png)
+
+-----------------------------------------------------------------------------
+# Reference Types
+- A reference type holds the memory address of a Java object
+- It can be set to null
+
+![References](assets/references.png)
 -----------------------------------------------------------------------------
 # Value Equality vs. Identity Equality
 
