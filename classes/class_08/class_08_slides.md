@@ -28,6 +28,7 @@ footer: Java Class - Class 5
 
 - int[] numbers = new int[3];
   - Creates new array with three elements named my_array
+  - Each element is initialized to 0
   - What type is the variable "numbers"?
   - What type goes into this array?
 
@@ -58,8 +59,8 @@ footer: Java Class - Class 5
 - Array only contains references to the objects, not the objects themselves
 
 ![Array Example](assets/string_array.png)
-- How does this array initialize?
-  - String[] foods = new String[];
+- In the following example, what does each item in the list initialize to?
+  - String[] foods = new String[5];
 -----------------------------------------------------------------------------
 # Using Arrays
 
@@ -67,6 +68,10 @@ footer: Java Class - Class 5
 - System.out.println(animals[0]); // tiger
 - System.out.println(animals[2]); // shark
 - System.out.println(animals.length); // 3
+
+-----------------------------------------------------------------------------
+# Practice!
+- Open up Multiples.java
 -----------------------------------------------------------------------------
 # Array Review
 - How do you get the length of an array?
@@ -87,9 +92,47 @@ footer: Java Class - Class 5
 
 -----------------------------------------------------------------------------
 # Multidimensional Arrays
+- Arrays can have more than one dimension
+- String[][] rectangle = new String[3][2];
+
+![Array Example](assets/multi_array.png)
 
 -----------------------------------------------------------------------------
+# Practice!
+- Open up TwoDimArray.java
+-----------------------------------------------------------------------------
 # Strings
+- A sequence of characters
+- String myName = "Ammon";
+  - Is this a primitive type?
+  - If not, why no "new" keyword?
+
+-----------------------------------------------------------------------------
+# String Concatenation
+- System.out.print("abc" + "de"); //abcde
+- System.out.print(99 + " red balloons"); //99 red balloons
+- System.out.print(9 + 9 + " red balloons"); //18 red balloons
+
+-----------------------------------------------------------------------------
+# String Concatenation Rules
+- Rules to follow when concatenating:
+  - When "adding" two numbers use numeric addition
+  - Use string concatenation otherwise
+  - Go left to right
+
+![Array Example](assets/string_concat.png)
+
+-----------------------------------------------------------------------------
+# String Immutability
+- Mutable = changeable
+- An immutable object is one that can't be changed once it is created
+- Strings are immutable
+
+-----------------------------------------------------------------------------
+# String Immutability
+- What does the following code print out?
+
+![Array Example](assets/immutable_strings.png)
 
 -----------------------------------------------------------------------------
 # Object Reference vs. Primitive
