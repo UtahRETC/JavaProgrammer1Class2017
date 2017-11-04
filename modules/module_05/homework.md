@@ -13,41 +13,9 @@
 }
 </style>
 
-### Quiz Questions (Move these into Canvas)
+### Quiz Questions
 
-1. What is the correct way to check if these two numbers are equal?
-
-```java
-int x = 5;
-int y = 6;
-```
-
-- `x == y`
-- `x.equals(y)`
-
-2. What is the correct way to check if the contents of these two strings are the same?
-
-```java
-String x = 'Red';
-String y = 'Blue';
-```
-
-- `x == y`
-- `x.equals(y)`
-
-3. What is the correct way to check if these two strings point to the same location in memory?
-
-```java
-String x = 'Red';
-String y = x;
-```
-
-- `x == y`
-- `x.equals(y)`
-
-4. ...
-
----
+Complete the module 05 quiz on Canvas.
 
 ### Code Questions
 
