@@ -1,9 +1,9 @@
 <!--
 $theme: default
 page_number: true
-footer: Java Class - Class 5
+footer: Java Class - Module 5
 -->
-# Class 08 - Ammon Gruwell
+# Module 5: Ammon Gruwell, Andrew Jensen
 
 - Arrays
 - Strings
@@ -19,7 +19,7 @@ footer: Java Class - Class 5
   - {'a', 'g', 'x'}
 - The items in the list are numbered starting at 0
 
-![Array Example](assets/empty_array.png)
+![Empty Array](assets/empty_array.png)
 
 - Arrays initialize to 0
 - Arrays may contain duplicates
@@ -28,12 +28,11 @@ footer: Java Class - Class 5
 ```
 int[] numbers = new int[3];
 ```
-- Creates new array with three elements named my_array
+- Creates new array with three elements named "numbers"
 - Each element is initialized to 0
 - What type is the variable "numbers"?
-- What type goes into this array?
 
-![Array Example](assets/create_array.png)
+![Create Array](assets/create_array.png)
 
 -----------------------------------------------------------------------------
 # Creating An Initialized Array
@@ -44,7 +43,7 @@ int[] numbers2 = {42, 55, 99};
 ```
 - When initializing, we can leave off the "new int[]" part
 
-![Array Example](assets/initialized_array.png)
+![Initialized Array](assets/initialized_array.png)
 
 -----------------------------------------------------------------------------
 # Creating An Array: Syntax
@@ -65,49 +64,30 @@ String[] bugs = {"cricket", "beetle", "ladybug"};
 ```
 - Array only contains references to the objects, not the objects themselves
 
-![Array Example](assets/string_array.png)
+![String Array](assets/string_array.png)
 - In the following example, what does each item in the list initialize to?
 ```
 String[] foods = new String[5];
 ```
 -----------------------------------------------------------------------------
 # Using Arrays
+- To access an item in an array we use the "varName[index]" notation
+- We can get the size of an array using the "length" attribute
 ```
 String[] animals = {"tiger", "kangaroo", "shark"};
 System.out.println(animals[0]); // tiger
 System.out.println(animals[2]); // shark
 System.out.println(animals.length); // 3
 ```
-
 -----------------------------------------------------------------------------
 # Practice!
-- Open up Multiples.java
------------------------------------------------------------------------------
-# Array Review
-- How do you get the length of an array?
-
------------------------------------------------------------------------------
-# Array Review
-- How do you get the length of an array?
-  - int len = myArray.length;
-
------------------------------------------------------------------------------
-# Array Review
-- How do you initialize an array?
-
------------------------------------------------------------------------------
-# Array Review
-- How do you initialize an array?
-```
-char[] myChars = {'w', 'g', 'b'};
-```
-
+- Open up Favorites.java
 -----------------------------------------------------------------------------
 # Multidimensional Arrays
 - Arrays can have more than one dimension
 - String[][] rectangle = new String[3][2];
 
-![Array Example](assets/multi_array.png)
+![2D Arrays](assets/multi_array.png)
 
 -----------------------------------------------------------------------------
 # Practice!
@@ -121,6 +101,8 @@ char[] myChars = {'w', 'g', 'b'};
 
 -----------------------------------------------------------------------------
 # String Concatenation
+- To combine two strings we use the + operator
+- When strings are concatenated with numbers, the numbers are converted to strings
 ```
 - System.out.print("abc" + "de"); //abcde
 - System.out.print(99 + " red balloons"); //99 red balloons
@@ -180,6 +162,7 @@ String b = "Error";
 -----------------------------------------------------------------------------
 # String Methods
 - length() - returns the length of a string
+  - Don't confuse with the ".length" attribute of arrays
 ```
 String axiom = "Java Rocks!";
 System.out.print(axiom.length()); //11
@@ -232,30 +215,70 @@ System.out.print(lie.equalsIgnoreCase("java is hard")); //true
 # String Method Chaining
 - What does the following print out?
 ```
-String result = " My Programs Never Have Bugs ".trim().toLowerCase().
-                 .substring(3).replace("never", "always");
+String result = " My Programs Never Have Bugs ".trim()
+                 .toLowerCase().substring(3)
+                 .replace("never", "always");
 System.out.println(result);
 ```
 -----------------------------------------------------------------------------
+# Practice
+- Open up Strings.java!
+
+-----------------------------------------------------------------------------
 # Primitives
 - Primitives are the basic building blocks of everything in Java
-- The primitive value is held directly in memory
+- A primitive value is held directly in memory
 - It cannot be null
+- It cannot have any methods
 
 ![List of Primitives](assets/primitives.png)
 
 -----------------------------------------------------------------------------
 # Reference Types
 - A reference type holds the memory address of a Java object
-- It can be set to null
+- It can be set to null and can have methods
 
 ![References](assets/references.png)
------------------------------------------------------------------------------
-# Value Equality vs. Identity Equality
 
 -----------------------------------------------------------------------------
+# Value Equality vs. Identity Equality
+- When comparing numbers we use the == operator
+- When comparing objects the == operator compares references and not the actual objects themselves.
+- To compare the actual objects we override and use the equals() method
+-----------------------------------------------------------------------------
+# Example!
+- Open up Duck.java
+-----------------------------------------------------------------------------
 # Wrapper Classes
+- Frequently, Java data structures only accept objects
+- If we want to store primitives in these containers then we have to wrap them in an object first
+- Java has wrapper classes that correspond to each primitive type
+
+![Wrappers](assets/wrappers.png)
 
 -----------------------------------------------------------------------------
 # Varargs
+- Varargs is short for variable arguments
+- It is a method paramater that can accept any number of items
+- It can be treated much like an array by the called method
+- A method may only have one varargs parameter and it must be last
+```
+public static void printNumbers(int... numbers){ //
+  for(int i=0; i<numbers.length; i++){
+    System.out.print(numbers[i] + " ");
+  }
+}
+public static void main(String[] args){
+  printNumbers(1); //1
+  printNumbers(5, 3, 8); //5 3 8
+}
+```
+-----------------------------------------------------------------------------
+# References :
+- OCA Java SE 8 Programmer I Study Guide
+- https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html
+- https://docs.oracle.com/javase/tutorial/java/data/strings.html
+- Feel free to contact me with questions : @gruwella / gruwella@gmail.com
 
+-----------------------------------------------------------------------------
+# That's All For Today!
