@@ -49,88 +49,10 @@ String y = x;
 
 ---
 
-### Code Questions (Move these into files and reference them from here)
+### Code Questions
 
-#### 1. Complete the following program:
+1. Complete and submit the `HomeworkSorting.java` project
 
-```java
-public class HomeworkSorting {
-  public static void main(String[] args) {
-    String[] animals = { "dog", "armadillo", "cat", "elephant", "baboon" };
+2. Complete the `HomeworkWordCounts.java` project
 
-    // TODO: sort the animals alphabetically
-
-    // TODO: print out the animals on one line, with commas in between
-  }
-}
-```
-
-#### 2. Complete the following program:
-
-```java
-public class HomeworkWordCounts {
-  public static void main(String[] args) {
-    String[] items = { "pencil", "paper", "computer", "whiteboard", "backpack" };
-
-    // TODO: get the number of letters for each word using the letterCounts method
-
-    // TODO: print out the letter counts, one line at a time
-  }
-
-  public static int[] letterCounts(String[] words) {
-    // TODO: implement this method
-  }
-}
-```
-
-#### 3. Complete the following program:
-
-```java
-public class HomeworkMovies {
-  public static void main(String[] args) {
-    String searchTitle = args[0];
-    Movie[] movies = getMovies();
-
-    // TODO: search through each movie to see if its title matches searchTitle
-
-    // TODO: if a movie's title matches, print its info, using the getInfo() method
-
-    // TODO: if no movies match the user input
-  }
-
-  public Movie[] getMovies() {
-    Movie starWars = new Movie();
-    starWars.setTitle('Star Wars');
-    starWars.setGenre('Science Fiction');
-
-    // TODO: define a few of your favorite movies here!
-    // You can use http://www.imdb.com/ for info.
-
-    Movie[] movies = { starWars8 };
-    return movies;
-  }
-}
-
-class Movie {
-  private String title;
-  private String genre;
-  private int year;
-
-  // TODO: Define getter and setter methods for each of the above fields
-
-  /**
-   * Returns info about a Movie as a String.
-   *
-   * For example:
-   *
-   * Star Wars
-   * Genre: Science Fiction
-   * Released: 1977
-   */
-  public String getInfo() {
-    // TODO: implement this method
-  }
-}
-```
-
----
+3. Complete the `HomeworkMovies.java` project
