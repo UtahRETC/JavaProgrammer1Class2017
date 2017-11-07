@@ -57,6 +57,11 @@
 3. More Git commands
 
 
+### Ideas for future projects
+
+- https://www.eduonix.com/courses/Software-Development/Learn-Projects-in-Java-for-Beginners-from-Scratch
+
+
 ### Outline
 
 - Leftovers:
