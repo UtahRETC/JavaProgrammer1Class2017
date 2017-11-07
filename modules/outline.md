@@ -50,6 +50,13 @@
 20. Test reviews
 
 
+### These are things that are not in the outline right now but probably should be
+
+1. Build an HTTP api
+2. Learn how to search on Google and Stack Overflow
+3. More Git commands
+
+
 ### Outline
 
 - Leftovers:
