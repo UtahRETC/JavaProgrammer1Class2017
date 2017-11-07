@@ -210,6 +210,15 @@ Now that you have Git installed in your computer, we're going to create a GitHub
 
 -----------------------------------------------------------------------------
 
+# The Project
+
+- What we're doing.
+- What we're providing.
+- What you need to finish on your own.
+- Testing your work.
+
+-----------------------------------------------------------------------------
+
 # Additional resources
 
 -----------------------------------------------------------------------------
