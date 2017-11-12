@@ -186,19 +186,40 @@ Now that you have Git installed in your computer, we're going to create a GitHub
 - `git add`
 - `git commit`
 - `git push`
+- `git status`
 - `git clone`
 
 -----------------------------------------------------------------------------
 
 # `git add`
 
+By default, Git does not care about every file in the repository. If you want Git to track changes you make to a file, you have to "add" it by running `git add <FILENAME>`
+
+Once you have added a file with `git add`, Git remember this action and so you won't have to run `git add` again on that file, with the exception being if you rename the file.
+
 -----------------------------------------------------------------------------
 
 # `git commit`
 
+Think of a commit as a package containing changes you have made to your code. Let's say we just finished adding a feature to our project, we would create a commit which basically packages all of those changes and formats them in a way that I can then share when the rest of my team or the rest of the internet.
+
+You can create commits when ever and as onften as you'd like. The only requirement is that there is at least one character change in a file that Git is tracking.
+
 -----------------------------------------------------------------------------
 
 # `git push`
+
+Committing you updates doesn't mean they'll be shared with others that have access to the repository.
+
+To share these changes with everyone else, you have to "push" your commits. The command `git push` takes the commits that only exist locally (on your computer) and pushes them to the remote Git server (GitHub.com).
+
+-----------------------------------------------------------------------------
+
+# `git status`
+
+This simple command will give you information about the current state of your repository. With this command you can see which files are untracked by Git, which tracked files have modifications, and also which files you have recently started tracking with Git.
+
+When you create a new commit, Git will put all changes and new files in the commit and so they will not show up when you run `git status`, but what you will see is that there is a local commit that needs to be pushed (with `git push`.)
 
 -----------------------------------------------------------------------------
 
