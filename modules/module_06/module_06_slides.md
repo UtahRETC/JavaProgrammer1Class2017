@@ -193,7 +193,7 @@ Now that you have Git installed in your computer, we're going to create a GitHub
 
 # `git add`
 
-By default, Git does not care about every file in the repository. If you want Git to track changes you make to a file, you have to "add" it by running `git add <FILENAME>`
+By default, Git does not care about every file in the repository. If you want Git to track changes you make to a file, you have to "add" it by running `git add <FILENAME>`.
 
 Once you have added a file with `git add`, Git remember this action and so you won't have to run `git add` again on that file, with the exception being if you rename the file.
 
@@ -224,6 +224,18 @@ When you create a new commit, Git will put all changes and new files in the comm
 -----------------------------------------------------------------------------
 
 # Cloning your repository with `git clone`
+
+-----------------------------------------------------------------------------
+
+`git add`: Use this command to tell Git to start tracking the changes you make to a file.
+
+`git commit`: Use this command once you are done with a set of updates to your code and you are ready to package them so that you can share them with others.
+
+`git push`: Use this command to make your commits available to the rest of your team.
+
+`git status`: Use this command to get information about your repository. Tells you what files Git is not tracking and which ones you have modified.
+
+`git clone`: Use this command to download a copy of a repository to your own computer.
 
 -----------------------------------------------------------------------------
 
