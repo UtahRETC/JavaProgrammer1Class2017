@@ -6,7 +6,7 @@ footer: Java Class - Review 1
 
 # Review 1 (Modules 1 - 5)
 
-- **Declaring variables of different data types**
+- **Variables**
 - **Arrays**
 - **Control structures**
 - **Classes and properties**
@@ -16,11 +16,37 @@ footer: Java Class - Review 1
 
 -----------------------------------------------------------------------------
 
-# Declaring variables of different data types
+# Variables
+
+```java
+String myName = "Marcos Minond";
+boolean isAlive = true;
+int age = 92;
+```
 
 -----------------------------------------------------------------------------
 
 # Arrays
+
+```java
+String[] friends = {
+  "Abdikadir",
+  "Abdirahman",
+  "Abdullah",
+  "Ali",
+  "Ali",
+  "Benahin",
+  "Garroe",
+  "Indrias",
+  "Khem",
+  "Matios",
+  "Mohamed ",
+  "Mohammed",
+  "Passy",
+  "Patrick",
+  "Tamrat"
+};
+```
 
 -----------------------------------------------------------------------------
 
