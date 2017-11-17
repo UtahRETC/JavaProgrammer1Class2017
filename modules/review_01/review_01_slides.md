@@ -49,6 +49,11 @@ footer: Java Class - Review 1
 
 # Projects
 
+Get your computers out because we're going to do the basics of the frist
+program.
+
+What are the constructs for each project?
+
 -----------------------------------------------------------------------------
 
 # Additional resources
