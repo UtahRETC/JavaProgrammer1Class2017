@@ -30,6 +30,8 @@ int age = 92;
 
 Remember the parts of a variable: "type", "name", "=", "value".
 
+<div class="break"></div>
+
 ## Arrays
 
 Arrays are lists of values. They group together values/data that should be
@@ -115,6 +117,8 @@ You can have a single `if` statement or a group. A group must always start with
 statement at the very end of the group. The `else if` and `else` statements are
 optional.
 
+<div class="break"></div>
+
 Below is an example of reading input from a user and comparing it to a secret
 code that is stored in our code:
 
@@ -146,6 +150,8 @@ is how we compare strings. If the two strings are equal, we then tell the user
 that they guessed the correct secret code. And if they are not, we tell them
 that they guessed incorrectly.
 
+<div class="break"></div>
+
 Below is a code example of how you would do something similar, but with numbers
 instead:
 
@@ -172,6 +178,8 @@ check if the number guessed is larger than the number the user is supposed to
 guess using the `>` operator. Once we know a number is *not* greater than (`>`)
 and *not* equal to (`==`) another number, the only option we are left with is
 that it is less than (`<`) so we do not need a comparison here.
+
+<div class="break"></div>
 
 ## Control structures - `for` loop statements
 
@@ -207,6 +215,8 @@ Read for loops like this:
 4. Increment `i` by one and go back to step #2.
 5. Execute the code that is after/below the `for` loop.
 
+<div class="break"></div>
+
 ## Classes and properties
 
 class X {
@@ -222,5 +232,3 @@ class X {
 }
 
 ## Constructors
-
-## Casting

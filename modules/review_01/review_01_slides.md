@@ -43,10 +43,6 @@ footer: Java Class - Review 1
 
 -----------------------------------------------------------------------------
 
-# Casting
-
------------------------------------------------------------------------------
-
 # Projects
 
 Get your computers out because we're going to do the basics of the frist
