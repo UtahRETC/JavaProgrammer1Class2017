@@ -244,6 +244,8 @@ starWars.releaseYear = 1977;
 `title` and a `releaseYear` property that are both public, I can set them by
 accessing the property using dot notation: `variableName.propertyName`.
 
+<div class="break"></div>
+
 ## Class methods
 
 Along with properties, classes can have methods. Every class you have created
@@ -283,6 +285,8 @@ public class MovieRunner {
   }
 }
 ```
+
+<div class="break"></div>
 
 ## Class constructors
 
