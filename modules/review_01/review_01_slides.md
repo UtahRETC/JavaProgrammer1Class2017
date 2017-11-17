@@ -9,9 +9,9 @@ footer: Java Class - Review 1
 - **Variables**
 - **Arrays**
 - **Control structures**
-- **Classes and properties**
-- **Classes and methods**
-- **Constructors**
+- **Class properties**
+- **Class methods**
+- **Class constructors**
 - **Projects**
 
 -----------------------------------------------------------------------------
@@ -46,6 +46,13 @@ String[] friends = {
   "Patrick",
   "Tamrat"
 };
+```
+
+-----------------------------------------------------------------------------
+
+```java
+System.out.println(friends[0]); // "Abdikadir"
+System.out.println(friends[1]); // "Abdirahman"
 ```
 
 -----------------------------------------------------------------------------
@@ -104,34 +111,106 @@ for (initialize; check; increment) {
 
 -----------------------------------------------------------------------------
 
-# Classes and properties
+# Class properties
+
+```java
+class Movie {
+  String title;
+  int releaseYear;
+}
+
+public class MovieRunner {
+  public static void main(String[] args) {
+    Movie starWars = new Movie();
+    starWars.title = "Star Wars";
+    starWars.releaseYear = 1977;
+  }
+}
+```
 
 -----------------------------------------------------------------------------
 
-# Classes and methods
+# Class methods
 
 -----------------------------------------------------------------------------
 
-# Constructors
+```java
+class Movie {
+  String title;
+  int releaseYear;
+
+  String getMovieInformation(String greeting) {
+    return greeting + ", " + title + " was released in "
+      + releaseYear;
+  }
+}
+
+public class MovieRunner {
+  public static void main(String[] args) {
+    Movie starWars = new Movie();
+    starWars.title = "Star Wars";
+    starWars.releaseYear = 1977;
+
+    String info = starWars.getMovieInformation();
+    System.out.println(info);
+  }
+}
+```
+
+-----------------------------------------------------------------------------
+
+# Class constructors
+
+-----------------------------------------------------------------------------
+
+```java
+class Movie {
+  String title; int releaseYear;
+
+  Movie(String t, int r) {
+    title = t;
+    releaseYear = r;
+  }
+
+  String getMovieInformation(String greeting) {
+    return greeting + ", " + title + " was released in "
+      + releaseYear;
+  }
+}
+
+public class MovieRunner {
+  public static void main(String[] args) {
+    Movie starWars = new Movie("Star Wars", 1977);
+    String info = starWars.getMovieInformation("Hello");
+    System.out.println(info);
+  }
+}
+```
 
 -----------------------------------------------------------------------------
 
 # Projects
 
-Get your computers out because we're going to do the basics of the frist
-program.
-
-What are the constructs for each project?
-
 -----------------------------------------------------------------------------
 
-# Additional resources
+# Additional resources (1/3)
 
 - _Control structures_: http://www.dcs.ed.ac.uk/teaching/cs1/CS1/Ah/Notes/JavaControl.pdf
 - _Control structures_: https://en.wikiversity.org/wiki/Java_Tutorial/Control_Structures_I_-_Decision_structures
 - _Control structures_: https://www.slideshare.net/Ravi_Kant_Sahu/control-structures-in-java
+
+
+-----------------------------------------------------------------------------
+
+# Additional resources (2/3)
+
 - _Variables, Data Types, and Math Operators_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m3&clip=0
 - _Conditional Logic, Looping, and Arrays_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m4&clip=0&mode=live
+
+-----------------------------------------------------------------------------
+
+# Additional resources (3/3)
+
 - _Representing Complex Types with Classes_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m5&clip=0&mode=live
 - _Class Initializers and Constructors_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m6&clip=0&mode=live
 - _A Closer Look at Parameters_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m7&clip=0&mode=live
