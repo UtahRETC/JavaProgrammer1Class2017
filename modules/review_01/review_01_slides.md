@@ -50,6 +50,8 @@ String[] friends = {
 
 -----------------------------------------------------------------------------
 
+# Working with arrays
+
 ```java
 System.out.println(friends[0]);     // "Abdikadir"
 System.out.println(friends[1]);     // "Abdirahman"
