@@ -30,11 +30,27 @@ int age = 92;
 
 Remember the parts of a variable: "type", "name", "=", "value".
 
-# Arrays
+## Arrays
 
-int[] numbers = new int[]{1, 2, 3, 4};
+Arrays are lists of values. They group together values/data that should be
+grouped. They are simply lists:
 
-# Control structures
+```java
+String[] friends = {
+  "Marcos Minond",
+  "Mohamed Alsoudani",
+  "Ryan Moore"
+};
+```
+
+Above is a sample array of `String` values. To declare an array in Java, I take
+any type (`int`, `short`, `String`, `boolean`, etc.) and add a `[]` after the
+type, I give it a name just like I would with any other type, then put the list
+of comma separated values inside the `{}` brackets.
+
+<div class="break"></div>
+
+## Control structures - `if` statements
 
 There are two types of control structures in Java. The first kind allows you to
 run parts of your code when a certain condition is met, like when a users
@@ -141,14 +157,15 @@ guess using the `>` operator. Once we know a number is *not* greater than (`>`)
 and *not* equal to (`==`) another number, the only option we are left with is
 that it is less than (`<`) so we do not need a comparison here.
 
+## Control structures - `for` loop statements
 
-# Classes and properties
+## Classes and properties
 
 class X {
 
 }
 
-# Classes and methods
+## Classes and methods
 
 class X {
   int getAge() {
@@ -156,6 +173,6 @@ class X {
   }
 }
 
-# Constructors
+## Constructors
 
-# Casting
+## Casting
