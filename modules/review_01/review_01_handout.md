@@ -15,8 +15,20 @@
 
 ## Variables
 
-Placement of every statement matters.
-Depends on where we put the statement.
+Variables hold data. They can store data that we write as part of our code,
+data that the user types into your program, data that comes from a database in
+another computer, etc.
+
+Declaring a variable is simple. All you need to know is the type, what you want
+to name it, and the value it should hold:
+
+```java
+String myName = "Marcos Minond";
+boolean isAlive = true;
+int age = 92;
+```
+
+Remember the parts of a variable: "type", "name", "=", "value".
 
 # Arrays
 
