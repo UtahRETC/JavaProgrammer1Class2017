@@ -217,7 +217,7 @@ Read for loops like this:
 
 <div class="break"></div>
 
-## Classes and properties
+## Class properties
 
 Think of classes as a way to group different parts of a larger object into a
 single object so that we can treat it as a single unit. One of the features
@@ -244,7 +244,7 @@ starWars.releaseYear = 1977;
 `title` and a `releaseYear` property that are both public, I can set them by
 accessing the property using dot notation: `variableName.propertyName`.
 
-## Classes and methods
+## Class methods
 
 Along with properties, classes can have methods. Every class you have created
 so far as a `state void main(String[] args)` method. Methods are one of the
@@ -271,7 +271,7 @@ except that since it is a method call, I can pass arguments to it within `()`
 parentheses.
 
 ```java
-public class Ignore {
+public class MovieRunner {
   public static void main(String[] args) {
     Movie starWars = new Movie();
     starWars.title = "Star Wars";
@@ -284,4 +284,44 @@ public class Ignore {
 }
 ```
 
-## Constructors
+## Class constructors
+
+A constructor is a special method in Java. To create one, all I have to do is
+declare a method in my class that does not have a return value and has the same
+name as the class itself:
+
+```java
+class Movie {
+  String title;
+  int releaseYear;
+
+  Movie(String t, int r) {
+    title = t;
+    releaseYear = r;
+  }
+
+  String getMovieInformation(String greeting) {
+    return greeting + ", " + title + " was released in " + releaseYear;
+  }
+}
+```
+
+This constructor can take any parameters that I can use in whatever ways I want
+to. One of the typical ways of using constructors is by creating one that take
+all of the values you need to store in the class. Remember how our `Movie`
+class has a `title` and a `releaseYear` year? Well instead of setting those two
+properties separately (see the "Classes properties" section), I can create a
+constructor that takes both values and stores them in the properties that I
+need them in:
+
+```java
+public class MovieRunner {
+  public static void main(String[] args) {
+    Movie starWars = new Movie("Star Wars", 1977);
+
+    String info = starWars.getMovieInformation("Hello Marcos");
+
+    System.out.println(info);
+  }
+}
+```
