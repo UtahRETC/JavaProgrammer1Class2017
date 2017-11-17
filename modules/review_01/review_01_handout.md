@@ -48,6 +48,17 @@ any type (`int`, `short`, `String`, `boolean`, etc.) and add a `[]` after the
 type, I give it a name just like I would with any other type, then put the list
 of comma separated values inside the `{}` brackets.
 
+Accessing a specific entry in the array is done by placing `[N]` after the
+variable name, where `N` is the index of the value:
+
+```java
+System.out.println(friends[1]);
+```
+
+This will print out the second item (because arrays start at 0, so 1 is the
+second item) in my `friends` array, which if you look at the list, you'll see
+it includes Mohamed's name.
+
 <div class="break"></div>
 
 ## Control structures - `if` statements
@@ -60,7 +71,9 @@ row. This is usually done when you need to take the same action multiple times.
 Arguably, the two most important control structures in Java are the `if` and
 `for` statements.
 
-`if` statements have this structure:
+`if` statements say, if something is true, then do this, otherwise check this
+other thing and do that instead. `if (conditionIsTrue) doThis(); else
+doAnotherThing();`:
 
 ```java
 int myNumber = 42;
@@ -158,6 +171,38 @@ and *not* equal to (`==`) another number, the only option we are left with is
 that it is less than (`<`) so we do not need a comparison here.
 
 ## Control structures - `for` loop statements
+
+Another control structure, `for` loops have two forms, but I'll only mention
+one in this handout. Here is an example:
+
+```java
+String[] friends = {
+  "Marcos Minond",
+  "Mohamed Alsoudani",
+  "Ryan Moore"
+};
+
+for (int i = 0; i < friends.length; i++) {
+  // loop body
+  System.out.println(friends[i] + " is my friend.");
+}
+```
+
+This code creates an array of `String` values then loops over them and prints
+out a message. The different parts of the for loop are the following:
+
+-. Setup: `int i = 0`
+-. Check: `i < friends.length`
+-. Increment: `i++`
+
+Read for loops like this:
+
+1. Declare `int i` and set its value to `0`.
+2. Check if `i` is less than then number of items in the `friends` array (using
+`friends.length`), if it is, go to step #3. If it is not, go to step #5.
+3. Run the code that is in the body of the loop.
+4. Increment `i` by one and go back to step #2.
+5. Execute the code that is after/below the `for` loop.
 
 ## Classes and properties
 
