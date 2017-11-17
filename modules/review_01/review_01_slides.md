@@ -51,8 +51,9 @@ String[] friends = {
 -----------------------------------------------------------------------------
 
 ```java
-System.out.println(friends[0]); // "Abdikadir"
-System.out.println(friends[1]); // "Abdirahman"
+System.out.println(friends[0]);     // "Abdikadir"
+System.out.println(friends[1]);     // "Abdirahman"
+System.out.println(friends.length); // 15
 ```
 
 -----------------------------------------------------------------------------
