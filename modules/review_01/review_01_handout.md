@@ -59,6 +59,9 @@ This will print out the second item (because arrays start at 0, so 1 is the
 second item) in my `friends` array, which if you look at the list, you'll see
 it includes Mohamed's name.
 
+To get the "length" of an array, which in the case of arrays it is the number
+of items it holds, check the `.length` property: `friends.length;`
+
 <div class="break"></div>
 
 ## Control structures - `if` statements
