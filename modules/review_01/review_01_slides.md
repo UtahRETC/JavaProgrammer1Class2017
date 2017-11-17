@@ -4,7 +4,7 @@ page_number: true
 footer: Java Class - Review 1
 -->
 
-# Review 1 (Module 1 - 5)
+# Review 1 (Modules 1 - 5)
 
 - **Declaring variables of different data types**
 - **Arrays**
