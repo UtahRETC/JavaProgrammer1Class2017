@@ -219,16 +219,69 @@ Read for loops like this:
 
 ## Classes and properties
 
-class X {
+Think of classes as a way to group different parts of a larger object into a
+single object so that we can treat it as a single unit. One of the features
+classes have is the ability to have properties. Properties are very similar to
+variables, expect that they are tied to the class:
 
+```java
+class Movie {
+  String title;
+  int releaseYear;
 }
+```
+
+I can use this movie class by declaring a variable and giving it a type of
+`Movie` since classes that you create are type in Java:
+
+```java
+Movie starWars = new Movie();
+starWars.title = "Star Wars";
+starWars.releaseYear = 1977;
+```
+
+`starWars` is an instance of the `Movie` class. Since the `Movie` class has a
+`title` and a `releaseYear` property that are both public, I can set them by
+accessing the property using dot notation: `variableName.propertyName`.
 
 ## Classes and methods
 
-class X {
-  int getAge() {
+Along with properties, classes can have methods. Every class you have created
+so far as a `state void main(String[] args)` method. Methods are one of the
+building blocks in Java. You own classes can have methods:
 
+```java
+class Movie {
+  String title;
+  int releaseYear;
+
+  String getMovieInformation(String greeting) {
+    return greeting + ", " + title + " was released in " + releaseYear;
   }
 }
+```
+
+By looking at the method declaration `String getMovieInformation(String
+greeting` I can see the different parts. First, it has a return type of
+`String`, a name which is `getMovieInformation`, and it take one argument,
+`String greeting`, that I can use inside of the method's body.
+
+I can use the `getMovieInformation` method very much like I use properties,
+except that since it is a method call, I can pass arguments to it within `()`
+parentheses.
+
+```java
+public class Ignore {
+  public static void main(String[] args) {
+    Movie starWars = new Movie();
+    starWars.title = "Star Wars";
+    starWars.releaseYear = 1977;
+
+    String info = starWars.getMovieInformation();
+
+    System.out.println(info);
+  }
+}
+```
 
 ## Constructors
