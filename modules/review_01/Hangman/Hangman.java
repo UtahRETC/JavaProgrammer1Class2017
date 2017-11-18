@@ -50,11 +50,7 @@ public class Hangman {
       }
 
       // Print word with all correct guesses filled in.
-      for (int j = 0; j < word.length(); j++) {
-        System.out.printf("%s ", letters.get(j));
-      }
-
-      System.out.println("");
+      System.out.println(String.join(" ", letters));
 
       // Check if we're done.
       if (!letters.contains("_")) {
