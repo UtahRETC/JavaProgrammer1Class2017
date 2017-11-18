@@ -32,7 +32,7 @@
 1. Hello, World
 2. Variables, conditionals, and loops
 3. Classes and instances
-4. Modules, fields, and encapsulation
+4. Methods, fields, and encapsulation
 5. Arrays, strings, and references
 6. Project 1 and introduction to git
 7. Packages, imports, and conflicts
