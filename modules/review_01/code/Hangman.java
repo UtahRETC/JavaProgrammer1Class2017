@@ -36,11 +36,8 @@ public class Hangman {
 
       if (guess.length() != 1) {
         System.out.println("You are only allowed to guess a single letter!");
-        continue;
-      }
-
-      // Fill in all instances of `guess` that are found in `word`.
-      if (word.contains(guess)) {
+      } else if (word.contains(guess)) {
+        // Fill in all instances of `guess` that are found in `word`.
         int index = word.indexOf(guess);
 
         while (index >= 0) {
