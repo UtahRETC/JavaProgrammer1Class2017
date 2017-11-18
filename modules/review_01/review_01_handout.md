@@ -186,8 +186,20 @@ that it is less than (`<`) so we do not need a comparison here.
 ## Control structures - `for` loop statements
 
 Another control structure, `for` loops have two forms, but I'll only mention
-one in this handout. Here is an example:
+one in this handout. `for` loops are good for when you want to do a similar thing over and over for a set number of times, like when racers run around a track a certain number of times: each lap is like an iteration of the loop. 
 
+Here is an example:
+```java
+int laps = 10
+
+for (int i = 0; i < laps; i++) {
+  // loop body
+  System.out.println("The runner finished a lap!");
+}
+```
+When programming, you can also determine loop length from a data structure like an array. This is useful when you need to perform an operation for each item in the array:
+
+Here is an example:
 ```java
 String[] friends = {
   "Marcos Minond",
