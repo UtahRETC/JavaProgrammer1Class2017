@@ -264,7 +264,7 @@ class Movie {
 ```
 
 By looking at the method declaration `String getMovieInformation(String
-greeting` I can see the different parts. First, it has a return type of
+greeting)` I can see the different parts. First, it has a return type of
 `String`, a name which is `getMovieInformation`, and it take one argument,
 `String greeting`, that I can use inside of the method's body.
 
