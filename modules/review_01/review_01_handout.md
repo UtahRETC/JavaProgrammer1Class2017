@@ -76,7 +76,9 @@ row. This is usually done when you need to take the same action multiple times.
 Arguably, the two most important control structures in Java are the `if` and
 `for` statements.
 
-`if` statements say, if something is true, then do this, otherwise check this
+`if` statements allow us to create logical branches in our program, kind of like when you are walking a single path and it branches into two different paths. We create conditions to decide which branch of the path to take. If the condition is true, we take the first branch, otherwise we proceed to the next option. This process of choosing whether to take a branch continues until we find the right path to take. The `else` keyword can be used to provide a course of action or path to take if no conditions evauluate to true. This can get a little tricky, but like all programming concepts, becomes much easier to understand with practice.`
+
+To summarize: `if` statements say, if something is true, then do this, otherwise check this
 other thing and do that instead. `if (conditionIsTrue) doThis(); else
 doAnotherThing();`:
 
