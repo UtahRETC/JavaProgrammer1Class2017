@@ -18,7 +18,7 @@ public class HomeworkMovies {
     // TODO: define a few of your favorite movies here!
     // You can use http://www.imdb.com/ for info.
 
-    Movie[] movies = { starWars };
+    Movie[] movies = {starWars};
     return movies;
   }
 }
@@ -33,11 +33,9 @@ class Movie {
   /**
    * Returns info about a Movie as a String.
    *
-   * For example:
+   * <p>For example:
    *
-   * Star Wars
-   * Genre: Science Fiction
-   * Released: 1977
+   * <p>Star Wars Genre: Science Fiction Released: 1977
    */
   public String getInfo() {
     // TODO: implement this method

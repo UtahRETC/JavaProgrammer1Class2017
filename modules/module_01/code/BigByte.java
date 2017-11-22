@@ -7,4 +7,3 @@ public class BigByte {
     System.out.println(oneTwentyEight);
   }
 }
-

@@ -4,7 +4,7 @@ public class LogicalOperators {
     boolean iKnowYourEmail = true;
     if (youKnowMyEmail || iKnowYourEmail) {
       System.out.println("We can communicate :)");
-      //only one needs to be true
+      // only one needs to be true
     }
   }
 }

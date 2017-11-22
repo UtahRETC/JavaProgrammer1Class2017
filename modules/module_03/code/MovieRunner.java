@@ -1,7 +1,5 @@
-public class MovieRunner
-{
-  public static void main(String[] args)
-  {
+public class MovieRunner {
+  public static void main(String[] args) {
     // Movie #1
     Person ford = new Person("Harrison Ford");
     Person lucas = new Person("George Lucas");
@@ -25,4 +23,3 @@ public class MovieRunner
     movie3.info();
   }
 }
-

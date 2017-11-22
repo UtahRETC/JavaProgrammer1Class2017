@@ -4,7 +4,7 @@ public class WhileLoops {
 
     while (number > 0) {
       System.out.println(number + " cycles left");
-      number -= 1; //The same as "number = number - 1;"
+      number -= 1; // The same as "number = number - 1;"
     }
   }
 }

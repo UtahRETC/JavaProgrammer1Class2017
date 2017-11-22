@@ -1,6 +1,6 @@
 public class HomeworkWordCounts {
   public static void main(String[] args) {
-    String[] items = { "pencil", "paper", "computer", "whiteboard", "backpack" };
+    String[] items = {"pencil", "paper", "computer", "whiteboard", "backpack"};
 
     // TODO: get the number of letters for each word using the letterCounts method
 
@@ -9,6 +9,6 @@ public class HomeworkWordCounts {
 
   public static int[] letterCounts(String[] words) {
     // TODO: implement this method
-    return new int[] { 1, 2, 3, 4, 5 };
+    return new int[] {1, 2, 3, 4, 5};
   }
 }

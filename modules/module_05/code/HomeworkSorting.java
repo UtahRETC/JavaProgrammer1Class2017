@@ -1,6 +1,6 @@
 public class HomeworkSorting {
   public static void main(String[] args) {
-    String[] animals = { "dog", "armadillo", "cat", "elephant", "baboon" };
+    String[] animals = {"dog", "armadillo", "cat", "elephant", "baboon"};
 
     // TODO: sort the animals alphabetically
 

@@ -4,11 +4,8 @@ public class DataTypesSample {
     int age = 97;
 
     String name = "Marcos";
-    String message = "Hello, " + name +
-                     ", you are " + age +
-                     " years old";
+    String message = "Hello, " + name + ", you are " + age + " years old";
 
     System.out.println(message);
   }
 }
-

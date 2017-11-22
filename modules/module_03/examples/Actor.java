@@ -1,13 +1,11 @@
-class Actor
-{
+class Actor {
   String name;
-  Actor(String n)
-  {
+
+  Actor(String n) {
     name = n;
   }
-  
-  void speak()
-  {
+
+  void speak() {
     System.out.println("Hi! My name is " + name);
   }
 }
