@@ -9,6 +9,8 @@ public class Sample {
     System.out.printf("Give me your best guess and press enter: ");
     int numberGuessed = reader.nextShort();
 
-    System.out.printf("The number you guessed is %d and you were supposed to guess %s.\n", numberToGuess, numberGuessed);
+    System.out.printf(
+        "The number you guessed is %d and you were supposed to guess %s.\n",
+        numberToGuess, numberGuessed);
   }
 }
