@@ -43,17 +43,6 @@ How would you print out the largest possible Integer?
 (Reminder: These are static fields.)
 (By default this class is already imported being in `java.lang`.)
 
----
-
-# Public Fields
-
-How would you print out the largest possible Integer?
-
-![100%](integer_fields.png)
-
-```java
-System.out.println(Integer.MAX_VALUE);
-```
 
 ---
 
@@ -62,20 +51,6 @@ System.out.println(Integer.MAX_VALUE);
 How is each constructor called?
 
 ![100%](integer_constructors.png)
-
----
-
-# Constructors
-
-How is each constructor called?
-
-![100%](integer_constructors.png)
-
-```java
-Integer intNum = new Integer(3);
-Integer intStr = new Integer("12");
-Integer fail = new Integer("fail"); // What will happen?
-```
 
 ---
 
@@ -89,34 +64,9 @@ How would you get the float value from an `Integer` (without casting)?
 
 # Methods
 
-How would you get the float value from an `Integer` (without casting)?
-
-![100%](integer_float.png)
-
-```java
-Integer intObj = new Integer(45);
-float f = intObj.floatValue();
-```
-
----
-
-# Methods
-
 How is `parseInt` called? What type is returned?
 
 ![100%](integer_parseint.png)
-
----
-
-# Methods
-
-How is `parseInt` called? What type is returned?
-
-![100%](integer_parseint.png)
-
-```java
-int i = Integer.parseInt("3");
-```
 
 ---
 
