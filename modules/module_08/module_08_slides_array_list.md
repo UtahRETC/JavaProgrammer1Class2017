@@ -186,10 +186,20 @@ Demonstrate Updating a movie with the `set()` method
 
 ---
 
-#Step Four
+# Step Four
 
 Using methods in combination
 
 Demonstrate using `contains()` and `add()` together to only add a movie if it is not already present
 Demonstrate using `set()` and `isEmpty()` to only update a move if the list isn't empty
 Demonstrate using `set()` and `size()` to only update a movie by index if that index is present
+
+---
+
+# Additional Resources
+
+- [Pluralsight Java Fundamentals Core - Chapter 6 Collections](https://app.pluralsight.com/library/courses/java-fundamentals-core-platform/table-of-contents)
+- [Pluralsight Java Fundamentals - Chapter 5 (review arrays)](https://app.pluralsight.com/library/courses/java-fundamentals-language/table-of-contents)
+- [ArrayList Docs](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)
+- [MIT ArrayList Slides](https://ocw.mit.edu/courses/civil-and-environmental-engineering/1-00-introduction-to-computers-and-engineering-problem-solving-spring-2012/lecture-notes/MIT1_00S12_Lec_11.pdf)
+
