@@ -1,6 +1,6 @@
 # Module Outline
 
-<title>outline</title>
+<title>Module Outline</title>
 
 <style>
 @media print {
@@ -59,6 +59,7 @@
 
 ### Ideas for future projects
 
+- https://introcs.cs.princeton.edu/java/assignments/
 - https://www.eduonix.com/courses/Software-Development/Learn-Projects-in-Java-for-Beginners-from-Scratch
 
 
