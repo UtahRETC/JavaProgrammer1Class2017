@@ -59,7 +59,9 @@
 
 ### Ideas for future projects
 
+- https://www.reddit.com/r/learnprogramming/comments/176iwa/i_give_you_the_best_200_assignments_i_have_ever/
 - https://introcs.cs.princeton.edu/java/assignments/
+- https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/assignments/
 - https://www.eduonix.com/courses/Software-Development/Learn-Projects-in-Java-for-Beginners-from-Scratch
 
 
