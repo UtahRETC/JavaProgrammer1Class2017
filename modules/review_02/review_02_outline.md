@@ -1,4 +1,19 @@
-TODO:
+# Java cert prep class (Review 2)
+
+<style>
+@media print {
+  pre {
+    border: 1px solid gray;
+    page-break-inside: avoid;
+  }
+}
+
+.break {
+  page-break-after: always;
+}
+</style>
+
+## TODO:
 
 - Compile list of homework
   Come up with good description for all assignments that we can put in writing
@@ -15,7 +30,7 @@ TODO:
   classes.
 
 
-Review topics:
+## Review topics:
 
 - What code goes where?
   Where can I put statements?
@@ -29,7 +44,7 @@ Review topics:
   Why doesn't every class have a main method?
 
 
-During class:
+## During class:
 
 - Use Hangman as an example.
 
@@ -42,6 +57,6 @@ During class:
   Nested methods where the child does some tricky stuff.
 
 
-Homework assignments:
+## Homework assignments:
 
 - ???
