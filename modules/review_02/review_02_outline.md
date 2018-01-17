@@ -78,7 +78,7 @@
 
 ### While, do/while, for loops
 
-- http://programmingbydoing.com/a/enter-pin.html good one, make sure to follow this with pin-lockout.
+- _DONE http://programmingbydoing.com/a/enter-pin.html good one, make sure to follow this with pin-lockout._
 - http://programmingbydoing.com/a/pin-lockout.html make sure this follows enter-ping.
 - http://programmingbydoing.com/a/flip-again.html
 - http://programmingbydoing.com/a/nim.html this would be a good one.

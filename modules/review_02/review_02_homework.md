@@ -26,7 +26,7 @@ https://youtu.be/WSaS17CSS4c and a website with similar behaviour
 http://www.ask8ball.net/
 
 Below is sample output of what you might see when running your program. Your
-output style and text should be the same:
+output style and text should be the same as what we have provided below:
 
 ```text
 MAGIC 8-BALL SAYS: Yes definitely
@@ -48,7 +48,7 @@ and then picking a second random number from 1-6. Add the two values together,
 and display the total.
 
 Below is sample output of what you might see when running your program. Your
-output style and text should be the same:
+output style and text should be the same as what we have provided below:
 
 ```text
 Roll #1: 3
@@ -76,7 +76,7 @@ must have at least ten fortunes. If you're having a hard-time thinking of
 fortunes, do a search online for "fortune cookies fortunes list."
 
 Below is sample output of what you might see when running your program. Your
-output style and text should be the same:
+output style and text should be the same as what we have provided below:
 
 ```text
 Fortune cookie says: "You will have a great time doing your homework for the Java Class."
@@ -88,4 +88,33 @@ Fortune cookie says: "Believe it can be done."
 
 ```text
 Fortune cookie says: "Practice, practice, practice. Remember."
+```
+
+
+#### 4. Enter Your Bank PIN
+
+Write a program that simulates being asked for your bank PIN (like at an ATM or
+when buying something at the grocery store). Your program should ask the user
+the enter their PIN number until they enter the correct answer (meaning that if
+they enter the wrong answer you should ask them again).
+
+Make the pin they are supposed to guess always be "0775".
+
+Below is sample output of what you might see when running your program. Your
+output style and text should be the same as what we have provided below:
+
+```text
+WELCOME TO THE BANK OF <YOUR FIRST AND LAST NAME>.
+ENTER YOUR PIN: 1234
+
+INCORRECT PIN. TRY AGAIN.
+ENTER YOUR PIN: 5342
+
+INCORRECT PIN. TRY AGAIN.
+ENTER YOUR PIN: 6542
+
+INCORRECT PIN. TRY AGAIN.
+ENTER YOUR PIN: 0775
+
+PIN ACCEPTED. YOU NOW HAVE ACCESS TO YOUR ACCOUNT.
 ```
