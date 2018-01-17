@@ -118,3 +118,26 @@ ENTER YOUR PIN: 0775
 
 PIN ACCEPTED. YOU NOW HAVE ACCESS TO YOUR ACCOUNT.
 ```
+
+
+#### 5. Enter Your Bank PIN with Lockout
+
+Let's alter the previous assignment ("Enter Your Bank PIN") to lock the user
+out after 3 incorrect tries. You can simulate locking the user out by stopping
+your program.
+
+Below is sample output of what you might see when running your program. Your
+output style and text should be the same as what we have provided below:
+
+```text
+WELCOME TO THE BANK OF <YOUR FIRST AND LAST NAME>.
+ENTER YOUR PIN: 1234
+
+INCORRECT PIN. TRY AGAIN.
+ENTER YOUR PIN: 5342
+
+INCORRECT PIN. TRY AGAIN.
+ENTER YOUR PIN: 6542
+
+YOU HAVE RUN OUT OF TRIES. ACCOUNT LOCKED.
+```
