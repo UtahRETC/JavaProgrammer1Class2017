@@ -61,9 +61,9 @@
 
 ### Random
 
-- http://programmingbydoing.com/a/magic-8ball.html
-- http://programmingbydoing.com/a/dice.html
-- http://programmingbydoing.com/a/fortune-cookie.html
+- _DONE http://programmingbydoing.com/a/magic-8ball.html_
+- _DONE http://programmingbydoing.com/a/dice.html_
+- _DONE http://programmingbydoing.com/a/fortune-cookie.html_
 
 ### Conditionals
 
