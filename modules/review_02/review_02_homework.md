@@ -141,3 +141,91 @@ ENTER YOUR PIN: 6542
 
 YOU HAVE RUN OUT OF TRIES. ACCOUNT LOCKED.
 ```
+
+
+#### 6. One Letter At A Time
+
+TODO: add instructions
+
+```text
+Enter your message: I like learning Java!
+Here are the letters in order:
+
+0: 'I'
+1: ' '
+2: 'l'
+3: 'i'
+4: 'k'
+5: 'e'
+6: ' '
+7: 'l'
+8: 'e'
+9: 'a'
+10: 'r'
+11: 'n'
+12: 'i'
+13: 'n'
+14: 'g'
+15: ' '
+16: 'J'
+17: 'a'
+18: 'v'
+19: 'a'
+20: '!'
+```
+
+
+#### 7. Grocery List
+
+TODO: add instructions
+
+```text
+You have 0 items in your grocery list.
+Would you like to add another item? [y/n]: y
+What is the item: bread
+
+You have 1 items in your grocery list.
+Would you like to add another item? [y/n]: y
+What is the item: eggs
+
+You have 2 items in your grocery list.
+Would you like to add another item? [y/n]: y
+What is the item: milk
+
+You have 3 items in your grocery list.
+Would you like to add another item? [y/n]: n
+
+Here is your grocery list:
+- bread
+- eggs
+- milk
+```
+
+
+#### 8. Letter Positions
+
+TODO: add instructions
+
+```text
+The word is "rabbit".
+Type a letter: a
+
+Here are the positions of that letter:
+1
+```
+
+```text
+The word is "rabbit".
+Type a letter: b
+
+Here are the positions of that letter:
+2
+3
+```
+
+```text
+The word is "rabbit".
+Type a letter: c
+
+That letter is not in the word!
+```
