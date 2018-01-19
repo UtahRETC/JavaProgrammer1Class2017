@@ -260,10 +260,10 @@ spaces before and after the operators (`+`, `*`, etc.) or else Java won't know
 where a number starts and end.
 
 
-#### 10. Calculator with error handling and quit
+#### 10. Calculator with error handling, quit, and more operators
 
 Let's make the previous Calculator program a little more user friendly. We're
-going to make two changes:
+going to make the following changes:
 
 - When a user uses an unsupported operator (like `%`), let's given them a
   helpful message telling them.
@@ -274,20 +274,27 @@ going to make two changes:
   it is not then you can assume it is a number which would require you to
   convert a `String` into a `double` (hint: https://goo.gl/VW4RbX)
 
+- Add support for the modulus (`%` in your calculator and `%` in Java) operator
+  and exponents (`^` in your calculator and `Math.pow` in Java).
+
 Below is sample output of what you might see when running your program. Your
 output style and text should be the same as what we have provided below:
 
 ```text
-> 2 + 3
-= 5
-> 21 % 4
-ERROR, invalid operator: %
-> 21 * 2
-= 42
-> quit
-Goodbye.
+> 32 - 3
+> = 29.0
+> > 4 & 1
+> ERROR, invalid operator: &
+> > 4 % 3
+> = 1.0
+> > 3 ^ 2
+> = 9.0
+> > 4 ^ 4
+> = 256.0
+> > quit
+> Goodbye.
 ```
 
 Here's an example of how your program should behave:
 
-[![asciicast](https://asciinema.org/a/o4gkCDD6NGf854HvmYafCqKbN.png)](https://asciinema.org/a/o4gkCDD6NGf854HvmYafCqKbN)
+[![asciicast](https://asciinema.org/a/AlGPYqUjCzfWoWYHTThmTj0Au.png)](https://asciinema.org/a/AlGPYqUjCzfWoWYHTThmTj0Au)
