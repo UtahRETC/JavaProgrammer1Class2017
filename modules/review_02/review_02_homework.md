@@ -281,16 +281,16 @@ Below is sample output of what you might see when running your program. Your
 output style and text should be the same as what we have provided below:
 
 ```text
-> 32 - 3
-> = 29.0
-> > 4 & 1
-> ERROR, invalid operator: &
-> > 4 % 3
+> 32 - 4
+> = 28.0
+> > 23 & 2
+> Error, invalid operator: &
+> > 10 % 3
 > = 1.0
 > > 3 ^ 2
 > = 9.0
-> > 4 ^ 4
-> = 256.0
+> > 3 ^ 3
+> = 27.0
 > > quit
 > Goodbye.
 ```
