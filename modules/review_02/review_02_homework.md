@@ -122,9 +122,11 @@ PIN ACCEPTED. YOU NOW HAVE ACCESS TO YOUR ACCOUNT.
 
 #### 5. Enter Your Bank PIN with Lockout
 
-Let's alter the previous assignment ("Enter Your Bank PIN") to lock the user
-out after 3 incorrect tries. You can simulate locking the user out by stopping
-your program.
+For this assignment, we can start where we left off on the last assingment and
+make a few modifications to lock the user out after 3 incorrect tries. You can
+simulate locking the user out by stopping your program.
+
+You should have two files. One of assingment #4 and another for #5.
 
 Below is sample output of what you might see when running your program. Your
 output style and text should be the same as what we have provided below:

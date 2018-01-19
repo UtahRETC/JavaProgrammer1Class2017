@@ -80,6 +80,7 @@
 
 - _DONE http://programmingbydoing.com/a/enter-pin.html good one, make sure to follow this with pin-lockout._
 - _DONE http://programmingbydoing.com/a/pin-lockout.html make sure this follows enter-ping._
+- _DONE http://programmingbydoing.com/a/letter-at-a-time.html_
 - http://programmingbydoing.com/a/flip-again.html
 - http://programmingbydoing.com/a/nim.html this would be a good one.
 - http://programmingbydoing.com/a/counting-machine-revisited.html also a good one.
