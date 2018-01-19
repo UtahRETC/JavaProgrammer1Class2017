@@ -1,18 +1,5 @@
 # Review 2 Homework
 
-<style>
-@media print {
-  pre {
-    border: 1px solid gray;
-    page-break-inside: avoid;
-  }
-}
-
-.break {
-  page-break-after: always;
-}
-</style>
-
 #### 1. Magic 8 Ball
 
 Write a program that simulates a Magic 8 Ball. A Magic 8 Ball is a toy that
