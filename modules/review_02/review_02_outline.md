@@ -1,18 +1,5 @@
 # Java cert prep class (Review 2)
 
-<style>
-@media print {
-  pre {
-    border: 1px solid gray;
-    page-break-inside: avoid;
-  }
-}
-
-.break {
-  page-break-after: always;
-}
-</style>
-
 ## TODO:
 
 - **WIP** Slides for class. Marcos will start putting together the slides. But
