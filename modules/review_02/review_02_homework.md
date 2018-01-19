@@ -231,3 +231,63 @@ Type a letter: c
 
 That letter is not in the word!
 ```
+
+
+#### 9. Calculator
+
+Write a calculator program that allows you to add, subtract, multiply, and
+divide two numbers. The calculator supports integers (`int` in Java) and real
+numbers (`double` in Java), so make sure you are appropriately reading user
+input and storing results. You can stop your Calculator program by pressing
+<kbd>Ctrl + C</kbd>.
+
+Below is sample output of what you might see when running your program. Your
+output style and text should be the same as what we have provided below:
+
+```text
+> 2 + 3
+= 5
+> 4 * 9
+= 36
+> 7 - 3
+= 4
+> 12 / 4
+= 3
+```
+
+Note: when testing your code works for this assignment, make sure you put
+spaces before and after the operators (`+`, `*`, etc.) or else Java won't know
+where a number starts and end.
+
+
+#### 10. Calculator with error handling and quit
+
+Let's make the previous Calculator program a little more user friendly. We're
+going to make two changes:
+
+- When a user uses an unsupported operator (like `%`), let's given them a
+  helpful message telling them.
+
+- Let users type "quit" to exit the program instead of <kbd>Ctrl + C</kbd>.
+  Keep in mind that you will have to read input as a string to check if it is a
+  special keyword, like "quit" in which case you would exit the program, and if
+  it is not then you can assume it is a number which would require you to
+  convert a `String` into a `double` (hint: https://goo.gl/VW4RbX)
+
+Below is sample output of what you might see when running your program. Your
+output style and text should be the same as what we have provided below:
+
+```text
+> 2 + 3
+= 5
+> 21 % 4
+ERROR, invalid operator: %
+> 21 * 2
+= 42
+> quit
+Goodbye.
+```
+
+Here's an example of how your program should behave:
+
+[![asciicast](https://asciinema.org/a/o4gkCDD6NGf854HvmYafCqKbN.png)](https://asciinema.org/a/o4gkCDD6NGf854HvmYafCqKbN)

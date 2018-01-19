@@ -88,8 +88,8 @@
 
 ### More of a project type of homework
 
-- http://programmingbydoing.com/a/baby-calculator.html
-- http://programmingbydoing.com/a/project-calculator.html
+- _DONE http://programmingbydoing.com/a/baby-calculator.html_
+- _DONE-ish http://programmingbydoing.com/a/project-calculator.html_
 
 ### Functions
 
