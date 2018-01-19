@@ -297,4 +297,4 @@ output style and text should be the same as what we have provided below:
 
 Here's an example of how your program should behave:
 
-[![asciicast](https://asciinema.org/a/AlGPYqUjCzfWoWYHTThmTj0Au.png)](https://asciinema.org/a/AlGPYqUjCzfWoWYHTThmTj0Au)
+[![asciicast](https://asciinema.org/a/CtTOeGgSIMwu6F1D1yO4oIwyD.png)](https://asciinema.org/a/CtTOeGgSIMwu6F1D1yO4oIwyD)
