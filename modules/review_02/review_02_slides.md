@@ -99,13 +99,17 @@ Field declarations can only go in classes. Follow the rules for _Variable declar
 // Access    Return  Name           Arguments
 // Modifier  Type
 
-    return "Hey " + friendName + ", good to see you!";
+    String greeting = "Hey " + friendName + "!";
+//  ^
+//  Body
+
+    return greeting;
 //  ^
 //  Return statement
   }
 ```
 
-Unless your method has a return type of `void`, your method is required to have a `return` statement.
+==Note:== Unless your method has a return type of `void`, your method is required to have a `return` statement.
 
 
 -----------------------------------------------------------------------------
@@ -165,27 +169,23 @@ The sections in between the curly braces `{}` are run when the condition in the 
 
 -----------------------------------------------------------------------------
 
-## Declaring a method
-
-A method declaration looks like this:
+## Classes
 
 ```java
-public int setHomeworkScore(int hwScore) {
-  score = hwScore;
-  greet();
-  System.out.println("My score is " + hwScore);
-  return score;
-}
+   public    class   Hangman {
+// ^         ^       ^
+// Access    Class   Name
+// Modifier
+
+     protected String word;
+//   ^
+//   Field declarations
+
+     public boolean isDone() { /* ... */ }
+//   ^
+//   Method declarations
+   }
 ```
-
-Parts:
-
-- public
-- int
-- setHomeworkScore
-- `(` and `)`
-- int hwScore
-- `{` and `}`
 
 -----------------------------------------------------------------------------
 
