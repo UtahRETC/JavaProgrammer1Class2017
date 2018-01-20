@@ -166,7 +166,16 @@ Here are the letters in order:
 
 #### 7. Grocery List
 
-TODO: add instructions
+Write a program that saves a grocery list for you. Your program should say how
+many items are in the list, then ask the user if they want to add another item.
+If the user enters `y`, the program should prompt the user to type in the item.
+Then it should loop back to the beginning. If the user enters `n`, the
+program should stop asking for new items and display the whole list.
+
+You can store the grocery items into a `ArrayList<String>`.
+
+Below is sample output of what you might see when running your program. Your
+output style and text should be the same as what we have provided below:
 
 ```text
 You have 0 items in your grocery list.
