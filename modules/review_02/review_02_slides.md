@@ -22,6 +22,162 @@ footer: Java Class - Review 2
 
 -----------------------------------------------------------------------------
 
+# Where does code go?
+
+In order to speak English properly, we need to understand English grammar.
+Grammar helps us know how to arrange our words into sentences so others can
+understand us correctly.
+
+Java has grammar rules too! We need to follow the rules of Java's grammar so
+that _the computer_ can understand us correctly.
+
+Let's talk about the most important parts of the grammar, from **smallest** to
+**biggest**.
+
+-----------------------------------------------------------------------------
+
+## Statements
+
+A statement in Java is like a _single sentence_.
+
+Here are some examples of statements:
+
+```java
+score = hwScore;
+
+greet();
+
+System.out.println("My score is " + hwScore);
+
+return score;
+```
+
+Notice:
+
+- they all look a little different!
+- they each contain a little bit of logic
+- every program's logic is made up of statements
+
+-----------------------------------------------------------------------------
+
+## Fancier statements
+
+```java
+if () {
+  
+}
+
+while () {
+  
+}
+
+for () {
+  
+}
+```
+
+These statements are for control flow. The sections in between the curly braces
+`{ }` are run when the logic in the parentheses `( )` is true. The code inside
+the curly braces _will also be statements_.
+
+-----------------------------------------------------------------------------
+
+## Declaring a method
+
+A method declaration looks like this:
+
+```java
+public int setHomeworkScore(int hwScore) {
+  score = hwScore;
+  greet();
+  System.out.println("My score is " + hwScore);
+  return score;
+}
+```
+
+Parts:
+
+- public
+- int
+- setHomeworkScore
+- `(` and `)`
+- int hwScore
+- `{` and `}`
+
+-----------------------------------------------------------------------------
+
+## A simple class
+
+All of this code goes in a file called `Student.java`:
+
+```java
+public class Student {
+
+  private String firstName;
+  private String lastName;
+  private int score;
+
+  public String greet() {
+    return "Hi, my name is " + firstName;
+  }
+  
+  public int setHomeworkScore(int hwScore) {
+    greet();
+    score = hwScore;
+    System.out.println("My score is " + hwScore);
+    return score;
+  }
+
+}
+```
+
+Parts:
+
+- This file contains the `Student` class
+- The `Student` class contains some fields and method declarations
+- There are three fields: `firstName`, `lastName`, and `score`
+- There are two methods: `greet` and `setHomeworkScore`
+
+-----------------------------------------------------------------------------
+
+## Declaring a class
+
+A class declaration looks like this:
+
+```java
+public class Student {
+  
+}
+```
+
+Parts:
+
+- public
+- class
+- Student
+- `{` and `}`
+
+## What can we put inside of a class declaration?
+
+- fields
+- method declarations
+
+-----------------------------------------------------------------------------
+
+
+
+- Where does code go?
+  - Classes
+  - Methods
+  - Fields
+    - teach variables first!
+  - Statements
+  - Control Flow
+  - Method declaration vs. method call
+
+
+-----------------------------------------------------------------------------
+
 ## The Main Method
 
 ```java
@@ -77,6 +233,10 @@ door** of your house. You can't get into your house without a door!
 Your program can have lots of reusable parts, like _classes_ and _methods_. But
 it needs to start from a single specific place.
 
+TODO: the logic in our program is in statements, and statements
+
+TODO: define a statement (in the previous section), show several examples combined in a method
+
 -----------------------------------------------------------------------------
 
 ## Where does the main method go?
@@ -88,6 +248,8 @@ TODO: info here
 -----------------------------------------------------------------------------
 
 ## Example: Pet Store
+
+TODO: make a Main class
 
 We have these classes:
 
@@ -122,6 +284,8 @@ the `PetStore` class!"
 
 Or, "Hey Java, go into my house, and here is where the front door is!"
 
+TODO: the main method has to look the right way so Java knows how to open the door
+
 -----------------------------------------------------------------------------
 
 ## Why just _one_ main method?
@@ -132,17 +296,11 @@ You _could_ have a main method defined in multiple classes, but you still have
 to tell Java _which one to use_ when you run your program. You have to choose:
 do you want to go into the house from the front door or the back door?
 
------------------------------------------------------------------------------
+TODO: get rid of the "back door" idea
 
-## Where does code go?
+TODO: talk about how it doesn't help us when there are multiple main methods, Java will do whatever we tell it to do
 
-- Where does code go?
-  - Classes
-  - Methods
-  - Fields
-  - Statements
-  - Control Flow
-  - Method declaration vs. method call
+TODO: you have been telling Java where to start this whole time!
 
 -----------------------------------------------------------------------------
 
