@@ -299,6 +299,8 @@ Why is this important? As far as your computer is concerned, it's not. Indenting
 
 # Homework
 
+You're learning a lot and it's hard to remember everything, we understand. But we also understand that it takes a lot of practice to learn and remember everything you need in order to become and effective programmer, so this week we're going to assing more homework as a way to give you more chance to practice what you're learning.
+
 -----------------------------------------------------------------------------
 
 # Additional resources
