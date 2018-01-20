@@ -214,59 +214,50 @@ public class Student {
 }
 ```
 
+-----------------------------------------------------------------------------
+
+## A simple class
+
 Parts:
 
 - This file contains the `Student` class
-- The `Student` class contains some fields and method declarations
+- The `Student` class contains some field declarations and method declarations
 - There are three fields: `firstName`, `lastName`, and `score`
 - There are two methods: `greet` and `setHomeworkScore`
 
 -----------------------------------------------------------------------------
 
-## Declaring a class
+## Grammar rules
 
-A class declaration looks like this:
+- A class declaration can contain:
+  - field declarations
+  - method declarations
 
-```java
-public class Student {
-
-}
-```
-
-Parts:
-
-- public
-- class
-- Student
-- `{` and `}`
-
-## What can we put inside of a class declaration?
-
-- fields
-- method declarations
-
------------------------------------------------------------------------------
-
-
-
-- Where does code go?
-  - Classes
-  - Methods
-  - Fields
-    - teach variables first!
-  - Statements
-  - Control Flow
-  - Method declaration vs. method call
-
+- A method declaration can contain:
+  - statements
 
 -----------------------------------------------------------------------------
 
 # The Main Method
 
+A special method declaration!
+
 ```java
 public static void main(String[] args) {
   System.out.println("Hello world!");
 }
+```
+
+```java
+   public   static void    main(String[] args) {
+// ^        ^      ^       ^    ^
+// Access   Static Return  Name Arguments
+// Modifier        type
+
+     System.out.println("Hello world!");
+//   ^
+//   Body
+   }
 ```
 
 -----------------------------------------------------------------------------
@@ -274,37 +265,16 @@ public static void main(String[] args) {
 ## What are the parts?
 
 ```java
-public static void main(String[] args) {
-  System.out.println("Hello world!");
-}
+   public   static void    main(String[] args) {
+// ^        ^      ^       ^    ^
+// Access   Static Return  Name Arguments
+// Modifier        type
+
+     System.out.println("Hello world!");
+//   ^
+//   Body
+   }
 ```
-
-- public
-- static
-- void
-- main
-- String[] args
-- `{` and `}`
-- body
-
------------------------------------------------------------------------------
-
-## What are the parts?
-
-```java
-public static void main(String[] args) {
-  System.out.println("Hello world!");
-}
-```
-
-- public: Java can see and run this method
-- static: There is only one copy of this method, not one per _instance_ of the
-class
-- void: The method doesn't return anything
-- main: The name of the method!
-- String[] args: User input from the terminal
-- `{` and `}`: Shows where the body of the method starts and ends
-- body: Put logic inside of here
 
 -----------------------------------------------------------------------------
 
