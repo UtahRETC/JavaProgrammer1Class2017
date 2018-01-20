@@ -5,9 +5,8 @@
 - Slides for class. Marcos will start putting together the slides. But we need
   to decide who is going to talk about what.
 
-- Compile list of homework
-  Come up with good description for all assignments that we can put in writing
-  and examplain during class.
+- Compile list of homework. Come up with good description for all assignments
+  that we can put in writing and examplain during class.
 
 - Pick an assignment (probably Hangman) and figure out how we are going to use
   use it as an example to teach and review what we would like to cover during

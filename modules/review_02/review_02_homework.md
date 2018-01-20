@@ -177,36 +177,39 @@ Here are the characters in order:
 #### 7. Grocery List
 
 Write a program that saves a grocery list for you. Your program should say how
-many items are in the list, then ask the user if they want to add another item.
-If the user enters `y`, the program should prompt the user to type in the item.
-Then it should loop back to the beginning. If the user enters `n`, the
-program should stop asking for new items and display the whole list.
+many items are in the list, then ask the user if they want to add an item. If
+the user enters `y`, the program should prompt the user to type in the item.
+Then it should loop back to the beginning. If the user enters `n`, the program
+should stop asking for new items and display the whole list, and then exit.
 
-You can store the grocery items into a `ArrayList<String>`.
+You can store the grocery items into a `ArrayList<String>`. Here is
+documentation for `ArrayList`: https://goo.gl/AEkzaM.
 
 Below is sample output of what you might see when running your program. Your
 output style and text should be the same as what we have provided below:
 
 ```text
 You have 0 items in your grocery list.
-Would you like to add another item? [y/n]: y
+Would you like to add an item? [y/n]: y
 What is the item: bread
 
 You have 1 items in your grocery list.
-Would you like to add another item? [y/n]: y
+Would you like to add an item? [y/n]: y
 What is the item: eggs
 
 You have 2 items in your grocery list.
-Would you like to add another item? [y/n]: y
+Would you like to add an item? [y/n]: y
 What is the item: milk
 
 You have 3 items in your grocery list.
-Would you like to add another item? [y/n]: n
+Would you like to add an item? [y/n]: n
 
 Here is your grocery list:
 - bread
 - eggs
 - milk
+
+Goodbye.
 ```
 
 
