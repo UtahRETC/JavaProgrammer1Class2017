@@ -24,7 +24,7 @@ public class Main {
     return words[rand.nextInt(words.length)];
   }
 
-  public static void main(String[] args) {
+  public static void startGameOfHangman() {
     Scanner in = new Scanner(System.in);
     Hangman game = new Hangman(getARandomWord());
 
@@ -47,5 +47,17 @@ public class Main {
         break;
       }
     }
+  }
+
+  public static boolean playAnotherGame() {
+    Scanner in = new Scanner(System.in);
+    System.out.print("Play again? (yes/no) ");
+    return in.next().equals("yes");
+  }
+
+  public static void main(String[] args) {
+    do {
+      startGameOfHangman();
+    } while (playAnotherGame());
   }
 }
