@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -52,7 +51,16 @@ public class Main {
   public static boolean playAnotherGame() {
     Scanner in = new Scanner(System.in);
     System.out.print("Play again? (yes/no) ");
-    return in.next().equals("yes");
+
+    String answer = in.next();
+
+    if (answer.equals("no")) {
+      return false;
+    } else if (answer.equals("yes")) {
+      return true;
+    } else {
+      return playAnotherGame();
+    }
   }
 
   public static void main(String[] args) {
