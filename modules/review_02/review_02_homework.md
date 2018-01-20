@@ -8,7 +8,7 @@ original Magic 8 Ball as 20 possible answers, which you can find here:
 https://en.wikipedia.org/wiki/Magic_8-Ball#Possible_answers. Your program
 should be able to responde with any of the twenty possible answers.
 
-Still not sure what a Magic 8 Ball is? Here's a great video explination
+Still not sure what a Magic 8 Ball is? Here's a great video explanation
 https://youtu.be/WSaS17CSS4c and a website with similar behaviour
 http://www.ask8ball.net/
 
