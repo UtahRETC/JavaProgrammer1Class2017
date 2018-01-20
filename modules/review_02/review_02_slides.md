@@ -242,9 +242,7 @@ public class Main {
 
 # Whitespace
 
-What is whitespace? Whitespace are new lines, tab characters, and space
-characters. Adding whitespace in your code can help you create "blocks" and
-"sections" in your code.
+What is whitespace? Whitespace are new lines, tab characters, and space characters. Adding whitespace in your code can help you create "blocks" and "sections" in your code.
 
 -----------------------------------------------------------------------------
 
