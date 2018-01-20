@@ -304,10 +304,9 @@ TODO: you have been telling Java where to start this whole time!
 
 -----------------------------------------------------------------------------
 
-# Coding with _style_
+# Coding with _style_ 💅
 
 - What is style in code?
-- How does your code look?
 - Is it easy for you to read?
 - Is it easy for others to read?
 
