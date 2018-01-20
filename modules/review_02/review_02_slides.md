@@ -155,9 +155,9 @@ do you want to go into the house from the front door or the back door?
 
 -----------------------------------------------------------------------------
 
-You will read your code more often and more times than write it. Most likely, you will write your program once and only modify it a few times, but how many times will you come back to it because you forgot something about it or you need to remember how to use it?
-
 As professional programmers, most of your time will be spent reading a line of code rather than writing it. Or at least you will have to read it more times than it took to write it in the first place, so make sure it is easy to read.
+
+Remember, you will read your code more often and more times than write it.
 
 -----------------------------------------------------------------------------
 
@@ -237,6 +237,63 @@ public class Main {
   }
 }
 ```
+
+-----------------------------------------------------------------------------
+
+# Whitespace
+
+What is whitespace? Whitespace are new lines, tab characters, and space
+characters. Adding whitespace in your code can help you create "blocks" and
+"sections" in your code.
+
+-----------------------------------------------------------------------------
+
+## Adding whitespace in a line of code
+
+```java
+int a = 7;
+int b = 20;
+int c = 2*(a-3)+4*b-2*(a-b-3)+5;
+```
+
+```java
+int a = 7;
+int b = 20;
+int c = 2 * (a - 3) + 4 * b - 2 * (a - b - 3) + 5;
+```
+
+-----------------------------------------------------------------------------
+
+## Adding whitespace between statements
+
+```java
+if (age >= 60) {
+  activateSeniorDiscount();
+}
+if (gender.equals("Female")) {
+  provideFemaleShoes();
+} else if (gender.equals("Male")) {
+  provideMaleShoes();
+}
+```
+
+```java
+if (age >= 60) {
+  activateSeniorDiscount();
+}
+
+if (gender.equals("Female")) {
+  provideFemaleShoes();
+} else if (gender.equals("Male")) {
+  provideMaleShoes();
+}
+```
+
+-----------------------------------------------------------------------------
+
+# Why?
+
+Why is this important? As far as your computer is concerned, it's not. Indenting your Java code won't alter it's behaviour, neither will adding spaces in between the plus operator, so why? Because you will read your code more often and more times than write it, and so we these style guides to make it easier for humans (including your future self) to read.
 
 -----------------------------------------------------------------------------
 
