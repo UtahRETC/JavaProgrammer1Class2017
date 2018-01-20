@@ -252,7 +252,7 @@ where a number starts and end.
 Let's make the previous Calculator program a little more user friendly. We're
 going to make the following changes:
 
-- When a user uses an unsupported operator (like `%`), let's given them a
+- When a user uses an unsupported operator (like `&`), let's given them a
   helpful message telling them.
 
 - Let users type "quit" to exit the program instead of <kbd>Ctrl + C</kbd>.
