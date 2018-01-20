@@ -99,14 +99,14 @@ Field declarations can only go in classes. Follow the rules for _Variable declar
 // Access    Return  Name           Arguments
 // Modifier  Type
 
-    String greeting = "Hey " + friendName + "!";
-//  ^
-//  Body
+     String greeting = "Hey " + friendName + "!";
+//   ^
+//   Body
 
-    return greeting;
-//  ^
-//  Return statement
-  }
+     return greeting;
+//   ^
+//   Return statement
+   }
 ```
 
 ==Note:== Unless your method has a return type of `void`, your method is required to have a `return` statement.
