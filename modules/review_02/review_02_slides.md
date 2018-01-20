@@ -452,6 +452,17 @@ You're learning a lot and it's hard to remember everything, we understand. But w
 
 -----------------------------------------------------------------------------
 
+## What do we expect?
+
+- We have example text output for each assignment; your program's output should look _exactly_ like ours.
+- Follow the code style guides you learned today.
+  - put brackets where needed
+  - indent your code
+  - add whitespace to add visual sections to your code
+- Every assignment should be in a _separate file_ that is _ready to compile and run_ with no changes.
+
+-----------------------------------------------------------------------------
+
 # Additional resources
 
 - Introduction: https://youtu.be/TBWX97e1E9g
