@@ -535,7 +535,3 @@ You're learning a lot and it's hard to remember everything, we understand. But w
 - Classes: https://youtu.be/rGlJiUO-dZA
 - Logic behind programming and building a game: https://youtu.be/_pUz-GJcdRU, https://youtu.be/bQTFXlZWzKw
 - Arrays and collections (ArrayList): https://youtu.be/eNPX2pTiaHI, https://youtu.be/IEqvmsqjpT0
-
------------------------------------------------------------------------------
-
-# Reference list
