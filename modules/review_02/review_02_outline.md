@@ -2,10 +2,10 @@
 
 ## TODO:
 
-- Slides for class. Marcos will start putting
-  together the slides. But we need to decide who is going to talk about what.
+- Slides for class. Marcos will start putting together the slides. But we need
+  to decide who is going to talk about what.
 
-- **WIP** Compile list of homework
+- Compile list of homework
   Come up with good description for all assignments that we can put in writing
   and examplain during class.
 

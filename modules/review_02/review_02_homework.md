@@ -134,7 +134,17 @@ YOU HAVE RUN OUT OF TRIES. ACCOUNT LOCKED.
 
 #### 6. One Letter At A Time
 
-TODO: add instructions
+Write a program that lets a user enter a message which is the printed to the
+screen one character at a time along with its index. Hints: you already know
+how to read user input using the `Scanner` class, but in case you forgot, here
+is a link to the documentation: https://goo.gl/Dd54UP. If you're going to loop
+over a string you need to know its length, which you can get using the
+`.length` method. Read about it here: https://goo.gl/CR5uTb. Finally, to get a
+character at a specific location of a string, you can use the `.charAt` method.
+Read about `.charAt` here: https://goo.gl/ptYxW4.
+
+Below is sample output of what you might see when running your program. Your
+output style and text should be the same as what we have provided below:
 
 ```text
 Enter your message: I like learning Java!
