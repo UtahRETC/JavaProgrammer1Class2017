@@ -155,15 +155,15 @@ do you want to go into the house from the front door or the back door?
 
 -----------------------------------------------------------------------------
 
-You will read your code more often and more times that write it. Most likely, you will write your program once and only modify it a few times, but how many times will you come back to it because you forgot something about it or you need to remember how to use it?
+You will read your code more often and more times than write it. Most likely, you will write your program once and only modify it a few times, but how many times will you come back to it because you forgot something about it or you need to remember how to use it?
 
 As professional programmers, most of your time will be spent reading a line of code rather than writing it. Or at least you will have to read it more times than it took to write it in the first place, so make sure it is easy to read.
 
 -----------------------------------------------------------------------------
 
-## How can we do that?
+## How can we make our code easy to read?
 
-There's a few techniques programmers follow to make their code more "readable" and preferences can differ from programmer to programms, but there are a few common methods that are expected of everyone.
+There's a few techniques programmers follow to make their code more "readable" and preferences can differ from programmer to programmer, but there are a few common methods that are expected of everyone.
 
 -----------------------------------------------------------------------------
 
