@@ -269,17 +269,17 @@ output style and text should be the same as what we have provided below:
 
 ```text
 > 32 - 4
-> = 28.0
-> > 23 & 2
-> Error, invalid operator: &
-> > 10 % 3
-> = 1.0
-> > 3 ^ 2
-> = 9.0
-> > 3 ^ 3
-> = 27.0
-> > quit
-> Goodbye.
+= 28.0
+> 23 & 2
+Error, invalid operator: &
+> 10 % 3
+= 1.0
+> 3 ^ 2
+= 9.0
+> 3 ^ 3
+= 27.0
+> quit
+Goodbye.
 ```
 
 Here's an example of how your program should behave:

@@ -304,7 +304,7 @@ TODO: you have been telling Java where to start this whole time!
 
 -----------------------------------------------------------------------------
 
-# Coding with _style_ 💅
+# Coding with _style_
 
 - What is style in code?
 - Is it easy for you to read?
@@ -314,7 +314,7 @@ TODO: you have been telling Java where to start this whole time!
 
 As professional programmers, most of your time will be spent reading a line of code rather than writing it. Or at least you will have to read it more times than it took to write it in the first place, so make sure it is easy to read.
 
-Remember, you will read your code more often and more times than write it.
+Remember, you will read your code more often than you will write it.
 
 -----------------------------------------------------------------------------
 
@@ -326,7 +326,7 @@ There's a few techniques programmers follow to make their code more "readable" a
 
 ## Always use brackets
 
-The first rule we'll place is that you should always use curly brackets (`{`/`}`) even when optional?
+The first rule we'll place is that you should always use curly brackets (`{`/`}`) even when they are optional.
 
 ```java
 if (isBankAccountOwner())
@@ -345,14 +345,16 @@ if (isBankAccountOwner()) {
 
 ## Indentation
 
-Proper indentation is the easiest path to having good style when it comes to your code. Which of the two following example is easier to read? What is the code doing?
+Second, proper indentation is another easy rule to follow to have good style.
+
+Which of the two following examples is easier to read? What is the code doing?
 
 -----------------------------------------------------------------------------
 
 ```java
 public class Main {
-public static void fizzBuzz(String[] args) {
-for (int i = 0; i < 100; i+) {
+public static void main(String[] args) {
+for (int i = 0; i < 100; i++) {
 if (i % 5 == 0 && i % 3 == 0) {
 System.out.println("FizzBuzz");
 } else if (i % 3 == 0) {
@@ -364,10 +366,6 @@ System.out.println(i);
 }
 }
 }
-
-public static void main(String[] args) {
-fizzBuzz();
-}
 }
 ```
 
@@ -375,8 +373,8 @@ fizzBuzz();
 
 ```java
 public class Main {
-  public static void fizzBuzz(String[] args) {
-    for (int i = 0; i < 100; i+) {
+  public static void main(String[] args) {
+    for (int i = 0; i < 100; i++) {
       if (i % 5 == 0 && i % 3 == 0) {
         System.out.println("FizzBuzz");
       } else if (i % 3 == 0) {
@@ -388,10 +386,6 @@ public class Main {
       }
     }
   }
-
-  public static void main(String[] args) {
-    fizzBuzz();
-  }
 }
 ```
 
@@ -399,7 +393,7 @@ public class Main {
 
 # Whitespace
 
-What is whitespace? Whitespace are new lines, tab characters, and space characters. Adding whitespace in your code can help you create "blocks" and "sections" in your code.
+What is whitespace? Whitespace are new lines, tab characters, and space characters. Adding whitespace in your code can help you create visual "blocks" and "sections."
 
 -----------------------------------------------------------------------------
 
@@ -448,13 +442,13 @@ if (gender.equals("Female")) {
 
 # Why?
 
-Why is this important? As far as your computer is concerned, it's not. Indenting your Java code won't alter it's behaviour, neither will adding spaces in between the plus operator, so why? Because you will read your code more often and more times than write it, and so we these style guides to make it easier for humans (including your future self) to read.
+Why is this important? As far as your computer is concerned, it's not. Indenting your Java code won't alter it's behaviour, neither will adding spaces in between the plus operator, so why? Because you will read your code more often and more times than write it, and so we follow these style guides to make it easier for humans (including your future self) to read.
 
 -----------------------------------------------------------------------------
 
 # Homework
 
-You're learning a lot and it's hard to remember everything, we understand. But we also understand that it takes a lot of practice to learn and remember everything you need in order to become and effective programmer, so this week we're going to assing more homework as a way to give you more chance to practice what you're learning.
+You're learning a lot and it's hard to remember everything, we understand. But we also understand that it takes a lot of practice to learn and remember everything you need in order to become an effective programmer, so this week we're going to assing more homework as a way to give you more chance to practice what you're learning.
 
 -----------------------------------------------------------------------------
 
