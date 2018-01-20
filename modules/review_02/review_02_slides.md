@@ -22,6 +22,130 @@ footer: Java Class - Review 2
 
 -----------------------------------------------------------------------------
 
+## The Main Method
+
+```java
+public static void main(String[] args) {
+  System.out.println("Hello world!");
+}
+```
+
+-----------------------------------------------------------------------------
+
+## What are the parts?
+
+```java
+public static void main(String[] args) {
+  System.out.println("Hello world!");
+}
+```
+
+- public
+- static
+- void
+- main
+- String[] args
+- `{` and `}`
+- body
+
+-----------------------------------------------------------------------------
+
+## What are the parts?
+
+```java
+public static void main(String[] args) {
+  System.out.println("Hello world!");
+}
+```
+
+- public: Java can see and run this method
+- static: There is only one copy of this method, not one per _instance_ of the
+class
+- void: The method doesn't return anything
+- main: The name of the method!
+- String[] args: User input from the terminal
+- `{` and `}`: Shows where the body of the method starts and ends
+- body: Put logic inside of here
+
+-----------------------------------------------------------------------------
+
+## Why do we need a main method?
+
+The main method is the **entry point** into your program. It is like the **front
+door** of your house. You can't get into your house without a door!
+
+Your program can have lots of reusable parts, like _classes_ and _methods_. But
+it needs to start from a single specific place.
+
+-----------------------------------------------------------------------------
+
+## Where does the main method go?
+
+The main method should be defined inside of a _class_
+
+TODO: info here
+
+-----------------------------------------------------------------------------
+
+## Example: Pet Store
+
+We have these classes:
+
+- `PetStore`
+- `Animal`
+- `Food`
+
+You could put the main method in the `PetStore` class, like this:
+
+```java
+public class PetStore {
+
+  public static void main(String[] args) {
+    System.out.println("Welcome to the pet store!");
+
+    PetStore myStore = new PetStore();
+    // More logic here...
+  }
+
+  // More PetStore methods here...
+}
+```
+
+Then you call it from the terminal like this:
+
+```
+java PetStore
+```
+
+This means, "Hey Java, start running my program, and the starting point is in
+the `PetStore` class!"
+
+Or, "Hey Java, go into my house, and here is where the front door is!"
+
+-----------------------------------------------------------------------------
+
+## Why just _one_ main method?
+
+Your house only needs one front door!
+
+You _could_ have a main method defined in multiple classes, but you still have
+to tell Java _which one to use_ when you run your program. You have to choose:
+do you want to go into the house from the front door or the back door?
+
+-----------------------------------------------------------------------------
+
+## Where does code go?
+
+- Where does code go?
+  - Classes
+  - Methods
+  - Fields
+  - Statements
+  - Control Flow
+  - Method declaration vs. method call
+
+-----------------------------------------------------------------------------
+
 # Coding with _style_
 
 - What is style in code?
