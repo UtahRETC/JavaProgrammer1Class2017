@@ -6,7 +6,7 @@ footer: Java Class - Review 2
 
 # Review 2
 
-- **Code, code code**
+- **Code, code, code**
 - **Main method?**
 - **Code, where does it go?**
 - **Coding with _style_**
