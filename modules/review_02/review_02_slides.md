@@ -305,6 +305,15 @@ You're learning a lot and it's hard to remember everything, we understand. But w
 
 # Additional resources
 
+- Introduction: https://youtu.be/TBWX97e1E9g
+- User input: https://youtu.be/yYN8u90MKCg
+- Conditionals (if/else/switch): https://youtu.be/qZ2pb6BljLk
+- Loops (for/while): https://youtu.be/efvZmFd1prA
+- Methods: https://youtu.be/1HTsLK_m2ao
+- Classes: https://youtu.be/rGlJiUO-dZA
+- Logic behind programming and building a game: https://youtu.be/_pUz-GJcdRU, https://youtu.be/bQTFXlZWzKw
+- Arrays and collections (ArrayList): https://youtu.be/eNPX2pTiaHI, https://youtu.be/IEqvmsqjpT0
+
 -----------------------------------------------------------------------------
 
 # Reference list
