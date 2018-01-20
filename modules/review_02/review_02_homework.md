@@ -132,7 +132,7 @@ YOU HAVE RUN OUT OF TRIES. ACCOUNT LOCKED.
 ```
 
 
-#### 6. One Character At A Time
+#### 6. One Character at a time
 
 Write a program that lets a user enter a message which is the printed to the
 screen one character at a time along with its index. Hints: you already know
