@@ -189,13 +189,10 @@ The sections in between the curly braces `{}` are run when the condition in the 
 
 -----------------------------------------------------------------------------
 
-## A simple class
-
-All of this code goes in a file called `Student.java`:
+## A Full Example
 
 ```java
 public class Student {
-
   private String firstName;
   private String lastName;
   private int score;
@@ -210,15 +207,12 @@ public class Student {
     System.out.println("My score is " + hwScore);
     return score;
   }
-
 }
 ```
 
 -----------------------------------------------------------------------------
 
-## A simple class
-
-Parts:
+## Parts of the previous example
 
 - This file contains the `Student` class
 - The `Student` class contains some field declarations and method declarations
@@ -227,14 +221,21 @@ Parts:
 
 -----------------------------------------------------------------------------
 
-## Grammar rules
+## What are our rules?
 
 - A class declaration can contain:
-  - field declarations
-  - method declarations
+  - Field declarations
+  - Method declarations
 
 - A method declaration can contain:
-  - statements
+  - Statements
+
+- A statement can be one of:
+  - Variable declaration/initialization
+  - Method call
+  - `if`, `if`/`else` statements
+  - `for`/`while` loops
+  - `return` statement
 
 -----------------------------------------------------------------------------
 
@@ -246,18 +247,6 @@ A special method declaration!
 public static void main(String[] args) {
   System.out.println("Hello world!");
 }
-```
-
-```java
-   public   static void    main(String[] args) {
-// ^        ^      ^       ^    ^
-// Access   Static Return  Name Arguments
-// Modifier        type
-
-     System.out.println("Hello world!");
-//   ^
-//   Body
-   }
 ```
 
 -----------------------------------------------------------------------------
@@ -280,80 +269,100 @@ public static void main(String[] args) {
 
 ## Why do we need a main method?
 
-The main method is the **entry point** into your program. It is like the **front
-door** of your house. You can't get into your house without a door!
+The main method is the ==entry point== into your program. It is like the **front door** of your house. You can't get into your house without a door!
 
-Your program can have lots of reusable parts, like _classes_ and _methods_. But
-it needs to start from a single specific place.
-
-TODO: the logic in our program is in statements, and statements
-
-TODO: define a statement (in the previous section), show several examples combined in a method
+Your program can have lots of reusable parts, like _classes_ and _methods_. But it needs to start from a single specific place. By having a `main` method, you tell Java where to start.
 
 -----------------------------------------------------------------------------
 
 ## Where does the main method go?
 
-The main method should be defined inside of a _class_
-
-TODO: info here
+The `main` method is just like any other method declaration, so it goes inside of a class declaration.
 
 -----------------------------------------------------------------------------
 
 ## Example: Pet Store
 
-TODO: make a Main class
+- `Main.java`
+- `PetStore.java`
+- `Animal.java`
+- `Food.java`
 
-We have these classes:
+-----------------------------------------------------------------------------
 
-- `PetStore`
-- `Animal`
-- `Food`
+## `Main.java`
 
-You could put the main method in the `PetStore` class, like this:
+You could put the main method in the `Main` class, like this:
 
 ```java
-public class PetStore {
-
+public class Main {
   public static void main(String[] args) {
     System.out.println("Welcome to the pet store!");
 
     PetStore myStore = new PetStore();
-    // More logic here...
+    myStore.openForBusiness();
   }
-
-  // More PetStore methods here...
 }
 ```
+
+-----------------------------------------------------------------------------
+
+## Running your code - what happens?
 
 Then you call it from the terminal like this:
 
 ```
-java PetStore
+> java Main
 ```
 
-This means, "Hey Java, start running my program, and the starting point is in
-the `PetStore` class!"
+Whatever class you pass to the `java` command, it must have a `main` method since this is where Java will start from.
 
-Or, "Hey Java, go into my house, and here is where the front door is!"
+So this means, _"Hey Java, start running my program, and the starting point is in the `Main` class!"_. Or, _"Hey Java, go into my house, and here is where the front door is!"_
 
-TODO: the main method has to look the right way so Java knows how to open the door
+-----------------------------------------------------------------------------
+
+## How many `main` methods do I need?
+
+One. If you have multiple `main` methods, Java will only run one of them for you, and it will be the one that you tell it to.
+
+```text
+> java Main
+> java PetStore
+> java YoutubeServer
+```
+
+The three commands above will run three different `main` methods found in three separate locations: `Main.java`, `PetStore.java`, `YoutubeServer.java`. And it will only run one of them per command!
 
 -----------------------------------------------------------------------------
 
 ## Why just _one_ main method?
 
-Your house only needs one front door!
+Your house only needs one front door! You _could_ have a main method defined in multiple classes, but you still have to tell Java _which one to use_ when you run your program.
 
-You _could_ have a main method defined in multiple classes, but you still have
-to tell Java _which one to use_ when you run your program. You have to choose:
-do you want to go into the house from the front door or the back door?
+-----------------------------------------------------------------------------
 
-TODO: get rid of the "back door" idea
+## Quiz
 
-TODO: talk about how it doesn't help us when there are multiple main methods, Java will do whatever we tell it to do
+If I have a `Main.java` file with the following contents and I run the command at the bottom of the slide, what will I see print to the screen?
 
-TODO: you have been telling Java where to start this whole time!
+```java
+public class Program {
+  public static void main(String[] args) {
+    System.out.println("Running Program.main");
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    System.out.println("Running Main.main");
+  }
+}
+```
+
+```text
+> javac Main.java
+> java Main
+```
 
 -----------------------------------------------------------------------------
 
