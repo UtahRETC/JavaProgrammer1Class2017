@@ -7,8 +7,8 @@ footer: Java Class - Review 2
 # Review 2
 
 - **Code, code, code**
-- **Main method?**
 - **Code, where does it go?**
+- **Main method?**
 - **Coding with _style_**
 - **Homework**
 
@@ -16,69 +16,152 @@ footer: Java Class - Review 2
 
 # Code, code, code
 
------------------------------------------------------------------------------
-
-# Main method? Code, where does it go?
+Let's review some fundamentals that will help you every time you write a program.
 
 -----------------------------------------------------------------------------
 
 # Where does code go?
 
-In order to speak English properly, we need to understand English grammar.
-Grammar helps us know how to arrange our words into sentences so others can
-understand us correctly.
+In order to speak English properly, we need to understand English grammar. Grammar helps us know how to arrange our words into sentences so others can understand us correctly.
 
-Java has grammar rules too! We need to follow the rules of Java's grammar so
-that _the computer_ can understand us correctly.
+Java has grammar rules too! We need to follow the rules of Java's grammar so that _the computer_ can understand us correctly.
 
-Let's talk about the most important parts of the grammar, from **smallest** to
-**biggest**.
+Let's talk about the most important parts of the grammar, from **smallest** to **biggest**.
 
 -----------------------------------------------------------------------------
 
 ## Statements
 
-A statement in Java is like a _single sentence_.
-
-Here are some examples of statements:
+A statement in Java is like a _single sentence_. Here are some examples of statements:
 
 ```java
-score = hwScore;
+score = hwScore;    // Setting a variable to a value.
 
-greet();
-
+greet();            // Calling a methods
 System.out.println("My score is " + hwScore);
 
-return score;
+return score;       // Returning a value in a method.
 ```
 
-Notice:
+Notice that each line looks a little bit different. Each contains logic, and logic is what your program is made of.
 
-- they all look a little different!
-- they each contain a little bit of logic
-- every program's logic is made up of statements
+These are rules that when learned, you can use to know what any line of code is doing.
 
 -----------------------------------------------------------------------------
 
-## Fancier statements
+## Variable declaration and initializatio.
+
+Variable declarations can only go in methods.
 
 ```java
-if () {
-  
-}
+    String firstName;
+//  ^      ^        ^
+//  Type   Name     Semicolon
 
-while () {
-  
-}
+    firstName =     "Ford Prefect";
+//  ^         ^     ^             ^
+//  Name      Equal Value         Semicolon
 
-for () {
-  
-}
+    short age = 30;
+//  ^     ^     ^
+//  Type  Name  Value
+
+    Movie starWars = new Movie("A New Hope");
+//  ^     ^          ^
+//  Type  Name       Value
 ```
 
-These statements are for control flow. The sections in between the curly braces
-`{ }` are run when the logic in the parentheses `( )` is true. The code inside
-the curly braces _will also be statements_.
+-----------------------------------------------------------------------------
+
+## Field declaration and initialization
+
+Field declarations can only go in classes. Follow the rules for _Variable declarations and initialization_ with some exceptions:
+
+```java
+   protected String movieName;
+// ^         ^      ^
+// Access    Type   Name
+// Modifier
+
+   public   static short numberOfMovies = 0;
+// ^        ^      ^     ^                ^
+// Access   Static Type  Name             Value
+// Modifier
+```
+
+-----------------------------------------------------------------------------
+
+## Method declarations
+
+```java
+   public    String  createGreeting(String friendName) {
+// ^         ^       ^              ^
+// Access    Return  Name           Arguments
+// Modifier  Type
+
+    return "Hey " + friendName + ", good to see you!";
+//  ^
+//  Return statement
+  }
+```
+
+Unless your method has a return type of `void`, your method is required to have a `return` statement.
+
+
+-----------------------------------------------------------------------------
+
+## Conditions and Loops: if statement
+
+```java
+   if (age >= 16) {
+// ^   ^
+// If  Condition
+
+     issueDriversLicense();
+//   ^
+//   Body
+   } else if (age == 15) {
+//   ^        ^
+//   Else If  Condition
+
+     learnersPermitOnly();
+//   ^
+//   Body
+   }
+```
+
+The sections in between the curly braces `{}` are run when the condition in the parentheses `()` is true. The code inside the curly braces _will also be statements_ (the body).
+
+-----------------------------------------------------------------------------
+
+## Conditions and Loops: while loop
+
+```java
+   while (age < 16) {
+// ^      ^
+// If     Condition
+
+     noDriversLicenseForYou();
+//   ^
+//   Body
+   }
+```
+
+-----------------------------------------------------------------------------
+
+## Conditions and Loops: for loop
+
+```java
+   for (int i = 0; i < 100; i++) {
+// ^    ^          ^        ^
+// For  Initialization      Step
+//                 Condition
+
+     displaySystemStatus();
+//   ^
+//   Body
+   }
+```
 
 -----------------------------------------------------------------------------
 
@@ -120,7 +203,7 @@ public class Student {
   public String greet() {
     return "Hi, my name is " + firstName;
   }
-  
+
   public int setHomeworkScore(int hwScore) {
     greet();
     score = hwScore;
@@ -146,7 +229,7 @@ A class declaration looks like this:
 
 ```java
 public class Student {
-  
+
 }
 ```
 
@@ -178,7 +261,7 @@ Parts:
 
 -----------------------------------------------------------------------------
 
-## The Main Method
+# The Main Method
 
 ```java
 public static void main(String[] args) {
@@ -391,7 +474,7 @@ public class Main {
 
 -----------------------------------------------------------------------------
 
-# Whitespace
+## Whitespace
 
 What is whitespace? Whitespace are new lines, tab characters, and space characters. Adding whitespace in your code can help you create visual "blocks" and "sections."
 
@@ -440,7 +523,7 @@ if (gender.equals("Female")) {
 
 -----------------------------------------------------------------------------
 
-# Why?
+## Why?
 
 Why is this important? As far as your computer is concerned, it's not. Indenting your Java code won't alter it's behaviour, neither will adding spaces in between the plus operator, so why? Because you will read your code more often and more times than write it, and so we follow these style guides to make it easier for humans (including your future self) to read.
 
