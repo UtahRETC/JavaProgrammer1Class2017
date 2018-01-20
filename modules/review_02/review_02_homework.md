@@ -132,7 +132,7 @@ YOU HAVE RUN OUT OF TRIES. ACCOUNT LOCKED.
 ```
 
 
-#### 6. One Letter At A Time
+#### 6. One Character At A Time
 
 Write a program that lets a user enter a message which is the printed to the
 screen one character at a time along with its index. Hints: you already know
@@ -148,7 +148,7 @@ output style and text should be the same as what we have provided below:
 
 ```text
 Enter your message: I like learning Java!
-Here are the letters in order:
+Here are the characters in order:
 
 0: 'I'
 1: ' '
@@ -210,32 +210,39 @@ Here is your grocery list:
 ```
 
 
-#### 8. Letter Positions
+#### 8. Character Positions
 
-TODO: add instructions
+Write a program that first asks a user to type in a word and then asks the user
+to type in a single character. If that character does not appear in the word
+print out this message: "That character is not in the word!". Otherwise, print
+"Here are the positions of that character:" followed by a list of indexes where
+that character appears in the word.
+
+Below is sample output of what you might see when running your program. Your
+output style and text should be the same as what we have provided below:
 
 ```text
-The word is "rabbit".
-Type a letter: a
+Type a word: rabbit
+Type a character: a
 
-Here are the positions of that letter:
+Here are the positions of that character:
 1
 ```
 
 ```text
-The word is "rabbit".
-Type a letter: b
+Type a word: carrot
+Type a character: r
 
-Here are the positions of that letter:
+Here are the positions of that character:
 2
 3
 ```
 
 ```text
-The word is "rabbit".
-Type a letter: c
+Type a word: bike
+Type a character: c
 
-That letter is not in the word!
+That character is not in the word!
 ```
 
 
