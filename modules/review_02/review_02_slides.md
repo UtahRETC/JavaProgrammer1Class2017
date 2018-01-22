@@ -346,13 +346,13 @@ Your house only needs one front door! You _could_ have a main method defined in 
 If I have a `Main.java` file with the following contents and I run the command at the bottom of the slide, what will I see print to the screen?
 
 ```java
-public class Program {
+class Program {
   public static void main(String[] args) {
     System.out.println("Running Program.main");
   }
 }
 
-public class Main {
+class Main {
   public static void main(String[] args) {
     System.out.println("Running Main.main");
   }
