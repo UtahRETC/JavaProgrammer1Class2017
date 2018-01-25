@@ -72,7 +72,7 @@ LocalTime noon = LocalTime.of(12, 0);
 LocalDateTime l = LocalDateTime.of(2017, 1, 26, 12, 0);
 ```
 
-You can also combine a date and time object to create a `LocalDateTime`: 
+You can also <u>combine a date and time object</u> to create a `LocalDateTime`: 
 
 ```java
 LocalDateTime l2 = LocalDateTime.of(yesterday, noon);
@@ -84,7 +84,7 @@ LocalDateTime l2 = LocalDateTime.of(yesterday, noon);
 
 # Older ways
 
-There are a lot of examples on the internet that use older ways of using dates and times. **Do not use these**.
+There are a lot of examples on the internet that use older ways of using dates and times. **<u>Do not use these</u>**.
 
 ```java
 //DO NOT USE!
@@ -100,7 +100,7 @@ The book has more examples of old ways to create dates and times.
 
 # Adding and Subtracting
 
-Methods are named `minus` and `plus` followed by the unit (Seconds, Days, Weeks), like this:
+Methods to <u>add and subtract dates and times</u> are named `minus` and `plus` followed by the unit (Seconds, Days, Weeks), like this:
 
 ```java
 LocalDate d = LocalDate.now();
@@ -125,7 +125,7 @@ You can use these on `LocalDate`, `LocalTime` and `LocalDateTime`.
 
 Write a small program that prints your next birthday.
 
-Extra: Also print the day of the week of your next ten birthdays.
+<u>Extra</u>: Also print the day of the week of your next ten birthdays.
 
 The output should look like this:
 
@@ -143,22 +143,6 @@ My next 10 birthdays:
 
 _Hints: Use a `for` loop. Look up the `getDayOfWeek()` method._
 
----
-
-# Method Chaining
-
-This is a good time to introduce a pattern that is used a lot in Java: **method chaining**.
-
-Method chaining is calling several methods in the same statement: `thing.doThis().thenThat().thenSomethingElse()`
-
-We can use this with the add / subtract methods as follows:
-
-```java
-LocalDateTime l = LocalDateTime.now();
-LocalDateTime someTime = l.plusYears(1).minusDays(1);
-```
-<big>❓</big>What date / time would `someTime` be?
-
 --- 
 
 # Periods
@@ -175,7 +159,6 @@ LocalDate nextYear = d.plus(aYear);
 ```
 
 <big>❓</big>How would you create a `Period` of 2 weeks, 3 hours, 20 seconds?
-
 
 ---
 
@@ -211,7 +194,7 @@ System.out.println(shortF.format(now));
 
 ---
 
-# Other useful methods (extra)
+# Extra: Other useful methods
 
 If you want to determine if one date / time is before or after another: `.isbefore()` / `.isAfter()`
 
@@ -223,9 +206,25 @@ LocalDate christmas = LocalDate.of(2018, 12, 25);
 Period untilChristmas = now.until(christmas);
 ```
 
+---
+
+# Extra: Method Chaining
+
+A pattern that is used a lot in Java is **method chaining**.
+
+Method chaining is calling several methods in the same statement: `thing.doThis().thenThat().thenSomethingElse()`
+
+We can use this with the add / subtract methods as follows:
+
+```java
+LocalDateTime l = LocalDateTime.now();
+LocalDateTime someTime = l.plusYears(1).minusDays(1);
+```
+<big>❓</big>What date / time will `someTime` be now?
+
 --- 
 
-# What about time zones? (extra)
+# Extra: What about time zones?
 
 We learned about using **Local** times and dates. This is all you need for the exam, and many real world uses. It is possible to work with time zones in Java, but we will not cover this in class.
 
