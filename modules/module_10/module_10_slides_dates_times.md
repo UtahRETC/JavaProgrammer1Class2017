@@ -10,38 +10,38 @@ __Book__: Chapter 3, pages 138 to 152
 
 ---
 
-# What are Dates and Times?
+# What is a Date?
 
-A date represents a specific day. It can be any day in the past, in the future, or today.
+A date represents a <u>day</u>. It can be any day in the past, in the future, or today.
 
-## Today's **date**: 2018-01-27
+## Here is a date: <u>2018-01-27</u>
 
-See how Java represents a date: YYYY-MM-DD
+See how Java represents a date: <u>YYYY-MM-DD</u>
 
-Use a date: [`java.time.LocalDate`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+To use a date: [`java.time.LocalDate`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
 
 ---
 
-# What are Dates and Times?
+# What is a Time?
 
-A time represents a specific time of day.
+A time represents a <u>time of day</u>, between midnight and 11:59:59pm
 
-## A **time**: 14:30:45
+## Here is a **time**: 14:30:45
 
 See how Java represents a time: HH:MM:SS.
-Java uses a **24-hour** clock, so 2PM is 14:00
+Java uses a <u>24-hour clock</u>, so 2PM is 14:00
 
-Use a time: [`java.time.LocalTime`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalTime.html)
+To use a time: [`java.time.LocalTime`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalTime.html)
 
 ---
 
 # Date and Time together
 
-Very often, you want both a date and a time in one.
+Very often, you want <u>both a date and a time</u> in one.
 
-## A date and time: `2018-01-27T14:30:45`
+## This is a DateTime: `2018-01-27T14:30:45`
 
-See how Java represents a date and time: a capital letter T between the date and the time parts.
+See how Java represents a date and time: a <u>capital letter T</u> between the date and the time parts.
 
 Use a date/time: [`java.time.LocalDateTime`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
 
@@ -50,8 +50,11 @@ Use a date/time: [`java.time.LocalDateTime`](https://docs.oracle.com/javase/8/do
 # Common Operations
 
 ## Right now: `.now()`
-This works on all classes
-```
+To create a <u>new date or time object</u> with the current date or time.
+
+This works on all classes:
+
+```java
 LocalDate d = LocalDate.now();
 LocalTime t = LocalTime.now();
 LocalDateTime dt = LocalDateTime.now();
@@ -61,6 +64,7 @@ LocalDateTime dt = LocalDateTime.now();
 # Common Operations
 
 ## A specific date or time: `.of()`
+To create a <u>new date or time object</u> with a specific date or time.
 
 ```java
 LocalDate yesterday = LocalDate.of(2017, 1, 26);
@@ -73,8 +77,8 @@ You can also combine a date and time object to create a `LocalDateTime`:
 ```java
 LocalDateTime l2 = LocalDateTime.of(yesterday, noon);
 ```
-
-Let's see this [in practice]().
+<big>❓</big>How do we create an object that represents midnight?
+<big>❓</big>How do we create an object that represents tomorrow, 3pm?
 
 ---
 
@@ -90,7 +94,7 @@ Calendar c = Calendar.getInstance();
 
 ![](images/cowboy-shaking-head.gif)
 
-The book has more old examples you should not use.
+The book has more examples of old ways to create dates and times.
 
 ---
 
@@ -112,8 +116,8 @@ LocalDate yesterday = d.minusDays(1);
 
 You can use these on `LocalDate`, `LocalTime` and `LocalDateTime`. 
 
-<big>❓</big>How would you subtract 15 seconds from a day object?
-<big>❓</big>What happens when you call `.addMinutes(1)` to a `LocalDate` object?
+<big>❓</big>How would you subtract three hours from a `LocalTime` object?
+<big>❓</big>What happens when you call `.addMinutes(1)` on a `LocalDate` object?
 
 --- 
 
@@ -123,7 +127,21 @@ Write a small program that prints your next birthday.
 
 Extra: Also print the day of the week of your next ten birthdays.
 
-_Hint: look up the `getDayOfWeek()` method._
+The output should look like this:
+
+```text
+My birthday is on 1972-12-07
+My next 10 birthdays: 
+2018: FRIDAY
+2019: SATURDAY
+2020: MONDAY
+2021: TUESDAY
+2022: WEDNESDAY
+2023: THURSDAY
+(...)
+```
+
+_Hints: Use a `for` loop. Look up the `getDayOfWeek()` method._
 
 ---
 
@@ -156,6 +174,9 @@ LocalDate d = LocalDate.now();
 LocalDate nextYear = d.plus(aYear);
 ```
 
+<big>❓</big>How would you create a `Period` of 2 weeks, 3 hours, 20 seconds?
+
+
 ---
 
 # The Real World
@@ -171,14 +192,24 @@ To represent dates and times in 'human readable` format, we use a **Formatter**.
 
 ---
 
-# Summary
+# Formatting dates and times
+
+We must first define a Formatter:
 
 ```java
-// A date: December 7, 
-LocalDate d = LocalDate.of(1972, 12, 7);
+DateTimeFormatter shortF = 
+DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT);`
 ```
 
---- 
+Then apply it to a date or time object:
+
+```java
+LocalDateTime now = LocalDateTime.now();
+System.out.println(shortF.format(now));
+// This will print: 1/24/18 2:42 PM
+```
+
+---
 
 # Other useful methods (extra)
 
@@ -196,6 +227,6 @@ Period untilChristmas = now.until(christmas);
 
 # What about time zones? (extra)
 
-The classes we learned about use **Local** times and dates. This is all you need for the exam. It is possible to work with time zones in Java, but we will not cover this in class.
+We learned about using **Local** times and dates. This is all you need for the exam, and many real world uses. It is possible to work with time zones in Java, but we will not cover this in class.
 
 ![](images/tz.gif)
