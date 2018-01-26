@@ -1,5 +1,13 @@
 # Java cert prep class (Review 2)
 
+## Summary
+
+We learned about the grammar and lagunage rules we must follow when programming
+in Java. Covered entry points which are special methods or parts of code where
+our program will always start from. There is just one entry point per program
+and in Java, it is the `main` method. Finally, we covered why good style
+matters in programming.
+
 ## TODO:
 
 - Slides for class. Marcos will start putting together the slides. But we need
