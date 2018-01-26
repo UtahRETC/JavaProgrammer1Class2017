@@ -1,10 +1,10 @@
 <!--
 $theme: default
 page_number: true
-footer: Java Class - Module 6
+footer: Java Class - Project 1
 -->
 
-# Module 6
+# Project 1
 
 - **Git introduction.**
 - **GitHub account creating**

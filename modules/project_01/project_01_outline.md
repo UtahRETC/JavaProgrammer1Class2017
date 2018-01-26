@@ -1,4 +1,4 @@
-# Java cert prep class (Module 6)
+# Java cert prep class (Project 1)
 
 Introducing students to Git (and GitHub), and their first project in this
 class. It should cover all of the concepts we have gone over so far and also be

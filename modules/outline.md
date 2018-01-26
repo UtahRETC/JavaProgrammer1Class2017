@@ -29,6 +29,8 @@
 
 ### Modules
 
+Note that this particular order is not what we ended up following 100% of the time.
+
 1. Hello, World
 2. Variables, conditionals, and loops
 3. Classes and instances
