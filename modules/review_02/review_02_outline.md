@@ -2,10 +2,10 @@
 
 ## Summary
 
-We learned about the grammar and lagunage rules we must follow when programming
-in Java. Covered entry points which are special methods or parts of code where
+We learned about the grammar and language rules we must follow when programming
+in Java. Covered entry points, which are special methods or parts of code where
 our program will always start from. There is just one entry point per program
-and in Java, it is the `main` method. Finally, we covered why good style
+and in Java it is the `main` method. Finally, we covered why good style
 matters in programming.
 
 ## TODO:
