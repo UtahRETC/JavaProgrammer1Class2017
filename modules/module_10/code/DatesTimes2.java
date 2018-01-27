@@ -1,22 +1,14 @@
 import java.time.*;
 
-class DatesPractice1 {
+class DatesTimes2 {
 
 	public static void main(String[] args) {
-		// now()
-		LocalDate d = LocalDate.now();
-		LocalTime t = LocalTime.now();
-		LocalDateTime dt = LocalDateTime.now();
-
-		System.out.println("Date: " + d);
-		System.out.println("Time: " +  t);
-		System.out.println("Date/Time: " + dt);
-
-		// a specifc time / date
+		// Now let's print some specific days / times
 		LocalDate yesterday = LocalDate.of(2017, 1, 26);
 		LocalTime noon = LocalTime.of(12, 0);
 		LocalDateTime l = LocalDateTime.of(2017, 1, 26, 12, 0);
-		// Same:
+		
+		// Or we can combine a date and time into a datetime
 		LocalDateTime l2 = LocalDateTime.of(yesterday, noon);
 
 		System.out.println("yesterday: " + yesterday);
