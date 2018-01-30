@@ -2,19 +2,20 @@
 
 ## TODO
 
+- WIP Put together slides for Git intro.
+- WIP Put together slides for GitHub intro.
+- WIP Put together slides for class structure changes.
+- WIP Put together slides for homework.
 - *DONE* Compile list of Pluralsight videos for next week's lesson and
   coordinate with instructors for that week so they know what students are
   prepping with.
 - *DONE* Decide if we're going to introduce IDE's: not for now.
-- Put together slides for Git intro.
-- Put together slides for GitHub intro.
-- Put together slides for class structure changes.
-- Put together slides for homework.
 
 ## Videos and homework
 
 Require students to watch the Pluralsight content listed below and for the
-homework, they will take notes on the video and push them to GitHub.
+homework, they will take notes on the video and push them to GitHub. Commits
+for video notes should be at five different times.
 
 - Representing Complex Types with Classes
   https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m5&clip=0&mode=live
