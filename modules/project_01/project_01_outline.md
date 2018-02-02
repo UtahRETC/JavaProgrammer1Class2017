@@ -2,6 +2,7 @@
 
 ## TODO
 
+- DONE Put together slides for previous week's review.
 - WIP Put together slides for Git intro.
 - WIP Put together slides for GitHub intro.
 - WIP Put together slides for class structure changes.

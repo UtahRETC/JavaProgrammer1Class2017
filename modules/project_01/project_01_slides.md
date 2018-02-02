@@ -4,26 +4,65 @@ page_number: true
 footer: Java Class - Project 1
 -->
 
-# Project 1
+# Project 1 and intro to Git
 
-- **Git introduction.**
+- **Review of Previous Week**
+- **Introduction to Git**
 - **GitHub account creating**
-- **Using Git and GitHub for class projects**
-- **Project #1 introduction**
+- **Using Git and GitHub for this class**
+- **Changes, changes, changes**
+- **Homework**
 
 -----------------------------------------------------------------------------
 
-# Project?
+# But first a review of last week
 
-Instead of homework assignments this week, let's do a project! Let's start putting what you've been learning to use by building a database.
+```java
+LocalDate d = LocalDate.now()
+LocalTime t = LocalTime.of(13, 2, 10);
 
-We'll use conditionals (`if` statements), loops (`for` statements), different data types (`String`, `int`, etc.), multiple classes and methods -- so everything we've gone over so far.
+LocalDateTime dt = LocalDateTime.now();
+LocalDateTime hourLater = dt.plusHours(1);
+
+Period p = Period.of(1, 0, 7);
+DateTimeFormatter f =
+  DateTimeFormatter.ofLocalizedDateTime(
+    FormatStyle.SHORT);
+```
 
 -----------------------------------------------------------------------------
 
-# Git?
+# Introduction to Git
 
-Git is a program that allows you to track updates in your code and easity share it as well. Git is heavily used in jobs and large projects, so we will use it to use to submit this and all future class projects.
+-----------------------------------------------------------------------------
+
+# We're going to talk about the what, the how, then the why - and then the how again.
+
+-----------------------------------------------------------------------------
+
+# What is Git?
+
+-----------------------------------------------------------------------------
+
+# Git is Version Control software
+
+-----------------------------------------------------------------------------
+
+# What is "Version Control"?
+
+-----------------------------------------------------------------------------
+
+==**Version Control**==: the task of keeping a software system consisting of many versions and configurations well organized. ~ Google [1]
+
+-----------------------------------------------------------------------------
+
+# Let's simplify some more.
+
+-----------------------------------------------------------------------------
+
+# Git
+
+Git is a program that allows you to track updates in your code and easity share what you are working on. Git is heavily used in jobs and large projects, so we will use it to use to submit this and all future class projects.
 
 -----------------------------------------------------------------------------
 
@@ -257,3 +296,5 @@ When you create a new commit, Git will put all changes and new files in the comm
 -----------------------------------------------------------------------------
 
 # Reference list
+
+[1] https://www.google.com/search?q=define+version+control&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
