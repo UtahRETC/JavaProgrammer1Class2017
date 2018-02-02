@@ -36,7 +36,7 @@ DateTimeFormatter f =
 
 -----------------------------------------------------------------------------
 
-# We're going to talk about the what, the how, then the why - and then the how again.
+# We're going to talk about the what, the why, and then the how.
 
 -----------------------------------------------------------------------------
 
@@ -52,6 +52,8 @@ DateTimeFormatter f =
 
 -----------------------------------------------------------------------------
 
+# New Terminology
+
 ==**Version Control**==: the task of keeping a software system consisting of many versions and configurations well organized. ~ Google [1]
 
 -----------------------------------------------------------------------------
@@ -66,7 +68,7 @@ Git is a program that allows you to track updates in your code and easity share 
 
 -----------------------------------------------------------------------------
 
-# Git
+# Git (cont.)
 
 - A better way to "undo" changes,
 - A better way to collaborate than mailing files back and forth, and
@@ -74,19 +76,41 @@ Git is a program that allows you to track updates in your code and easity share 
 
 -----------------------------------------------------------------------------
 
+# Why?
+
+-----------------------------------------------------------------------------
+
+# A few reasons
+
+1. This is a tool you'll use if you become a Software Developer.
+2. Using Git allows you to store your code on GitHub (we'll get to that in a second.)
+3. Storing your code on GitHub is good because, first, it's a backup, but more importanly it serves as a portfolio that shows off your work.
+
+-----------------------------------------------------------------------------
+
 # What is GitHub?
 
-GitHub is a site where you can host your code for free after you create an account. It is a place where anyone can search, browse, download, and use Open Source software. It doesn't *run* your code, but it just *stores* it.
+GitHub is a site where you can host your code for free (after you create an account). It is a place where anyone can search, browse, download, and use Open Source software. It doesn't *run* your code, but it just *stores* it.
+
+-----------------------------------------------------------------------------
+
+# Are you familiar with Dropbox?
+
+-----------------------------------------------------------------------------
+
+# Think of Git + GitHub as Dropbox for your code
 
 -----------------------------------------------------------------------------
 
 # New Terminology
 
-==**Open Source**==: Any software whose source code (like the Java code you write) is freely available.
+==**Open Source**==: A software project (however big or small) that has made their code freely available for anyone to see.
+
+A lot of the code that is powering the internet is Open Source software. Like, a lot. Open Source software is *extremely* important.
 
 -----------------------------------------------------------------------------
 
-# Git + GitHub = Dropbox for your code
+# Let's start getting into the "how"
 
 -----------------------------------------------------------------------------
 
@@ -97,18 +121,26 @@ GitHub is a site where you can host your code for free after you create an accou
 
 -----------------------------------------------------------------------------
 
-# What's next
+# Now we're going to do the following:
 
 1. Install Git.
 2. Signup for GitHub.
-3. Create a space in your GitHub account to store the first project.
-4. Git commands you'll need to know.
+3. Create a space in your GitHub account and in your own computer to store the first project.
+4. Learn the parts of Git that are important for you to know.
 
 -----------------------------------------------------------------------------
 
 # Installing Git
 
 Go to https://git-scm.com/download and select the operating system that you're using. If you're on Windows, make sure you know if you have 32 or 64 bit versions. The next slides are screenshots of installing Git in Windows.
+
+-----------------------------------------------------------------------------
+
+# https://git-scm.com/download
+
+-----------------------------------------------------------------------------
+
+![bg original 85%](assets/git-install-00-download.png)
 
 -----------------------------------------------------------------------------
 
@@ -186,6 +218,10 @@ Now that you have Git installed in your computer, we're going to create a GitHub
 
 -----------------------------------------------------------------------------
 
+# https://github.com
+
+-----------------------------------------------------------------------------
+
 ![bg original 85%](assets/github-01-sign-up.png)
 
 -----------------------------------------------------------------------------
@@ -206,17 +242,56 @@ Now that you have Git installed in your computer, we're going to create a GitHub
 
 -----------------------------------------------------------------------------
 
-![bg original 80%](assets/github-06-create-new-repo.png)
-
------------------------------------------------------------------------------
-
-![bg original 75%](assets/github-07-repo-information.png)
+After verifying your email we're going to create a repository for this week's homework assignment.
 
 -----------------------------------------------------------------------------
 
 # New Terminology
 
 ==**Repository**==: repositories are where you store your Git projects. They track the code and have a history of all of the updates.
+
+A repository is just like a folder that holds one of your projects. You create a repository for different projects. Repositories can have many files and other folders in them.
+
+-----------------------------------------------------------------------------
+
+We're going to create a new repository that you will own and use for this week's homework. Go to GitHub and follow the next slides.
+
+-----------------------------------------------------------------------------
+
+![bg original 80%](assets/github-06-creating-a-repo.png)
+
+-----------------------------------------------------------------------------
+
+- **Repository name**: java-class-git-homework
+
+- **Description**: Repository for Git homework in my Introduction to Java Programming class.
+
+- **Check "Public"**
+
+- **Check "Initialize this repository with a README"**
+
+- **Click "Create repository" button**
+
+-----------------------------------------------------------------------------
+
+
+![bg original 80%](assets/github-07-repo-information.png)
+
+-----------------------------------------------------------------------------
+
+![bg original 75%](assets/github-08-clone-repo.png)
+
+-----------------------------------------------------------------------------
+
+# Let's download your new repository to your computer.
+
+-----------------------------------------------------------------------------
+
+Create a Projects folder in your computer, navigate to that folder in your terminal, and run the clone command.
+
+-----------------------------------------------------------------------------
+
+# Now let's talk about how we use Git
 
 -----------------------------------------------------------------------------
 
@@ -262,36 +337,44 @@ When you create a new commit, Git will put all changes and new files in the comm
 
 -----------------------------------------------------------------------------
 
-# Cloning your repository with `git clone`
+# `git clone`
+
+This command downloads a repository to your computer. You need to clone a repository before you can make any changes to it on your computer.
 
 -----------------------------------------------------------------------------
 
-`git add`: Use this command to tell Git to start tracking the changes you make to a file.
+`git add`: Use this command to tell Git to start tracking the changes you make to a file. Example: `git add HelloWorld.java`
 
-`git commit`: Use this command once you are done with a set of updates to your code and you are ready to package them so that you can share them with others.
+`git commit`: Use this command once you are done with a set of updates to your code and you are ready to package them so that you can share them with others. `git commit -m "Fixing a bug"`
 
-`git push`: Use this command to make your commits available to the rest of your team.
+`git push`: Use this command to make your commits available to the rest of your team. Example: `git push origin master`
 
 `git status`: Use this command to get information about your repository. Tells you what files Git is not tracking and which ones you have modified.
 
-`git clone`: Use this command to download a copy of a repository to your own computer.
+`git clone`: Use this command to download a copy of a repository to your own computer. Only need to do this once.
 
 -----------------------------------------------------------------------------
 
-# Making a change and pushing it to GitHub
+```bash
+> # After you cloned your repo and cd into the folder
+> git status
+> git add Calculator.java
+> git add Main.java
+> git commit -m "Finished the Calculator homework"
+> git push origin master
+```
 
 -----------------------------------------------------------------------------
 
-# The Project
-
-- What we're doing.
-- What we're providing.
-- What you need to finish on your own.
-- Testing your work.
+# Lab #1: add a file to your repository and push it to GitHub.
 
 -----------------------------------------------------------------------------
 
-# Additional resources
+# Lab #2: make a change to that same file and push the update to Github.
+
+-----------------------------------------------------------------------------
+
+# Lab #3: follow at least one of your classmates.
 
 -----------------------------------------------------------------------------
 

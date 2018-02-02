@@ -2,11 +2,12 @@
 
 ## TODO
 
-- DONE Put together slides for previous week's review.
-- WIP Put together slides for Git intro.
-- WIP Put together slides for GitHub intro.
-- WIP Put together slides for class structure changes.
-- WIP Put together slides for homework.
+- *DONE* Put together slides for previous week's review.
+- *DONE* Put together slides for Git intro.
+- *DONE* Put together slides for GitHub intro.
+- **WIP** Put together slides for class structure changes.
+- **WIP** Put together slides for homework.
+- **WIP** Put together actual homework.
 - *DONE* Compile list of Pluralsight videos for next week's lesson and
   coordinate with instructors for that week so they know what students are
   prepping with.
@@ -23,6 +24,14 @@ for video notes should be at five different times.
 
 - Class Initializers and Constructors
   https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m6&clip=0&mode=live
+
+Also, I was thinking we could have then write a paragraph or so that describes
+the new terminology and topics introduced in class:
+
+- Git
+- GitHub
+- Version Control
+- Open Source
 
 ## Outline
 
