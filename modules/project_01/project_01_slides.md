@@ -390,6 +390,14 @@ This command downloads a repository to your computer. You need to clone a reposi
 
 # Let's review this week's homework
 
+You should have the following for this week's homework:
+
+- Git installed on your computer.
+- A GitHub account.
+- A Pluralsight account.
+
+If you are missing any of these please talk to us.
+
 -----------------------------------------------------------------------------
 
 # Reference list
