@@ -7,11 +7,12 @@
 - *DONE* Put together slides for GitHub intro.
 - *DONE* Put together slides for class structure changes.
 - *DONE* Put together slides for homework.
-- **WIP** Put together actual homework.
+- *DONE* Put together actual homework.
 - *DONE* Compile list of Pluralsight videos for next week's lesson and
   coordinate with instructors for that week so they know what students are
   prepping with.
 - *DONE* Decide if we're going to introduce IDE's: not for now.
+- **TODO** Talk to next week's instructors about what videos students will watch.
 
 ## Videos and homework
 
