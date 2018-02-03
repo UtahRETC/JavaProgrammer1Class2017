@@ -250,7 +250,7 @@ After verifying your email we're going to create a repository for this week's ho
 
 # New Terminology
 
-==**Repository**==: repositories are where you store your Git projects. They track all the code and have a history of every change that has been committed! 
+==**Repository**==: repositories are where you store your Git projects. They track all the code and have a history of every change! 
 
 A repository is just like a folder that holds one of your projects. You create a repository for different projects. Repositories can have many files and other folders in them.
 You will want to get in the practice of creating a new repository for every project.
