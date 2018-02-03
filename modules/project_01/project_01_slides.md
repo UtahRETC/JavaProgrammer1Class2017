@@ -82,9 +82,11 @@ Git is a program that allows you to track updates in your code and easity share 
 
 # A few reasons
 
-1. This is a tool you'll use if you become a Software Developer.
+1. This is a tool you'll use when you become a Software Developer.
 2. Using Git allows you to store your code on GitHub (we'll get to that in a second.)
-3. Storing your code on GitHub is good because, first, it's a backup, but more importanly it serves as a portfolio that shows off your work.
+3. Storing your code on GitHub is good because:
+    - it's a backup that shows a history of your work
+    - more importanly it is a portfolio that shows off your work
 
 -----------------------------------------------------------------------------
 
@@ -248,9 +250,10 @@ After verifying your email we're going to create a repository for this week's ho
 
 # New Terminology
 
-==**Repository**==: repositories are where you store your Git projects. They track the code and have a history of all of the updates.
+==**Repository**==: repositories are where you store your Git projects. They track all the code and have a history of every change! 
 
 A repository is just like a folder that holds one of your projects. You create a repository for different projects. Repositories can have many files and other folders in them.
+You will want to get in the practice of creating a new repository for every project.
 
 -----------------------------------------------------------------------------
 
@@ -309,21 +312,24 @@ Create a Projects folder in your computer, navigate to that folder in your termi
 
 By default, Git does not care about every file in the repository. If you want Git to track changes you make to a file, you have to "add" it by running `git add <FILENAME>`.
 
-Once you have added a file with `git add`, Git remember this action and so you won't have to run `git add` again on that file, with the exception being if you rename the file.
+Then, as you make changes to your files, you will also need to tell git which changes you are interested in keeping track of, by using `git add` on the files that have changed. This gives you fine tuned control over what changes you are committing to as you work.
+
 
 -----------------------------------------------------------------------------
 
-# `git commit`
+# `git commit -m "your commit explanation"`
 
-Think of a commit as a package containing changes you have made to your code. Let's say we just finished adding a feature to our project, we would create a commit which basically packages all of those changes and formats them in a way that I can then share when the rest of my team or the rest of the internet.
+Think of a commit as a snapshot of changes you have made to your code. Let's say we just finished adding a feature to our project, we would create a commit which basically packages all of those changes and formats them in a way that I can then share when the rest of my team or the rest of the internet.
 
-You can create commits when ever and as onften as you'd like. The only requirement is that there is at least one character change in a file that Git is tracking.
+When you commit you will also include a short explanation of the changes you made at the end. What you put between the quotes is up to you!
+
+There is no limit to the number of commits you make! The only requirement is that there is at least one character change in a file that Git is tracking.
 
 -----------------------------------------------------------------------------
 
 # `git push`
 
-Committing you updates doesn't mean they'll be shared with others that have access to the repository.
+Committing your updates doesn't mean they'll be shared with others that have access to the repository.
 
 To share these changes with everyone else, you have to "push" your commits. The command `git push` takes the commits that only exist locally (on your computer) and pushes them to the remote Git server (GitHub.com).
 
