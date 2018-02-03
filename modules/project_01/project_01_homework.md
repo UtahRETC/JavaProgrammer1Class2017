@@ -19,6 +19,8 @@
 
 # 3. Push updates to your `java-class-git-homework` repository
 
-Upload any notes and practice code that you have from watching the assigned
-video content. You must have **three separate/unique commits** that you create
-in **three different days**.
+Upload any notes, practice code, and questions that you have from watching the
+assigned video content. You must have **three separate/unique commits** that
+you create in **three different days**. We expect at minimum two separate files
+with Java code, one file with notes, and two questions from watching the
+videos.
