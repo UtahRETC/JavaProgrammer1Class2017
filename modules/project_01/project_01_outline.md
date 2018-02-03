@@ -5,8 +5,8 @@
 - *DONE* Put together slides for previous week's review.
 - *DONE* Put together slides for Git intro.
 - *DONE* Put together slides for GitHub intro.
-- **WIP** Put together slides for class structure changes.
-- **WIP** Put together slides for homework.
+- *DONE* Put together slides for class structure changes.
+- *DONE* Put together slides for homework.
 - **WIP** Put together actual homework.
 - *DONE* Compile list of Pluralsight videos for next week's lesson and
   coordinate with instructors for that week so they know what students are

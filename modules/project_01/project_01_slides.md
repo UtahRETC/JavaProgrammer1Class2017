@@ -378,6 +378,14 @@ This command downloads a repository to your computer. You need to clone a reposi
 
 -----------------------------------------------------------------------------
 
+# Changes, changes, changes
+
+-----------------------------------------------------------------------------
+
+# Let's review this week's homework
+
+-----------------------------------------------------------------------------
+
 # Reference list
 
 [1] https://www.google.com/search?q=define+version+control&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
