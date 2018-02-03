@@ -1,6 +1,6 @@
 # Homework
 
-# 1. Write a short description (two or three sentences) describing the following tems:
+# 1. Write a short description (two or three sentences) describing the following terms:
 
 - Git
 - GitHub
