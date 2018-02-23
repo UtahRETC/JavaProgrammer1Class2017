@@ -13,31 +13,23 @@
 }
 </style>
 
-#### 1. Magic 8 Ball
+#### 1. Different kinds of shapes
 
-**TODO: this was copied from Review 2 so replace it!**
+Start in the code in the `shapes` folder. Compile and run the `Main` class and you will see a window appear with some shapes inside of it. You will see a triangle and a diamond. These shapes use the `Triangle` and `Diamond` classes, which both inherit from the `Shape` class.
 
-Write a program that simulates a Magic 8 Ball. A Magic 8 Ball is a toy that
-gives you a random answer when shaken. And the answers are totally random. The
-original Magic 8 Ball as 20 possible answers, which you can find here:
-https://en.wikipedia.org/wiki/Magic_8-Ball#Possible_answers. Your program
-should be able to responde with any of the twenty possible answers.
+Your job is to make two new classes, `Circle` and `Square`, that both inherit from the `Shape` class just like the other shapes. To do this, you will need to write a constructor method and a `render` method. Next, you will need to add the shapes to the list in `Main`, with the right X and Y coordinates.
 
-Still not sure what a Magic 8 Ball is? Here's a great video explanation
-https://youtu.be/WSaS17CSS4c and a website with similar behaviour
-http://www.ask8ball.net/
+When you are finished, you should see a picture like this:
 
-Below is sample output of what you might see when running your program. Your
-output style and text should be the same as what we have provided below:
+**TODO: Insert picture here**
 
-```text
-MAGIC 8-BALL SAYS: Yes definitely
-```
+Hints:
 
-```text
-MAGIC 8-BALL SAYS: My sources say no
-```
+- The [`drawRect`](https://docs.oracle.com/javase/8/docs/api/java/awt/Graphics.html#drawRect-int-int-int-int-) method will draw a rectangle or a square.
+- The [`drawOval`](https://docs.oracle.com/javase/8/docs/api/java/awt/Graphics.html#drawOval-int-int-int-int-) method will draw an oval or a circle.
+- If you get stuck, use the `Triangle` and `Diamond` classes as examples!
 
-```text
-MAGIC 8-BALL SAYS: Ask again later
-```
+#### 2.
+
+
+Something with overriding methods
