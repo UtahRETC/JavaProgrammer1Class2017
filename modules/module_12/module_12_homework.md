@@ -15,20 +15,21 @@
 -----------------------------------------------------------------------
 #### 1. Different kinds of shapes
 
-Start in the code in the `shapes` folder. Compile and run the `Main` class and you will see a window appear with some shapes inside of it. You will see a triangle and a diamond. These shapes use the `Triangle` and `Diamond` classes, which both inherit from the `Shape` class.
+Start in the code in the `shapes` folder. Compile and run the `Main` class and you will see a window appear with some shapes inside of it. You will see a circle and a triangle. These shapes use the `Circle` and `Triangle` classes, which both inherit from the `CanvasShape` class.
 
-Your job is to make two new classes, `Circle` and `Square`, that both inherit from the `Shape` class just like the other shapes. To do this, you will need to write a constructor method and a `render` method. Next, you will need to add the shapes to the list in `Main`, with the right X and Y coordinates.
+![](shapes-1.png)
+
+Your job is to make two new classes, `Square` and `Diamond`, that both inherit from the `CanvasShape` class just like the other shapes. To do this, you will need to write a constructor method and a `render` method. Next, you will need to add the shapes to the list in `Main`, with the right X and Y coordinates.
 
 When you are finished, you should see a picture like this:
 
--------------------------------------------------------------------------
-**TODO: Insert picture here**
+![](shapes-2.png)
 
 Hints:
 
 - The [`drawRect`](https://docs.oracle.com/javase/8/docs/api/java/awt/Graphics.html#drawRect-int-int-int-int-) method will draw a rectangle or a square.
-- The [`drawOval`](https://docs.oracle.com/javase/8/docs/api/java/awt/Graphics.html#drawOval-int-int-int-int-) method will draw an oval or a circle.
-- If you get stuck, use the `Triangle` and `Diamond` classes as examples!
+- The diamond is more tricky because you need to use the `GeneralPath` class. See the `Triangle` class for an example of how to use it.
+- If you get stuck, use the `Circle` and `Triangle` classes as examples!
 
 --------------------------------------------------------------------------
 
