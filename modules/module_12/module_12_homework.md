@@ -17,13 +17,13 @@
 
 Start in the code in the `shapes` folder. Compile and run the `Main` class and you will see a window appear with some shapes inside of it. You will see a circle and a triangle. These shapes use the `Circle` and `Triangle` classes, which both inherit from the `CanvasShape` class.
 
-![](shapes-1.png)
+<img src="shapes-1.png" height="300" />
 
 Your job is to make two new classes, `Square` and `Diamond`, that both inherit from the `CanvasShape` class just like the other shapes. To do this, you will need to write a constructor method and a `render` method. Next, you will need to add the shapes to the list in `Main`, with the right X and Y coordinates.
 
 When you are finished, you should see a picture like this:
 
-![](shapes-2.png)
+<img src="shapes-2.png" height="300" />
 
 Hints:
 
