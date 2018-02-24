@@ -25,7 +25,7 @@ footer: Java Class - Modifiers and Inheritance
 
 # Review (Class Declaration)
 
-`access modifier` class `Name` 
+`access modifier` class `Name`
 {
 `class body`
 }
@@ -73,7 +73,7 @@ Can be applied to classes, variables and methods:
 ## Access Modifier Permissions
 ```
            | Class | Package | Subclass | Subclass | World
-           |       |         |(same pkg)|(diff pkg)| 
+           |       |         |(same pkg)|(diff pkg)|
 ———————————+———————+—————————+——————————+——————————+———————
 public     |   +   |    +    |    +     |     +    |   +     
 ———————————+———————+—————————+——————————+——————————+———————
@@ -90,14 +90,14 @@ blank : not accessible
 -----------------------------------------------------------------------------
 # Access Modifiers Good Practice
 * Only ```public``` if another class needs it
-* Make all variables ```private``` and access them via ```public``` getters/setters 
-* ```protected``` when only related classes should be able to access 
+* Make all variables ```private``` and access them via ```public``` getters/setters
+* ```protected``` when only related classes should be able to access
 -----------------------------------------------------------------------------
 # Access Modifier Example
 
 ```java
 public class BankCustomer{
-  //All data members (variables) are made private 
+  //All data members (variables) are made private
   private String name = "Sam Jones";
   private double balance = 502.38;
   private String SSnum = "555-55-5555";
@@ -153,7 +153,7 @@ int number = 40;
 public final class Person
 {
   //final variables: can't be changed once declared.
-  private final String name; 
+  private final String name;
   private int age;
   Person(String name, int age){
     this.name = name;
@@ -276,9 +276,7 @@ public class Dog extends Animal {
 public class Main {
   public static void main(String[] args) {
     Dog spot = new Dog();
-    
     spot.walk(); // Defined in the Animal class
-    
     spot.bark(); // Defined in the Dog class
   }
 }
@@ -340,9 +338,7 @@ public class Dog extends Animal {
 public class Main {
   public static void main(String[] args) {
     Dog spot = new Dog();
-    
     spot.walk(); // "The animal is walking"
-    
     spot.bark(); // "Bark!"
   }
 }
@@ -393,12 +389,10 @@ public class Animal {
 }
 
 public class Dog extends Animal {
-
   @Override
   public void walk() {
     System.out.println("The dog is walking");
   }
-
   public void bark() {
     System.out.println("Bark!");
   }
