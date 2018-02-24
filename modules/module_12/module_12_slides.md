@@ -17,21 +17,178 @@ footer: Java Class - Modifiers and Inheritance
 
 # Review of Previous Week
 
-TODO (Eric)
+* ```this``` and ```null``` keywords
+* Class and method declarations
+* Exiting methods
+* Encapsulation
+
+--------------------------------------------------------------------------
+
+# Review (Class Declaration)
+
+`access modifier` class `Name` 
+{
+`class body`
+}
+
+```java
+public class Ball {
+    private double xVelocity;
+    private double yVelocity;
+
+    public double getyVelocity() {
+        return yVelocity;
+    }
+
+    public double getxVelocity() {
+        return xVelocity;
+    }
+}
+```
+
+--------------------------------------------------------------------------
+# Review (exiting methods)
+3 Ways to exit a method:
+
+* the end of the method is reached (for void methods)
+* encounter a return statement (for non-void methods)
+* exception thrown (more on those later)
 
 -----------------------------------------------------------------------------
 
 # Access Modifiers
 
-TODO (Eric)
+Can be applied to classes, variables and methods:
+ * `public`: Accessible to all, everywhere
+  
+ * `protected`: Accessible via inheritence and the same package
+ * `default`: Accessible to the subclasses
+ * `private`: Accessible only to the same class
+```
+  public String name = "Sam Jones";
+  private String SSnum = "555-55-5555";
+  protected String address = "500E 200N, Salt Lake City";
+  String phoneNum = "(301)-254-3320"; //default
+  ```
+-----------------------------------------------------------------------------
+## Access Modifier Permissions
+```
+           | Class | Package | Subclass | Subclass | World
+           |       |         |(same pkg)|(diff pkg)| 
+———————————+———————+—————————+——————————+——————————+———————
+public     |   +   |    +    |    +     |     +    |   +     
+———————————+———————+—————————+——————————+——————————+———————
+protected  |   +   |    +    |    +     |     +    |         
+———————————+———————+—————————+——————————+——————————+———————
+no modifier|   +   |    +    |    +     |          |    
+———————————+———————+—————————+——————————+——————————+———————
+private    |   +   |         |          |          |    
++ : accessible
+blank : not accessible
+```
+
+
+-----------------------------------------------------------------------------
+# Access Modifiers Good Practice
+* Only ```public``` if another class needs it
+* Make all variables ```private``` and access them via ```public``` getters/setters 
+* ```protected``` when only related classes should be able to access 
+-----------------------------------------------------------------------------
+# Access Modifier Example
+
+```java
+public class BankCustomer{
+  //All data members (variables) are made private 
+  private String name = "Sam Jones";
+  private double balance = 502.38;
+  private String SSnum = "555-55-5555";
+  //Only related classes can see the balance
+  protected double getBalance(){
+    return balance;
+  }
+  //Private, only the base class should be able to access this
+  private String getSSnum(){
+    return SSnum;
+  //Public, everyone should be able to see their name at least
+  public String getName(){
+    return name;
+  }
+}
+```
 
 -----------------------------------------------------------------------------
 
-# The `final` Keyword
+# Final keyword (Overview)
 
-TODO (Eric)
+Has 3 uses:
+
+1) Variables-- Most common, equilivent to ```const``` in other languages
+2) Methods --Cannot be overriden (more on that in a bit...)
+3) Classes --Has no inheritance/sub-classes
+
+--------------------------------------------------------------------
+
+# Final keyword example (Variable)
+
+When you don't want a value to change.
+```java
+// the value of pi will never change
+final double PI = 3.141592653589793;
+// the following line results in a compiler error!!
+PI = 3;
+```
+
+```java
+// declared but not initialized
+final int number;
+// initilized at some later point, this IS valid.
+int number = 40;
+```
+
+--------------------------------------------------------------------
+
+# Final keyword example (classes)
+
+```java
+// Class marked final, this means no inheritence
+public final class Person
+{
+  //final variables: can't be changed once declared.
+  private final String name; 
+  private int age;
+  Person(String name, int age){
+    this.name = name;
+    this.age = age;
+  }
+  public getName(){
+    return name;
+  }
+  public getAge(){
+    return age;
+  }
+  public setAge(int newValue)
+    age = newValue;
+}
+```
+
+--------------------------------------------------------------------
+
+# Final keyword example (classes)
+
+```java
+class Child extends Person{
+  //COMPILE ERROR, cannot extend a final class
+}
+```
+
+--------------------------------------------------------------------
+
+# Final keyword example (methods)
+
+(See Person and Student example code in module)
 
 -----------------------------------------------------------------------------
+
 
 # Overloading
 
