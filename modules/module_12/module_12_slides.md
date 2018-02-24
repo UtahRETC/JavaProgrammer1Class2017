@@ -9,7 +9,6 @@ footer: Java Class - Modifiers and Inheritance
 - **Review of Previous Week**
 - **Access modifiers**
 - **Final keyword**
-- **Overloading**
 - **Inheritance**
 - **Overriding**
 
@@ -189,22 +188,6 @@ class Child extends Person{
 
 -----------------------------------------------------------------------------
 
-
-# Overloading
-
-TODO (Andrew)
-
-Outline:
-
-- signature of a method
-  - name
-  - parameters
-  - return type
-- examples
-- constructors can do it too
-
------------------------------------------------------------------------------
-
 # Inheritance
 
 -----------------------------------------------------------------------------
@@ -335,22 +318,7 @@ But you don't need to, because Java does it for you. The result is the same.
 
 -----------------------------------------------------------------------------
 
-TODO: add more
-
------------------------------------------------------------------------------
-
 # Overriding
-
-TODO (Andrew)
-
-Overview:
-
-- member hiding [See video](https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m8&clip=2&mode=live)
-  - dangerous for fields!
-- method overriding
-  - based on the actual class, not the casting
-  - good
-  - We can add the `@Override` annotation to show that we mean to override something
 
 -----------------------------------------------------------------------------
 
@@ -447,12 +415,28 @@ public class Main {
 
 -----------------------------------------------------------------------------
 
-# Additional resources
+## We can add `final` to a method to keep it from being overridden
 
-- _A video students should watch_ by Someone https://andalinktotheresource.com
+```java
+public class Animal {
+  public final void walk() { // Now the Dog class cannot override this!
+    System.out.println("The animal is walking");
+  }
+}
+```
 
 -----------------------------------------------------------------------------
 
-# Reference list
+# Videos for next week
 
-1. Your citation, https://anditswebsite.com
+- [Overloading](https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m7&clip=2&mode=live)
+- [Using Final and Abstract](https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m8&clip=6&mode=live) - part of the videos on Inheritance
+
+-----------------------------------------------------------------------------
+
+# Additional Resources
+
+- [Encapsulation and Access Modifiers](https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m5&clip=3&mode=live)
+- [Applying Access Modifiers](https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m5&clip=4&mode=live)
+- [Inheritance](https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m8&clip=0&mode=live)
+
