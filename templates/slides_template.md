@@ -6,11 +6,18 @@ footer: Java Class - Module N
 
 # Module N
 
+- **Review of Previous Week**
 - **We are going to cover this**
 - **and this**
 - **and this**
 - **and this**
 - **and finally this**
+
+-----------------------------------------------------------------------------
+
+# Review of Previous Week
+
+One slide describing what was covered last week.
 
 -----------------------------------------------------------------------------
 
