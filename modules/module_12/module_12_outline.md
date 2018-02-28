@@ -1,10 +1,6 @@
-# Module 12 Outline: overloading, access modifiers, inheritance, overriding, and final
+# Module 12 Outline
 
--Overloading
--Access modifiers
--Inheritance
--Overriding
--Final keyword
+## Overloading, access modifiers, inheritance, overriding, and final
 
 - Overloading
 - Access modifiers
