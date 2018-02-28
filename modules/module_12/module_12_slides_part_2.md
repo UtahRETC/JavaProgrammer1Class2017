@@ -9,9 +9,10 @@ footer: Java Class - Module 12
 - **Review of Previous Week**
 - **Classes as types**
 - **Constructors**
+- **`this`**
+- **`super`**
 - **`instanceof`**
 - **Casting**
-- **`super`**
 - **Polymorphism**
 - **Additional resources**
 
@@ -203,11 +204,11 @@ class HumanBeing {
 
 -----------------------------------------------------------------------------
 
-## `super`
+# `super`
 
 -----------------------------------------------------------------------------
 
-## `instanceof`
+# `instanceof`
 
 -----------------------------------------------------------------------------
 
