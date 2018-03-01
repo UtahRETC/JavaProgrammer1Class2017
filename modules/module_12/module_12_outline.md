@@ -34,7 +34,7 @@
 - __TODO__ Object[] stuff
   - `.equals`
   - `.toString`
-- __TODO__ Explicit cast
+- __WIP__ Explicit cast
   - (CargoFlight) o
   - instanceof
 - __DONE__ Constructors
@@ -42,5 +42,5 @@
 - __WIP__ super
   - we can access things in the base class
   - super.equals
-- __TODO__ Simple polymorphism
+- __WIP__ Simple polymorphism
   - `Animal[] animals = { new Dog(), new Ostrich, ... }`

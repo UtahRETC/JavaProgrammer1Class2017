@@ -543,13 +543,66 @@ TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
 
 # Casting
 
------------------------------------------------------------------------------
-
-# `instanceof`
+Let's talk about casting, why we need it and how to use it.
 
 -----------------------------------------------------------------------------
 
-# Polymorphism
+## Polymorphism
+
+Remember this from a little while ago? Do you also remember what classes were the parents and which ones were the children?
+
+```
+                                //     Animal
+class Animal {}                 //       |
+                                //       |
+class Human extends Animal {}   //       v
+                                //   +--Human--+
+class Student extends Human {}  //   |         |
+                                //   |         |
+class Doctor extends Human {}   //   v         v
+                                //  Student   Doctor
+```
+
+-----------------------------------------------------------------------------
+
+## Polymorphism (cont.)
+
+- `Animal` is the "Base" class since it doesn't extend anything, it is also the "Parent" of `Human` and of `Student`, since `Human` extends `Parent` and `Student` extends `Human`,
+- `Human` is the "Parent" of `Student` and the "Child" of `Animal`
+- `Student` is the "Child" of both `Human` and `Animal`. Same goes for `Doctor`.
+
+
+Another way of saying this would be:
+
+- A `Human` is an `Animal`
+- A `Student` is a `Human`
+- A `Student` is an `Animal` since a `Human` is an `Animal` and we know that a `Student` is a `Human`. Same goes for `Doctor`.
+
+A Child class "is a" Parent class.
+
+-----------------------------------------------------------------------------
+
+## Polymorphism (cont.)
+
+Remember how a child class "is a" Parent class? Polymorphism says that a method that a method that wants a Parent class can be given a Child class as well. Here's an example:
+
+```java
+public class Main {
+  public static void main(String[] args) {
+    Student you = new Student();
+    you.favoriteColor = "Blue";
+    printHumanFavoriteColor(you); }
+
+  public static void printFavColor(Human h) {
+    System.out.println("Favorite color: " +
+      h.favoriteColor); } }
+```
+
+Notice how the `printHumanFavoriteColor` method wants a `Human` but we give it a `Student` instead. This is allowed because a `Student` is a `Human` and so anything a `Human` can do, so can a `Student`.
+
+-----------------------------------------------------------------------------
+
+## `instanceof`
 
 -----------------------------------------------------------------------------
 
