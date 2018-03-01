@@ -31,16 +31,16 @@
 
 ## Part 2
 
-- Object[] stuff
+- __TODO__ Object[] stuff
   - `.equals`
   - `.toString`
-- Explicit cast
+- __TODO__ Explicit cast
   - (CargoFlight) o
   - instanceof
-- Constructors
+- __DONE__ Constructors
   - NOT inherited
-- super
+- __WIP__ super
   - we can access things in the base class
   - super.equals
-- Simple polymorphism
+- __TODO__ Simple polymorphism
   - `Animal[] animals = { new Dog(), new Ostrich, ... }`

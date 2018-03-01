@@ -11,8 +11,8 @@ footer: Java Class - Module 12
 - **Constructors**
   - **`this`**
   - **`super`**
-- **`instanceof`**
 - **Casting**
+  - **`instanceof`**
 - **Polymorphism**
 - **Additional resources**
 
@@ -509,11 +509,47 @@ What is the difference between `this()` and `super()`?
 
 -----------------------------------------------------------------------------
 
-# `instanceof`
+## A final note on constructors
+
+Remember inheritance and how one of its benefits was that it allowed us to automatically call methods of a parent class? Well, this is not exactly the case with constructors as we are required to explicitly define constructors in child classes.
+
+-----------------------------------------------------------------------------
+
+### Example
+
+TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+
+-----------------------------------------------------------------------------
+
+### Using `super` to access parent class
+
+Just like we can use `this` to access fields and methods or the current class, we can use `super` as a way to access the parent class.
+
+-----------------------------------------------------------------------------
+
+### Example
+
+TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
 
 -----------------------------------------------------------------------------
 
 # Casting
+
+-----------------------------------------------------------------------------
+
+# `instanceof`
 
 -----------------------------------------------------------------------------
 
