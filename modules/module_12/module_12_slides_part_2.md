@@ -370,6 +370,127 @@ What are the rules for using `this` as a way to call other constructors?
 
 ## `super`
 
+The `super` method works just like the `this` method except it calls constructors of the parent class?
+
+```java
+class Animal {
+  protected String species;
+  Animal(String species) { this.species = species; } }
+
+class Human extends Animal {
+  protected String favoriteColor;
+  Human(String fc) {
+    super("Homo sapiens");      // Calls the constructor
+    this.favoriteColor = fc; } }// in the Animal class
+
+class Student extends Human {
+  protected String subject;
+
+  Student(String subject) {
+    super("Unknown");           // Calls the constructor
+    this.subject = subject; } } // in the Human class
+```
+
+-----------------------------------------------------------------------------
+
+### Timeout, let's review some terminology
+
+Terms like Base, Parent, Child, and Current will come up when talking about classes. In this example,
+
+- `Animal` is the "Base" class since it doesn't extend anything, it is also the "Parent" of `Human` and of `Student`, since `Human` extends `Parent` and `Student` extends `Human`,
+- `Human` is the "Parent" of `Student` and the "Child" of `Animal`
+- `Student` is the "Child" of both `Human` and `Animal`
+
+```
+class Animal { /* ... */ }
+
+class Human extends Animal { /* ... */ }
+
+class Student extends Human { /* ... */ }
+```
+
+-----------------------------------------------------------------------------
+
+### Rules for using `super`
+
+The rules for using `super` are the same as for `this`, which if you remember are the following:
+
+1. The call to `this` must be the first code that runs in a constructor. I cannot do something then run `this()`. Instead I have to run `this()` then do other things in the constructor.
+2. `this` must call a constructor that exists!
+
+
+Notice how the first rule states we must call `this` first thing if we're calling it. If the same goes for `super`, this means that we can't have a constructor that calls both `super` and `this`, since they both want to go fist we have to pick one or the other.
+
+-----------------------------------------------------------------------------
+
+### Question
+
+What are the rules for using `super`?
+
+-----------------------------------------------------------------------------
+
+### Answer
+
+1. The call to `super` must be the first code that runs in a constructor. I cannot do something then run `super()`. Instead I have to run `super()` then do other things in the constructor.
+2. `super` must call a constructor that exists!
+
+-----------------------------------------------------------------------------
+
+### Question
+
+Are these constructors (1) valid? If not, (2) then why?
+
+```java
+class Human extends Animal {
+  protected String favoriteColor;
+
+  Human() {
+    super("Homo sapiens");
+    this("Blue");
+  }
+
+  Human(String favoriteColor) {
+    super("Homo sapiens");
+    this.favoriteColor = favoriteColor;
+  }
+}
+```
+
+-----------------------------------------------------------------------------
+
+### Answer
+
+```java
+class Human extends Animal {
+  protected String favoriteColor;
+
+  Human() {
+    // I cannot have a constructor run both `super` and
+    // `this` because of the rules of `this`/`super`
+    super("Homo sapiens");
+    this("Blue");
+  }
+
+  Human(String favoriteColor) {
+    // This is ok.
+    super("Homo sapiens");
+    this.favoriteColor = favoriteColor;
+  }
+}
+```
+
+-----------------------------------------------------------------------------
+
+### Question
+
+What is the difference between `this()` and `super()`?
+
+-----------------------------------------------------------------------------
+
+### Answer
+
+`super()` calls a constructor in the parent class while `this()` calls a constructor in the current class.
+
 -----------------------------------------------------------------------------
 
 # `instanceof`
