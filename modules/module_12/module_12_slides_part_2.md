@@ -9,8 +9,8 @@ footer: Java Class - Module 12
 - **Review of Previous Week**
 - **Classes as types**
 - **Constructors**
-- **`this`**
-- **`super`**
+  - **`this`**
+  - **`super`**
 - **`instanceof`**
 - **Casting**
 - **Polymorphism**
@@ -175,7 +175,7 @@ A constructor will be picked depending on what parameters I use and what their t
 
 -----------------------------------------------------------------------------
 
-# Quiz time
+### Question
 
 Who can tell me what constructor runs when `me1` is instanciated? What about for `me2`? Why?
 
@@ -200,11 +200,175 @@ class HumanBeing {
 
 -----------------------------------------------------------------------------
 
-# `this`
+## `this`
+
+The `this` keyword seems to come up a lot in Java, doesn't it? We've already seen it being used for when we want to access instance fields or call instance methods, but as we'll see, it also has another use case, and that it to call other constructors methods.
 
 -----------------------------------------------------------------------------
 
-# `super`
+### Let's put this to use
+
+Let's start with this class and let's update it to use `this` instead.
+
+```java
+class HumanBeing {
+  protected String name;
+  protected int age;
+
+  public HumanBeing() {
+    this.name = "Unknown Person";
+    this.age = 0;
+  }
+
+  public HumanBeing(String name, int age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+```
+
+-----------------------------------------------------------------------------
+
+### Example using `this`
+
+Here we have the same class, but some of the constructors changed and now all they do is call `this` as if it were a method. The first constructor does a little bit of work and then passes on the work to the other constructor. Notice how the second constructor did not change. This is because we still need code that will do something!
+
+```java
+class HumanBeing {
+  protected String name;
+  protected int age;
+
+  public HumanBeing() { this("Unknown Person", 0); }
+
+  public HumanBeing(String name, int age) {
+    this.name = name;
+    this.age = age; } }
+```
+
+-----------------------------------------------------------------------------
+
+If I instanciate the previous class like so `HumanBeing me = new HumanBeing();` what will happen is that Java will start by using the first constructor, and all the first constructor does is run this code `this("Unknown Person", 0);`, which calls the second constructor, so both constructors will end up running.
+
+-----------------------------------------------------------------------------
+
+### Rules for using `this` as a constructor
+
+There are two rules for using `this` as a way to call another constructor:
+
+1. The call to `this` must be the first code that runs in a constructor. I cannot do something then run `this()`. Instead I have to run `this()` then do other things in the constructor.
+2. `this` must call a constructor that exists!
+
+-----------------------------------------------------------------------------
+
+### Question
+
+Who can tell me (1) what is wrong with the constructors below and (2) how I can fix them.
+
+```java
+class Cat {
+  protected String name;
+  protected String breed;
+
+  public Cat() {
+    this(1, 2, 3, 4, 5, 6, 7);
+  }
+
+  public Cat(String name) {
+    System.out.println("Creating a new Cat");
+    this(name, "Unknown Breed");
+  }
+
+  public Cat(String name, String Breed) {
+    this.name = name;
+    this.breed = breed;
+  }
+}
+```
+
+-----------------------------------------------------------------------------
+
+### Answer
+
+```java
+public Cat() {
+  // This is calling an invalid constructor. There are
+  // no constructors that take seven integers as
+  // arguments.
+  this(1, 2, 3, 4, 5, 6, 7);
+}
+
+public Cat(String name) {
+  // This is running code (`System.out.println`) before
+  // the call to `this`, which is not allowed.
+  System.out.println("Creating a new Cat");
+  this(name, "Unknown Breed");
+}
+
+public Cat(String name, String Breed) {
+  // This is ok.
+  this.name = name;
+  this.breed = breed;
+}
+```
+
+-----------------------------------------------------------------------------
+
+### Question
+
+Who can tell me (1) what constructor(s) runs when I instanciate `me1` and (2) why? What about for when In instanciate `me2`?
+
+```java
+public class Main {
+  public static void main(String[] args) {
+    HumanBeing me1 = new HumanBeing();
+    HumanBeing me2 = new HumanBeing("Marcos", 92); } }
+
+class HumanBeing {
+  protected String name; protected int age;
+
+  public HumanBeing() {
+    this("Unknown Person", 0);
+    System.out.println("Running Constructor #1"); }
+
+  public HumanBeing(String name, int age) {
+    this.name = name;
+    this.age = age;
+    System.out.println("Running Constructor #2"); } }
+```
+
+-----------------------------------------------------------------------------
+
+### Answer
+
+Instanciating `me1` triggers the first constructor, which then triggers the second one, so we see:
+
+```text
+Running Constructor #2
+Running Constructor #1
+```
+
+Instanciating `me2` triggers the second constructor which only sets properties, so we see:
+
+```text
+Running Constructor #2
+```
+
+-----------------------------------------------------------------------------
+
+### Question
+
+What are the rules for using `this` as a way to call other constructors?
+
+-----------------------------------------------------------------------------
+
+### Answer
+
+1. The call to `this` must be the first code that runs in a constructor. I cannot do something then run `this()`. Instead I have to run `this()` then do other things in the constructor.
+2. `this` must call a constructor that exists!
+
+-----------------------------------------------------------------------------
+
+## `super`
 
 -----------------------------------------------------------------------------
 
