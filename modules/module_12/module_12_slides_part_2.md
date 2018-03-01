@@ -395,7 +395,7 @@ class Student extends Human {
 
 ### Timeout, let's review some terminology
 
-Terms like Base, Parent, Child, and Current will come up when talking about classes. In this example,
+When talking about class hierarchy, terms like Base, Parent, and Child will come up when talking about classes. Using the example below,
 
 - `Animal` is the "Base" class since it doesn't extend anything, it is also the "Parent" of `Human` and of `Student`, since `Human` extends `Parent` and `Student` extends `Human`,
 - `Human` is the "Parent" of `Student` and the "Child" of `Animal`
@@ -407,6 +407,22 @@ class Animal { /* ... */ }
 class Human extends Animal { /* ... */ }
 
 class Student extends Human { /* ... */ }
+```
+
+-----------------------------------------------------------------------------
+
+Try to imagine a root system or a family tree when thinking about class hierarchy, where base classes are at the top and they are followed by their child classes, which can also be parents to other classes.
+
+```
+                                //     Animal
+class Animal {}                 //       |
+                                //       |
+class Human extends Animal {}   //       v
+                                //   +--Human--+
+class Student extends Human {}  //   |         |
+                                //   |         |
+class Doctor extends Human {}   //   v         v
+                                //  Student   Doctor
 ```
 
 -----------------------------------------------------------------------------
