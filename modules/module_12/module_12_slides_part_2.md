@@ -1,7 +1,7 @@
 <!--
 $theme: default
 page_number: true
-footer: Java Class - Module 12
+footer: Java Class - Inheritance (pt. 2)
 -->
 
 # Module 12
@@ -20,7 +20,10 @@ footer: Java Class - Module 12
 
 # Review of Previous Week
 
-TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+- **Access modifiers**
+- **Final keyword**
+- **Inheritance**
+- **Overriding**
 
 -----------------------------------------------------------------------------
 
@@ -509,35 +512,9 @@ Remember inheritance and how one of its benefits was that it allowed us to autom
 
 -----------------------------------------------------------------------------
 
-### Example
-
-TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
-
------------------------------------------------------------------------------
-
 ### Using `super` to access parent class
 
-Just like we can use `this` to access fields and methods or the current class, we can use `super` as an explicitl way to access the parent class.
-
------------------------------------------------------------------------------
-
-### Example
-
-TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
-
------------------------------------------------------------------------------
-
-### Question
-
-Who can tell me (1) what method is called and (2) why?
-
-TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
-
------------------------------------------------------------------------------
-
-### Answer
-
-TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+Just like we can use `this` to access fields and methods or the current class, we can use `super` as an explicit way to access the parent class.
 
 -----------------------------------------------------------------------------
 
@@ -602,7 +579,111 @@ Notice how the `printHumanFavoriteColor` method wants a `Human` but we give it a
 
 -----------------------------------------------------------------------------
 
+## Example
+
+Suppose we have these classes:
+
+```java
+public class Animal {
+  private String sound;
+  Animal(String sound) {
+    this.sound = sound;
+  }
+  public void makeSound() {
+    System.out.println(this.sound);
+  }
+}
+public class Dog extends Animal {
+  public Dog() {
+    super("bark");
+  }
+}
+public class Cow extends Animal {
+  public Cow() {
+    super("moo");
+  }
+}
+```
+
+This means that a `Dog` will make the "bark" sound and a `Cow` will make the "moo" sound.
+
+-----------------------------------------------------------------------------
+
+## Benefits (1)
+
+We can instantiate a member of a child class and then save it into a variable for a parent class!
+
+```java
+public class Main {
+  public static void main(String[] args) {
+    // A Dog is a kind of Animal so this is OK.
+    Animal spot = new Dog();
+    spot.makeNoise(); // "bark"
+
+    Animal bessie = new Cow();
+    bessie.makeNoise(); // "moo"
+  }
+}
+```
+
+-----------------------------------------------------------------------------
+
+## Benefits (2)
+
+We can even do this with arrays and lists, which means we can store objects of *different child classes* in a single data structure!
+
+```java
+public class Main {
+  public static void main(String[] args) {
+    Animal[] animals = {
+      new Dog(),
+      new Cow()
+    };
+    for (int i; i < animals.length; i++) {
+      animals[i].makeSound();
+    }
+  }
+}
+```
+
+What will be the output of this program?
+
+-----------------------------------------------------------------------------
+
 ## `instanceof`
+
+-----------------------------------------------------------------------------
+
+This lets us check if an object belongs to a class, or if it extends that class (either directly or indirectly).
+
+-----------------------------------------------------------------------------
+
+## Example
+
+```
+                                //     Animal
+class Animal {}                 //       |
+                                //       |
+class Human extends Animal {}   //       v
+                                //   +--Human--+
+class Student extends Human {}  //   |         |
+                                //   |         |
+class Doctor extends Human {}   //   v         v
+                                //  Student   Doctor
+```
+
+-----------------------------------------------------------------------------
+
+```java
+public class Main {
+  public static void main(String[] args) {
+    HumanBeing p = new Teacher("Andrew");
+    if (p instanceof Teacher) {
+      System.out.println("This person is a teacher!");
+    }
+  }
+}
+```
 
 -----------------------------------------------------------------------------
 
