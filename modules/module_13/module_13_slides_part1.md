@@ -14,7 +14,7 @@
 
 # Interface Example
 ``` java
-public interface Runner extends CanMove {
+public interface Racer {
   // constants
   int MAX_SPEED = 576;
   // method signatures
@@ -26,13 +26,12 @@ public interface Runner extends CanMove {
 - Has attribute (generally should not).
 - No method body.
 - Access modifier? Default: `public`.
-- Can inherit from another interface.
 
 ---
 
 # Implementing an Interface
 ```java
-public class Cheetah extends Animal implements Runner {
+public class Cheetah extends Animal implements Racer {
   public void run() {
     setSpeed(70);
     move(2.5);
@@ -40,6 +39,26 @@ public class Cheetah extends Animal implements Runner {
 }
 ```
 - Notice the keyword `implements`.
+
+---
+
+# Missing interface method
+- What happens if we forget?
+```java
+public class Cheetah implements Racer {
+  private int spots = 42;
+}
+```
+```bash
+$ javac Cheetah.java
+Cheetah.java:1: error: 
+Cheetah is not abstract and does not override abstract 
+method run() in Racer
+public class Cheetah implements Racer {
+       ^
+1 error
+```
+- Thanks compiler. I did forget.
 
 ---
 
@@ -64,7 +83,7 @@ public class Dog extends Animal implements OldMcDonald {
 
 ---
 
-# Example 2 Continued
+# Example 2: Old McDonald (cont.)
 ```java
 public class OldMcDonaldSong {
   public void sing(List<OldMcDonald> animals) {
@@ -75,18 +94,30 @@ public class OldMcDonaldSong {
   }
 }
 ```
+- A list of animals will sing several versus.
+
+---
+
+# Mixing interfaces and inheritance
 ```java
 public class FarmAnimals {
   private List<Animal> animals = new ArrayList<Animal>();
   public FarmAnimals(List<Animal> animals) {
     animals.addAll(animals);
   }
+  
+  public putToWork() {
+    for (Animal a : animals) {
+      a.work();
+    }
+  }
 }
 ```
+- Now put the farm animals back to work.
 
 ---
 
-# Abstract
+# Abstract Classes
 <center><img src="convergence.jpg" height=650></center>
 
 ---
@@ -97,7 +128,6 @@ public class FarmAnimals {
 Animal genericAnimal = new Animal();
 ```
 - How do you prevent this?
-  - `abstract`
 
 ---
 
@@ -167,6 +197,7 @@ public abstract class Animal {
 ```
 - What does that look like?
 - Why not just use an interface?
+- `abstract public void speak();` also works.
 
 ---
 
@@ -182,7 +213,55 @@ public abstract class Animal {
 ```
 - Some methods implemented in parent.
 - Some methods implemented in children.
-- Can always override the parent methods.
+
+---
+
+# Abstract Methods: Mixed
+```java
+public abstract class Animal {
+  public abstract void speak();
+  
+  public void recitePoetry() {
+    System.out.println("Two roads diverged in a ...");
+  }
+}
+```
+```java
+public class Rat extends Animal {
+  public void speak() {
+    System.out.println("squeak!");
+  }
+  
+  public void recitePoetry() {
+    System.out.println("I do not do poetry.");
+  }
+}
+```
+
+---
+
+# Polymorphic Parameters
+```java
+class Plane {}
+class Jet extends Plane {}
+
+public class Main {
+  public String fly(Plane p) { return "plane"; }
+  public String fly(Jet j) { return "jet"; }
+  
+  public static void main(String[] args) {
+    Plane plane = new Plane();
+    System.out.println("I am a " + fly(plane));
+    
+    Jet jet = new Jet();
+    System.out.println("I am a " + fly(jet));
+    
+    Plane mix = new Jet();
+    System.out.println("I am a " + fly(mix));
+  }
+}
+```
+- What will the output be?
 
 ---
 
