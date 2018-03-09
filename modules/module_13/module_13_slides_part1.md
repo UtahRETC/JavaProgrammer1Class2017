@@ -203,3 +203,17 @@ public abstract class AbstractList<E> {
 ```
 - `addAll` same for each type of list.
 - `add` method will vary. Implementation detail supplied by each child.
+
+---
+
+# Summary
+- Interface
+  - Contract for all implementers to follow.
+  - Contains one or more empty methods.
+  - May contain fields, but generally shouldn't.
+- Abstract Class
+  - Cannot be instantiated.
+  - May contain fields.
+  - Abstract methods required by children.
+  - Can contain method bodies.
+  - Children may override non-abstract methods.
