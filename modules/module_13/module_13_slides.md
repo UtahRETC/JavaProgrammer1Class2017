@@ -118,6 +118,23 @@ public class FarmAnimals {
 
 ---
 
+# Interface inheritance
+```java
+public interface Rude {
+  void mock();
+}
+```
+```java
+public interface Grumpy extends Rude {
+  void complain();
+}
+```
+- Implementing `Grumpy` means you need to implement both:
+  - `void mock()`
+  - `void complain()` 
+
+---
+
 # Abstract Classes
 <center><img src="convergence.jpg" height=650></center>
 
