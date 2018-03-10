@@ -1,6 +1,7 @@
 # Outline
 - Interfaces
 - Abstract classes
+- Casting revisited
 
 ---
 
@@ -284,6 +285,50 @@ public abstract class AbstractList<E> {
 - `add` method will vary. Implementation detail supplied by each child.
 
 ---
+# Casting revisited (upcasting)
+
+- Classes can be safely upcast to:
+  - Any interfaces it implements
+  - Its parent class
+  - Anything its parent can be cast to
+
+```java
+interface GPInterface1{}
+interface GPInterface2{}
+public class Grandparent implements GPInterface1, GPInterface2{} 
+
+public class Parent extends Grandparent{}
+ 
+interface ChildInterface{}
+public class Child extends Parent implements ChildInterface {}
+```
+
+---
+# Casting revisited (Downcasting)
+Downcasting is casting to a more specific type.  It is not safe and may crash the application.
+
+```java
+Parent actuallyAChild = new Child();
+Parent notAChild = new Parent();
+
+Child works = (Child)actuallyaChild;
+child fails = (Child)notAChild;
+```
+---
+
+# Casting revisited (instanceof)
+
+Instance of checks if an object is of a more specific type
+```java
+Parent notAChild = new Parent();
+
+if(notAChild instanceof Child) {
+  child skipped = (Child)notAChild;
+}
+
+```
+
+---
 
 # Summary
 - Interface
@@ -296,3 +341,6 @@ public abstract class AbstractList<E> {
   - Abstract methods required by children.
   - Can contain method bodies.
   - Children may override non-abstract methods.
+- Casting
+  - Upcasts are safe
+  - Downcasts can crash an application
