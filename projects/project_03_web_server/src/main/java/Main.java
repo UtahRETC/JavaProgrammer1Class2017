@@ -8,24 +8,42 @@ public class Main {
   public static void main(String[] args) {
     port(3000);
 
-    get("/", (req, res) -> "Hello World");
+    get("/", (request, response) -> "Hello World! This endpoint should actually serve up the index.html file.");
 
-    path("/api", () -> {
+    get("/api/people", (request, response) -> {
+      return "This is return JSON for all the people in the system.";
+    });
 
-      get("/animals", (req, res) -> {
-        res.type("application/json");
+    get("/api/students/:id", (request, response) -> {
+      String id = request.params(":id");
+      return "This should return info for student number " + id + ".";
+    });
 
-        List<Animal> animals = new ArrayList<Animal>();
+    post("/api/students", (request, response) -> {
+      return "You just POSTed info to define a new student.";
+    });
 
-        animals.add(new Animal(3, "Anders", 3));
-        animals.add(new Animal(1, "Spot", 15));
-        animals.add(new Animal(2, "Zippy", 6));
+    put("/api/students/:id/grade", (request, response) -> {
+      String id = request.params(":id");
+      return "You just set a student's grade to something new.";
+    });
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        return gson.toJson(animals);
-      });
-
-    }); // end API
+    // path("/api", () -> {
+    //
+    //   get("/animals", (req, res) -> {
+    //     res.type("application/json");
+    //
+    //     List<Animal> animals = new ArrayList<Animal>();
+    //
+    //     animals.add(new Animal(3, "Anders", 3));
+    //     animals.add(new Animal(1, "Spot", 15));
+    //     animals.add(new Animal(2, "Zippy", 6));
+    //
+    //     Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    //     return gson.toJson(animals);
+    //   });
+    //
+    // }); // end API
 
   }
 
