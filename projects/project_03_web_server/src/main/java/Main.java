@@ -11,9 +11,9 @@ public class Main {
     school.addPerson(new Student(2, "Eric", "Fortney", 96));
     school.addPerson(new Student(3, "Marcos", "Minond", 92));
 
-    port(3000);
+    staticFiles.location("/public");
 
-    get("/", (request, response) -> "Hello World! This endpoint should actually serve up the index.html file.");
+    port(3000);
 
     get("/api/people", (request, response) -> {
       response.type("application/json");
