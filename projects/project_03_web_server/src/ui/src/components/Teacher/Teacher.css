@@ -1,0 +1,10 @@
+.teacher-container{
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: gray;
+}
+
+.updateBtn{
+  margin-left: 10px;
+}
