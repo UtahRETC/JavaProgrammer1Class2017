@@ -1,15 +1,13 @@
 import React from "react";
 import "./Student.css";
 
-export class Student extends React.Component{
+export class Student extends React.Component {
   render() {
     console.log(this.props);
-    return(
+    return (
       <div className="student-container">
         <div>
-          <img className="student-pic"
-             alt="Avatar"
-             src="/avatar.jpg"/>
+          <img className="student-pic" alt="Avatar" src="/avatar.jpg" />
         </div>
         <table className="table">
           <thead>

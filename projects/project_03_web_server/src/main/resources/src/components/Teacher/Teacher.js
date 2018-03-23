@@ -1,14 +1,13 @@
 import React from "react";
 import "./Teacher.css";
 
-export class Teacher extends React.Component{
-
-  constructor(){
+export class Teacher extends React.Component {
+  constructor() {
     super();
-    this.state = { studentRows: []};
+    this.state = { studentRows: [] };
   }
 
-  componentWillMount(){
+  componentWillMount() {
     var studentRows = [];
     this.props.route.students.forEach(function(person) {
       studentRows.push(
@@ -20,7 +19,12 @@ export class Teacher extends React.Component{
           <td>
             <form>
               <div className="form-inline">
-                <input type="text" className="form-control" id="formGroupExampleInput2" placeholder="New Grade %"/>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="formGroupExampleInput2"
+                  placeholder="New Grade %"
+                />
                 <button className="btn btn-default updateBtn"> Update</button>
               </div>
             </form>
@@ -28,12 +32,12 @@ export class Teacher extends React.Component{
         </tr>
       );
     });
-    this.setState({studentRows: studentRows})
+    this.setState({ studentRows: studentRows });
   }
 
   render() {
     console.log(this.props);
-    return(
+    return (
       <div className="teacher-container">
         <table className="table">
           <thead>
@@ -45,9 +49,7 @@ export class Teacher extends React.Component{
               <th scope="col">Update Grade</th>
             </tr>
           </thead>
-          <tbody>
-            {this.state.studentRows}
-          </tbody>
+          <tbody>{this.state.studentRows}</tbody>
         </table>
       </div>
     );
