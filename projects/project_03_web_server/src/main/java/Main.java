@@ -1,7 +1,7 @@
-import java.util.List;
-import static spark.Spark.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import static spark.Spark.*;
 
 public class Main {
   public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class Main {
     school.addPerson(new Student(2, "Eric", "Fortney", 96));
     school.addPerson(new Student(3, "Marcos", "Minond", 92));
 
-    staticFiles.location("/public");
+    staticFiles.location("/build");
 
     port(3000);
 
@@ -48,5 +48,4 @@ public class Main {
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
     return gson.toJson(o);
   }
-
 }
