@@ -1,5 +1,4 @@
 import React from "react";
-import { render } from 'react-dom';
 import "./Student.css";
 
 export class Student extends React.Component{
@@ -8,7 +7,9 @@ export class Student extends React.Component{
     return(
       <div className="student-container">
         <div>
-          <img className="student-pic" src="http://dragene.no/wp-content/uploads/2016/06/default1.jpg"/>
+          <img className="student-pic"
+             alt="Avatar"
+             src="/avatar.jpg"/>
         </div>
         <table className="table">
           <thead>

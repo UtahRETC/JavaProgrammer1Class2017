@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from 'react-router';
-import { render } from 'react-dom';
 import "./Sidebar.css";
 
 import jsonData from "../../data.json";
@@ -14,7 +13,7 @@ export class Sidebar extends React.Component{
   componentWillMount(){
     var studentsToAdd = [];
     jsonData.people.forEach(function(person) {
-      if (person.type == "STUDENT"){
+      if (person.type === "STUDENT"){
         studentsToAdd.push(person);
       }
     });

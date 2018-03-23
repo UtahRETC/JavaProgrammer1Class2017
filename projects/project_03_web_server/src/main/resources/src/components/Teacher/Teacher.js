@@ -1,5 +1,4 @@
 import React from "react";
-import { render } from 'react-dom';
 import "./Teacher.css";
 
 export class Teacher extends React.Component{

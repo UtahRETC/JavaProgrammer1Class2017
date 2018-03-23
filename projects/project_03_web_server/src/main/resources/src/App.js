@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import { Router, Route, browserHistory, IndexRoute} from 'react-router';
-import { render } from 'react-dom';
 import  {} from 'react-bootstrap';
 
-import { Sidebar } from "./components/Sidebar/Sidebar";
 import { Home } from "./components/Home/Home";
 import { Student } from "./components/Student/Student";
 import { Teacher } from "./components/Teacher/Teacher";
 import { Root } from "./components/Root/Root";
 
 import jsonData from "./data.json";
-import logo from './logo.svg';
 import './App.css';
 
 
@@ -23,7 +20,7 @@ class App extends Component {
   componentWillMount(){
     var studentsToAdd = [];
     jsonData.people.forEach(function(person) {
-      if (person.type == "STUDENT"){
+      if (person.type === "STUDENT"){
         studentsToAdd.push(person);
       }
     });
