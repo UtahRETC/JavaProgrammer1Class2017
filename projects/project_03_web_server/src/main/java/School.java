@@ -16,26 +16,6 @@ public class School {
 
   public void addPerson(Person p) {
     this.people.add(p);
-    // TODO: assign an ID
   }
 
-  public Person getPersonById(int id) {
-    for (Person p : people) {
-      if (p.getId() == id) {
-        return p;
-      }
-    }
-
-    return null;
-  }
-
-  public void setGrade(int id, int grade) {
-    for (Person p : people) {
-      if (p.getId() == id && p instanceof Student) {
-        Student s = (Student) p;
-        s.setGrade(grade);
-        return;
-      }
-    }
-  }
 }
