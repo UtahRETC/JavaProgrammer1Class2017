@@ -5,17 +5,21 @@ import static spark.Spark.*;
 
 public class Main {
   public static void main(String[] args) {
+
+    // Put your school logic here!!! -------------------------------------------
     School school = new School();
     // TODO: don't assign IDs out here, do it internally
     school.addPerson(new Student(1, "Andrew", "Jensen", 80));
     school.addPerson(new Student(2, "Eric", "Fortney", 96));
     school.addPerson(new Student(3, "Marcos", "Minond", 92));
 
+    // End school logic. -------------------------------------------------------
+
     staticFiles.location("/build");
 
     port(3000);
 
-    get("/api/people", (request, response) -> {
+    get("/api/students", (request, response) -> {
       response.type("application/json");
       return makeJson(school.getPeople());
     });

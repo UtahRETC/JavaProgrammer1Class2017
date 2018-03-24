@@ -6,29 +6,27 @@
 
 Serves up the HTML for the single-page app.
 
-**GET /people**
+**GET /students**
 
-Serves up a list of all people in the system.
+Serves up a list of all students in the system.
 
 Response body:
 
 ```json
-{
-  "people": [
-    {
-      "id": 1,
-      "type": "TEACHER",
-      "firstName": "Andrew",
-      "lastName": "Jensen"
-    },
-    {
-      "id": 2,
-      "type": "STUDENT",
-      "firstName": "Abdullah",
-      "lastName": "Kareem"
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "firstName": "Andrew",
+    "lastName": "Jensen",
+    "grade": 87
+  },
+  {
+    "id": 2,
+    "firstName": "Eric",
+    "lastName": "Fortney",
+    "grade": 90
+  }
+]
 ```
 
 **GET /students/{studentID}**
@@ -40,22 +38,22 @@ Response body:
 ```json
 {
   "id": 2,
-  "firstName": "Abdullah",
-  "lastName": "Kareem",
+  "firstName": "Eric",
+  "lastName": "Fortney",
   "grade": 90
 }
 ```
 
 **POST /students**
 
-Defines a new student in the class.
+Defines a new student in the class. Their grade should default to 0.
 
 Request body:
 
 ```json
 {
-  "firstName": "Abdullah",
-  "lastName": "Kareem"
+  "firstName": "Marcos",
+  "lastName": "Minond"
 }
 ```
 
@@ -63,7 +61,10 @@ Response body:
 
 ```json
 {
-  "id": 5
+  "id": 5,
+  "firstName": "Marcos",
+  "lastName": "Minond",
+  "grade": 0
 }
 ```
 

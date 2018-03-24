@@ -14,7 +14,7 @@ export class Teacher extends React.Component {
   }
 
   fetchStudents = () => {
-    return fetch(`/api/people`)
+    return fetch(`/api/students`)
       .then(res => res.json())
       .then(body => {
         this.setState({
