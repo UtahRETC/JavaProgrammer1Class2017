@@ -29,11 +29,11 @@ public class School {
     return null;
   }
 
-  public void setGrade(int id, int score) {
+  public void setGrade(int id, int grade) {
     for (Person p : people) {
       if (p.id == id && p instanceof Student) {
         Student s = (Student) p;
-        s.score = score;
+        s.grade = grade;
         return;
       }
     }
