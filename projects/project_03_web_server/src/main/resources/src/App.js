@@ -35,16 +35,11 @@ class App extends Component {
           <Route
             path={"teacher"}
             component={Teacher}
-            students={studentsToRender}
           />
-          {studentsToRender.map(student => (
-            <Route
-              key={student.id}
-              path={"student/" + student.id}
-              component={Student}
-              studentInfo={student}
-            />
-          ))}
+          <Route
+            path={"student/:id"}
+            component={Student}
+          />
         </Route>
       </Router>
     );
