@@ -2,21 +2,26 @@ import React from "react";
 import { Link } from "react-router";
 import "./Sidebar.css";
 
-import jsonData from "../../data.json";
-
 export class Sidebar extends React.Component {
   constructor() {
     super();
-    this.state = { students: [] };
+    this.state = {
+      students: []
+    };
   }
-  componentWillMount() {
-    var studentsToAdd = [];
-    jsonData.people.forEach(function(person) {
-      if (person.type === "STUDENT") {
-        studentsToAdd.push(person);
-      }
-    });
-    this.setState({ students: studentsToAdd });
+
+  componentDidMount() {
+    this.fetchStudents();
+  }
+
+  fetchStudents = () => {
+    return fetch(`/api/people`)
+      .then(res => res.json())
+      .then(body => {
+        this.setState({
+          students: body
+        });
+      });
   }
 
   render() {

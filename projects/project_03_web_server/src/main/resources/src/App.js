@@ -7,27 +7,14 @@ import { Student } from "./components/Student/Student";
 import { Teacher } from "./components/Teacher/Teacher";
 import { Root } from "./components/Root/Root";
 
-import jsonData from "./data.json";
 import "./App.css";
 
 class App extends Component {
   constructor() {
     super();
-    this.state = { students: [] };
-  }
-  componentWillMount() {
-    var studentsToAdd = [];
-    jsonData.people.forEach(function(person) {
-      if (person.type === "STUDENT") {
-        studentsToAdd.push(person);
-      }
-    });
-    this.setState({ students: studentsToAdd });
   }
 
   render() {
-    let studentsToRender = this.state.students;
-
     return (
       <Router history={browserHistory}>
         <Route path={"/"} component={Root}>
