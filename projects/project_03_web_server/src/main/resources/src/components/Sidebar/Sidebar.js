@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router";
+
+import StateService from '../../services/StateService';
 import "./Sidebar.css";
 
 export class Sidebar extends React.Component {
@@ -8,10 +10,16 @@ export class Sidebar extends React.Component {
     this.state = {
       students: []
     };
+
+    this.unsubscribe = StateService.subscribe(this.fetchStudents);
   }
 
   componentDidMount() {
     this.fetchStudents();
+  }
+
+  componentWillUnmount() {
+    this.unsubscribe();
   }
 
   fetchStudents = () => {

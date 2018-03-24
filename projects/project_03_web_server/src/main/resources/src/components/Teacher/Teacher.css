@@ -8,3 +8,10 @@
 .updateBtn{
   margin-left: 10px;
 }
+
+.AddStudentForm {
+  max-width: 20rem;
+}
+.AddStudentForm input {
+  margin-bottom: 10px;
+}

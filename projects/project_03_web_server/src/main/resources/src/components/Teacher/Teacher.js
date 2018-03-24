@@ -1,4 +1,6 @@
 import React from "react";
+
+import StateService from '../../services/StateService';
 import "./Teacher.css";
 
 export class Teacher extends React.Component {
@@ -44,9 +46,35 @@ export class Teacher extends React.Component {
       });
   }
 
+  addStudent = (firstName, lastName) => {
+    fetch(`/api/students`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        firstName,
+        lastName
+      })
+    })
+      .then(res => {
+        if (res.status === 200) {
+          return Promise.resolve();
+        } else {
+          return Promise.reject(new Error('Error adding the student'));
+        }
+      })
+      .then(() => this.fetchStudents())
+      .then(() => StateService.notify())
+      .catch(err => {
+        console.error('TODO: Handle this error!!!', err);
+      });
+  }
+
   render() {
     return (
       <div className="teacher-container">
+        <h3>Students</h3>
         <table className="table">
           <thead>
             <tr>
@@ -73,6 +101,9 @@ export class Teacher extends React.Component {
             ))}
           </tbody>
         </table>
+        <AddStudentForm
+          onAddStudent={this.addStudent}
+        />
       </div>
     );
   }
@@ -105,6 +136,49 @@ class StudentGradeForm extends React.Component {
           onClick={() => this.submit()}
         >
           Update
+        </button>
+      </div>
+    );
+  }
+}
+
+class AddStudentForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.firstNameInput = null;
+    this.lastNameInput = null;
+  }
+
+  submit() {
+    const firstName = this.firstNameInput.value;
+    const lastName = this.lastNameInput.value;
+    this.props.onAddStudent(firstName, lastName);
+
+    this.firstNameInput.value = '';
+    this.lastNameInput.value = '';
+  }
+
+  render() {
+    return (
+      <div className="AddStudentForm">
+        <h3>Add student</h3>
+        <input
+          type="text"
+          className="form-control"
+          placeholder="First Name"
+          ref={(elem) => { this.firstNameInput = elem; }}
+        />
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Last Name"
+          ref={(elem) => { this.lastNameInput = elem; }}
+        />
+        <button
+          className="btn btn-default"
+          onClick={() => this.submit()}
+        >
+          Add
         </button>
       </div>
     );
