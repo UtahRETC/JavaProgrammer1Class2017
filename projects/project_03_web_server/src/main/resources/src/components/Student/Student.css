@@ -1,0 +1,14 @@
+.student-container{
+  background-color: lightgray;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15pt;
+  margin:50px;
+  display: grid;
+  grid-template-columns: .5fr 1fr
+}
+
+.student-pic{
+  width: 200px;
+  height: auto;
+}
