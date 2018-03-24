@@ -21,7 +21,7 @@ public class School {
 
   public Person getPersonById(int id) {
     for (Person p : people) {
-      if (p.id == id) {
+      if (p.getId() == id) {
         return p;
       }
     }
@@ -31,9 +31,9 @@ public class School {
 
   public void setGrade(int id, int grade) {
     for (Person p : people) {
-      if (p.id == id && p instanceof Student) {
+      if (p.getId() == id && p instanceof Student) {
         Student s = (Student) p;
-        s.grade = grade;
+        s.setGrade(grade);
         return;
       }
     }

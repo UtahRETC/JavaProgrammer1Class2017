@@ -1,8 +1,12 @@
 public class Student extends Person {
-  int grade;
+  private int grade;
 
-  public Student(int id, String firstName, String lastName, int grade) {
-    super(id, firstName, lastName);
+  public Student(String firstName, String lastName, int grade) {
+    super(firstName, lastName);
+    this.grade = grade;
+  }
+
+  public void setGrade(int grade) {
     this.grade = grade;
   }
 }

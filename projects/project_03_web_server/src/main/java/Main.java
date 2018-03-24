@@ -8,10 +8,9 @@ public class Main {
 
     // Put your school logic here!!! -------------------------------------------
     School school = new School();
-    // TODO: don't assign IDs out here, do it internally
-    school.addPerson(new Student(1, "Andrew", "Jensen", 80));
-    school.addPerson(new Student(2, "Eric", "Fortney", 96));
-    school.addPerson(new Student(3, "Marcos", "Minond", 92));
+    school.addPerson(new Student("Andrew", "Jensen", 80));
+    school.addPerson(new Student("Eric", "Fortney", 96));
+    school.addPerson(new Student("Marcos", "Minond", 92));
 
     // End school logic. -------------------------------------------------------
 
@@ -34,6 +33,7 @@ public class Main {
       response.type("application/json");
       Gson gson = new Gson();
       Student addedStudent = gson.fromJson(request.body(), Student.class);
+      addedStudent.assignId();
       school.addPerson(addedStudent);
       return makeJson(addedStudent);
     });

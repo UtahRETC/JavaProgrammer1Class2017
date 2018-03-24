@@ -1,11 +1,24 @@
 public class Person {
-  int id;
-  String firstName;
-  String lastName;
 
-  public Person(int id, String firstName, String lastName) {
-    this.id = id;
+  private static int nextId = 1;
+
+  static int getNextId() {
+    return nextId++;
+  }
+
+  private int id;
+  private String firstName;
+  private String lastName;
+
+  public Person(String firstName, String lastName) {
+    this.id = getNextId();
     this.firstName = firstName;
     this.lastName = lastName;
+  }
+
+  public int getId() { return this.id; }
+
+  public void assignId() {
+    this.id = getNextId();
   }
 }
