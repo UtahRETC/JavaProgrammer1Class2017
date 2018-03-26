@@ -15,7 +15,7 @@
 
 ### TODO
 
-- What do need to finish on the project?
+- What do need to finish the Server project?
   - Error handling needs to display errors that will help debug the backend.
     - Front end displays errors that are specific to the front end. Like the response format is wrong.
     - Backend logs any time it sends out an error response.
