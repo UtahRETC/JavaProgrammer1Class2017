@@ -13,6 +13,15 @@
 }
 </style>
 
+### TODO
+
+- What do need to finish on the project?
+  - Error handling needs to display errors that will help debug the backend.
+    - Front end displays errors that are specific to the front end. Like the response format is wrong.
+    - Backend logs any time it sends out an error response.
+    - Anything that would be useful when debugging the creating of new endpoints.
+
+
 ### Module outline
 
 - Exceptions
