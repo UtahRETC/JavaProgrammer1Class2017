@@ -1,4 +1,4 @@
-# Project 3: Web Server
+# Web Server Project
 
 ## Endpoints
 
