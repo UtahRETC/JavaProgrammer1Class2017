@@ -4,7 +4,7 @@ page_number: true
 footer: Java Class - Inheritance (pt. 2)
 -->
 
-# Module 12
+# Module 13
 
 - **Review of Previous Week**
 - **Classes as types**
