@@ -6,20 +6,12 @@ footer: Java Class - Web Server Project
 
 # Project 3: Web Server
 
-- **Review of Previous Week**
 - **Web Development Overview**
 - **How to Communicate on the Web**
 - **JSON**
 - **This Week's Project: Web Server**
 
 --------------------------------------------------------------------------
-
-# Review of Previous Week
-
-- TODO: add details here
-
---------------------------------------------------------------------------
-
 
 
 
@@ -509,9 +501,3 @@ Enter ``ipconfig`` from the Windows Command Line. Copy the ``IPv4 Address`` with
 See the homework document and the API specs
 
 Submit a link to your code repo on Canvas
-
---------------------------------------------------------------------------
-
-# Additional Resources
-
-- TODO: add resources
