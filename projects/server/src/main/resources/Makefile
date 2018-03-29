@@ -13,6 +13,7 @@ endif
 build:
 	if [ ! -d dist ]; then mkdir dist; fi
 	cp index.html dist/
+	cp node_modules/tachyons/css/tachyons.min.css dist/
 	$(WEBPACK) $(WEBPACKFLAGS)
 
 server:

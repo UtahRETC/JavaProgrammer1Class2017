@@ -13,7 +13,9 @@ module.exports = {
     ]
   },
   devServer: {
-    historyApiFallback: true,
+    historyApiFallback: {
+      rewrites: [{ from: /^\/tachyons.min.css$/, to: "/dist/tachyons.min.css" }]
+    },
     proxy: {
       "/api": "http://localhost:3000"
     }
