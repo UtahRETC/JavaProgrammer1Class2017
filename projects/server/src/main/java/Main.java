@@ -17,7 +17,7 @@ public class Main {
 
     // End school logic. -------------------------------------------------------
 
-    staticFiles.location("/build");
+    staticFiles.location("/dist");
 
     port(3000);
 
