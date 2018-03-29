@@ -17,3 +17,6 @@ build:
 
 server:
 	$(WEBPACKSERVER) $(WEBPACKFLAGS)
+
+deps:
+	npm install
