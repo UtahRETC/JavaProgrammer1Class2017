@@ -9,26 +9,45 @@ const EVENT_EDIT = "evedit";
 const EVENT_DELETE = "evdelete";
 
 const Avatars = {
-  names: ["Cat", "GuineaPig", "Hippopotamus", "Horse", "Lion", "Rabbit"],
+  nextImage: 0,
+  images: ["Cat", "GuineaPig", "Hippopotamus", "Horse", "Lion", "Rabbit"],
 
-  get(person) {
-    return Avatars.names[
-      (person.firstName + person.lastName + person.id).length %
-        Avatars.names.length
-    ];
+  colors: [
+    "#a2d9ce",
+    "#a3e4d7",
+    "#d4efdf",
+    "#e5e8e8",
+    "#e6b0aa",
+    "#e8daef",
+    "#f9e79f",
+    "#fadbd8",
+    "#fae5d3",
+    "#fdf2e9"
+  ],
+
+  url() {
+    return (
+      "url(/assets/images/" +
+      Avatars.images[Avatars.nextImage++ % Avatars.images.length] +
+      ".png)"
+    );
   },
 
-  url(person) {
-    return "url(/assets/images/" + Avatars.get(person) + ".png)";
+  color() {
+    return Avatars.colors[
+      Math.floor((Math.random() * 100) % Avatars.colors.length)
+    ];
   }
 };
 
 const Avatar = props => (
   <div
-    className="w2 h2 w3-ns h3-ns br-100 avatar"
+    className="w2 h2 w3-ns h3-ns br-100 ba b--dashed b--gray"
     style={{
-      backgroundImage: Avatars.url(props.person),
-      backgroundPositionY: "2px",
+      backgroundColor: Avatars.color(),
+      backgroundImage: Avatars.url(),
+      backgroundPositionX: "50%",
+      backgroundPositionY: "3px",
       backgroundRepeat: "no-repeat",
       backgroundSize: "110%"
     }}
@@ -95,9 +114,9 @@ class StudentList extends Component {
     let { students, editing, creating } = this.state;
 
     return (
-      <article className="mt2 measure-wide center">
-        <h1>Students Management System</h1>
-        <ul className="list pl0 mt1 measure-wide">
+      <article className="mt4 measure-wide center">
+        <h2 className="tc">Students Management System</h2>
+        <ul className="list pl0 mt5 measure-wide">
           {students.map(student => (
             <li className="pa3 ph0-l bb b--black-10">
               {Student(student, ev => this.handleStudentEvent(ev, student))}
