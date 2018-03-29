@@ -9,9 +9,7 @@ const EVENT_EDIT = "evedit";
 const EVENT_DELETE = "evdelete";
 
 const Avatars = {
-  nextImage: 0,
   images: ["Cat", "GuineaPig", "Hippopotamus", "Horse", "Lion", "Rabbit"],
-
   colors: [
     "#a2d9ce",
     "#a3e4d7",
@@ -25,18 +23,16 @@ const Avatars = {
     "#fdf2e9"
   ],
 
-  url() {
-    return (
-      "url(/assets/images/" +
-      Avatars.images[Avatars.nextImage++ % Avatars.images.length] +
-      ".png)"
-    );
+  url(person) {
+    return "url(/assets/images/" + this.image(person) + ".png)";
   },
 
-  color() {
-    return Avatars.colors[
-      Math.floor((Math.random() * 100) % Avatars.colors.length)
-    ];
+  image(person) {
+    return this.images[parseInt(person.id) % this.images.length];
+  },
+
+  color(person) {
+    return this.colors[parseInt(person.id) % this.colors.length];
   }
 };
 
@@ -44,8 +40,8 @@ const Avatar = props => (
   <div
     className="w2 h2 w3-ns h3-ns br-100 ba b--dashed b--gray"
     style={{
-      backgroundColor: Avatars.color(),
-      backgroundImage: Avatars.url(),
+      backgroundColor: Avatars.color(props.person),
+      backgroundImage: Avatars.url(props.person),
       backgroundPositionX: "50%",
       backgroundPositionY: "3px",
       backgroundRepeat: "no-repeat",
@@ -110,6 +106,13 @@ class StudentList extends Component {
     }
   }
 
+  closeModal() {
+    this.setState({
+      editing: null,
+      creating: false
+    });
+  }
+
   render() {
     let { students, editing, creating } = this.state;
 
@@ -124,7 +127,15 @@ class StudentList extends Component {
           ))}
         </ul>
 
-        <Modal isOpen={editing || creating}>{JSON.stringify(editing)}</Modal>
+        <Modal
+          isOpen={editing || creating}
+          shouldCloseOnOverlayClick={true}
+          shouldCloseOnEsc={true}
+          className="measure center mt5 pa5 bg-white ba b--dashed b--gray"
+          onRequestClose={() => this.closeModal()}
+        >
+          {JSON.stringify(editing)}
+        </Modal>
       </article>
     );
   }
