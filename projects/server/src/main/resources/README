@@ -9,3 +9,14 @@ dependencies.
 The dev server is started with the `make server` command and the same rules for
 the NODE_ENV variable apply. Requests made to the "/api/" endpoint are proxied
 to localhost:3000 which is the default address for the Java app.
+
+
+
+Credit goes to Richard Schumann for the following images:
+
+- https://thenounproject.com/schumanncombo/collection/animals/?i=92048
+- https://thenounproject.com/schumanncombo/collection/animals/?i=92051
+- https://thenounproject.com/schumanncombo/collection/animals/?i=92053
+- https://thenounproject.com/schumanncombo/collection/animals/?i=92055
+- https://thenounproject.com/schumanncombo/collection/animals/?i=92057
+- https://thenounproject.com/schumanncombo/collection/animals/?i=92058
