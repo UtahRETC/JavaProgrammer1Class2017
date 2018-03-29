@@ -17,7 +17,12 @@ const Student = person => (
   <div className="flex items-center lh-copy">
     <div
       className="w2 h2 w3-ns h3-ns br-100 avatar"
-      style={{ backgroundImage: getAvatarUrl(person) }}
+      style={{
+        backgroundImage: getAvatarUrl(person),
+        backgroundPositionY: "2px",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "110%"
+      }}
     />
     <div className="pl3 flex-auto">
       <span className="f6 db black-70">Id: {person.id}</span>
@@ -55,10 +60,4 @@ class StudentList extends Component {
   }
 }
 
-class App extends Component {
-  render() {
-    return <StudentList />;
-  }
-}
-
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(<StudentList />, document.getElementById("app"));
