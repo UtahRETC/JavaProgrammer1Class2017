@@ -184,25 +184,46 @@ const HttpError = ({ config, request, response }) => {
   let textSuggestion;
   let codeSuggestion;
 
-  if (response.status === 404) {
-    textSuggestion =
-      "That error message suggests that the endpoint does not exists. " +
-      "Make sure it exists, there are no typos in the URL, and that " +
-      "you have the correct method. Finally, make sure to restart the " +
-      "server after your changes are complete. Below is a suggestion " +
-      "of what the code for this endpoint might look like. Keep in mind " +
-      "that this is only a suggestion and you will have to make changes:";
+  if (response.status >= 500) {
+    if (response && response.data && response.data.stack) {
+      textSuggestion = `This error suggests that there was a problem running
+        part of the server code. Below you will find a stack trace of the
+        exception that the server ran into. Make sure to pay close attention to
+        lines that mention the "Main.java" file:`;
+
+      codeSuggestion = response.data.stack;
+    } else {
+      textSuggestion = `This error suggests that there was a problem running
+        part of the server code. Unfortunately I was not able get back any
+        information about the error, so you will have to refer to the output in
+        the server console.`;
+    }
+  } else if (response.status >= 404) {
+    textSuggestion = `This error message suggests that the endpoint does not
+      exists. Make sure it exists, there are no typos in the URL, and that you
+      have the correct method. Finally, make sure to restart the server after
+      your changes are complete. Below is a suggestion of what the code for
+      this endpoint might look like. Keep in mind that this is only a
+      suggestion and you will have to make changes:`;
 
     codeSuggestion = `${config.method.toLowerCase()}("${
       config.url
     }", (request, response) -> {
   // Your code goes here
 });`;
-  } else if (response.status === 500) {
   } else {
-    textSuggestion =
-      "Check the error output on the server console and make sure to " +
-      "restart the server after you make changes to your code.";
+    if (response && response.data && response.data.stack) {
+      textSuggestion = `Check the error output on the server console and make
+        sure to restart the server after you make changes to your code. Below
+        you will find a stack trace of the exception that the server ran into.
+        Make sure to pay close attention to lines that mention the "Main.java"
+        file:`;
+
+      codeSuggestion = response.data.stack;
+    } else {
+      textSuggestion = `Check the error output on the server console and make
+        sure to restart the server after you make changes to your code.`;
+    }
   }
 
   return (

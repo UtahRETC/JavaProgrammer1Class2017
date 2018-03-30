@@ -83,6 +83,7 @@ public class Main {
 
     exception(Exception.class, (e, request, response) -> {
       response.type("application/json");
+      response.status(500);
 
       ErrorResponse result = new ErrorResponse(e);
       String json = makeJson(result);
