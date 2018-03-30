@@ -414,7 +414,7 @@ class StudentList extends Component {
       <span>Create a new student</span>
     ) : (
       <span>
-        Editing {editing.firstName} {editing.lastName}
+        Editing "{this.getStudentName(editing)}"
       </span>
     );
 
