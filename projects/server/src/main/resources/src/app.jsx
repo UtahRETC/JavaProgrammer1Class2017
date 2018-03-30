@@ -3,10 +3,34 @@ import ReactDOM from "react-dom";
 import Modal from "react-modal";
 import axios from "axios";
 
-const API_GET_STUDENTS = "/api/students";
-
 const EVENT_EDIT = "evedit";
 const EVENT_DELETE = "evdelete";
+
+const Students = {
+  endpoint: "/api/students",
+
+  getAll() {
+    return axios.get(this.endpoint).then(res => res.data);
+  },
+
+  getById(id) {
+    return axios.get(`${this.endpoint}/${id}`).then(res => res.data);
+  },
+
+  update(student) {
+    return axios.put(`${this.endpoint}/${id}`, student).then(res => res.data);
+  },
+
+  remove(student) {
+    return axios
+      .delete(`${this.endpoint}/${student.id}`, student)
+      .then(res => res.data);
+  },
+
+  create(student) {
+    return axios.post(this.endpoint, student).then(res => res.data);
+  }
+};
 
 const Avatars = {
   images: ["Cat", "GuineaPig", "Hippopotamus", "Horse", "Lion", "Rabbit"],
@@ -62,11 +86,10 @@ const Button = props => {
   return (
     <a
       className={[
-        "f6 link dim br1 ph3 pv2 mt2 mr2 dib",
+        "f6 link dim br1 ph3 pv2 mt2 mr2 dib pointer",
         bgColor || "bg-dark-blue",
         fgColor || "white"
       ].join(" ")}
-      href="#0"
       {...rest}
     >
       {props.children}
@@ -103,6 +126,58 @@ const Field = props => {
   );
 };
 
+const HttpError = ({ config, request, response }) => {
+  let textSuggestion;
+  let codeSuggestion;
+
+  switch (response.status) {
+    case 404:
+      textSuggestion =
+        "That error message suggests that the endpoint does not exists. " +
+        "Make sure it exists, there are no typos in the URL, and that " +
+        "you have the correct method. Finally, make sure to restart the " +
+        "server after your changes are complete. Below is a suggestion " +
+        "of what the code for this endpoint might look like. Keep in mind " +
+        "that this is only a suggestion and you will have to make changes:";
+
+      codeSuggestion = `${config.method.toLowerCase()}("${
+        config.url
+      }", (request, response) -> {
+  // Your code goes here
+});`;
+
+      break;
+
+    default:
+      textSuggestion =
+        "Check the error output on the server console and make sure to " +
+        "restart the server after you make changes to your code.";
+      break;
+  }
+
+  return (
+    <div>
+      <h2 className="dark-red">HTTP Error</h2>
+      <h4>
+        There was an error making an HTTP request to <code>"{config.url}"</code>{" "}
+        with a <code>"{config.method.toUpperCase()}"</code> method. The request
+        came back with a status of{" "}
+        <code>
+          {response.status}, {response.statusText}
+        </code>.
+      </h4>
+      {textSuggestion ? <p className="lh-copy">{textSuggestion}</p> : ""}
+      {codeSuggestion ? (
+        <code>
+          <pre>{codeSuggestion}</pre>
+        </code>
+      ) : (
+        ""
+      )}
+    </div>
+  );
+};
+
 const Student = (person, onClick) => (
   <div className="flex items-center lh-copy">
     <Avatar person={person} />
@@ -124,6 +199,7 @@ class StudentList extends Component {
     students: [],
     creating: false,
     editing: null,
+    reqErr: null,
     lastUpdate: 0
   };
 
@@ -132,10 +208,9 @@ class StudentList extends Component {
   }
 
   fetchStudents() {
-    axios
-      .get(API_GET_STUDENTS)
-      .then(res => res.data)
-      .then(students => this.setState({ students, lastUpdate: Date.now() }));
+    Students.getAll()
+      .then(students => this.setState({ students, lastUpdate: Date.now() }))
+      .catch(reqErr => this.setState({ reqErr }));
   }
 
   handleStudentEvent(ev, student) {
@@ -173,7 +248,9 @@ class StudentList extends Component {
       )}`.trim() + "?";
 
     if (window.confirm(msg)) {
-      console.warn("Delete unimplemented");
+      Students.remove(student)
+        .then(() => this.fetchStudents())
+        .catch(reqErr => this.setState({ reqErr }));
     }
   }
 
@@ -181,15 +258,21 @@ class StudentList extends Component {
     return [student.firstName, student.lastName].join(" ").trim();
   }
 
-  closeModal() {
+  closeStudentModal() {
     this.setState({
       editing: null,
       creating: false
     });
   }
 
+  closeErrorModal() {
+    this.setState({
+      reqErr: null
+    });
+  }
+
   render() {
-    let { students, editing, creating, lastUpdate } = this.state;
+    let { students, editing, creating, lastUpdate, reqErr } = this.state;
 
     let studentInfo = editing || {};
     let studentsListElem = !students.length ? (
@@ -214,8 +297,30 @@ class StudentList extends Component {
       </div>
     );
 
-    let modalIsOpen = !!editing || !!creating;
-    let modalTitleElem = !editing ? (
+    let errorModalElem = !reqErr ? (
+      <span />
+    ) : (
+      <Modal
+        appElement={document.getElementById("app")}
+        isOpen={true}
+        shouldCloseOnOverlayClick={false}
+        shouldCloseOnEsc={true}
+        className="w-50 center mt4 pa4 bg-white ba b--gray outline-0-l"
+        onRequestClose={() => this.closeErrorModal()}
+      >
+        <HttpError
+          config={reqErr.config}
+          request={reqErr.request}
+          response={reqErr.response}
+        />
+        <div className="tr mt3">
+          <Button onClick={() => this.closeErrorModal()}>Close</Button>
+        </div>
+      </Modal>
+    );
+
+    let studentModalIsOpen = !!editing || !!creating;
+    let studentModalTitleElem = !editing ? (
       <span>Create a new student</span>
     ) : (
       <span>
@@ -223,18 +328,18 @@ class StudentList extends Component {
       </span>
     );
 
-    let modalElem = (
+    let studentModalElem = (
       <Modal
         appElement={document.getElementById("app")}
-        isOpen={modalIsOpen}
+        isOpen={studentModalIsOpen}
         shouldCloseOnOverlayClick={false}
         shouldCloseOnEsc={true}
-        className="measure-wide center mt4 pa4 bg-white ba b--gray outline-0-l"
-        onRequestClose={() => this.closeModal()}
+        className="w-50 center mt4 pa4 bg-white ba b--gray outline-0-l"
+        onRequestClose={() => this.closeStudentModal()}
       >
         <div>
           <form className="black-80">
-            <h2 className="mt0">{modalTitleElem}</h2>
+            <h2 className="mt0">{studentModalTitleElem}</h2>
 
             <Field
               label="First Name"
@@ -248,7 +353,7 @@ class StudentList extends Component {
             />
 
             <div className="tr">
-              <CancelButton onClick={() => this.closeModal()} />
+              <CancelButton onClick={() => this.closeStudentModal()} />
               <Button>Submit</Button>
             </div>
           </form>
@@ -269,7 +374,8 @@ class StudentList extends Component {
 
         {studentsListElem}
         {lastUpdateMsgElem}
-        {modalElem}
+        {studentModalElem}
+        {errorModalElem}
       </article>
     );
   }
