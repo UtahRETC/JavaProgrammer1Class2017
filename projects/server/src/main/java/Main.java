@@ -81,6 +81,14 @@ public class Main {
 
     // TODO: implement the DELETE /api/students/{id} endpoint here...
 
+    exception(Exception.class, (e, request, response) -> {
+      response.type("application/json");
+
+      ErrorResponse result = new ErrorResponse(e);
+      String json = makeJson(result);
+      response.body(json);
+    });
+
     awaitInitialization();
     System.out.println("");
     System.out.println("Server is running!");
