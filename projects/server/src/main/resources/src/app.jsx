@@ -56,6 +56,49 @@ const Link = props => (
   </a>
 );
 
+const Button = props => (
+  <a
+    className={[
+      "f6 link dim br1 ph3 pv2 mt2 mr2 dib",
+      props.bgColor || "bg-dark-blue",
+      props.fgColor || "white"
+    ].join(" ")}
+    href="#0"
+    {...props}
+  >
+    {props.children}
+  </a>
+);
+
+const CancelButton = props => (
+  <Button fgColor="dark-gray" bgColor="bg-white" {...props}>
+    Cancel
+  </Button>
+);
+
+const Field = props => {
+  let id = "fieldId" + Math.random().toString();
+  let info = props.required ? (
+    <span className="normal black-60">(required)</span>
+  ) : (
+    <span />
+  );
+
+  return (
+    <span>
+      <label for={id} className="f6 b db mb2 mt3">
+        {props.label} {info}
+      </label>
+      <input
+        id={id}
+        className="input-reset ba b--black-20 pa2 mb2 db w-100"
+        type="text"
+        value={props.value}
+      />
+    </span>
+  );
+};
+
 const Student = (person, onClick) => (
   <div className="flex items-center lh-copy">
     <Avatar person={person} />
@@ -115,11 +158,21 @@ class StudentList extends Component {
 
   render() {
     let { students, editing, creating } = this.state;
+    let userInfo = editing || {};
+
+    let modalIsOpen = editing || creating;
+    let modalTitle = !editing ? (
+      <h2 className="mt0 tc">Create a new student</h2>
+    ) : (
+      <h2 className="mt0 tc">
+        Editing {editing.firstName} {editing.lastName}
+      </h2>
+    );
 
     return (
       <article className="mt4 measure-wide center">
         <h2 className="tc">Students Management System</h2>
-        <ul className="list pl0 mt5 measure-wide">
+        <ul className="list pl0 mt5">
           {students.map(student => (
             <li className="pa3 ph0-l bb b--black-10">
               {Student(student, ev => this.handleStudentEvent(ev, student))}
@@ -128,13 +181,25 @@ class StudentList extends Component {
         </ul>
 
         <Modal
-          isOpen={editing || creating}
-          shouldCloseOnOverlayClick={true}
+          isOpen={modalIsOpen}
+          shouldCloseOnOverlayClick={false}
           shouldCloseOnEsc={true}
-          className="measure center mt5 pa5 bg-white ba b--dashed b--gray"
+          className="measure-wide center mt4 pa4 bg-white ba b--gray outline-0-l"
           onRequestClose={() => this.closeModal()}
         >
-          {JSON.stringify(editing)}
+          <div>
+            <form className="black-80">
+              {modalTitle}
+
+              <Field label="First Name" value={userInfo.firstName} required={true} />
+              <Field label="Last Name" value={userInfo.lastName} required={true} />
+
+              <div className="tr">
+                <CancelButton onClick={() => this.closeModal()} />
+                <Button>Submit</Button>
+              </div>
+            </form>
+          </div>
         </Modal>
       </article>
     );
