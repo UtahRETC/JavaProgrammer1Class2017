@@ -853,10 +853,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 <pre><code class="lang-text">gradle <span class="hljs-command">run</span>
 </code></pre>
 <p>You will notice a progress bar pause at 75%: &quot;Run&quot;. That means the server is now running! The server is different from other homework we&#39;ve done in the past, because it is a <em>long-running process</em>, meaning it needs to keep running in order to do its work rather than running quickly and finishing.</p>
-<p>Remember that you can stop the server by pressing <strong>CTRL+C</strong>.</p>
-<p>Now, open your web browser and navigate to <a href="http://localhost:3000">http://localhost:3000</a>. You should see something like this:</p>
-<p>TODO: show screenshot here</p>
-<p>This means all of the starter code is working and you can start on your part of the project!</p>
+<p>Remember that you can stop the server by pressing <strong>CTRL+C</strong>. You will need to restart your server each time you want to test out a code change, just like how you need to run <code>javac</code> and <code>java</code> on your terminal for smaller programs.</p>
+<p>Now, open your web browser and navigate to <a href="http://localhost:3000">http://localhost:3000</a>. If you see the grading system front end, this means all of the starter code is working and you can start on your part of the project!</p>
 <h2 id="step-3-finish-implementing-the-server">Step 3: Finish implementing the server</h2>
 <p>Remember that the project has two parts: the <em>server</em> and the <em>client</em>. The client code is already finished, but you need to finish up the server code. You will be able to perform some actions without changing anything, but you will need to implement two final API endpoints to make the whole system work. These are the endpoints in the system:</p>
 <ul>
@@ -868,10 +866,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 <li><code>DELETE /api/students/{id}</code> (TODO!)</li>
 </ul>
 <p>The <strong>API Specification Document</strong> has the full details on what these endpoints should look like. Your endpoints need to return JSON data like the example responses in the document.</p>
-<p>In order to implement the last two endpoints, you will need to add code to the <code>Main</code> class, but you will also need to modify the <code>School</code> class. Implement a <code>setGrade</code> method and a <code>deleteStudent</code> method.</p>
-<p>The <code>setGrade</code> method should take two parameters: a student&#39;s ID and a new grade. It should look through the students until it finds the right one, then change the grade to the new value.</p>
-<p>The <code>deleteStudent</code> method take one parameter: the ID of the student to delete. It should find the student that has that ID and remove it out of the list of students.</p>
-<p>Make sure your endpoints return the right kind of data in their HTTP responses too! The API Spec will tell you what they need to look like.</p>
+<p>In order to implement the endpoints, you will need to change code in the <code>Main</code>, <code>School</code>, and <code>Student</code> classes.</p>
+<h3 id="step-3-part-1-implement-the-endpoint-to-change-a-student-s-grade">Step 3, Part 1: Implement the endpoint to change a student&#39;s grade</h3>
+<p>You&#39;ll notice that the logic for this endpoint has already been started in the <code>Main</code> class.</p>
+<p>Implement a <code>setGrade</code> method in the <code>School</code> class. The method should take two parameters: a student&#39;s ID and a new grade. It should look through the students until it finds the right one, then change the grade to the new value. You will also need to create a setter method in the <code>Student</code> class.</p>
+<h3 id="step-3-part-2-implement-the-endpoint-to-delete-a-student">Step 3, Part 2: Implement the endpoint to delete a student</h3>
+<p>Implement a <code>deleteStudent</code> method in the <code>School</code> class. The method should take one parameter: the ID of the student to delete. It should find the student that has that ID and remove it out of the list of students.</p>
+<p>There is not a handler method for this endpoint, so you will need to create one yourself. You will need to follow the same pattern that the other endpoints follow. This part of the <a href="http://sparkjava.com/documentation#routes">Spark documentation</a> can help you know which method to call to create the endpoint.</p>
+<h2 id="submitting-the-project">Submitting the project</h2>
+<p>Put your work on Githbu and submit a link to your repo on Canvas, like previous projects.</p>
 
 </body>
 </html>
