@@ -10,27 +10,40 @@ const Students = {
   endpoint: "/api/students",
 
   getAll() {
-    return axios.get(this.endpoint).then(res => res.data);
+    return axios.get(this.endpoint);
   },
 
   getById(id) {
-    return axios.get(`${this.endpoint}/${id}`).then(res => res.data);
+    return axios.get(`${this.endpoint}/${id}`);
   },
 
   update(student) {
-    return axios
-      .put(`${this.endpoint}/${student.id}`, student)
-      .then(res => res.data);
+    return axios.put(`${this.endpoint}/${student.id}`, student);
   },
 
   remove(student) {
-    return axios
-      .delete(`${this.endpoint}/${student.id}`, student)
-      .then(res => res.data);
+    return axios.delete(`${this.endpoint}/${student.id}`, student);
   },
 
   create(student) {
-    return axios.post(this.endpoint, student).then(res => res.data);
+    return axios.post(this.endpoint, student);
+  },
+
+  isStudent(thing) {
+    if (typeof thing === "string") {
+      try {
+        thing = JSON.parse(thing);
+      } catch (err) {
+        return false;
+      }
+    }
+
+    return (
+      "id" in thing &&
+      "grade" in thing &&
+      "firstName" in thing &&
+      "lastName" in thing
+    );
   }
 };
 
@@ -74,6 +87,23 @@ const Avatar = props => (
       backgroundSize: "110%"
     }}
   />
+);
+
+const Code = props => (
+  <code>
+    <pre
+      style={{
+        background: "#f3f3f3",
+        padding: ".75rem",
+        border: "1px solid #dadada",
+        whiteSpace: "pre-wrap",
+        maxHeight: "300px",
+        overflow: "auto"
+      }}
+    >
+      {props.children}
+    </pre>
+  </code>
 );
 
 const Link = props => (
@@ -133,6 +163,23 @@ class Field extends Component {
   }
 }
 
+const SchemeError = ({ got, expected }) => (
+  <div>
+    <h2 className="dark-red">HTTP Response Format Error</h2>
+    <h4>
+      An HTTP request was made but it came back with an unexpected response
+      format.
+    </h4>
+    <p className="lh-copy">
+      Make sure that your response is sending back the right information. I'm
+      expecting something like this:
+    </p>
+    <Code>{JSON.stringify(expected, null, "  ")}</Code>
+    <p className="lh-copy">But instead I got this:</p>
+    <Code>{JSON.stringify(got, null, "  ")}</Code>
+  </div>
+);
+
 const HttpError = ({ config, request, response }) => {
   let textSuggestion;
   let codeSuggestion;
@@ -160,7 +207,7 @@ const HttpError = ({ config, request, response }) => {
 
   return (
     <div>
-      <h2 className="dark-red">HTTP Error</h2>
+      <h2 className="dark-red">HTTP Request Error</h2>
       <h4>
         There was an error making an HTTP request to <code>"{config.url}"</code>{" "}
         with a <code>"{config.method.toUpperCase()}"</code> method. The request
@@ -170,13 +217,7 @@ const HttpError = ({ config, request, response }) => {
         </code>.
       </h4>
       {textSuggestion ? <p className="lh-copy">{textSuggestion}</p> : ""}
-      {codeSuggestion ? (
-        <code>
-          <pre>{codeSuggestion}</pre>
-        </code>
-      ) : (
-        ""
-      )}
+      {codeSuggestion ? <Code>{codeSuggestion}</Code> : ""}
     </div>
   );
 };
@@ -201,9 +242,10 @@ class StudentList extends Component {
   state = {
     students: [],
     creating: false,
+    lastUpdate: 0,
     editing: null,
     reqErr: null,
-    lastUpdate: 0
+    schemaErr: null
   };
 
   componentWillMount() {
@@ -240,6 +282,7 @@ class StudentList extends Component {
 
   getAllStudents() {
     Students.getAll()
+      .then(res => res.data)
       .then(students => this.setState({ students, lastUpdate: Date.now() }))
       .catch(reqErr => this.setState({ reqErr }));
   }
@@ -265,8 +308,23 @@ class StudentList extends Component {
 
   createStudent(student) {
     return Students.create(student)
-      .then(() => this.getAllStudents())
-      .catch(reqErr => this.setState({ reqErr }));
+      .catch(reqErr => this.setState({ reqErr }))
+      .then(res => {
+        if (!Students.isStudent(res.data)) {
+          this.setState({
+            schemaErr: {
+              got: res.data,
+              expected: {
+                id: "<auto generated id>",
+                grade: "<auto generated grade>",
+                firstName: "<first name string value>",
+                lastName: "<last name string value>"
+              }
+            }
+          });
+        }
+      })
+      .then(() => this.getAllStudents());
   }
 
   getStudentName(student) {
@@ -282,13 +340,22 @@ class StudentList extends Component {
 
   closeErrorModal() {
     this.setState({
-      reqErr: null
+      reqErr: null,
+      schemaErr: null
     });
   }
 
   render() {
     let firstNameRef, lastNameRef;
-    let { students, editing, creating, lastUpdate, reqErr } = this.state;
+
+    let {
+      students,
+      editing,
+      creating,
+      lastUpdate,
+      reqErr,
+      schemaErr
+    } = this.state;
 
     let studentInfo = editing || {};
     let studentsListElem = !students.length ? (
@@ -313,27 +380,33 @@ class StudentList extends Component {
       </div>
     );
 
-    let errorModalElem = !reqErr ? (
-      <span />
-    ) : (
-      <Modal
-        appElement={document.getElementById("app")}
-        isOpen={true}
-        shouldCloseOnOverlayClick={false}
-        shouldCloseOnEsc={true}
-        className="w-50 center mt4 pa4 bg-white ba b--gray outline-0-l"
-        onRequestClose={() => this.closeErrorModal()}
-      >
-        <HttpError
-          config={reqErr.config}
-          request={reqErr.request}
-          response={reqErr.response}
-        />
-        <div className="tr mt3">
-          <Button onClick={() => this.closeErrorModal()}>Close</Button>
-        </div>
-      </Modal>
-    );
+    let errorModalElem =
+      !reqErr && !schemaErr ? (
+        <span />
+      ) : (
+        <Modal
+          appElement={document.getElementById("app")}
+          isOpen={true}
+          shouldCloseOnOverlayClick={false}
+          shouldCloseOnEsc={true}
+          className="w-50 center mt4 pa4 bg-white ba b--gray outline-0-l"
+          onRequestClose={() => this.closeErrorModal()}
+        >
+          {reqErr && (
+            <HttpError
+              config={reqErr.config}
+              request={reqErr.request}
+              response={reqErr.response}
+            />
+          )}
+          {schemaErr && (
+            <SchemeError got={schemaErr.got} expected={schemaErr.expected} />
+          )}
+          <div className="tr mt3">
+            <Button onClick={() => this.closeErrorModal()}>Close</Button>
+          </div>
+        </Modal>
+      );
 
     let studentModalIsOpen = !!editing || !!creating;
     let studentModalTitleElem = !editing ? (
