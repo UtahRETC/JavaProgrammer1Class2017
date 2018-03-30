@@ -477,7 +477,7 @@ class StudentList extends Component {
     );
 
     return (
-      <article className="mt4 measure-wide center">
+      <article className="mt4 pa2 measure-wide center">
         <h2 className="mb4">Students Management System</h2>
 
         <Button onClick={() => this.getAllStudents()}>
