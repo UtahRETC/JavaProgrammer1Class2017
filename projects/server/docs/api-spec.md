@@ -6,7 +6,7 @@ This document describes how the front end and back end will communicate for the 
 
 ## Static Resources
 
-**GET /**
+### GET /
 
 Serves up the HTML for the single-page app.
 
@@ -14,7 +14,7 @@ Serves up the HTML for the single-page app.
 
 ## Student Resource
 
-**GET /api/students**
+### GET /api/students
 
 Returns a list of all students in the system.
 
@@ -39,7 +39,7 @@ Example response body:
 ]
 ```
 
-**GET /api/students/{id}**
+### GET /api/students/{id}
 
 Returns information about a specific student.
 
@@ -56,7 +56,7 @@ Example response body:
 }
 ```
 
-**POST /api/students**
+### POST /api/students
 
 Defines a new student in the class.
 
@@ -82,7 +82,7 @@ Example response body:
 }
 ```
 
-**PUT /api/students/{id}**
+### PUT /api/students/{id}
 
 Sets the first and last name for a student.
 
@@ -106,7 +106,7 @@ Example response body:
 }
 ```
 
-**PUT /api/students/{id}/grade**
+### PUT /api/students/{id}/grade
 
 Sets the grade for a student.
 
@@ -120,7 +120,7 @@ Example request body:
 
 No response body will be sent.
 
-**DELETE /api/students/{id}**
+### DELETE /api/students/{id}
 
 Deletes a student from the system.
 
