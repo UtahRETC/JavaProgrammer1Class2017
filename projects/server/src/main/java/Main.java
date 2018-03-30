@@ -66,7 +66,11 @@ public class Main {
 
     // TODO: implement the DELETE /api/students/{id} endpoint here...
 
-    // FIXME: say that the server is now running
+    awaitInitialization();
+    System.out.println("");
+    System.out.println("Server is running!");
+    System.out.println("Navigate to http://localhost:3000 to use it.");
+    System.out.println("");
   }
 
   public static String makeJson(Object o) {
