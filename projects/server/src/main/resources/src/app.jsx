@@ -192,7 +192,12 @@ class StudentList extends Component {
     let { students, editing, creating, lastUpdate } = this.state;
 
     let studentInfo = editing || {};
-    let studentsListElem = (
+    let studentsListElem = !students.length ? (
+      <h4 className="mt4">
+        There are no students to show. You can add new students by clicking on
+        the "Create new student" button above and filling out the form.
+      </h4>
+    ) : (
       <ul className="list pl0 mt4">
         {students.map(student => (
           <li key={student.id} className="pa3 ph0-l bb b--black-10">
