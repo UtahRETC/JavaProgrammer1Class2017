@@ -348,6 +348,7 @@ class StudentList extends Component {
 
   render() {
     let firstNameRef, lastNameRef;
+    let widths = "mw7 w-60-ns w-75-m w-90"
 
     let {
       students,
@@ -390,7 +391,7 @@ class StudentList extends Component {
           isOpen={true}
           shouldCloseOnOverlayClick={false}
           shouldCloseOnEsc={true}
-          className="w-50 center mt4 pa4 bg-white ba b--gray outline-0-l"
+          className={widths + " center mt4 pa4 bg-white ba b--gray outline-0-l"}
           onRequestClose={() => this.closeErrorModal()}
         >
           {reqErr && (
@@ -447,7 +448,7 @@ class StudentList extends Component {
         isOpen={studentModalIsOpen}
         shouldCloseOnOverlayClick={false}
         shouldCloseOnEsc={true}
-        className="w-50 center mt4 pa4 bg-white ba b--gray outline-0-l"
+        className={widths + " center mt4 pa4 bg-white ba b--gray outline-0-l"}
         onRequestClose={() => this.closeStudentModal()}
       >
         <div>
@@ -477,7 +478,7 @@ class StudentList extends Component {
     );
 
     return (
-      <article className="mt4 pa2 measure-wide center">
+      <article className={widths + " mt4 pa2 center"}>
         <h2 className="mb4">Students Management System</h2>
 
         <Button onClick={() => this.getAllStudents()}>
