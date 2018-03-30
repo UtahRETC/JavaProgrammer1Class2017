@@ -62,16 +62,16 @@ const Avatars = {
     "#fdf2e9"
   ],
 
-  url(person) {
-    return "url(/assets/images/" + this.image(person) + ".png)";
+  url(student) {
+    return "url(/assets/images/" + this.image(student) + ".png)";
   },
 
-  image(person) {
-    return this.images[parseInt(person.id) % this.images.length];
+  image(student) {
+    return this.images[parseInt(student.id) % this.images.length];
   },
 
-  color(person) {
-    return this.colors[parseInt(person.id) % this.colors.length];
+  color(student) {
+    return this.colors[parseInt(student.id) % this.colors.length];
   }
 };
 
@@ -79,8 +79,8 @@ const Avatar = props => (
   <div
     className="w2 h2 w3-ns h3-ns br-100 ba b--dashed b--gray"
     style={{
-      backgroundColor: Avatars.color(props.person),
-      backgroundImage: Avatars.url(props.person),
+      backgroundColor: Avatars.color(props.student),
+      backgroundImage: Avatars.url(props.student),
       backgroundPositionX: "50%",
       backgroundPositionY: "3px",
       backgroundRepeat: "no-repeat",
@@ -222,15 +222,15 @@ const HttpError = ({ config, request, response }) => {
   );
 };
 
-const Student = (person, onClick) => (
+const Student = (student, onClick) => (
   <div className="flex items-center lh-copy">
-    <Avatar person={person} />
+    <Avatar student={student} />
 
     <div className="pl3 flex-auto">
-      <span className="f6 db black-70">Id: {person.id}</span>
-      <span className="f6 db black-70">Grade: {person.grade}%</span>
+      <span className="f6 db black-70">Id: {student.id}</span>
+      <span className="f6 db black-70">Grade: {student.grade}%</span>
       <span className="f6 db black-70">
-        {person.firstName} {person.lastName}
+        Name: {student.firstName} {student.lastName}
       </span>
     </div>
 
@@ -283,7 +283,7 @@ class StudentList extends Component {
 
   getAllStudents() {
     Students.getAll()
-      .then(res => res.data)
+      .then(res => res.data.reverse())
       .then(students => this.setState({ students, lastUpdate: Date.now() }))
       .catch(reqErr => this.setState({ reqErr }));
   }
@@ -348,7 +348,7 @@ class StudentList extends Component {
 
   render() {
     let firstNameRef, lastNameRef;
-    let widths = "mw7 w-60-ns w-75-m w-90"
+    let widths = "mw7 w-60-ns w-75-m w-90";
 
     let {
       students,
@@ -414,9 +414,7 @@ class StudentList extends Component {
     let studentModalTitleElem = !editing ? (
       <span>Create a new student</span>
     ) : (
-      <span>
-        Editing "{this.getStudentName(editing)}"
-      </span>
+      <span>Editing "{this.getStudentName(editing)}"</span>
     );
 
     let studentModalSubmitAction = () => {
@@ -479,7 +477,7 @@ class StudentList extends Component {
 
     return (
       <article className={widths + " mt4 pa2 center"}>
-        <h2 className="mb4">Students Management System</h2>
+        <h2 className="mb4">Student Management System</h2>
 
         <Button onClick={() => this.getAllStudents()}>
           Refresh student list
