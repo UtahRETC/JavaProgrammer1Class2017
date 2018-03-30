@@ -18,7 +18,9 @@ const Students = {
   },
 
   update(student) {
-    return axios.put(`${this.endpoint}/${id}`, student).then(res => res.data);
+    return axios
+      .put(`${this.endpoint}/${student.id}`, student)
+      .then(res => res.data);
   },
 
   remove(student) {
@@ -130,29 +132,25 @@ const HttpError = ({ config, request, response }) => {
   let textSuggestion;
   let codeSuggestion;
 
-  switch (response.status) {
-    case 404:
-      textSuggestion =
-        "That error message suggests that the endpoint does not exists. " +
-        "Make sure it exists, there are no typos in the URL, and that " +
-        "you have the correct method. Finally, make sure to restart the " +
-        "server after your changes are complete. Below is a suggestion " +
-        "of what the code for this endpoint might look like. Keep in mind " +
-        "that this is only a suggestion and you will have to make changes:";
+  if (response.status === 404) {
+    textSuggestion =
+      "That error message suggests that the endpoint does not exists. " +
+      "Make sure it exists, there are no typos in the URL, and that " +
+      "you have the correct method. Finally, make sure to restart the " +
+      "server after your changes are complete. Below is a suggestion " +
+      "of what the code for this endpoint might look like. Keep in mind " +
+      "that this is only a suggestion and you will have to make changes:";
 
-      codeSuggestion = `${config.method.toLowerCase()}("${
-        config.url
-      }", (request, response) -> {
+    codeSuggestion = `${config.method.toLowerCase()}("${
+      config.url
+    }", (request, response) -> {
   // Your code goes here
 });`;
-
-      break;
-
-    default:
-      textSuggestion =
-        "Check the error output on the server console and make sure to " +
-        "restart the server after you make changes to your code.";
-      break;
+  } else if (response.status === 500) {
+  } else {
+    textSuggestion =
+      "Check the error output on the server console and make sure to " +
+      "restart the server after you make changes to your code.";
   }
 
   return (
@@ -204,19 +202,13 @@ class StudentList extends Component {
   };
 
   componentWillMount() {
-    this.fetchStudents();
-  }
-
-  fetchStudents() {
-    Students.getAll()
-      .then(students => this.setState({ students, lastUpdate: Date.now() }))
-      .catch(reqErr => this.setState({ reqErr }));
+    this.getAllStudents();
   }
 
   handleStudentEvent(ev, student) {
     switch (ev) {
       case EVENT_EDIT:
-        this.editStudent(student);
+        this.setEditStudent(student);
         break;
 
       case EVENT_DELETE:
@@ -229,16 +221,22 @@ class StudentList extends Component {
     }
   }
 
-  createStudent() {
+  setCreateStudent() {
     this.setState({
       creating: true
     });
   }
 
-  editStudent(student) {
+  setEditStudent(student) {
     this.setState({
       editing: student
     });
+  }
+
+  getAllStudents() {
+    Students.getAll()
+      .then(students => this.setState({ students, lastUpdate: Date.now() }))
+      .catch(reqErr => this.setState({ reqErr }));
   }
 
   deleteStudent(student) {
@@ -249,9 +247,21 @@ class StudentList extends Component {
 
     if (window.confirm(msg)) {
       Students.remove(student)
-        .then(() => this.fetchStudents())
+        .then(() => this.getAllStudents())
         .catch(reqErr => this.setState({ reqErr }));
     }
+  }
+
+  updateStudent(student) {
+    return Students.update(student)
+      .then(() => this.getAllStudents())
+      .catch(reqErr => this.setState({ reqErr }));
+  }
+
+  createStudent(student) {
+    return Students.create(student)
+      .then(() => this.getAllStudents())
+      .catch(reqErr => this.setState({ reqErr }));
   }
 
   getStudentName(student) {
@@ -278,7 +288,7 @@ class StudentList extends Component {
     let studentsListElem = !students.length ? (
       <h4 className="mt4">
         There are no students to show. You can add new students by clicking on
-        the "Create new student" button above and filling out the form.
+        the "Create a new student" button above and filling out the form.
       </h4>
     ) : (
       <ul className="list pl0 mt4">
@@ -328,6 +338,18 @@ class StudentList extends Component {
       </span>
     );
 
+    let studentModalSubmitAction = () => {
+      if (editing) {
+        // TODO Pass real student object
+        this.updateStudent({});
+      } else {
+        // TODO Pass real student object
+        this.createStudent({});
+      }
+
+      this.closeStudentModal();
+    };
+
     let studentModalElem = (
       <Modal
         appElement={document.getElementById("app")}
@@ -354,7 +376,7 @@ class StudentList extends Component {
 
             <div className="tr">
               <CancelButton onClick={() => this.closeStudentModal()} />
-              <Button>Submit</Button>
+              <Button onClick={studentModalSubmitAction}>Submit</Button>
             </div>
           </form>
         </div>
@@ -365,10 +387,10 @@ class StudentList extends Component {
       <article className="mt4 measure-wide center">
         <h2 className="mb4">Students Management System</h2>
 
-        <Button onClick={() => this.fetchStudents()}>
+        <Button onClick={() => this.getAllStudents()}>
           Refresh student list
         </Button>
-        <Button onClick={() => this.createStudent()}>
+        <Button onClick={() => this.setCreateStudent()}>
           Create a new student
         </Button>
 
