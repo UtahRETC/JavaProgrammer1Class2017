@@ -105,28 +105,33 @@ const CancelButton = props => (
   </Button>
 );
 
-const Field = props => {
-  let id = "fieldId" + Math.random().toString();
-  let info = props.required ? (
-    <span className="normal black-60">(required)</span>
-  ) : (
-    <span />
-  );
+class Field extends Component {
+  render() {
+    let { required, label, value, inputRef } = this.props;
+    let id = "fieldId" + Math.random().toString();
 
-  return (
-    <span>
-      <label htmlFor={id} className="f6 b db mb2 mt3">
-        {props.label} {info}
-      </label>
-      <input
-        id={id}
-        className="input-reset ba b--black-20 pa2 mb2 db w-100"
-        type="text"
-        defaultValue={props.value}
-      />
-    </span>
-  );
-};
+    let info = required ? (
+      <span className="normal black-60">(required)</span>
+    ) : (
+      ""
+    );
+
+    return (
+      <span>
+        <label htmlFor={id} className="f6 b db mb2 mt3">
+          {label} {info}
+        </label>
+        <input
+          id={id}
+          className="input-reset ba b--black-20 pa2 mb2 db w-100"
+          type="text"
+          defaultValue={value}
+          ref={obj => (inputRef ? inputRef(obj) : null)}
+        />
+      </span>
+    );
+  }
+}
 
 const HttpError = ({ config, request, response }) => {
   let textSuggestion;
@@ -282,6 +287,7 @@ class StudentList extends Component {
   }
 
   render() {
+    let firstNameRef, lastNameRef;
     let { students, editing, creating, lastUpdate, reqErr } = this.state;
 
     let studentInfo = editing || {};
@@ -339,12 +345,22 @@ class StudentList extends Component {
     );
 
     let studentModalSubmitAction = () => {
+      if (!firstNameRef || !lastNameRef) {
+        alert("Js error");
+        return;
+      }
+
       if (editing) {
-        // TODO Pass real student object
-        this.updateStudent({});
+        this.updateStudent({
+          id: editing.id,
+          firstName: firstNameRef.value,
+          lastName: lastNameRef.value
+        });
       } else {
-        // TODO Pass real student object
-        this.createStudent({});
+        this.createStudent({
+          firstName: firstNameRef.value,
+          lastName: lastNameRef.value
+        });
       }
 
       this.closeStudentModal();
@@ -367,11 +383,13 @@ class StudentList extends Component {
               label="First Name"
               value={studentInfo.firstName}
               required={true}
+              inputRef={ref => (firstNameRef = ref)}
             />
             <Field
               label="Last Name"
               value={studentInfo.lastName}
               required={true}
+              inputRef={ref => (lastNameRef = ref)}
             />
 
             <div className="tr">
