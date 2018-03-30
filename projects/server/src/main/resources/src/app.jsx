@@ -228,6 +228,7 @@ const Student = (person, onClick) => (
 
     <div className="pl3 flex-auto">
       <span className="f6 db black-70">Id: {person.id}</span>
+      <span className="f6 db black-70">Grade: {person.grade}%</span>
       <span className="f6 db black-70">
         {person.firstName} {person.lastName}
       </span>
@@ -419,6 +420,7 @@ class StudentList extends Component {
 
     let studentModalSubmitAction = () => {
       if (!firstNameRef || !lastNameRef) {
+        // TODO better error than this
         alert("Js error");
         return;
       }
