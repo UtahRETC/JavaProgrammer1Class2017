@@ -56,19 +56,21 @@ const Link = props => (
   </a>
 );
 
-const Button = props => (
-  <a
+const Button = props => {
+  let { bgColor, fgColor, ...rest } = props;
+
+  return <a
     className={[
       "f6 link dim br1 ph3 pv2 mt2 mr2 dib",
-      props.bgColor || "bg-dark-blue",
-      props.fgColor || "white"
+      bgColor || "bg-dark-blue",
+      fgColor || "white"
     ].join(" ")}
     href="#0"
-    {...props}
+    {...rest}
   >
     {props.children}
   </a>
-);
+};
 
 const CancelButton = props => (
   <Button fgColor="dark-gray" bgColor="bg-white" {...props}>
@@ -86,14 +88,14 @@ const Field = props => {
 
   return (
     <span>
-      <label for={id} className="f6 b db mb2 mt3">
+      <label htmlFor={id} className="f6 b db mb2 mt3">
         {props.label} {info}
       </label>
       <input
         id={id}
         className="input-reset ba b--black-20 pa2 mb2 db w-100"
         type="text"
-        value={props.value}
+        defaultValue={props.value}
       />
     </span>
   );
@@ -165,10 +167,27 @@ class StudentList extends Component {
 
   render() {
     let { students, editing, creating, lastUpdate } = this.state;
-    let studentInfo = editing || {};
 
-    let modalIsOpen = editing || creating;
-    let modalTitle = !editing ? (
+    let studentInfo = editing || {};
+    let studentsListElem = (
+      <ul className="list pl0 mt4">
+        {students.map(student => (
+          <li key={student.id} className="pa3 ph0-l bb b--black-10">
+            {Student(student, ev => this.handleStudentEvent(ev, student))}
+          </li>
+        ))}
+      </ul>
+    );
+
+    let lastUpdateTime = new Date(lastUpdate).toTimeString();
+    let lastUpdateMsgElem = (
+      <div className="mt2 f7 normal black-60">
+        Last student update: {lastUpdateTime}
+      </div>
+    );
+
+    let modalIsOpen = !!editing || !!creating;
+    let modalTitleElem = !editing ? (
       <span>Create a new student</span>
     ) : (
       <span>
@@ -176,11 +195,37 @@ class StudentList extends Component {
       </span>
     );
 
-    let lastUpdateTime = new Date(lastUpdate).toTimeString();
-    let lastUpdateMsg = (
-      <div className="mt2 f7 normal black-60">
-        Last student update: {lastUpdateTime}
-      </div>
+    let modalElem = (
+      <Modal
+        appElement={document.getElementById("app")}
+        isOpen={modalIsOpen}
+        shouldCloseOnOverlayClick={false}
+        shouldCloseOnEsc={true}
+        className="measure-wide center mt4 pa4 bg-white ba b--gray outline-0-l"
+        onRequestClose={() => this.closeModal()}
+      >
+        <div>
+          <form className="black-80">
+            <h2 className="mt0">{modalTitleElem}</h2>
+
+            <Field
+              label="First Name"
+              value={studentInfo.firstName}
+              required={true}
+            />
+            <Field
+              label="Last Name"
+              value={studentInfo.lastName}
+              required={true}
+            />
+
+            <div className="tr">
+              <CancelButton onClick={() => this.closeModal()} />
+              <Button>Submit</Button>
+            </div>
+          </form>
+        </div>
+      </Modal>
     );
 
     return (
@@ -194,45 +239,9 @@ class StudentList extends Component {
           Create a new student
         </Button>
 
-        <ul className="list pl0 mt4">
-          {students.map(student => (
-            <li key={student.id} className="pa3 ph0-l bb b--black-10">
-              {Student(student, ev => this.handleStudentEvent(ev, student))}
-            </li>
-          ))}
-        </ul>
-
-        {lastUpdateMsg}
-
-        <Modal
-          isOpen={modalIsOpen}
-          shouldCloseOnOverlayClick={false}
-          shouldCloseOnEsc={true}
-          className="measure-wide center mt4 pa4 bg-white ba b--gray outline-0-l"
-          onRequestClose={() => this.closeModal()}
-        >
-          <div>
-            <form className="black-80">
-              <h2 className="mt0">{modalTitle}</h2>
-
-              <Field
-                label="First Name"
-                value={studentInfo.firstName}
-                required={true}
-              />
-              <Field
-                label="Last Name"
-                value={studentInfo.lastName}
-                required={true}
-              />
-
-              <div className="tr">
-                <CancelButton onClick={() => this.closeModal()} />
-                <Button>Submit</Button>
-              </div>
-            </form>
-          </div>
-        </Modal>
+        {studentsListElem}
+        {lastUpdateMsgElem}
+        {modalElem}
       </article>
     );
   }
