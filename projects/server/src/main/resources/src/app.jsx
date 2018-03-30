@@ -18,7 +18,16 @@ const Students = {
   },
 
   update(student) {
-    return axios.put(`${this.endpoint}/${student.id}`, student);
+    return axios.put(`${this.endpoint}/${student.id}`, {
+      firstName: student.firstName,
+      lastName: student.lastName
+    });
+  },
+
+  updateGrade(student) {
+    return axios.put(`${this.endpoint}/${student.id}/grade`, {
+      grade: student.grade
+    });
   },
 
   remove(student) {
