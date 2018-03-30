@@ -1,3 +1,4 @@
+import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -11,9 +12,8 @@ public class Main {
     School school = new School();
 
     // TODO: try adding some initial students here, like this...
-    // Remember that we need to switch "Person" for "Student" later
-    school.addPerson(new Person("Andrew", "Jensen"));
-    school.addPerson(new Person("Eric", "Fortney"));
+    school.addStudent(new Student("Andrew", "Jensen"));
+    school.addStudent(new Student("Eric", "Fortney"));
 
     // End school logic. -------------------------------------------------------
 
@@ -22,28 +22,51 @@ public class Main {
     port(3000);
 
     get("/api/students", (request, response) -> {
+      List<Student> students = school.getStudents();
+      String json = makeJson(students);
       response.type("application/json");
-      return makeJson(school.getPeople());
+      return json;
     });
 
     get("/api/students/:id", (request, response) -> {
-      // TODO: implement this endpoint!
-
-      return makeJson(null); // TODO: swap this out
+      int id = Integer.parseInt(request.params(":id"));
+      Student student = school.getStudentById(id);
+      String json = makeJson(student);
+      response.type("application/json");
+      return json;
     });
 
-    // TODO: implement the POST /api/students endpoint
+    post("/api/students", (request, response) -> {
+      // FIXME
+       return "";
+    });
+
+    put("/api/students/:id", (request, response) -> {
+      int id = Integer.parseInt(request.params(":id"));
+      Student studentToUpdate = school.getStudentById(id);
+
+      Gson gson = new Gson();
+      UpdateStudentRequest updates = gson.fromJson(request.body(), UpdateStudentRequest.class);
+      studentToUpdate.setFirstName(updates.firstName);
+      studentToUpdate.setLastName(updates.lastName);
+      String json = makeJson(studentToUpdate);
+      return json;
+    });
 
     put("/api/students/:id/grade", (request, response) -> {
       response.type("application/json");
       int id = Integer.parseInt(request.params(":id"));
       Gson gson = new Gson();
-      GradeRequest gradeRequest = gson.fromJson(request.body(), GradeRequest.class);
-      // TODO: implement the setGrade method for the School class,
-      // then uncomment the following line
-      // school.setGrade(id, gradeRequest.grade);
+      UpdateGradeRequest update = gson.fromJson(request.body(), UpdateGradeRequest.class);
+
+      // TODO: finish implementing this endpoint...
+
       return "";
     });
+
+    // TODO: implement the DELETE /api/students/{id} endpoint here...
+
+    // FIXME: say that the server is now running
   }
 
   public static String makeJson(Object o) {

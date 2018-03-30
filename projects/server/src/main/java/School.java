@@ -3,19 +3,29 @@ import java.util.List;
 
 public class School {
   int nextId;
-  List<Person> people;
+  List<Student> students;
 
   public School() {
     this.nextId = 1;
-    this.people = new ArrayList<Person>();
+    this.students = new ArrayList<Student>();
   }
 
-  public List<Person> getPeople() {
-    return this.people;
+  public List<Student> getStudents() {
+    return this.students;
   }
 
-  public void addPerson(Person p) {
-    this.people.add(p);
+  public Student getStudentById(int id) {
+    for (int i = 0; i < this.students.size(); i++) {
+      Student currentStudent = this.students.get(i);
+      if (currentStudent.getId() == id) {
+        return currentStudent;
+      }
+    }
+    return null;
+  }
+
+  public void addStudent(Student p) {
+    this.students.add(p);
   }
 
 }
