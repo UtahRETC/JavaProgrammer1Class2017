@@ -1,6 +1,6 @@
 # Web Server Project: API Specification
 
-TODO: add overview here
+This document describes how the front end and back end will communicate for the web server project to work. The front end has already been built according to the spec, but you will need to finish building the server so it follows the same contract.
 
 
 
@@ -18,6 +18,8 @@ Serves up the HTML for the single-page app.
 
 Returns a list of all students in the system.
 
+There will be no request body.
+
 Example response body:
 
 ```json
@@ -25,12 +27,14 @@ Example response body:
   {
     "id": 1,
     "firstName": "Andrew",
-    "lastName": "Jensen"
+    "lastName": "Jensen",
+    "grade": 87
   },
   {
     "id": 2,
     "firstName": "Eric",
-    "lastName": "Fortney"
+    "lastName": "Fortney",
+    "grade": 90
   }
 ]
 ```
@@ -39,13 +43,15 @@ Example response body:
 
 Returns information about a specific student.
 
+There will be no request body.
+
 Example response body:
 
 ```json
 {
   "id": 2,
-  "firstName": "Abdullah",
-  "lastName": "Kareem",
+  "firstName": "Eric",
+  "lastName": "Fortney",
   "grade": 90
 }
 ```
@@ -58,18 +64,45 @@ Example request body:
 
 ```json
 {
-  "firstName": "Abdullah",
-  "lastName": "Kareem"
+  "firstName": "Martijn",
+  "lastName": "van Exel"
 }
 ```
 
-Notice how only the first and last name are posted. The server will assign an ID and an initial score to the new student.
+*Notice how only the first and last name are posted. The server should assign an ID and an initial grade to the new student.*
 
 Example response body:
 
 ```json
 {
-  "id": 5
+  "id": 5,
+  "firstName": "Martijn",
+  "lastName": "van Exel",
+  "grade": 0
+}
+```
+
+**PUT /api/students/{id}**
+
+Sets the first and last name for a student.
+
+Example request body:
+
+```json
+{
+  "firstName": "Ryan",
+  "lastName": "Moore"
+}
+```
+
+Example response body:
+
+```json
+{
+  "id": 8,
+  "firstName": "Ryan",
+  "lastName": "Moore",
+  "grade": 85
 }
 ```
 
@@ -86,3 +119,9 @@ Example request body:
 ```
 
 No response body will be sent.
+
+**DELETE /api/students/{id}**
+
+Deletes a student from the system.
+
+There will be no request body or response body.
