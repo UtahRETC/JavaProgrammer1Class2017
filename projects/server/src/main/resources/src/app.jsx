@@ -110,8 +110,8 @@ const Student = (person, onClick) => (
       </span>
     </div>
 
-    <Link onClick={() => onClick(EVENT_EDIT)}>edit</Link>
-    <Link onClick={() => onClick(EVENT_DELETE)}>delete</Link>
+    <Link onClick={() => onClick(EVENT_EDIT)}>Edit</Link>
+    <Link onClick={() => onClick(EVENT_DELETE)}>Delete</Link>
   </div>
 );
 
@@ -119,7 +119,8 @@ class StudentList extends Component {
   state = {
     students: [],
     creating: false,
-    editing: null
+    editing: null,
+    lastUpdate: 0
   };
 
   componentWillMount() {
@@ -130,7 +131,7 @@ class StudentList extends Component {
     axios
       .get(API_GET_STUDENTS)
       .then(res => res.data)
-      .then(students => this.setState({ students }));
+      .then(students => this.setState({ students, lastUpdate: Date.now() }));
   }
 
   handleStudentEvent(ev, student) {
@@ -149,6 +150,12 @@ class StudentList extends Component {
     }
   }
 
+  createNewStudent() {
+    this.setState({
+      creating: true
+    });
+  }
+
   closeModal() {
     this.setState({
       editing: null,
@@ -157,28 +164,45 @@ class StudentList extends Component {
   }
 
   render() {
-    let { students, editing, creating } = this.state;
-    let userInfo = editing || {};
+    let { students, editing, creating, lastUpdate } = this.state;
+    let studentInfo = editing || {};
 
     let modalIsOpen = editing || creating;
     let modalTitle = !editing ? (
-      <h2 className="mt0 tc">Create a new student</h2>
+      <span>Create a new student</span>
     ) : (
-      <h2 className="mt0 tc">
+      <span>
         Editing {editing.firstName} {editing.lastName}
-      </h2>
+      </span>
+    );
+
+    let lastUpdateTime = new Date(lastUpdate).toTimeString();
+    let lastUpdateMsg = (
+      <div className="mt2 f7 normal black-60">
+        Last student update: {lastUpdateTime}
+      </div>
     );
 
     return (
       <article className="mt4 measure-wide center">
-        <h2 className="tc">Students Management System</h2>
-        <ul className="list pl0 mt5">
+        <h2 className="mb4">Students Management System</h2>
+
+        <Button onClick={() => this.fetchStudents()}>
+          Refresh student list
+        </Button>
+        <Button onClick={() => this.createNewStudent()}>
+          Create a new student
+        </Button>
+
+        <ul className="list pl0 mt4">
           {students.map(student => (
-            <li className="pa3 ph0-l bb b--black-10">
+            <li key={student.id} className="pa3 ph0-l bb b--black-10">
               {Student(student, ev => this.handleStudentEvent(ev, student))}
             </li>
           ))}
         </ul>
+
+        {lastUpdateMsg}
 
         <Modal
           isOpen={modalIsOpen}
@@ -189,10 +213,18 @@ class StudentList extends Component {
         >
           <div>
             <form className="black-80">
-              {modalTitle}
+              <h2 className="mt0">{modalTitle}</h2>
 
-              <Field label="First Name" value={userInfo.firstName} required={true} />
-              <Field label="Last Name" value={userInfo.lastName} required={true} />
+              <Field
+                label="First Name"
+                value={studentInfo.firstName}
+                required={true}
+              />
+              <Field
+                label="Last Name"
+                value={studentInfo.lastName}
+                required={true}
+              />
 
               <div className="tr">
                 <CancelButton onClick={() => this.closeModal()} />
