@@ -37,8 +37,13 @@ public class Main {
     });
 
     post("/api/students", (request, response) -> {
-      // FIXME
-       return "";
+      Gson gson = new Gson();
+      UpdateStudentRequest updates = gson.fromJson(request.body(), UpdateStudentRequest.class);
+      Student studentToAdd = new Student(updates.firstName, updates.lastName);
+      school.addStudent(studentToAdd);
+      String json = makeJson(studentToAdd);
+      response.type("application/json");
+      return json;
     });
 
     put("/api/students/:id", (request, response) -> {
