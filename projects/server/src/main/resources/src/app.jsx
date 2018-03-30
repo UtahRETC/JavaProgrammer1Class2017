@@ -59,17 +59,19 @@ const Link = props => (
 const Button = props => {
   let { bgColor, fgColor, ...rest } = props;
 
-  return <a
-    className={[
-      "f6 link dim br1 ph3 pv2 mt2 mr2 dib",
-      bgColor || "bg-dark-blue",
-      fgColor || "white"
-    ].join(" ")}
-    href="#0"
-    {...rest}
-  >
-    {props.children}
-  </a>
+  return (
+    <a
+      className={[
+        "f6 link dim br1 ph3 pv2 mt2 mr2 dib",
+        bgColor || "bg-dark-blue",
+        fgColor || "white"
+      ].join(" ")}
+      href="#0"
+      {...rest}
+    >
+      {props.children}
+    </a>
+  );
 };
 
 const CancelButton = props => (
@@ -139,11 +141,11 @@ class StudentList extends Component {
   handleStudentEvent(ev, student) {
     switch (ev) {
       case EVENT_EDIT:
-        this.setState({ editing: student });
+        this.editStudent(student);
         break;
 
       case EVENT_DELETE:
-        console.warn("Unimplemented event: %s", ev);
+        this.deleteStudent(student);
         break;
 
       default:
@@ -152,10 +154,31 @@ class StudentList extends Component {
     }
   }
 
-  createNewStudent() {
+  createStudent() {
     this.setState({
       creating: true
     });
+  }
+
+  editStudent(student) {
+    this.setState({
+      editing: student
+    });
+  }
+
+  deleteStudent(student) {
+    let msg =
+      `Are you sure you would like to delete ${this.getStudentName(
+        student
+      )}`.trim() + "?";
+
+    if (window.confirm(msg)) {
+      console.warn("Delete unimplemented");
+    }
+  }
+
+  getStudentName(student) {
+    return [student.firstName, student.lastName].join(" ").trim();
   }
 
   closeModal() {
@@ -235,7 +258,7 @@ class StudentList extends Component {
         <Button onClick={() => this.fetchStudents()}>
           Refresh student list
         </Button>
-        <Button onClick={() => this.createNewStudent()}>
+        <Button onClick={() => this.createStudent()}>
           Create a new student
         </Button>
 
