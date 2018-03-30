@@ -22,31 +22,39 @@ public class Main {
     port(3000);
 
     get("/api/students", (request, response) -> {
+      response.type("application/json");
+
       List<Student> students = school.getStudents();
       String json = makeJson(students);
-      response.type("application/json");
+
       return json;
     });
 
     get("/api/students/:id", (request, response) -> {
+      response.type("application/json");
+
       int id = Integer.parseInt(request.params(":id"));
       Student student = school.getStudentById(id);
       String json = makeJson(student);
-      response.type("application/json");
+
       return json;
     });
 
     post("/api/students", (request, response) -> {
+      response.type("application/json");
+
       Gson gson = new Gson();
       UpdateStudentRequest updates = gson.fromJson(request.body(), UpdateStudentRequest.class);
       Student studentToAdd = new Student(updates.firstName, updates.lastName);
       school.addStudent(studentToAdd);
       String json = makeJson(studentToAdd);
-      response.type("application/json");
+
       return json;
     });
 
     put("/api/students/:id", (request, response) -> {
+      response.type("application/json");
+
       int id = Integer.parseInt(request.params(":id"));
       Student studentToUpdate = school.getStudentById(id);
 
@@ -55,11 +63,13 @@ public class Main {
       studentToUpdate.setFirstName(updates.firstName);
       studentToUpdate.setLastName(updates.lastName);
       String json = makeJson(studentToUpdate);
+
       return json;
     });
 
     put("/api/students/:id/grade", (request, response) -> {
       response.type("application/json");
+
       int id = Integer.parseInt(request.params(":id"));
       Gson gson = new Gson();
       UpdateGradeRequest update = gson.fromJson(request.body(), UpdateGradeRequest.class);
