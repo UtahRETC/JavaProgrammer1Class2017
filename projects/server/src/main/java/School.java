@@ -27,5 +27,4 @@ public class School {
   public void addStudent(Student p) {
     this.students.add(p);
   }
-
 }

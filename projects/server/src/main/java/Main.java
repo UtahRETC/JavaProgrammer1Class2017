@@ -1,12 +1,11 @@
-import java.util.List;
+import static spark.Spark.*;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
-import static spark.Spark.*;
+import java.util.List;
 
 public class Main {
   public static void main(String[] args) {
-
     // Put your school logic here!!! -------------------------------------------
 
     School school = new School();
@@ -14,11 +13,12 @@ public class Main {
     // TODO: try adding some initial students here, like this...
     school.addStudent(new Student("Andrew", "Jensen"));
     school.addStudent(new Student("Eric", "Fortney"));
+    school.addStudent(new Student("Moore", "Ryan"));
+    school.addStudent(new Student("Marcos", "Minond"));
 
     // End school logic. -------------------------------------------------------
 
     staticFiles.location("/dist");
-
     port(3000);
 
     get("/api/students", (request, response) -> {
