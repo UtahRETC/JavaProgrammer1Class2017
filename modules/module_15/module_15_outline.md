@@ -33,12 +33,14 @@
 - What is a request in general? Body, params, url, method.
 - What is a request handler?
 - JSON, converting to and converting from. How and why.
+- What is Spark? What is Gradle?
 
 
 ### During class
 
-1. Implement `GET /api/students`.
-2. Add the `lastName` property to the `Student` class along with all of the
+1. Checkout the code, build, and run the application.
+2. Implement `GET /api/students`.
+3. Add the `lastName` property to the `Student` class along with all of the
    updates required to save that field from the client.
 
 
