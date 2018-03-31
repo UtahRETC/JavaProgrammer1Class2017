@@ -3,8 +3,9 @@ import ReactDOM from "react-dom";
 import Modal from "react-modal";
 import axios from "axios";
 
-const EVENT_EDIT = "evedit";
 const EVENT_DELETE = "evdelete";
+const EVENT_EDIT = "evedit";
+const EVENT_EDIT_GRADE = "eveditgrade";
 
 const Students = {
   endpoint: "/api/students",
@@ -113,6 +114,12 @@ const Code = props => (
       {props.children}
     </pre>
   </code>
+);
+
+const Separator = props => (
+  <span className="ml2" {...props}>
+    /
+  </span>
 );
 
 const Link = props => (
@@ -264,7 +271,10 @@ const Student = (student, onClick) => (
       </span>
     </div>
 
-    <Link onClick={() => onClick(EVENT_EDIT)}>Edit</Link>
+    <Link onClick={() => onClick(EVENT_EDIT_GRADE)}>Edit Grade</Link>
+    <Separator />
+    <Link onClick={() => onClick(EVENT_EDIT)}>Edit Student</Link>
+    <Separator />
     <Link onClick={() => onClick(EVENT_DELETE)}>Delete</Link>
   </div>
 );
@@ -272,9 +282,10 @@ const Student = (student, onClick) => (
 class StudentList extends Component {
   state = {
     students: [],
-    creating: false,
+    isCreating: false,
     lastUpdate: 0,
-    editing: null,
+    editingGrade: null,
+    editingStudent: null,
     reqErr: null,
     schemaErr: null
   };
@@ -289,11 +300,16 @@ class StudentList extends Component {
         this.setEditStudent(student);
         break;
 
+      case EVENT_EDIT_GRADE:
+        this.setEditStudentGrade(student);
+        break;
+
       case EVENT_DELETE:
         this.deleteStudent(student);
         break;
 
       default:
+        // TODO
         console.error("Unknown event: %s", ev);
         break;
     }
@@ -301,13 +317,19 @@ class StudentList extends Component {
 
   setCreateStudent() {
     this.setState({
-      creating: true
+      isCreating: true
+    });
+  }
+
+  setEditStudentGrade(student) {
+    this.setState({
+      editingGrade: student
     });
   }
 
   setEditStudent(student) {
     this.setState({
-      editing: student
+      editingStudent: student
     });
   }
 
@@ -333,29 +355,43 @@ class StudentList extends Component {
 
   updateStudent(student) {
     return Students.update(student)
-      .then(() => this.getAllStudents())
-      .catch(reqErr => this.setState({ reqErr }));
+      .catch(reqErr => this.setState({ reqErr }))
+      .then(res => this.assertStudent(res.data))
+      .then(() => this.getAllStudents());
+  }
+
+  updateStudentGrade(student) {
+    return Students.updateGrade(student)
+      .catch(reqErr => this.setState({ reqErr }))
+      .then(res => this.assertStudent(res.data))
+      .then(() => this.getAllStudents());
   }
 
   createStudent(student) {
     return Students.create(student)
       .catch(reqErr => this.setState({ reqErr }))
-      .then(res => {
-        if (!Students.isStudent(res.data)) {
-          this.setState({
-            schemaErr: {
-              got: res.data,
-              expected: {
-                id: "<auto generated id>",
-                grade: "<auto generated grade>",
-                firstName: "<first name string value>",
-                lastName: "<last name string value>"
-              }
-            }
-          });
-        }
-      })
+      .then(res => this.assertStudent(res.data))
       .then(() => this.getAllStudents());
+  }
+
+  assertStudent(data) {
+    if (Students.isStudent(data)) {
+      return true;
+    }
+
+    this.setState({
+      schemaErr: {
+        got: data,
+        expected: {
+          id: "<auto generated id>",
+          grade: "<auto generated grade>",
+          firstName: "<first name string value>",
+          lastName: "<last name string value>"
+        }
+      }
+    });
+
+    return false;
   }
 
   getStudentName(student) {
@@ -364,8 +400,9 @@ class StudentList extends Component {
 
   closeStudentModal() {
     this.setState({
-      editing: null,
-      creating: false
+      editingGrade: null,
+      editingStudent: null,
+      isCreating: false
     });
   }
 
@@ -377,19 +414,20 @@ class StudentList extends Component {
   }
 
   render() {
-    let firstNameRef, lastNameRef;
+    let firstNameRef, lastNameRef, gradeRef;
     let widths = "mw7 w-60-ns w-75-m w-90";
 
     let {
       students,
-      editing,
-      creating,
+      editingGrade,
+      editingStudent,
+      isCreating,
       lastUpdate,
       reqErr,
       schemaErr
     } = this.state;
 
-    let studentInfo = editing || {};
+    let studentInfo = editingStudent || {};
     let studentsListElem = !students.length ? (
       <h4 className="mt4">
         There are no students to show. You can add new students by clicking on
@@ -440,27 +478,40 @@ class StudentList extends Component {
         </Modal>
       );
 
-    let studentModalIsOpen = !!editing || !!creating;
-    let studentModalTitleElem = !editing ? (
-      <span>Create a new student</span>
-    ) : (
-      <span>Editing "{this.getStudentName(editing)}"</span>
-    );
+    let studentModalIsOpen = !!editingStudent || !!isCreating;
+    let studentModalTitleElem = <span />;
+
+    if (isCreating) {
+      studentModalTitleElem = <span>Create a new student</span>;
+    } else if (editingStudent) {
+      studentModalTitleElem = (
+        <span>Editing "{this.getStudentName(editingStudent)}"</span>
+      );
+    } else if (editingGrade) {
+      studentModalTitleElem = (
+        <span>Editing grade for "{this.getStudentName(editingGrade)}"</span>
+      );
+    }
 
     let studentModalSubmitAction = () => {
-      if (!firstNameRef || !lastNameRef) {
-        // TODO better error than this
+      if (!gradeRef && (!firstNameRef || !lastNameRef)) {
+        // TODO
         alert("Js error");
         return;
       }
 
-      if (editing) {
+      if (editingGrade) {
+        this.updateStudentGrade({
+          id: editingGrade.id,
+          grade: gradeRef.value
+        });
+      } else if (editingStudent) {
         this.updateStudent({
-          id: editing.id,
+          id: editingStudent.id,
           firstName: firstNameRef.value,
           lastName: lastNameRef.value
         });
-      } else {
+      } else if (isCreating) {
         this.createStudent({
           firstName: firstNameRef.value,
           lastName: lastNameRef.value
@@ -469,6 +520,35 @@ class StudentList extends Component {
 
       this.closeStudentModal();
     };
+
+    let gradeInfo = editingGrade || {};
+    let gradeModalIsOpen = !!editingGrade;
+    let gradeModalElem = (
+      <Modal
+        appElement={document.getElementById("app")}
+        isOpen={gradeModalIsOpen}
+        shouldCloseOnOverlayClick={false}
+        shouldCloseOnEsc={true}
+        className={widths + " center mt4 pa4 bg-white ba b--gray outline-0-l"}
+        onRequestClose={() => this.closeStudentModal()}
+      >
+        <form className="black-80">
+          <h2 className="mt0">{studentModalTitleElem}</h2>
+
+          <Field
+            label="Grade"
+            value={gradeInfo.grade}
+            required={true}
+            inputRef={ref => (gradeRef = ref)}
+          />
+
+          <div className="tr">
+            <CancelButton onClick={() => this.closeStudentModal()} />
+            <Button onClick={studentModalSubmitAction}>Submit</Button>
+          </div>
+        </form>
+      </Modal>
+    );
 
     let studentModalElem = (
       <Modal
@@ -479,29 +559,27 @@ class StudentList extends Component {
         className={widths + " center mt4 pa4 bg-white ba b--gray outline-0-l"}
         onRequestClose={() => this.closeStudentModal()}
       >
-        <div>
-          <form className="black-80">
-            <h2 className="mt0">{studentModalTitleElem}</h2>
+        <form className="black-80">
+          <h2 className="mt0">{studentModalTitleElem}</h2>
 
-            <Field
-              label="First Name"
-              value={studentInfo.firstName}
-              required={true}
-              inputRef={ref => (firstNameRef = ref)}
-            />
-            <Field
-              label="Last Name"
-              value={studentInfo.lastName}
-              required={true}
-              inputRef={ref => (lastNameRef = ref)}
-            />
+          <Field
+            label="First Name"
+            value={studentInfo.firstName}
+            required={true}
+            inputRef={ref => (firstNameRef = ref)}
+          />
+          <Field
+            label="Last Name"
+            value={studentInfo.lastName}
+            required={true}
+            inputRef={ref => (lastNameRef = ref)}
+          />
 
-            <div className="tr">
-              <CancelButton onClick={() => this.closeStudentModal()} />
-              <Button onClick={studentModalSubmitAction}>Submit</Button>
-            </div>
-          </form>
-        </div>
+          <div className="tr">
+            <CancelButton onClick={() => this.closeStudentModal()} />
+            <Button onClick={studentModalSubmitAction}>Submit</Button>
+          </div>
+        </form>
       </Modal>
     );
 
@@ -519,6 +597,7 @@ class StudentList extends Component {
         {studentsListElem}
         {lastUpdateMsgElem}
         {studentModalElem}
+        {gradeModalElem}
         {errorModalElem}
       </article>
     );
