@@ -309,8 +309,15 @@ class StudentList extends Component {
         break;
 
       default:
-        // TODO
-        console.error("Unknown event: %s", ev);
+        window.alert(`
+          Warning: an unhandled event was captured (method:
+          StudentList.handleStudentEvent).
+
+          If you are getting this message it means there is an issue with the
+          Web App for this assignment. Please take a screenshot of this message
+          and report the issue (along with your screenshot) to the teachers at
+          the next class. Thank you!
+        `);
         break;
     }
   }
@@ -495,8 +502,16 @@ class StudentList extends Component {
 
     let studentModalSubmitAction = () => {
       if (!gradeRef && (!firstNameRef || !lastNameRef)) {
-        // TODO
-        alert("Js error");
+        window.alert(`
+          Warning: unable to get a reference on input fields (method:
+          render.studentModalSubmitAction).
+
+          If you are getting this message it means there is an issue with the
+          Web App for this assignment. Please take a screenshot of this message
+          and report the issue (along with your screenshot) to the teachers at
+          the next class. Thank you!
+        `);
+
         return;
       }
 
