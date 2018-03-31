@@ -7,17 +7,45 @@ footer: Java Class - Module 15, part 2
 # Module 15, part 2
 
 - **Review of Previous Week**
-- **We are going to cover this**
-- **and this**
-- **and this**
-- **and this**
-- **and finally this**
+- **Servers and long running processes.**
+- **Lambdas 101**
+- **What is a request?**
+- **What is a request handler?**
+- **JSON, how and why.**
+- **What is Spark?**
+- **What is Gradle?**
 
 -----------------------------------------------------------------------------
 
 # Review of Previous Week
 
-One slide describing what was covered last week.
+-----------------------------------------------------------------------------
+
+# Servers and long running processes.
+
+-----------------------------------------------------------------------------
+
+# Lambdas 101
+
+-----------------------------------------------------------------------------
+
+# What is a request?
+
+-----------------------------------------------------------------------------
+
+# What is a request handler?
+
+-----------------------------------------------------------------------------
+
+# JSON, how and why.
+
+-----------------------------------------------------------------------------
+
+# What is Spark?
+
+-----------------------------------------------------------------------------
+
+# What is Gradle?
 
 -----------------------------------------------------------------------------
 
