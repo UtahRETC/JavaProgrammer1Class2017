@@ -13,7 +13,7 @@ footer: Java Class - Module 15, part 2
 - **What is a request handler?**
 - **JSON, how and why.**
 - **What is Spark? What is Gradle?**
-- **API Specs.**
+- **APIs and API Specs.**
 - **The Project.**
 
 -----------------------------------------------------------------------------
@@ -148,6 +148,14 @@ Along with Spark, we have provided the `toJson` and `fromJson` methods to help y
 Gradle is what is known as a _build tool_. A build tool is a program that helps with certain tasks, like running code, running test, and downloading dependecies (third-party code).
 
 Gradle is what we use to glue together Spark, Gson, and our own code.
+
+-----------------------------------------------------------------------------
+
+# APIs
+
+API stands for Application Programming Interface, meaning the tools and functions for application software development. The Java Standard Library has APIs like `System.out.println()`.
+
+Web APIs are kind of like functions on the internet that we can use in apps.
 
 -----------------------------------------------------------------------------
 
