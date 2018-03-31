@@ -9,7 +9,7 @@ footer: Java Class - Module 15, part 2
 - **Review of Previous Week**
 - **Servers and long running processes.**
 - **What is a request?**
-- **Lambdas 101**
+- **Lambdas**
 - **Code, Lambdas 101**
 - **What is a request handler?**
 - **JSON, how and why.**
@@ -56,7 +56,18 @@ A response is made up of the following parts:
 
 -----------------------------------------------------------------------------
 
-# Lambdas 101
+# Lambdas
+
+```java
+Route getStudentsRoute = (request, response) -> {
+  response.type("application/json");
+
+  List<Student> students = school.getStudents();
+  String json = toJson(students);
+
+  return json;
+};
+```
 
 -----------------------------------------------------------------------------
 
