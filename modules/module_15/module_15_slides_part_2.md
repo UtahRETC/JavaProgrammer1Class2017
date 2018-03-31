@@ -64,13 +64,49 @@ A response is made up of the following parts:
 
 A request handler is the code that is designated to run when a specific request is made to your server.
 
+```java
+get("/api/students", (request, response) -> {
+  response.type("application/json");
+  List<Student> students = school.getStudents();
+  return toJson(students);
+});
+```
+
 -----------------------------------------------------------------------------
 
-# JSON, how and why.
+```java
+post("/api/students", (request, response) -> {
+  response.type("application/json");
+
+  UpdateStudentRequest updates = fromJson(
+      request.body(),
+      UpdateStudentRequest.class
+  );
+
+  Student studentToAdd = new Student(
+    updates.firstName,
+    updates.lastName
+  );
+
+  school.addStudent(studentToAdd);
+
+  return toJson(studentToAdd);
+});
+```
+
+-----------------------------------------------------------------------------
+
+# What is Spark?
+
+In the previous slides we were calling methods like `post` and `get`, but where do they come from? This is where Spark comes in. Spark simplifies on the common tasks that all servers need to do so that you can focus on what is unique about your application.
+
+-----------------------------------------------------------------------------
+
+# JSON, why.
 
 JSON stands for "JavaScript Object Notation" and it is a format for encoding data.
 
-```
+```java
 class Student {
   public String firstName;
   public String lastName;
@@ -90,20 +126,28 @@ Student me = new Student("Marcos", "Minond", 99);
 
 -----------------------------------------------------------------------------
 
-# What is Spark?
+# JSON, how
+
+Along with Spark, we have provided the `toJson` and `fromJson` methods to help you convert to and from JSON. Under the hood, these methods are using a library called `Gson`.
 
 -----------------------------------------------------------------------------
 
 # What is Gradle?
 
+Gradle is what is known as a _build tool_. A build tool is a program that helps with certain tasks, like running code, running test, and downloading dependecies (third-party code).
+
+Gradle is what we use to glue together Spark, Gson, and our own code.
+
 -----------------------------------------------------------------------------
 
 # Additional resources
 
-1. None.
+1. Spark documentation, http://sparkjava.com/documentation
 
 -----------------------------------------------------------------------------
 
 # Reference list
 
-1. None.
+1. Spark framework, http://sparkjava.com/
+2. Google Gson library, https://github.com/google/gson
+3. Gradle build tool, https://gradle.org/
