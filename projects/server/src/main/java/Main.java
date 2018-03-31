@@ -8,6 +8,7 @@ public class Main {
   private static School generateSchool() {
     School school = new School();
 
+    // TODO Add more students to this list.
     school.addStudent(new Student("Andrew", "Jensen"));
     school.addStudent(new Student("Eric", "Fortney"));
     school.addStudent(new Student("Moore", "Ryan"));
@@ -16,17 +17,14 @@ public class Main {
     return school;
   }
 
-  public static void main(String[] args) {
+  private static void createHandlers() {
     School school = generateSchool();
-
-    staticFiles.location("/dist");
-    port(3000);
 
     get("/api/students", (request, response) -> {
       response.type("application/json");
 
       List<Student> students = school.getStudents();
-      String json = makeJson(students);
+      String json = toJson(students);
 
       return json;
     });
@@ -36,7 +34,7 @@ public class Main {
 
       int id = Integer.parseInt(request.params(":id"));
       Student student = school.getStudentById(id);
-      String json = makeJson(student);
+      String json = toJson(student);
 
       return json;
     });
@@ -44,11 +42,10 @@ public class Main {
     post("/api/students", (request, response) -> {
       response.type("application/json");
 
-      Gson gson = new Gson();
-      UpdateStudentRequest updates = gson.fromJson(request.body(), UpdateStudentRequest.class);
+      UpdateStudentRequest updates = fromJson(request.body(), UpdateStudentRequest.class);
       Student studentToAdd = new Student(updates.firstName, updates.lastName);
       school.addStudent(studentToAdd);
-      String json = makeJson(studentToAdd);
+      String json = toJson(studentToAdd);
 
       return json;
     });
@@ -59,11 +56,10 @@ public class Main {
       int id = Integer.parseInt(request.params(":id"));
       Student studentToUpdate = school.getStudentById(id);
 
-      Gson gson = new Gson();
-      UpdateStudentRequest updates = gson.fromJson(request.body(), UpdateStudentRequest.class);
+      UpdateStudentRequest updates = fromJson(request.body(), UpdateStudentRequest.class);
       studentToUpdate.setFirstName(updates.firstName);
       studentToUpdate.setLastName(updates.lastName);
-      String json = makeJson(studentToUpdate);
+      String json = toJson(studentToUpdate);
 
       return json;
     });
@@ -72,22 +68,27 @@ public class Main {
       response.type("application/json");
 
       int id = Integer.parseInt(request.params(":id"));
-      Gson gson = new Gson();
-      UpdateGradeRequest update = gson.fromJson(request.body(), UpdateGradeRequest.class);
-
-      // TODO: finish implementing this endpoint...
+      UpdateGradeRequest update = fromJson(request.body(), UpdateGradeRequest.class);
+      // TODO Finish implementing this endpoint.
 
       return "";
     });
 
-    // TODO: implement the DELETE /api/students/{id} endpoint here...
+    // TODO Implement the DELETE /api/students/{id} endpoint here.
+  }
+
+  public static void main(String[] args) {
+    staticFiles.location("/dist");
+    port(3000);
+
+    createHandlers();
 
     exception(Exception.class, (e, request, response) -> {
       response.type("application/json");
       response.status(500);
 
       ErrorResponse result = new ErrorResponse(e);
-      String json = makeJson(result);
+      String json = toJson(result);
       response.body(json);
     });
 
@@ -98,8 +99,13 @@ public class Main {
     System.out.println("");
   }
 
-  public static String makeJson(Object o) {
+  private static String toJson(Object o) {
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
     return gson.toJson(o);
+  }
+
+  private static <T> T fromJson(String json, Class<T> klass) {
+    Gson gson = new Gson();
+    return gson.fromJson(json, klass);
   }
 }
