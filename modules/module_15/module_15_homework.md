@@ -15,6 +15,30 @@
 
 ## Getting started
 
+The code for this week's homework assignment is located in the class' main Git
+repository in GitHub, https://github.com/UtahRETC/JavaProgrammer1Class. So to
+get the code, you can either clone the code by running `git clone
+https://github.com/UtahRETC/JavaProgrammer1Class.git` or downloading it by
+going to https://github.com/UtahRETC/JavaProgrammer1Class/archive/master.zip
+and extracting the content.
+
+After getting the code, nagivate to the `projects/server` directory and build
+then run the server with Gradle:
+
+```bash
+cd projects/server
+gradle build
+gradle run
+```
+
+After running these commands successfully, go to http://localhost:3000/ in your
+web browser and you should see something like this:
+
+<center>
+  <img src="assets/webapp.png" height="600" />
+</center>
+
+
 ## Homework assignment
 
 #### Add students more students to the School
