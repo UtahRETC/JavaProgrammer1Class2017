@@ -8,13 +8,13 @@ footer: Java Class - Module 15, part 2
 
 - **Review of Previous Week**
 - **Servers and long running processes.**
-- **What is a request?**
+- **Request and response**
 - **Lambdas**
-- **Code, Lambdas 101**
 - **What is a request handler?**
 - **JSON, how and why.**
-- **What is Spark?**
-- **What is Gradle?**
+- **What is Spark? What is Gradle?**
+- **API Specs.**
+- **The Project.**
 
 -----------------------------------------------------------------------------
 
@@ -148,6 +148,96 @@ Along with Spark, we have provided the `toJson` and `fromJson` methods to help y
 Gradle is what is known as a _build tool_. A build tool is a program that helps with certain tasks, like running code, running test, and downloading dependecies (third-party code).
 
 Gradle is what we use to glue together Spark, Gson, and our own code.
+
+-----------------------------------------------------------------------------
+
+## What is an API Spec?
+
+Spec is short of "specification". A spec is documentation, so an API Spec is documentation for the API.
+
+-----------------------------------------------------------------------------
+
+## Why are API Specs needed?
+
+Code needs documentation, and so do web APIs. If we write a thorough API spec, the client and server code can be written at the same time.
+
+Frontend developers can use "mock data" to simulate the server. Backend developers can use "mock data" to simulate a client. When both are finished, the client and server will send the same sort of data.
+
+-----------------------------------------------------------------------------
+
+## What's in an API Spec?
+
+1. `Resources`: Each resource represents a different entity, or a different class.
+    - Example: a grading system would have a `student` resource because we need to get/set data involving students.
+    - Example: a restaurant system would have a `reservations` resource to keep track of reserved tables.
+
+2. `Endpoints`: Each endpoint is a combination of a path and HTTP method.
+    - Example: a public library might have an endpoint like `POST /api/events/checkout` to create a new record of checking out some books.
+
+-----------------------------------------------------------------------------
+
+## Let's see an example
+
+-----------------------------------------------------------------------------
+
+**GET /api/students/{id}**
+
+Description: returns information about a specific student.
+
+Example response body:
+
+```
+None
+```
+
+Example response body:
+
+```json
+{
+  "id": 2,
+  "firstName": "Eric",
+  "lastName": "Fortney",
+  "grade": 90
+}
+```
+
+-----------------------------------------------------------------------------
+
+## Things to notice
+
+- HTTP method (`GET`)
+- Path (`/api/students/{id}`)
+- Request parameter: `{id}` should be replaced by an ID number for a student
+  - Example: `GET /api/students/5`
+- Details about the `request body` and `response body`
+
+-----------------------------------------------------------------------------
+
+## A note about example requests/responses
+
+- Not actual data on the server, just examples
+- Pay attention to the JSON format
+    - What are the data types?
+    - What are the parameter names?
+
+-----------------------------------------------------------------------------
+
+## Practice (1 of 2)
+
+Suppose we are building a system to keep track of flights. What resources should the API have?
+
+-----------------------------------------------------------------------------
+
+## Practice (2 of 2)
+
+Suppose we are writing an API spec for a social media platform. What would each of these endpoints do?
+
+- `POST /posts`
+- `GET /posts/{postId}`
+- `PUT /posts/{postId}`
+- `GET /posts/{postId}/comments`
+- `POST /posts/{postId}/comments`
+- `PUT /posts/{postId}/comments/{commentId}`
 
 -----------------------------------------------------------------------------
 
