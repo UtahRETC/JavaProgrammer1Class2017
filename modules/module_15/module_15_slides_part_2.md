@@ -20,6 +20,11 @@ footer: Java Class - Module 15, part 2
 
 # Review of Previous Week
 
+- Server and Client Architecture
+- Requests and Responses
+- Protocols
+- HTTP
+
 -----------------------------------------------------------------------------
 
 # This week we're building a Web Server
