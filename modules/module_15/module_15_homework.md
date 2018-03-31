@@ -35,7 +35,7 @@ After running these commands successfully, go to http://localhost:3000/ in your
 web browser and you should see something like this:
 
 <center>
-  <img src="assets/webapp.png" height="600" />
+  <img src="assets/webapp.png" height="400" />
 </center>
 
 
