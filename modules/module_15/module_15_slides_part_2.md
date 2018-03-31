@@ -105,25 +105,6 @@ footer: Java Class - Web Server Project (pt. 2)
 
 # API Specs
 
-(TODO: turn this outline into slides)
-
-- What are they?
-  - Documentation for APIs
-  - Why are they useful?
-
-- How do we read them?
-  - Each resource: a different entity or class
-  - Each endpoint: a method and path
-  - Path parameters
-  - Example requests and responses
-
-- Practice
-  - What resources would be contained in software for a public library?
-  - What resources would be contained in software for a _____?
-  - What tasks do these endpoints perform for a social media site?
-
-- Let's look at the spec for this project!
-
 --------------------------------------------------------------------------
 
 ## What is an API Spec?
@@ -142,16 +123,71 @@ footer: Java Class - Web Server Project (pt. 2)
 
 --------------------------------------------------------------------------
 
-## How do we read an API Spec?
+## What's in an API Spec?
 
-TODO expand this
-
---------------------------------------------------------------------------
-
-# The Project
-
---------------------------------------------------------------------------
+- `Resources`: Each resource represents a different entity, or a different class
+  - Example: a grading system would have a `student` resource because we need to get/set data involving students
+  - Example: a restaurant system would have a `reservations` resource to keep track of reserved tables
+- `Endpoints`: Each endpoint is a combination of a path and HTTP method
+  - Example: a public library might have an endpoint like `POST /api/events/checkout` to create a new record of checking out some books
 
 --------------------------------------------------------------------------
 
+## An example endpoint
+
+**GET /api/students/{id}**
+
+Returns information about a specific student.
+
+There will be no request body.
+
+Example response body:
+
+```json
+{
+  "id": 2,
+  "firstName": "Eric",
+  "lastName": "Fortney",
+  "grade": 90
+}
+```
+
 --------------------------------------------------------------------------
+
+## An example endpoint (continued)
+
+Things to notice:
+
+- HTTP method (`GET`)
+- Path (`/api/students/{id}`)
+- Request parameter: `{id}` should be replaced by an ID number for a student
+  - Example: `GET /api/students/5`
+- Details about the `request body` and `response body`
+
+--------------------------------------------------------------------------
+
+## A note about example requests/responses
+
+- Not actual data on the server, just examples
+- Pay attention to the JSON format
+  - What are the data types?
+  - What are the parameter names?
+
+--------------------------------------------------------------------------
+
+## Practice (1)
+
+Suppose we are building a system to keep track of flights. What resources should the API have?
+
+--------------------------------------------------------------------------
+
+## Practice (2)
+
+Suppose we are writing an API spec for a social media platform. What would each of these endpoints do?
+
+- `POST /posts`
+- `GET /posts/{postId}`
+- `PUT /posts/{postId}`
+- `GET /posts/{postId}/comments`
+- `POST /posts/{postId}/comments`
+- `PUT /posts/{postId}/comments/{commentId}`
