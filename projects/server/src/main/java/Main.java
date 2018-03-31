@@ -5,18 +5,19 @@ import com.google.gson.GsonBuilder;
 import java.util.List;
 
 public class Main {
-  public static void main(String[] args) {
-    // Put your school logic here!!! -------------------------------------------
-
+  private static School generateSchool() {
     School school = new School();
 
-    // TODO: try adding some initial students here, like this...
     school.addStudent(new Student("Andrew", "Jensen"));
     school.addStudent(new Student("Eric", "Fortney"));
     school.addStudent(new Student("Moore", "Ryan"));
     school.addStudent(new Student("Marcos", "Minond"));
 
-    // End school logic. -------------------------------------------------------
+    return school;
+  }
+
+  public static void main(String[] args) {
+    School school = generateSchool();
 
     staticFiles.location("/dist");
     port(3000);
