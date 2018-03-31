@@ -260,3 +260,24 @@ Suppose we are writing an API spec for a social media platform. What would each 
 1. Spark framework, http://sparkjava.com/
 2. Google Gson library, https://github.com/google/gson
 3. Gradle build tool, https://gradle.org/
+
+-----------------------------------------------------------------------------
+# Homework
+1. Experiment with adding students to the school
+  - You can find the hardcoded students in the generateSchool method in the Main.java file.
+2. Finish Implementing PUT "/api/students/:id/grade" endpoint
+  - Add public setGrade method to `Student` class
+  - Follow example from PUT "/api/students/:id" endpoint
+  - Get the student from the school by Id
+  - Update the student grade with the setGrade method you added
+  - return the student as JSON
+2. Implement DELETE "/api/students/:id
+  - add public `removeStudentById` method to `School` class
+  - add delete method with string route as first arg and lambda `(request, response) -> { }` as second arg
+  - follow example from POST "/api/students", instead of adding use the `removeStudentById` method
+  - return the deleted student as JSON
+
+
+  - 
+
+-----------------------------------------------------------------------------
