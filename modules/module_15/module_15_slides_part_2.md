@@ -14,7 +14,7 @@ footer: Java Class - Module 15, part 2
 - **JSON, how and why.**
 - **What is Spark? What is Gradle?**
 - **APIs and API Specs.**
-- **The Project.**
+- **Homework.**
 
 -----------------------------------------------------------------------------
 
@@ -254,6 +254,37 @@ Suppose we are writing an API spec for a social media platform. What would each 
 
 -----------------------------------------------------------------------------
 
+# Homework (1 of 3)
+
+**Experiment with adding students to the school**
+
+- You can find the hardcoded students in the generateSchool method in the Main.java file.
+
+-----------------------------------------------------------------------------
+
+# Homework (2 of 3)
+
+**Finish Implementing `PUT /api/students/:id/grade` endpoint**
+
+- Add public setGrade method to `Student` class.
+- Follow example from PUT "/api/students/:id" endpoint.
+- Get the student from the school by Id.
+- Update the student grade with the setGrade method you added.
+- Return the student as JSON.
+
+-----------------------------------------------------------------------------
+
+# Homework (3 of 3)
+
+**Implement `DELETE /api/students/:id` endpoint**
+
+- Add public `removeStudentById` method to `School` class.
+- Add delete method with string route as first arg and lambda `(request, response) -> { }` as second arg.
+- Follow example from POST "/api/students", instead of adding use the `removeStudentById` method.
+- Return the deleted student as JSON.
+
+-----------------------------------------------------------------------------
+
 # Additional resources
 
 1. Spark documentation, http://sparkjava.com/documentation
@@ -265,24 +296,3 @@ Suppose we are writing an API spec for a social media platform. What would each 
 1. Spark framework, http://sparkjava.com/
 2. Google Gson library, https://github.com/google/gson
 3. Gradle build tool, https://gradle.org/
-
------------------------------------------------------------------------------
-# Homework
-1. Experiment with adding students to the school
-  - You can find the hardcoded students in the generateSchool method in the Main.java file.
-2. Finish Implementing PUT "/api/students/:id/grade" endpoint
-  - Add public setGrade method to `Student` class
-  - Follow example from PUT "/api/students/:id" endpoint
-  - Get the student from the school by Id
-  - Update the student grade with the setGrade method you added
-  - return the student as JSON
-2. Implement DELETE "/api/students/:id
-  - add public `removeStudentById` method to `School` class
-  - add delete method with string route as first arg and lambda `(request, response) -> { }` as second arg
-  - follow example from POST "/api/students", instead of adding use the `removeStudentById` method
-  - return the deleted student as JSON
-
-
-  - 
-
------------------------------------------------------------------------------
