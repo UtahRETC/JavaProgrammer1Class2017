@@ -26,10 +26,20 @@
   - Should cover how to read and implement the spec. _Andrew_
 
 
+### Slide content outline
+
+- Long running processes.
+- Lambdas.
+- What is a request in general? Body, params, url, method.
+- What is a request handler?
+- JSON, converting to and converting from. How and why.
+
+
 ### During class
 
-1. We're going to add the `lastName` property to the `Student` class along with
-   all of the updates required to save that field from the client.
+1. Implement `GET /api/students`.
+2. Add the `lastName` property to the `Student` class along with all of the
+   updates required to save that field from the client.
 
 
 ### Homework
