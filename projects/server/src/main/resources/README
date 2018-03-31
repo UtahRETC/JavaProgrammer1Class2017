@@ -1,0 +1,22 @@
+This is the web app for the Student Management server project.
+
+To build, run `make build` with or without a NODE_ENV environment variable set.
+This variable is used to set the Webpack build mode. For example, building for
+dev would be done like this: `make build NODE_ENV=development`. The default
+mode is "production". Make sure you run `make deps` or `npm i` to download
+dependencies.
+
+The dev server is started with the `make server` command and the same rules for
+the NODE_ENV variable apply. Requests made to the "/api/" endpoint are proxied
+to localhost:3000 which is the default address for the Java app.
+
+
+
+Credit goes to Richard Schumann for the following images:
+
+- https://thenounproject.com/schumanncombo/collection/animals/?i=92048
+- https://thenounproject.com/schumanncombo/collection/animals/?i=92051
+- https://thenounproject.com/schumanncombo/collection/animals/?i=92053
+- https://thenounproject.com/schumanncombo/collection/animals/?i=92055
+- https://thenounproject.com/schumanncombo/collection/animals/?i=92057
+- https://thenounproject.com/schumanncombo/collection/animals/?i=92058

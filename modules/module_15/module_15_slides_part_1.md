@@ -6,20 +6,12 @@ footer: Java Class - Web Server Project
 
 # Project 3: Web Server
 
-- **Review of Previous Week**
 - **Web Development Overview**
 - **How to Communicate on the Web**
 - **JSON**
 - **This Week's Project: Web Server**
 
 --------------------------------------------------------------------------
-
-# Review of Previous Week
-
-- TODO: add details here
-
---------------------------------------------------------------------------
-
 
 
 
@@ -48,8 +40,8 @@ footer: Java Class - Web Server Project
 
 ## Other names
 
-- The `client` is often called the `front end` because it is in front of you
-- The `server` is often called the `back end` because it is hidden behind the front end
+- The code that directly interacts with the `client` is often called the `front end` because it is in front of you.
+- The code that directly interacts with the `server` is often called the `back end` because it is hidden behind the front end.
 
 --------------------------------------------------------------------------
 
@@ -117,7 +109,8 @@ We need a **protocol**.
 
 When you type this into your browser:
 
-TODO: put browser screenshot here
+<center><img src="assets/google-screenshot.png" height=200></center>
+
 
 It is making this request:
 
@@ -248,7 +241,8 @@ Example response body:
   ]
 }
 ```
-
+---------------------------------------------------------------------------
+## An example web API (continued)
 **GET /people/{ID}**: Returns a single person in the system.
 
 Example response body:
@@ -334,17 +328,18 @@ Example response body:
 
 ## A JSON Object Example
 
+Notice the nesting, a JSON can contain objects within it
 ```json
 {
   "id": 1,
   "firstName": "Andrew",
   "lastName": "Jensen",
-  "education": {
+  "education": { 		// <-- OBJECT
     "school": "Brigham Young University",
     "graduationYear": 2015,
     "major": "Computer Science"
   },
-  "interests": [
+  "interests": [   // <-- LIST
     "Java programming",
     "Going to rock concerts",
     "Watching movies"
@@ -372,9 +367,9 @@ Becomes this JSON:
 
 ```json
 {
-  "id": 1,
-  "firstName": "Andrew",
-  "lastName": "Jensen"
+  "id": 5,
+  "firstName": "Marcos",
+  "lastName": "Minond"
 }
 ```
 
@@ -432,7 +427,7 @@ For the student:
 
 The client has already been written!
 
-TODO: include screenshot
+<center><img src="assets/site.png"></center>
 
 The server is started, but you need to finish it
 
@@ -482,15 +477,27 @@ $ gradle run
 Now, navigate to `http://localhost:3000` in your web browser.
 
 --------------------------------------------------------------------------
+## Why can't people visit my site?
+
+`localhost` is a special keyword, not a specific website domain. It just tells the computer: "Grab my current IP address"
+
+It is like telling someone:
+- "The package is at my house" or
+- "The package is at 300E 721N, Salt Lake City, UT 84500"
+
+--------------------------------------------------------------------------
+
+## Sharing your site
+
+Enter ``ipconfig`` from the Windows Command Line. Copy the ``IPv4 Address`` with our given port number (more of those later). For me its: ``192.168.1.105:3000`` (Note this will change with each new internet connection you make. Real servers don't move around!)
+<center><img src="assets/ipconfig.png" height=400></center>
+
+
+
+--------------------------------------------------------------------------
 
 ## Homework instructions
 
 See the homework document and the API specs
 
 Submit a link to your code repo on Canvas
-
---------------------------------------------------------------------------
-
-# Additional Resources
-
-- TODO: add resources

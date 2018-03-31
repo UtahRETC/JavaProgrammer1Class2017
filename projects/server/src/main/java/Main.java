@@ -1,49 +1,100 @@
+import static spark.Spark.*;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
-import static spark.Spark.*;
+import java.util.List;
 
 public class Main {
   public static void main(String[] args) {
-
     // Put your school logic here!!! -------------------------------------------
 
     School school = new School();
 
     // TODO: try adding some initial students here, like this...
-    // Remember that we need to switch "Person" for "Student" later
-    school.addPerson(new Person("Andrew", "Jensen"));
-    school.addPerson(new Person("Eric", "Fortney"));
+    school.addStudent(new Student("Andrew", "Jensen"));
+    school.addStudent(new Student("Eric", "Fortney"));
+    school.addStudent(new Student("Moore", "Ryan"));
+    school.addStudent(new Student("Marcos", "Minond"));
 
     // End school logic. -------------------------------------------------------
 
-    staticFiles.location("/build");
-
+    staticFiles.location("/dist");
     port(3000);
 
     get("/api/students", (request, response) -> {
       response.type("application/json");
-      return makeJson(school.getPeople());
+
+      List<Student> students = school.getStudents();
+      String json = makeJson(students);
+
+      return json;
     });
 
     get("/api/students/:id", (request, response) -> {
-      // TODO: implement this endpoint!
+      response.type("application/json");
 
-      return makeJson(null); // TODO: swap this out
+      int id = Integer.parseInt(request.params(":id"));
+      Student student = school.getStudentById(id);
+      String json = makeJson(student);
+
+      return json;
     });
 
-    // TODO: implement the POST /api/students endpoint
+    post("/api/students", (request, response) -> {
+      response.type("application/json");
+
+      Gson gson = new Gson();
+      UpdateStudentRequest updates = gson.fromJson(request.body(), UpdateStudentRequest.class);
+      Student studentToAdd = new Student(updates.firstName, updates.lastName);
+      school.addStudent(studentToAdd);
+      String json = makeJson(studentToAdd);
+
+      return json;
+    });
+
+    put("/api/students/:id", (request, response) -> {
+      response.type("application/json");
+
+      int id = Integer.parseInt(request.params(":id"));
+      Student studentToUpdate = school.getStudentById(id);
+
+      Gson gson = new Gson();
+      UpdateStudentRequest updates = gson.fromJson(request.body(), UpdateStudentRequest.class);
+      studentToUpdate.setFirstName(updates.firstName);
+      studentToUpdate.setLastName(updates.lastName);
+      String json = makeJson(studentToUpdate);
+
+      return json;
+    });
 
     put("/api/students/:id/grade", (request, response) -> {
       response.type("application/json");
+
       int id = Integer.parseInt(request.params(":id"));
       Gson gson = new Gson();
-      GradeRequest gradeRequest = gson.fromJson(request.body(), GradeRequest.class);
-      // TODO: implement the setGrade method for the School class,
-      // then uncomment the following line
-      // school.setGrade(id, gradeRequest.grade);
+      UpdateGradeRequest update = gson.fromJson(request.body(), UpdateGradeRequest.class);
+
+      // TODO: finish implementing this endpoint...
+
       return "";
     });
+
+    // TODO: implement the DELETE /api/students/{id} endpoint here...
+
+    exception(Exception.class, (e, request, response) -> {
+      response.type("application/json");
+      response.status(500);
+
+      ErrorResponse result = new ErrorResponse(e);
+      String json = makeJson(result);
+      response.body(json);
+    });
+
+    awaitInitialization();
+    System.out.println("");
+    System.out.println("Server is running!");
+    System.out.println("Navigate to http://localhost:3000 to use it.");
+    System.out.println("");
   }
 
   public static String makeJson(Object o) {
