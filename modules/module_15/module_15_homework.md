@@ -22,11 +22,11 @@ https://github.com/UtahRETC/JavaProgrammer1Class.git` or downloading it by
 going to https://github.com/UtahRETC/JavaProgrammer1Class/archive/master.zip
 and extracting the content.
 
-After getting the code, nagivate to the `projects/server` directory and build
-then run the server with Gradle:
+After getting the code, move the contens of `projects/server` into your own
+repository. Once that's done you can build and run with server with the
+following commands (make sure you run these inside of the `server` folter):
 
 ```bash
-cd projects/server
 gradle build
 gradle run
 ```
