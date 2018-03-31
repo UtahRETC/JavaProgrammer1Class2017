@@ -30,17 +30,29 @@ footer: Java Class - Module 15, part 2
 
 So far we've been working with processes that start and stop once they complete their task. But what about processes that have no known completion? For example, like an HTTP Server. The server doesn't know when a user is going to visit a webpage, so instead it just starts and waits for a request. And as long as nothing goes wrong, it will keep running and listen for more requests.
 
------------------------------------------------------------------------------
-
-# New Terminology
-
-==**Request**==: a request, specifically an HTTP request is an incoming message to a webserver from a client, like a browser, or your mobile phone. The server is in change of taking this request and doing something with it.
+Many clients connect to a single server on the web
 
 -----------------------------------------------------------------------------
 
-# New Terminology
+# Request and response
 
-==**Response**== after the server receives a request, it will do some work and then send a message back to the original client. This is the response.
+This is the way clients and servers communicate. First, the client sends a `request`. Next, the server reads the request and returns a `response`.
+
+-----------------------------------------------------------------------------
+
+# HTTP request and response
+
+A request is made up of the following parts:
+
+- URL/Path
+- Method
+- Body (sometimes)
+
+A response is made up of the following parts:
+
+- Status code
+- Content type (html, json, xml, etc.)
+- Body
 
 -----------------------------------------------------------------------------
 
@@ -55,6 +67,26 @@ A request handler is the code that is designated to run when a specific request 
 -----------------------------------------------------------------------------
 
 # JSON, how and why.
+
+JSON stands for "JavaScript Object Notation" and it is a format for encoding data.
+
+```
+class Student {
+  public String firstName;
+  public String lastName;
+  public int grade;
+}
+
+Student me = new Student("Marcos", "Minond", 99);
+```
+
+```
+{
+  "firstName": "Marcos",
+  "lastName": "Minond",
+  "grade": 99,
+}
+```
 
 -----------------------------------------------------------------------------
 
