@@ -532,7 +532,7 @@ class StudentList extends Component {
         className={widths + " center mt4 pa4 bg-white ba b--gray outline-0-l"}
         onRequestClose={() => this.closeStudentModal()}
       >
-        <form className="black-80">
+        <div className="black-80">
           <h2 className="mt0">{studentModalTitleElem}</h2>
 
           <Field
@@ -546,7 +546,7 @@ class StudentList extends Component {
             <CancelButton onClick={() => this.closeStudentModal()} />
             <Button onClick={studentModalSubmitAction}>Submit</Button>
           </div>
-        </form>
+        </div>
       </Modal>
     );
 
@@ -559,7 +559,7 @@ class StudentList extends Component {
         className={widths + " center mt4 pa4 bg-white ba b--gray outline-0-l"}
         onRequestClose={() => this.closeStudentModal()}
       >
-        <form className="black-80">
+        <div className="black-80">
           <h2 className="mt0">{studentModalTitleElem}</h2>
 
           <Field
@@ -579,7 +579,7 @@ class StudentList extends Component {
             <CancelButton onClick={() => this.closeStudentModal()} />
             <Button onClick={studentModalSubmitAction}>Submit</Button>
           </div>
-        </form>
+        </div>
       </Modal>
     );
 
