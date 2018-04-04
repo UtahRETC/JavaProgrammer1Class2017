@@ -1,6 +1,5 @@
 public class Finally {
   public static void main(String[] args) {
-
     try {
       System.out.println("The `try` code block is running.");
       throw new Exception();
@@ -10,6 +9,5 @@ public class Finally {
     } finally {
       System.out.println("The `finally` code block is running.");
     }
-
   }
 }

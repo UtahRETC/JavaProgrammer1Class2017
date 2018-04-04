@@ -38,4 +38,9 @@
     - Exceptions in subclasses (ch. 6, page 319)
     - Printing exceptions (ch. 6, page 321)
 - **Additional resources**:
-  - _Exceptions and Error Handling_ by Jim Wilson https://app.pluralsight.com/player?course=java-fundamentals-language&author=jim-wilson&name=java-fundamentals-language-m10&clip=0&mode=live
+  - _Lesson 16: Exceptions_ by Michael Fudge https://youtu.be/R86ObiKhMNc
+
+
+### Homework
+
+Note: It would be good to tie projects/server into this module.
