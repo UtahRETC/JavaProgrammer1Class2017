@@ -7,10 +7,10 @@ footer: Java Class - Module 16
 # Module 16
 
 - **Review of Previous Week**
-- **What are Errors?**
 - **What are Exceptions?**
 - **Why do we need them?**
 - **How can we use them?**
+- **Errors vs Exceptions**
 - **Additional resources**
 
 -----------------------------------------------------------------------------
@@ -19,11 +19,11 @@ footer: Java Class - Module 16
 
 -----------------------------------------------------------------------------
 
-# What are Errors?
+# What are Exceptions?
 
 -----------------------------------------------------------------------------
 
-# What are Exceptions?
+## _The code where an error occurs is not the code that knows how to properly deal with the error._
 
 -----------------------------------------------------------------------------
 
@@ -75,6 +75,10 @@ try {
   System.out.println("The `finally` code block is running.");
 }
 ```
+
+-----------------------------------------------------------------------------
+
+# Errors vs Exceptions
 
 -----------------------------------------------------------------------------
 
