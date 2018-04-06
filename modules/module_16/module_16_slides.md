@@ -78,6 +78,88 @@ try {
 
 -----------------------------------------------------------------------------
 
+### `catch` and/or `finally`
+
+You need at least one `catch` or one `finally` block. And order matters, `try` must be first, `catch` next, and `finally` always goes last.
+
+-----------------------------------------------------------------------------
+
+#### Will this compile and/or run?
+
+```java
+try {
+  System.out.println("Running code");
+}
+```
+
+-----------------------------------------------------------------------------
+
+#### Will this compile and/or run?
+
+```java
+try {
+  alwaysThrowsException();
+} finally {
+  System.out.println("In finally block.");
+} catch (NullPointerException ex) {
+  System.out.println("An exception was thrown.");
+}
+```
+
+-----------------------------------------------------------------------------
+
+#### Will this compile and/or run?
+
+```java
+finally {
+  System.out.println("In finally block.");
+} catch (NullPointerException ex) {
+  System.out.println("An exception was thrown.");
+} try {
+  alwaysThrowsException();
+}
+```
+
+-----------------------------------------------------------------------------
+
+#### Will this compile and/or run?
+
+```java
+try {
+  alwaysThrowsException();
+} catch {
+  System.out.println("An exception was thrown.");
+}
+```
+
+-----------------------------------------------------------------------------
+
+#### Will this compile and/or run?
+
+```java
+try {
+  alwaysThrowsException();
+} catch (NullPointerException ex) {
+  System.out.println("An exception was thrown.");
+}
+```
+
+-----------------------------------------------------------------------------
+
+#### Will this compile and/or run?
+
+```java
+try {
+  alwaysThrowsException();
+} catch (NullPointerException ex) {
+  System.out.println("An exception was thrown.");
+} finally {
+  System.out.println("In finally block.");
+}
+```
+
+-----------------------------------------------------------------------------
+
 # Errors vs Exceptions
 
 -----------------------------------------------------------------------------
