@@ -21,17 +21,47 @@ footer: Java Class - Module 16
 
 # What are Exceptions?
 
+An exception is any event that occurs while a program is running that stops the intended flow of the application.
+
 -----------------------------------------------------------------------------
 
-## _The code where an error occurs is not the code that knows how to properly deal with the error._
+# Exception Examples:
+
+  - The program tries to read a file that has been deleted
+  - The program tries to parse text to JSON but it receives a different format  
+  - The program asks a user to provide input of one type, but the user gives an unexpected format 
+
+-----------------------------------------------------------------------------
+
+# The code where an error occurs is not the code that knows how to properly deal with the error.
+
+Take the example of reading a file, the code involved with reading a file is often written to be very reusable.
+It knows very little about the reasons _why_ a file is being read - it just knows how to accept a file location and perhaps file type.
+
+-----------------------------------------------------------------------------
+# The code where an error occurs is not the code that knows how to properly deal with the error.
+
+Adding the info about what kind of message to give to a user, or how to recover would make the reading file code very complicated and specific. 
+Instead the reading file code can let the rest of the application know that an exception has occurred and we can keep the reading file code small and handle the exception elsewhere. 
 
 -----------------------------------------------------------------------------
 
 # Why do we need them?
 
+As programmers, we only have control over our applications while we are writing them.
+Once they are running in the wild unexpected things occur: users provide invalid input, files are deleted or corrupted, networks go down!
+If we don't handle these unexpected events our programs will crash and in some extreme cases our system memory or hardware can be damaged.
+Exceptions provide a way for us to prevent serious damage and guard against the most error prone components of our applications.
+
 -----------------------------------------------------------------------------
 
 # How can we use them?
+
+Exceptions sound pretty rough! Why would we want to use them?
+  1. Some parts of our applications are more error prone than others, we can put rules around these to force us to deal with the fact that these are dangerous spots.
+  1. We can cause a specific type of exception to occur in order to prevent more serious problems from occurring. 
+  1. We can create code that deals with specific types of problems and recovers from them.
+  1. We can create code that deals with general, unforeseen problems.
 
 -----------------------------------------------------------------------------
 
@@ -62,6 +92,7 @@ try {
 -----------------------------------------------------------------------------
 
 ### `finally`
+
 
 ```java
 // See code/Finally.java
@@ -161,6 +192,14 @@ try {
 -----------------------------------------------------------------------------
 
 # Errors vs Exceptions
+
+Errors and Exceptions both inherit from the java.lang.Throwable Object, but they have one clear distinction.
+
+Errors represent catastrophic events that cannot be recovered from: for example running out of memory or other system resources.
+The application can't fix the environment it is running in, or install additional memory.
+
+Exceptions represent problems that can be recovered from: for example trying to read a file that has been deleted.
+The application can simply tell the user that the file was unable to be found and move on.
 
 -----------------------------------------------------------------------------
 
