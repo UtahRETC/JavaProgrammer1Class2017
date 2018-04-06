@@ -111,7 +111,7 @@ try {
 
 ### `catch` and/or `finally`
 
-You need at least one `catch` or one `finally` block. And order matters, `try` must be first, `catch` next, and `finally` always goes last.
+You need at least one `catch` or one `finally` block. A `try` block with no `catch/finally` is not allowed. And order matters, `try` must be first, `catch` next, and `finally` always goes last.
 
 -----------------------------------------------------------------------------
 
