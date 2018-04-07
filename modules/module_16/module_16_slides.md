@@ -238,6 +238,25 @@ try {
 
 -----------------------------------------------------------------------------
 
+## Custom `Exception`s
+
+```java
+class InvalidUserGradeException extends Exception {
+  private String givenGrade;
+
+  public InvalidUserGradeException(String msg, String givenGrade) {
+    super(msg);
+    this.givenGrade = givenGrade;
+  }
+
+  public String getGivenGrade() {
+    return givenGrade;
+  }
+}
+```
+
+-----------------------------------------------------------------------------
+
 ## Information found in `Exception`s
 
 - `public String getMessage()`: _Returns the detail message string..._ [4]
