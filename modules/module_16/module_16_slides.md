@@ -25,7 +25,7 @@ An exception is any event that occurs while a program is running that stops the 
 
 -----------------------------------------------------------------------------
 
-# Examples
+## Examples
 
   - The program tries to read a file that has been deleted.
   - The program tries to parse text to JSON but it receives a different format.
@@ -93,7 +93,48 @@ try {
 
 -----------------------------------------------------------------------------
 
+### `try`
+
+```java
+try {
+  // code
+}
+// catch and finally blocks...
+```
+
+-----------------------------------------------------------------------------
+
 ### `catch`
+
+```java
+try {
+  // code...
+} catch (ExceptionType ex) {
+  // code...
+} catch (ExceptionType ex) {
+  // code...
+} catch (ExceptionType ex) {
+  // code...
+}
+```
+
+-----------------------------------------------------------------------------
+
+### Which `catch` block will run with this code?
+
+```java
+try {
+  throw new ArithmeticException();
+} catch (NullPointerException ex) {
+  System.out.println("Got NullPointerException");
+} catch (ArrayIndexOutOfBoundsException ex) {
+  System.out.println("Got ArrayIndexOutOfBoundsException");
+} catch (ArithmeticException ex) {
+  System.out.println("Got ArithmeticException");
+} catch (Exception ex) {
+  System.out.println("Got any Exception");
+}
+```
 
 -----------------------------------------------------------------------------
 
@@ -197,6 +238,54 @@ try {
 
 -----------------------------------------------------------------------------
 
+## Information found in `Exception`s
+
+- `public String getMessage()`: _Returns the detail message string..._ [4]
+- `public StackTraceElement[] getStackTrace()`: _Provides programmatic access to the stack trace information printed by printStackTrace()._ [5]
+- `public void printStackTrace()`: _Prints this throwable and its backtrace to the standard error stream._ [6]
+
+-----------------------------------------------------------------------------
+
+### Example stack trace: `StacktraceExample.java`
+
+```java
+ 1 class MyException extends Exception {}
+ 2
+ 3 public class StacktraceExample {
+ 4   public static void main(String[] a) throws MyException {
+ 5     one();
+ 6   }
+ 7
+ 8   public static void one() throws MyException {
+ 9     two();
+10   }
+11
+12   public static void two() throws MyException {
+13     three();
+14   }
+15
+16   public static void three() throws MyException {
+17     throw new MyException();
+18   }
+19 }
+```
+
+-----------------------------------------------------------------------------
+
+### Example stack trace: output
+
+```text
+$ javac StacktraceExample.java
+$ java StacktraceExample
+Exception in thread "main" MyException
+        at Program.three(StacktraceExample.java:17)
+        at Program.two(StacktraceExample.java:13)
+        at Program.one(StacktraceExample.java:9)
+        at Program.main(StacktraceExample.java:5)
+```
+
+-----------------------------------------------------------------------------
+
 # Errors vs Exceptions
 
 Errors and Exceptions both inherit from the `java.lang.Throwable` Object, but they have one clear distinction.
@@ -226,3 +315,6 @@ Exceptions represent problems that can be recovered from: for example trying to 
 1. https://docs.oracle.com/javase/7/docs/api/java/lang/NullPointerException.html
 2. https://docs.oracle.com/javase/7/docs/api/java/lang/ArrayIndexOutOfBoundsException.html
 3. https://docs.oracle.com/javase/7/docs/api/java/lang/ArithmeticException.html
+4. https://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html#getMessage()
+5. https://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html#getStackTrace()
+6. https://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html#printStackTrace()
