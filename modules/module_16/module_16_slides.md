@@ -17,6 +17,15 @@ footer: Java Class - Module 16
 
 # Review of Previous Week
 
+- HTTP and HTTP Methods.
+- Request and response.
+- Request handlers.
+- Long running process.
+- Lambdas.
+- JSON. Why do we need it?
+- What is Spark?
+- What is Gradle?
+
 -----------------------------------------------------------------------------
 
 # What are Exceptions?
