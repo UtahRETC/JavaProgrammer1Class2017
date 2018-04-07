@@ -26,8 +26,7 @@ System. Update the appropriate endpoint so that instead of returning an error,
 it sets the user's grade to 0 when it fails to parse the input. Here's the
 current error:
 
-![error input][error-input]
-![error response][error-response]
-
-[error-input]: assets/homework-error-input.png "Error Input"
-[error-response]: assets/homework-error-response.png "Error Response"
+<center>
+  <img src="assets/homework-error-input.png" height="300" />
+  <img src="assets/homework-error-response.png" height="300" />
+</center>
