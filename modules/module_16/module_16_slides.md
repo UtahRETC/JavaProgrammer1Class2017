@@ -71,11 +71,77 @@ Exceptions sound pretty rough! Why would we want to use them?
 
 -----------------------------------------------------------------------------
 
+## Custom `Exception`s
+
+```java
+class InvalidUserGradeException extends Exception {
+  private String givenGrade;
+
+  public InvalidUserGradeException(String givenGrade) {
+    super("Invalid User Grade");
+    this.givenGrade = givenGrade;
+  }
+
+  public InvalidUserGradeException(String msg, String givenGrade) {
+    super(msg);
+    this.givenGrade = givenGrade;
+  }
+
+  public String getGivenGrade() {
+    return givenGrade;
+  }
+}
+```
+
+-----------------------------------------------------------------------------
+
 ## The `throw` keyword
+
+```java
+if (grade < 0 || grade > 100) {
+  throw new InvalidUserGradeException();
+}
+```
 
 -----------------------------------------------------------------------------
 
 ## The `throws` keyword
+
+```java
+class Student {
+  // code...
+
+  public void setGrade(int grade) throws InvalidUserGradeException {
+    // code...
+  }
+
+  // code...
+}
+```
+
+-----------------------------------------------------------------------------
+
+## `throws` with `throw`
+
+```java
+// code/Sample.java
+public class Sample {
+  public static void main(String[] args)
+      throws IllegalArgumentException, InvalidUserGradeException {
+    if (args.length == 0) {
+      throw new IllegalArgumentException("Expecting a grade argument");
+    } else {
+      int grade = Integer.parseInt(args[0]);
+
+      if (grade < 0 || grade > 100) {
+        throw new InvalidUserGradeException(Integer.toString(grade));
+      } else {
+        System.out.println("The user's grade is now " + grade);
+      }
+    }
+  }
+}
+```
 
 -----------------------------------------------------------------------------
 
@@ -233,25 +299,6 @@ try {
   System.out.println("An exception was thrown.");
 } finally {
   System.out.println("In finally block.");
-}
-```
-
------------------------------------------------------------------------------
-
-## Custom `Exception`s
-
-```java
-class InvalidUserGradeException extends Exception {
-  private String givenGrade;
-
-  public InvalidUserGradeException(String msg, String givenGrade) {
-    super(msg);
-    this.givenGrade = givenGrade;
-  }
-
-  public String getGivenGrade() {
-    return givenGrade;
-  }
 }
 ```
 
