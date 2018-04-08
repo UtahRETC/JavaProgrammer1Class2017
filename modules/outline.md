@@ -48,8 +48,8 @@ Note that this particular order is not what we ended up following 100% of the ti
 15. Project 3
 16. Exceptions
 17. Lambdas, scopes, garbage collector
-19. Project 4
-20. Test reviews
+18. Project 4
+19. Test reviews
 
 
 ### These are things that are not in the outline right now but probably should be
