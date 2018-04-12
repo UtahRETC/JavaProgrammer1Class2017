@@ -1,18 +1,10 @@
 # Outline
-- Lambdas - Overview
--   Methods not bound to a class
--   Executable code that can be passed around
-- Implementing class as carrier of a function
--   Syntax around a function
--   convert to lambda
-- Interface as type
--   functional interface
--   Built in functional interfaces
-- Method Reference
--   existing method used as lambda
-    
-- Connection to Interfaces
-- 
+- Methods as Code Blocks
+- Inroducing Lambdas
+- Functional Interfaces 
+- Examples
+- Valid Shortcuts
+- uilt-in Functional Interfaces
 
 ---
 # Methods as Code Blocks
@@ -80,7 +72,7 @@ parent.assignRoomToClean((String room) ->
 General Syntax: (Parameter List) -> {function body}
 
 ---
-# Functional Interface
+# Functional Interfaces
 Can only contain a single method.
 ```
 interface Child {
@@ -90,7 +82,7 @@ interface Child {
 
 Lambda Syntax: (Parameter List) -> {function body}
 Lambda Rules:
-- Parameter List types and positions much match Functional Interface method parameter list
+- Parameter List types and positions must match Functional Interface method parameter list
 - Return type of function body must match return type of Functional Interface method
 
 
@@ -168,7 +160,7 @@ Knight knight6 = (String weapon,
 
 ---
 # Valid Shortcuts
-Leave off paremter list types
+Leave off parameter list types
 ```
 Child child = (room) -> {
     System.out.println("doing nothing");
@@ -187,11 +179,40 @@ Child child = room ->
 ```
 ---
 # Built-in Functional Interfaces
+Java 8 has many built in functional interfaces for common use cases.
+Example Built in functional interfaces:
+- Consumer - Takes one argument and returns nothing
+- Producer - takes no arguents and returns a value
+- Function - takes one argument and returns a value
+
+https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html
 
 ---
+# Built-in Functional Interfaces
+```
+class Parent {
+    private String[] rooms = {"Living room", 
+        "First Bedroom", "Bathroom", "Second Bedroom"};
+    private int nextRoomIndex = 0;
 
-# Method reference
+    public void assignRoomToClean(Child child) {
+        child.clean(rooms[nextRoomIndex]);
+        nextRoomIndex = nextRoomIndex + 1;
+    }
+}
+```
+```
+class Parent {
+    private String[] rooms = {"Living room", 
+        "First Bedroom", "Bathroom", "Second Bedroom"};
+    private int nextRoomIndex = 0;
 
+    public void assignRoomToClean(Consumer<String> child) {
+        child.accept(rooms[nextRoomIndex]);
+        nextRoomIndex = nextRoomIndex + 1;
+    }
+}
+```
 ---
 
 # Summary
