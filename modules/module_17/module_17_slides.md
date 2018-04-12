@@ -216,3 +216,7 @@ class Parent {
 ---
 
 # Summary
+- Lambdas are functions not bound to any class
+- Backed by a Functional Interface
+- Takes on the type of the Functional interface and can be used in place of that interface
+- There are built-in Functional Interfaces that are used in the JDK and can be used in custom code
