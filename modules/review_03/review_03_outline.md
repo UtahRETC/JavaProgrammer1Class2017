@@ -1,17 +1,9 @@
 # Java cert prep class (Review 3)
 
-<style>
-@media print {
-  pre {
-    border: 1px solid gray;
-    page-break-inside: avoid;
-  }
-}
+### TODO
 
-.break {
-  page-break-after: always;
-}
-</style>
+- Pick questions to go through during class (Andrew, Mohamed, Marcos)
+- Create slides and code files (Marcos)
 
 
 ### Exam information
@@ -29,6 +21,7 @@ Java SE 8 Programmer I, 1Z0-808, [Additional Information](1Z0-808)
 
 - https://blogs.oracle.com/certification/test-your-java-knowledge-with-free-sample-questions
 - https://coderanch.com/t/661190/certification/Passed-Java-SE-Programmer-exam
+- https://www.selikoff.net/java-oca-8-programmer-i-study-guide/
 
 
 [1Z0-808]: https://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-808
