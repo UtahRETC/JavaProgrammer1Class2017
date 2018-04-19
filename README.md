@@ -21,7 +21,7 @@ an example slide deck.
 
 Follow these steps to create a new slide deck:
 
-1. Pick a section in the [outline documentation](modules/outline.md) and make
+1. Pick a section in the [outline documentation](outline.md) and make
    sure you are familiar and confortable with the content.
 2. Create a new module directory in the `modules` folder. If you have module 2,
    then create `modules/module_02`.
