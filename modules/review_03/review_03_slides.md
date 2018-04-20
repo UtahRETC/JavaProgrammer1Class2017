@@ -6,18 +6,16 @@ footer: Java Class - Review 3
 
 # Review 3
 
-- **Review of previous week**
 - **Exam details**
 - **Practice questions**
 
 -----------------------------------------------------------------------------
 
-# Review of Previous Week
-
------------------------------------------------------------------------------
-
 # Exam details _[1]_
 
+**Title**: Java SE 8 Programmer I
+**Exam Id**: 1Z0-808
+**Duration**: 150
 **Duration**: 150
 **No. question**: 70
 **Passing score**: 65%
@@ -150,8 +148,10 @@ footer: Java Class - Review 3
 
 # Additional resources
 
+- Wiley assessment and practice tests. For instructions on how to create an account and access the tests, follow the instructions here: https://goo.gl/RkxkEq
+
 -----------------------------------------------------------------------------
 
 # Reference list
 
-1. 1Z0-808 Exam, https://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-808
+1. 1Z0-808 Exam, https://goo.gl/PJAVWs
